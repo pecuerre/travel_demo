@@ -1,0 +1,25 @@
+<div class="sort-by-section clearfix box">
+  <h4 class="sort-by-title block-sm">Sort results by:</h4>
+  <ul class="sort-bar clearfix block-sm">
+      <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
+      <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
+      <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>duration</span></a></li>
+  </ul>
+  <ul class="swap-tiles clearfix block-sm">
+      <li class="swap-list <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'list' %>">
+          <%= link_to list_cruises_path do %>
+            <i class="soap-icon-list"></i>
+          <% end %>
+      </li>
+      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'grid' %>">
+          <%= link_to grid_cruises_path do %>
+            <i class="soap-icon-grid"></i>
+          <% end %>
+      </li>
+      <li class="swap-block <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'block' %>">
+          <%= link_to block_cruises_path do %>
+            <i class="soap-icon-block"></i>
+          <% end %>
+      </li>
+  </ul>
+</div>

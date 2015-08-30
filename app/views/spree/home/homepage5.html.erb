@@ -1,0 +1,844 @@
+<section id="content">
+  <div class="search-box-wrapper">
+      <div class="search-box container">
+          <ul class="search-tabs clearfix">
+              <li class="active"><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
+              <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
+              <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li>
+              <li><a href="#cars-tab" data-toggle="tab">CARS</a></li>
+              <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
+              <li><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
+              <li><a href="#online-checkin-tab" data-toggle="tab">ONLINE CHECK IN</a></li>
+          </ul>
+          <div class="visible-mobile">
+              <ul id="mobile-search-tabs" class="search-tabs clearfix">
+                  <li class="active"><a href="#hotels-tab">HOTELS</a></li>
+                  <li><a href="#flights-tab">FLIGHTS</a></li>
+                  <li><a href="#flight-and-hotel-tab">FLIGHT &amp; HOTELS</a></li>
+                  <li><a href="#cars-tab">CARS</a></li>
+                  <li><a href="#cruises-tab">CRUISES</a></li>
+                  <li><a href="#flight-status-tab">FLIGHT STATUS</a></li>
+                  <li><a href="#online-checkin-tab">ONLINE CHECK IN</a></li>
+              </ul>
+          </div>
+          
+          <div class="search-tab-content">
+              <div class="tab-pane fade active in" id="hotels-tab">
+                  <form action="hotel-list-view.html" method="post">
+                      <div class="row">
+                          <div class="form-group col-sm-6 col-md-3">
+                              <h4 class="title">Where</h4>
+                              <label>Your Destination</label>
+                              <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
+                          </div>
+                          
+                          <div class="form-group col-sm-6 col-md-4">
+                              <h4 class="title">When</h4>
+                              <div class="row">
+                                  <div class="col-xs-6">
+                                      <label>Check In</label>
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Check Out</label>
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group col-sm-6 col-md-3">
+                              <h4 class="title">Who</h4>
+                              <div class="row">
+                                  <div class="col-xs-4">
+                                      <label>Rooms</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-4">
+                                      <label>Adults</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-4">
+                                      <label>Kids</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group col-sm-6 col-md-2 fixheight">
+                              <label class="hidden-xs">&nbsp;</label>
+                              <button type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="tab-pane fade" id="flights-tab">
+                  <form action="flight-list-view.html" method="post">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group">
+                                  <label>Leaving From</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                              <div class="form-group">
+                                  <label>Going To</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">When</h4>
+                              <label>Departing On</label>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">anytime</option>
+                                              <option value="2">morning</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                              <label>Arriving On</label>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">anytime</option>
+                                              <option value="2">morning</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-3">
+                                      <label>Adults</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-3">
+                                      <label>Kids</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Promo Code</label>
+                                      <input type="text" class="input-text full-width" placeholder="type here" />
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-xs-3">
+                                      <label>Infants</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6 pull-right">
+                                      <label>&nbsp;</label>
+                                      <button class="full-width icon-check">SERACH NOW</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <div class="tab-pane fade" id="flight-and-hotel-tab">
+                  <form action="flight-list-view.html" method="post">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group">
+                                  <label>Leaving From</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                              <div class="form-group">
+                                  <label>Going To</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">When</h4>
+                              <label>Departing On</label>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">anytime</option>
+                                              <option value="2">morning</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                              <label>Arriving On</label>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <div class="datepicker-wrap">
+                                          <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">anytime</option>
+                                              <option value="2">morning</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-3">
+                                      <label>Adults</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-3">
+                                      <label>Kids</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Promo Code</label>
+                                      <input type="text" class="input-text full-width" placeholder="type here" />
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-xs-3">
+                                      <label>Rooms</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6 pull-right">
+                                      <label>&nbsp;</label>
+                                      <button class="full-width icon-check">SERACH NOW</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <div class="tab-pane fade" id="cars-tab">
+                  <form action="car-list-view.html" method="post">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group">
+                                  <label>Pick Up</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                              <div class="form-group">
+                                  <label>Drop Off</label>
+                                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">When</h4>
+                              <div class="form-group">
+                                  <label>Pick-Up Date / Time</label>
+                                  <div class="row">
+                                      <div class="col-xs-6">
+                                          <div class="datepicker-wrap">
+                                              <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-6">
+                                          <div class="selector">
+                                              <select class="full-width">
+                                                  <option value="1">anytime</option>
+                                                  <option value="2">morning</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Drop-Off Date / Time</label>
+                                  <div class="row">
+                                      <div class="col-xs-6">
+                                          <div class="datepicker-wrap">
+                                              <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                          </div>
+                                      </div>
+                                      <div class="col-xs-6">
+                                          <div class="selector">
+                                              <select class="full-width">
+                                                  <option value="1">anytime</option>
+                                                  <option value="2">morning</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-3">
+                                      <label>Adults</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-3">
+                                      <label>Kids</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="1">01</option>
+                                              <option value="2">02</option>
+                                              <option value="3">03</option>
+                                              <option value="4">04</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Promo Code</label>
+                                      <input type="text" class="input-text full-width" placeholder="type here" />
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <label>Car Type</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="">select a car type</option>
+                                              <option value="economy">Economy</option>
+                                              <option value="compact">Compact</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>&nbsp;</label>
+                                      <button class="full-width icon-check">SERACH NOW</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <div class="tab-pane fade" id="cruises-tab">
+                  <form action="cruise-list-view.html" method="post">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group">
+                                  <label>Your Destination</label>
+                                  <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">When</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <label>Departure Date</label>
+                                      <div class="datepicker-wrap">
+                                          <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Cruise Length</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="">select length</option>
+                                              <option value="1">1-2 Nights</option>
+                                              <option value="2">3-4 Nights</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <label>Cruise Line</label>
+                                      <div class="selector">
+                                          <select class="full-width">
+                                              <option value="">select cruise line</option>
+                                              <option>Azamara Club Cruises</option>
+                                              <option>Carnival Cruise Lines</option>
+                                              <option>Celebrity Cruises</option>
+                                              <option>Costa Cruise Lines</option>
+                                              <option>Cruise &amp; Maritime Voyages</option>
+                                              <option>Crystal Cruises</option>
+                                              <option>Cunard Line Ltd.</option>
+                                              <option>Disney Cruise Line</option>
+                                              <option>Holland America Line</option>
+                                              <option>Hurtigruten Cruise Line</option>
+                                              <option>MSC Cruises</option>
+                                              <option>Norwegian Cruise Line</option>
+                                              <option>Oceania Cruises</option>
+                                              <option>Orion Expedition Cruises</option>
+                                              <option>P&amp;O Cruises</option>
+                                              <option>Paul Gauguin Cruises</option>
+                                              <option>Peter Deilmann Cruises</option>
+                                              <option>Princess Cruises</option>
+                                              <option>Regent Seven Seas Cruises</option>
+                                              <option>Royal Caribbean International</option>
+                                              <option>Seabourn Cruise Line</option>
+                                              <option>Silversea Cruises</option>
+                                              <option>Star Clippers</option>
+                                              <option>Swan Hellenic Cruises</option>
+                                              <option>Thomson Cruises</option>
+                                              <option>Viking River Cruises</option>
+                                              <option>Windstar Cruises</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>&nbsp;</label>
+                                      <button class="icon-check full-width">SEARCH NOW</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <div class="tab-pane fade" id="flight-status-tab">
+                  <form action="flight-list-view.html" method="post">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <label>Leaving From</label>
+                                      <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Going To</label>
+                                      <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-xs-6 col-md-2">
+                              <h4 class="title">When</h4>
+                              <div class="form-group">
+                                  <label>Departure Date</label>
+                                  <div class="datepicker-wrap">
+                                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-xs-6 col-md-2">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group">
+                                  <label>Flight Number</label>
+                                  <input type="text" class="input-text full-width" placeholder="enter flight number" />
+                              </div>
+                          </div>
+                          <div class="form-group col-md-2 fixheight">
+                              <label class="hidden-xs">&nbsp;</label>
+                              <button class="icon-check full-width">SEARCH NOW</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <div class="tab-pane fade" id="online-checkin-tab">
+                  <form>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <h4 class="title">Where</h4>
+                              <div class="form-group row">
+                                  <div class="col-xs-6">
+                                      <label>Leaving From</label>
+                                      <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <label>Going To</label>
+                                      <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-xs-6 col-md-2">
+                              <h4 class="title">When</h4>
+                              <div class="form-group">
+                                  <label>Departure Date</label>
+                                  <div class="datepicker-wrap">
+                                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-xs-6 col-md-2">
+                              <h4 class="title">Who</h4>
+                              <div class="form-group">
+                                  <label>Full Name</label>
+                                  <input type="text" class="input-text full-width" placeholder="enter your full name" />
+                              </div>
+                          </div>
+                          <div class="form-group col-md-2 fixheight">
+                              <label class="hidden-xs">&nbsp;</label>
+                              <button class="icon-check full-width">SEARCH NOW</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container section">
+      <h2>Best Flight Offers</h2>
+      <div class="row image-box listing-style1 flight">
+          <div class="col-sm-6 col-md-3">
+              <article class="box">
+                  <figure class="animated" data-animation-type="fadeInDown">
+                      <span><img alt="" src="http://placehold.it/270x160"></span>
+                  </figure>
+                  <div class="details">
+                      <span class="price"><small>avg/person</small>$620</span>
+                      <h4 class="box-title">Paris<small>Oneway flight</small></h4>
+                      <div class="time">
+                          <div class="take-off">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">Take off</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                          <div class="landing">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">landing</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                      </div>
+                      <p class="duration fourty-space"><span class="skin-color">Total Time</span> 13 Hour, 40 minutes</p>
+                      <div class="action">
+                          <a class="button btn-small full-width" href="flight-detailed.html">SELECT NOW</a>
+                      </div>
+                  </div>
+              </article>
+          </div>
+          <div class="col-sm-6 col-md-3">
+              <article class="box">
+                  <figure class="animated" data-animation-type="fadeInDown">
+                      <span><img alt="" src="http://placehold.it/270x160"></span>
+                  </figure>
+                  <div class="details">
+                      <span class="price"><small>avg/person</small>$620</span>
+                      <h4 class="box-title">Paris<small>Oneway flight</small></h4>
+                      <div class="time">
+                          <div class="take-off">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">Take off</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                          <div class="landing">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">landing</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                      </div>
+                      <p class="duration fourty-space"><span class="skin-color">Total Time</span> 13 Hour, 40 minutes</p>
+                      <div class="action">
+                          <a class="button btn-small full-width" href="flight-detailed.html">SELECT NOW</a>
+                      </div>
+                  </div>
+              </article>
+          </div>
+          <div class="col-sm-6 col-md-3">
+              <article class="box">
+                  <figure class="animated" data-animation-type="fadeInDown">
+                      <span><img alt="" src="http://placehold.it/270x160"></span>
+                  </figure>
+                  <div class="details">
+                      <span class="price"><small>avg/person</small>$620</span>
+                      <h4 class="box-title">Paris<small>Oneway flight</small></h4>
+                      <div class="time">
+                          <div class="take-off">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">Take off</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                          <div class="landing">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">landing</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                      </div>
+                      <p class="duration fourty-space"><span class="skin-color">Total Time</span> 13 Hour, 40 minutes</p>
+                      <div class="action">
+                          <a class="button btn-small full-width" href="flight-detailed.html">SELECT NOW</a>
+                      </div>
+                  </div>
+              </article>
+          </div>
+          <div class="col-sm-6 col-md-3">
+              <article class="box">
+                  <figure class="animated" data-animation-type="fadeInDown">
+                      <span><img alt="" src="http://placehold.it/270x160"></span>
+                  </figure>
+                  <div class="details">
+                      <span class="price"><small>avg/person</small>$620</span>
+                      <h4 class="box-title">Paris<small>Oneway flight</small></h4>
+                      <div class="time">
+                          <div class="take-off">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">Take off</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                          <div class="landing">
+                              <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
+                              <div>
+                                  <span class="skin-color">landing</span><br>Wed Nov 13<br>7:50 Am
+                              </div>
+                          </div>
+                      </div>
+                      <p class="duration fourty-space"><span class="skin-color">Total Time</span> 13 Hour, 40 minutes</p>
+                      <div class="action">
+                          <a class="button btn-small full-width" href="flight-detailed.html">SELECT NOW</a>
+                      </div>
+                  </div>
+              </article>
+          </div>
+      </div>
+  </div>
+
+  <div class="global-map-area mobile-section parallax" data-stellar-background-ratio="0.5">
+      <div class="container">
+          <div class="table-wrapper hidden-table-sm">
+              <div class="col-md-6 description section table-cell">
+                  <h1>Take Travelo With You Wherever You Go!</h1>
+                  <div class="review clearfix">
+                      <div class="five-stars-container pull-left"><div class="five-stars transparent-bg" style="width: 100%;"></div></div>
+                      &nbsp;&nbsp;&nbsp;<label><small class="white-color uppercase">455 user ratings</small></label>
+                  </div>
+                  <br>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                  
+                  <a class="button btn-extra blue"><i class="soap-icon-apple"></i><span>Download from<br><em>apple store</em></span></a>
+                  <a class="button btn-extra yellow"><i class="soap-icon-googleplay"></i><span>Download from<br><em>google play</em></span></a>
+              </div>
+              <div class="col-md-6 image-wrapper table-cell hidden-sm">
+                  <img src="http://placehold.it/594x417" alt="" class="animated" data-animation-type="fadeInUp">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container section">
+      <h2>Travelo Photo Gallery</h2>
+      <div class="flexslider image-carousel style2 row-2" data-animation="slide" data-item-width="170" data-item-margin="30">
+          <ul class="slides">
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+                  <a href="#" class="hover-effect">
+                      <img src="http://placehold.it/170x160" alt="" />
+                      <p class="caption">La Degue Island</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
+      <div class="container description">
+          <h1 class="text-center box">Why Travelo</h1>
+          <div class="row">
+              <div class="col-xs-6 col-sm-3">
+                  <div class="icon-box style8 animated" data-animation-type="slideInUp" data-animation-delay="0">
+                      <i class="soap-icon-hotel"></i>
+                      <h4 class="box-title">135,000+ Hotels</h4>
+                      <p class="description">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                  <div class="icon-box style8 animated" data-animation-type="slideInUp" data-animation-delay="0.6">
+                      <i class="soap-icon-insurance"></i>
+                      <h4 class="box-title">Low Rates &amp; Top Savings</h4>
+                      <p class="description">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                  <div class="icon-box style8 animated" data-animation-type="slideInUp" data-animation-delay="0.9">
+                      <i class="soap-icon-star-1"></i>
+                      <h4 class="box-title">Reviewed by Real Travellers</h4>
+                      <p class="description">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                  <div class="icon-box style8 animated" data-animation-type="slideInUp" data-animation-delay="1.2">
+                      <i class="soap-icon-support"></i>
+                      <h4 class="box-title">We Speak your Language</h4>
+                      <p class="description">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

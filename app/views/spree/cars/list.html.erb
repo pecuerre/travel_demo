@@ -1,0 +1,506 @@
+<section id="content" class="gray-area">
+    <div class="container">
+            <div id="main">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                    <h4 class="search-results-title"><i class="soap-icon-search"></i><b>627</b> results found.</h4>
+                    <div class="toggle-container filters-container">
+                        <div class="panel style1 arrow-right">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#price-filter" class="collapsed">Price</a>
+                            </h4>
+                            <div id="price-filter" class="panel-collapse collapse">
+                                <div class="panel-content">
+                                    <div id="price-range"></div>
+                                    <br />
+                                    <span class="min-price-label pull-left"></span>
+                                    <span class="max-price-label pull-right"></span>
+                                    <div class="clearer"></div>
+                                </div><!-- end content -->
+                            </div>
+                        </div>
+                        
+                        <div class="panel style1 arrow-right">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#cartype-filter" class="collapsed">Car Type</a>
+                            </h4>
+                            <div id="cartype-filter" class="panel-collapse collapse filters-container">
+                                <div class="panel-content">
+                                    <ul class="check-square filters-option">
+                                        <li><a href="#">Full Size<small>(10)</small></a></li>
+                                        <li><a href="#">Compact<small>(82)</small></a></li>
+                                        <li class="active"><a href="#">Economy<small>(127)</small></a></li>
+                                        <li><a href="#">Luxury / Premium<small>(22)</small></a></li>
+                                        <li><a href="#">Mini Car<small>(38)</small></a></li>
+                                        <li><a href="#">Van / Minivan<small>(39)</small></a></li>
+                                        <li><a href="#">Exotic / Special<small>(72)</small></a></li>
+                                    </ul>
+                                    <a class="button btn-mini">MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel style1 arrow-right">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#car-rental-agent-filter" class="collapsed">Car Rental Agent</a>
+                            </h4>
+                            <div id="car-rental-agent-filter" class="panel-collapse collapse">
+                                <div class="panel-content">
+                                    <ul class="check-square filters-option">
+                                        <li><a href="#">Fox Rent A Car<small>(08)</small></a></li>
+                                        <li><a href="#">Payless<small>(32)</small></a></li>
+                                        <li class="active"><a href="#">Ez rent a car<small>(227)</small></a></li>
+                                        <li><a href="#">Thrifty<small>(22)</small></a></li>
+                                        <li><a href="#">Enterprise<small>(18)</small></a></li>
+                                        <li><a href="#">Alamo<small>(29)</small></a></li>
+                                        <li><a href="#">Dollar<small>(12)</small></a></li>
+                                    </ul>
+                                    <a class="button btn-mini">MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel style1 arrow-right">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#car-preferences-filter" class="collapsed">Car Preferences</a>
+                            </h4>
+                            <div id="car-preferences-filter" class="panel-collapse collapse">
+                                <div class="panel-content">
+                                    <ul class="check-square filters-option">
+                                        <li><a href="#">Passenger Quantity</a></li>
+                                        <li class="active"><a href="#">Satellite Navigation</a></li>
+                                        <li class="active"><a href="#">Air Conditioning</a></li>
+                                        <li><a href="#">Doors</a></li>
+                                        <li><a href="#">Diesel Vehicle</a></li>
+                                    </ul>
+                                    <a class="button btn-mini">MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel style1 arrow-right">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#modify-search-panel" class="collapsed">Modify Search</a>
+                            </h4>
+                            <div id="modify-search-panel" class="panel-collapse collapse">
+                                <div class="panel-content">
+                                    <form method="post">
+                                        <div class="form-group">
+                                            <label>pickup from</label>
+                                            <input type="text" class="input-text full-width" placeholder="city, district, or specific airpot" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>pick-up date</label>
+                                            <div class="datepicker-wrap">
+                                                <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>drop-off date</label>
+                                            <div class="datepicker-wrap">
+                                                <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <button class="btn-medium icon-check uppercase full-width">search again</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-9">
+                    <%= render partial: 'spree/cars/sort_by' %>
+                    <div class="car-list listing-style3 car">
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Economy Car<small>bmw mini</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl class="">
+                                        <dt class="skin-color">mileage</dt><dd>3000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$45.39</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Full Size<small>Holden sv6</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl class="">
+                                        <dt class="skin-color">mileage</dt><dd>3000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$100</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Luxury Elite<small>bmw 5 series</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>3000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$79.39</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Mini Car<small>Fiat 500</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>unlimited</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$15.39</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Intermediate<small>Renault grand scenic</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>unlimited</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$30.21</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Economy Car<small>vokswagen polo</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>8000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$40.55</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Full Size<small>Holden sv6</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>unlimited</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$100</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Luxury Elite<small>bmw 5 series</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>12000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$79.39</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Mini Car<small>Fiat 500</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>unlimited</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$15.39</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Intermediate<small>Renault grand scenic</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>unlimited</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$30.21</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box">
+                            <figure class="col-xs-3">
+                                <span><img alt="" src="http://placehold.it/270x160"></span>
+                            </figure>
+                            <div class="details col-xs-9 clearfix">
+                                <div class="col-sm-8">
+                                    <div class="clearfix">
+                                        <h4 class="box-title">Economy Car<small>vokswagen polo</small></h4>
+                                        <div class="logo">
+                                            <img src="http://placehold.it/110x25" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="amenities">
+                                        <ul>
+                                            <li><i class="soap-icon-user circle"></i>4</li>
+                                            <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                            <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                            <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                            <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 character">
+                                    <dl>
+                                        <dt class="skin-color">mileage</dt><dd>8000 miles</dd>
+                                        <dt class="skin-color">Pickup Time</dt><dd>5:45 pm</dd>
+                                        <dt class="skin-color">Location</dt><dd>London city</dd>
+                                    </dl>
+                                </div>
+                                <div class="action col-xs-6 col-sm-2">
+                                    <span class="price"><small>per day</small>$40.55</span>
+                                    <a href="car-detailed.html" class="button btn-small full-width">select</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <a href="#" class="button uppercase full-width btn-large">load more listings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

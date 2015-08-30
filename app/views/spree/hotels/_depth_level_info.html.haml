@@ -1,0 +1,40 @@
+%table.table.table-hover.table-condensed.hidden-phone
+  %thead
+    %tr
+      %th Available room types
+      %th Persons
+      %th Availability
+      %th Price for 5 nights
+  %tbody
+    - colum = 2 + rand(3)
+    - 1.upto(colum) do
+      %tr
+        %td
+          - rooms = ["Standard Studio", "Superior Room", "Executive Room", "Deluxe Studio", "One-Bedroom Apartment","Two-Bedroom Apartment", "Suite", "Junior Suite"]
+          - room = rooms[rand(7)]
+          %a{:href => "#"}
+            = room
+          - maybe = rand(8)
+          - if maybe == 3
+            %small
+              %span.label.label-success
+                Save #{20 + rand(50)}! »
+          - elsif maybe == 2
+            %small
+              %span.label.label-warning Last one! »
+        %td
+          - paxs = 1 + rand(3)
+          - 1.upto(paxs) do
+            %span.glyphicon.glyphicon-user
+          - childs = rand(2)
+          - if childs > 0
+            +
+            - 1.upto(childs) do
+              %span.glyphicon.glyphicon-user.child
+        %td.text-warning
+          Only #{1 +rand(5)} left
+        %td.text-info
+          $ #{price = 100 + rand(200)} USD
+        %td
+          %small
+            %span.label.label-info Info & Book »

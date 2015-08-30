@@ -1,0 +1,44 @@
+<% content_for :pagetitle do %>
+  <%= render partial: 'spree/hotels/pagetitle' %>
+<% end %>
+
+<% content_for :travel_search_box do %>
+  <%= render partial: 'spree/shared/index_search_box' %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render partial: 'spree/hotels/filter' %>
+<% end %>
+
+<%= render partial: 'spree/hotels/sort_by' %>
+
+<% if @products.any? %>
+  <div class="hotel-list">
+    <div class="row image-box hotel listing-style2">
+    <% @products.each do |product| %>
+      <div class="col-sms-6 col-sm-6 col-md-4">
+        <article class="box">
+            <figure>
+              <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
+                <%= product_image(product, :itemprop => "image") %>
+              </a>
+            </figure>
+            <div class="details">
+              <a title="View all" href="hotel-detailed.html" class="pull-right button uppercase">select</a>
+              <h4 class="box-title">
+                <%= link_to(product_path(product), :itemprop => "name", :title => product.name) do  %> 
+                  <%= truncate(product.name, length: 15)  %>
+                <% end %>
+              </h4>
+              <label class="price-wrapper">
+                <span class="price-per-unit"><%= Spree::Money.new(product.price).to_html %></span>avg/night
+              </label>
+            </div>  
+        </article>
+      </div>
+    <% end %>
+    </div>
+  </div>  
+<% end %>
+<a href="#" class="uppercase full-width button btn-large">load more listing</a>
+

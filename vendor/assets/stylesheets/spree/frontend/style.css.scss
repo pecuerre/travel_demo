@@ -411,8 +411,11 @@ img.full-width {
 /* Icons */
 @font-face {
   font-family: 'soap-icons';
-  src: url("../fonts/soap-icons.eot?26664784");
-  src: url("../fonts/soap-icons.eot?26664784#iefix") format("embedded-opentype"), url("../fonts/soap-icons.woff?26664784") format("woff"), url("../fonts/soap-icons.ttf?26664784") format("truetype"), url("../fonts/soap-icons.svg?26664784#soap-icons") format("svg");
+  src: font-url("soap-icons.eot");
+  src: font-url("soap-icons.eot?#iefix") format("embedded-opentype"), 
+       font-url("soap-icons.woff") format("woff"), 
+       font-url("soap-icons.ttf") format("truetype"), 
+       font-url("soap-icons.svg?#soap-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -1057,7 +1060,11 @@ img.full-width {
 /* font */
 @font-face {
   font-family: 'NexaBlack';
-  src: url("../fonts/NexaBlack.eot?") format("eot"), url("../fonts/NexaBlack.otf") format("opentype"), url("../fonts/NexaBlack.woff") format("woff"), url("../fonts/NexaBlack.ttf") format("truetype"), url("../fonts/NexaBlack.svg#NexaBlack") format("svg"); }
+  src: font-url("NexaBlack.eot?") format("eot"), 
+       font-url("NexaBlack.otf") format("opentype"), 
+       font-url("NexaBlack.woff") format("woff"), 
+       font-url("NexaBlack.ttf") format("truetype"), 
+       font-url("NexaBlack.svg#NexaBlack") format("svg"); }
 /* 1.2. Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #page-wrapper {
   position: relative;

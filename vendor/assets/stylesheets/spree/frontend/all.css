@@ -10,4 +10,5 @@
  *= require store/spree_travel_core
  *= require store/spree_travel_hotel
  *= require store/spree_travel_package
+ *= require spree/frontend/spree_property_type
 */

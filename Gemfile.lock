@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/openjaf/spree_property_type.git
+  revision: 4b64e2573ea56c327dea6ac989437b8e8bc588a0
+  branch: 3-0-stable
+  specs:
+    spree_property_type (3.0.0)
+      spree (~> 3.0.0)
+
+GIT
   remote: git://github.com/openjaf/spree_travel_core.git
   revision: 20758a6a40223ef1886e1620f81de0e2301a1f7f
   branch: combinations_less
@@ -409,6 +417,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree!
   spree_auth_devise!
+  spree_property_type!
   spree_travel_core!
   spree_travel_hotel!
   spree_travel_package!

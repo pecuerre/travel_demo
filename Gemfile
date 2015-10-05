@@ -35,3 +35,4 @@ gem 'spree_travel_core', github: 'openjaf/spree_travel_core', branch: 'combinati
 gem 'spree_travel_hotel', github: 'openjaf/spree_travel_hotel', branch: 'combinations_less'
 gem 'spree_travel_package', github: 'openjaf/spree_travel_package', branch: '3-0-stable'
 gem 'spree_travel_sample', github: 'openjaf/spree_travel_sample',branch: 'combinations_less'
+gem 'spree_property_type', github: 'openjaf/spree_property_type', branch: '3-0-stable'

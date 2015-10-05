@@ -56,12 +56,11 @@ module Spree
         @products = @@_products ||=
             begin
               products= []
-              sample_size=30
-              i=0
-              while i<sample_size
+              sample_size=10
+              sample_size.times do
                 products << generateProduct
-                i+=1
               end
+
               products
             end
       end

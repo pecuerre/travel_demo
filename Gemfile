@@ -22,7 +22,6 @@ end
 
 gem 'haml-rails'
 gem 'ffaker'
-gem 'byebug', group: [:development, :test]
 gem 'pry', group: [:development, :test]
 
 gem 'rails_12factor', group: :production

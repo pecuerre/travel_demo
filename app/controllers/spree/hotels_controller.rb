@@ -9,6 +9,7 @@ module Spree
     end
     
     def list
+      @property_types = Spree::PropertyType.all
     end
 
     def grid

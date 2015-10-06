@@ -32,10 +32,15 @@
   <% 
     @property_types.each do |property_type| 
       link_name = name_to_link(property_type)
+      # if params[:lastpt] == ptid(property_type)
+      #   ccss = ''
+      # else
+         ccss = 'collapsed'
+      # end
   %>
     <div class="panel style1 arrow-right">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#<%= link_name %>" class="collapsed"><%= property_type.name %></a>
+        <a data-toggle="collapse" href="#<%= link_name %>" class="<%= ccss %>"><%= property_type.name %></a>
       </h4>
       <div id="<%= link_name %>" class="panel-collapse collapse">
         <div class="panel-content">

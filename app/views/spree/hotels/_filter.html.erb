@@ -44,25 +44,18 @@
               property_type.properties.each do |pp| 
                 if is_property_in_url?(pp)
                   url = remove_property_from_url(pp)
+                  css = 'active'
                 else
                   url = add_property_to_url(pp)
+                  css = ''
                 end
                 text = "#{pp.name} <small>(1000)</small>".html_safe
             %>
-              <li><%= link_to text, url %></li>
+              <li class="<%= css %>"><%= link_to text, url %></li>
             <% end %>
-
-                    <li><a href="#">All<small>(722)</small></a></li>
-                    <li><a href="#">Hotel<small>(982)</small></a></li>
-                    <li><a href="#">Resort<small>(127)</small></a></li>
-                    <li class="active"><a href="#">Bed &amp; Breakfast<small>(222)</small></a></li>
-                    <li><a href="#">Condo<small>(158)</small></a></li>
-                    <li><a href="#">Residence<small>(439)</small></a></li>
-                    <li><a href="#">Guest House<small>(52)</small></a></li>
-                </ul>
-                <a class="button btn-mini">MORE</a>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
   <% end %>
     

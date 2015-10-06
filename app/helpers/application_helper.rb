@@ -5,7 +5,10 @@ module ApplicationHelper
 	end
 
 	def is_property_in_url?(pp)
-		false
+		pt = "pt#{pp.property_type.id}"
+		list = params[pt]
+		list = list.split('_') rescue []
+		list.include?(pp.id.to_s)
 	end
 
 	def add_property_to_url(pp)
@@ -20,6 +23,12 @@ module ApplicationHelper
 	end
 
 	def remove_property_from_url(pp)
-
+		pt = "pt#{pp.property_type.id}"
+		list = params[pt]
+		list = "" unless list
+		list = list.split('_')
+		list.delete(pp.id.to_s)
+		str = list.join('_')
+		params.merge(pt => str)
 	end
 end

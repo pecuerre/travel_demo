@@ -40,8 +40,16 @@
       <div id="<%= link_name %>" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <% property_type.properties.each do |pp| %>
-              <li><a href="#"> <%= pp.name %> </small></a></li>
+            <% 
+              property_type.properties.each do |pp| 
+                if is_property_in_url?(pp)
+                  url = remove_property_from_url(pp)
+                else
+                  url = add_property_to_url(pp)
+                end
+                text = "#{pp.name} <small>(1000)</small>".html_safe
+            %>
+              <li><%= link_to text, url %></li>
             <% end %>
 
                     <li><a href="#">All<small>(722)</small></a></li>

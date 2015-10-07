@@ -1,5 +1,7 @@
 <section id="content">
+<% if @flights.any? %>
     <div class="container flight-detail-page">
+    <% @flights.each do |f|%>
         <div class="row">
             <div id="main" class="col-md-9">
                 <div class="tab-container style1 box" id="flight-main-content">
@@ -18,15 +20,8 @@
                             <label>SELECT MONTH</label>
                             <div class="col-sm-6 col-md-4 no-float no-padding">
                                 <div class="selector">
-                                    <select class="full-width" id="select-month">
-                                        <option value="2014-6">June 2014</option>
-                                        <option value="2014-7">July 2014</option>
-                                        <option value="2014-8">August 2014</option>
-                                        <option value="2014-9">September 2014</option>
-                                        <option value="2014-10">October 2014</option>
-                                        <option value="2014-11">November 2014</option>
-                                        <option value="2014-12">December 2014</option>
-                                    </select>
+                                    <%= select_month(Time.now) %>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -39,13 +34,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p class="description">
-                                        The calendar is updated every five minutes and is only an approximation of availability.
-<br /><br />
-Some hosts set custom pricing for certain days on their calendar, like weekends or holidays. The rates listed are per day and do not include any cleaning fee or rates for extra people the host may have for this listing. Please refer to the listing's Description tab for more details.
-<br /><br />
-We suggest that you contact the host to confirm availability and rates before submitting a reservation request.
-                                    </p>
+                                    <p class="description"><%= f.calendar_description%> </p>
                                 </div>
                             </div>
                         </div>
@@ -65,66 +54,66 @@ We suggest that you contact the host to confirm availability and rates before su
                             <div class="intro table-wrapper full-width hidden-table-sm box">
                                 <div class="col-md-4 table-cell travelo-box">
                                     <dl class="term-description">
-                                        <dt>Airline:</dt><dd>delta</dd>
-                                        <dt>Flight Type:</dt><dd>Economy</dd>
-                                        <dt>Fare type:</dt><dd>Refundable</dd>
-                                        <dt>Cancellation:</dt><dd>$78 / person</dd>
-                                        <dt>Flight CHange:</dt><dd>$53 / person</dd>
-                                        <dt>Seats &amp; Baggage:</dt><dd>Extra Charge</dd>
-                                        <dt>Inflight Features:</dt><dd>Available</dd>
-                                        <dt>Base fare:</dt><dd>$320.00</dd>
-                                        <dt>Taxes &amp; Fees:</dt><dd>$300.00</dd>
-                                        <dt>total price:</dt><dd>$620.00</dd>
+                                        <dt>Airline:</dt><dd><%= f.airline%></dd>
+                                        <dt>Flight Type:</dt><dd><%= f.flight_type%></dd>
+                                        <dt>Fare type:</dt><dd><%= f.airline%></dd>
+                                        <dt>Cancellation:</dt><dd><%= f.cancellation%></dd>
+                                        <dt>Flight CHange:</dt><dd><%= f.flight_change%></dd>
+                                        <dt>Seats &amp; Baggage:</dt><dd><%= f.seat_baggage%></dd>
+                                        <dt>Inflight Features:</dt><dd><%= f.inflight_features%></dd>
+                                        <dt>Base fare:</dt><dd><%= f.base_fare%></dd>
+                                        <dt>Taxes &amp; Fees:</dt><dd><%= f.taxes_fees%></dd>
+                                        <dt>total price:</dt><dd><%= f.total_price%></dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-8 table-cell">
                                     <div class="detailed-features booking-details">
                                         <div class="travelo-box">
                                             <a href="#" class="button btn-mini yellow pull-right">1 STOP</a>
-                                            <h4 class="box-title">Indianapolis to Paris<small>Oneway flight</small></h4>
+                                            <h4 class="box-title"><%= f.name%><small><%= f.flight_way%></small></h4>
                                         </div>
                                         <div class="table-wrapper flights">
                                             <div class="table-row first-flight">
                                                 <div class="table-cell logo">
                                                     <img src="http://placehold.it/140x30" alt="">
-                                                    <label>AI-635 Economy</label>
+                                                    <label><%= f.identifier%></label>
                                                 </div>
                                                 <div class="table-cell timing-detail">
                                                     <div class="timing">
                                                         <div class="check-in">
                                                             <label>Take off</label>
-                                                            <span>13 Nov 2013, 7:50 am</span>
+                                                            <span><%= f.takeOff%></span>
                                                         </div>
                                                         <div class="duration text-center">
                                                             <i class="soap-icon-clock"></i>
-                                                            <span>1h 30m</span>
+                                                            <span><%= f.duration%></span>
                                                         </div>
                                                         <div class="check-out">
                                                             <label>landing</label>
-                                                            <span>13 Nov 2013, 9:20 Am</span>
+                                                            <span><%= f.landing%></span>
                                                         </div>
                                                     </div>
-                                                    <label class="layover">Layover : 3h 50m</label>
+                                                    <label class="layover">Layover : <%= f.lay_over%></label>
                                                 </div>
                                             </div>
                                             <div class="table-row second-flight">
                                                 <div class="table-cell logo">
                                                     <img src="http://placehold.it/140x30" alt="">
-                                                    <label>AI-635 Economy</label>
+                                                    <label><%= f.identifier%></label>
                                                 </div>
                                                 <div class="table-cell timing-detail">
                                                     <div class="timing">
                                                         <div class="check-in">
                                                             <label>Take off</label>
-                                                            <span>13 Nov 2013, 7:50 am</span>
+                                                            <span><%= f.takeOff%></span>
                                                         </div>
                                                         <div class="duration text-center">
                                                             <i class="soap-icon-clock"></i>
-                                                            <span>8h 20m</span>
+                                                            <span><%= f.duration%></span>
                                                         </div>
                                                         <div class="check-out">
                                                             <label>landing</label>
-                                                            <span>13 Nov 2013, 9:20 Am</span>
+                                                            <span><%= f.duration%></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,97 +123,21 @@ We suggest that you contact the host to confirm availability and rates before su
                                 </div>
                             </div>
                             <div class="long-description">
-                                <h2>About Delta Airlines</h2>
-                                <p>
-                                    Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcorper vulputate nisi, et fringilla ante convallis quis. Nullam vel tellus non elit suscipit volutpat. Integer id felis et nibh rutrum dignissim ut non risus. In tincidunt urna quis sem luctus, sed accumsan magna pellentesque. Donec et iaculis tellus. Vestibulum ut iaculis justo, auctor sodales lectus. Donec et tellus tempus, dignissim maurornare, consequat lacus. Integer dui neque, scelerisque nec sollicitudin sit amet, sodales a erat. Duis vitae condimentum ligula. Integer eu mi nisl. Donec massa dui, commodo id arcu quis, venenatis scelerisque velit.
-<br /><br />
-Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in. Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla sem, vel egestas dui ullamcorper ac.
-<br /><br />
-Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam fermentum tellus auctor, fringilla sapien et, congue quam. In a luctus tortor. Suspendisse eget tempor libero, ut sollicitudin ligula. Nulla vulputate tincidunt est non congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus at est imperdiet, dapibus ipsum vel, lacinia nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus id interdum lectus, ut elementum elit. Nullam a molestie magna. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra.
-                                </p>
+                                <h2>About <%= f.airline%></h2>
+                                <p><%= f.airline_description%></p>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="inflight-features">
-                            <h2>Features Style 01</h2>
+                            <h2>Features <%= f.identifier%></h2>
                             <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
                             <ul class="amenities clearfix style1 box">
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-wifi"></i>WI_FI</div>
+                              <% f.list_of_features_flight.each do |key, value|%>
+                              <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="<%= value %>"></i><%= key %></div>
                                 </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-entertainment"></i>entertainment</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-television"></i>television</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-aircon"></i>air conditioning</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-juice"></i>drink</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-joystick"></i>games</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-coffee"></i>coffee</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-winebar"></i>wines</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-shopping"></i>shopping</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-food"></i>food</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-comfort"></i>comfort</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style1"><i class="soap-icon-magazine"></i>magazines</div>
-                                </li>
+                              <% end %>
                             </ul>
-                            <h2>Features Style 02</h2>
-                            <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
-                            <ul class="amenities clearfix style2">
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-wifi circle"></i>WI_FI</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-entertainment circle"></i>entertainment</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-television circle"></i>television</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-aircon circle"></i>air conditioning</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-juice circle"></i>drink</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-joystick circle"></i>games</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-coffee circle"></i>coffee</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-winebar circle"></i>wines</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-shopping circle"></i>shopping</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-food circle"></i>food</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-comfort circle"></i>comfort</div>
-                                </li>
-                                <li class="col-md-4 col-sm-6">
-                                    <div class="icon-box style2"><i class="soap-icon-magazine circle"></i>magazines</div>
-                                </li>
-                            </ul>
+
                         </div>
                         <div class="tab-pane fade" id="flgiht-seat-selection">
                             <h2>Select your Seats</h2>
@@ -489,21 +402,21 @@ Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam f
                         <img src="http://placehold.it/270x160" alt="">
                     </figure>
                     <div class="details">
-                        <h2 class="box-title">Indianapolis to Paris<small>Oneway flight</small></h2>
+                        <h2 class="box-title"><%= f.name%><small><%= f.flight_way%></small></h2>
                         <span class="price clearfix">
                             <small class="pull-left">avg/person</small>
-                            <span class="pull-right">$620</span>
+                            <span class="pull-right"><%= f.price%></span>
                         </span>
                         
                         <div class="duration">
                             <i class="soap-icon-clock"></i>
                             <dl>
                                 <dt class="skin-color">Total Time:</dt>
-                                <dd>13 Hour, 40 minutes</dd>
+                                <dd><%= f.duration_long_style%></dd>
                             </dl>
                         </div>
                         
-                        <p class="description">Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+                        <p class="description"><%= f.short_description%></p>
                         <a href="flight-booking.html" class="button green full-width uppercase btn-medium">book flight now</a>
                     </div>
                 </article>
@@ -539,5 +452,7 @@ Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam f
                 
             </div>
         </div>
+    <% end%>
     </div>
+<% end%>
 </section>

@@ -68,27 +68,11 @@
       <div id="airlines-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Major Airline
-              <small>($620)</small>
+            <% @airlines.each do |airline| %>
+            <li><a href="#"><%= airline%>
+              <small>($<%= rand(600...3000)%>)</small>
             </a></li>
-            <li><a href="#">United Airlines
-              <small>($982)</small>
-            </a></li>
-            <li class="active"><a href="#">delta airlines
-              <small>($1,127)</small>
-            </a></li>
-            <li><a href="#">Alitalia
-              <small>($2,322)</small>
-            </a></li>
-            <li><a href="#">US airways
-              <small>($3,158)</small>
-            </a></li>
-            <li><a href="#">Air France
-              <small>($4,239)</small>
-            </a></li>
-            <li><a href="#">Air tahiti nui
-              <small>($5,872)</small>
-            </a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>
@@ -180,7 +164,7 @@
                   <div class="first-row">
                     <div>
                       <h4 class="box-title"><%= flight.name %>
-                        <small>Oneway flight</small>
+                        <small><%= flight.flightType %></small>
                       </h4>
                       <a class="button btn-mini stop">1 STOP</a>
 
@@ -200,7 +184,7 @@
                       <div class="take-off col-sm-4">
                         <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                         <div>
-                          <span class="skin-color">Take off</span><br/>Wed Nov 13, 2013 7:50 Am
+                          <span class="skin-color">Take off</span><br/><%= flight.takeOff %>
                         </div>
                       </div>
                       <div class="landing col-sm-4">

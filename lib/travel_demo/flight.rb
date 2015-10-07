@@ -3,7 +3,7 @@ module Sample
   class Flight
 
     @flight_ways=['One way flight', 'Two way flight']
-    @fligh_types=['Business', 'First Class', 'Economy', 'Premium Economy']
+    @flight_types=['Business', 'First Class', 'Economy', 'Premium Economy']
     @inflight_features=['Available', 'Not Available']
     @airlines=['Major Airline', 'United Airlines', 'Delta Airlines', 'Alitalia', 'US airways', 'Air France', 'Air tahiti nui', 'American Airlines', 'Copa Airlines']
     ##  to change the style of the icon add circle at the end. Example: soap-icon-entertainment circle
@@ -26,7 +26,7 @@ module Sample
       def generate_flight
         f = OpenStruct.new
         f.flight_way=@flight_ways.sample
-        f.flight_type=@fligh_types.sample
+        f.flight_type=@flight_types.sample
         f.name = Faker::Address.country + ' - '+ Faker::Address.country
 
         takeoff=generate_date
@@ -43,6 +43,12 @@ module Sample
         f.flight_change='$'+rand(40...200).to_s+'/person' #$78 / person
         f.seat_baggage='$'+rand(40...200).to_s+'/person' #$78 / person
 
+        keys = @features.keys.to_a
+        set = Set.new
+        5.times { set << keys.sample}
+        hash = @features.select {|key, _| set.include?(key) }
+
+
         f.inflight_features=@inflight_features.sample
         f.base_fare='$'+rand(300...900).to_s #$320.00
         f.taxes_fees='$'+rand(300...900).to_s #$320.00
@@ -53,7 +59,7 @@ module Sample
         f.airline_description=Faker::Lorem.paragraph(10)
         f.calendar_description=Faker::Lorem.paragraphs(1)
         f.identifier=f.airline[0]+f.airline[1]+' - '+rand(100...999).to_s+ ' '+f.flight_type
-        f.list_of_features_flight=@features
+        f.list_of_features_flight=hash
         f
       end
 
@@ -61,7 +67,7 @@ module Sample
         @@_flights ||=
             begin
               flights= []
-              sample_size=10
+              sample_size=3
               sample_size.times do
                 flights << generate_flight
               end

@@ -14,3 +14,4 @@
 
 //= require_self
 //= require_tree .
+//= require spree/frontend/spree_property_type

@@ -1,38 +1,4 @@
 GIT
-  remote: git://github.com/openjaf/spree_travel_core.git
-  revision: 20758a6a40223ef1886e1620f81de0e2301a1f7f
-  branch: combinations_less
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
-
-GIT
-  remote: git://github.com/openjaf/spree_travel_hotel.git
-  revision: ca514942b94f6a352fd127fbf305905b77483855
-  branch: combinations_less
-  specs:
-    spree_travel_hotel (3.0.0)
-      spree_core (~> 3.0.0)
-
-GIT
-  remote: git://github.com/openjaf/spree_travel_package.git
-  revision: d0bf0c42fb7acb124ae030ed7125a51e88c507d9
-  branch: 3-0-stable
-  specs:
-    spree_travel_package (3.0.0)
-      spree_core (~> 3.0.0)
-      spree_travel_core (~> 3.0.0)
-
-GIT
-  remote: git://github.com/openjaf/spree_travel_sample.git
-  revision: 80ba3cb3d00c6aadbdb345989eb23ab30def857a
-  branch: combinations_less
-  specs:
-    spree_travel_sample (3.0.0)
-      colored
-      spree_core (~> 3.0.0)
-
-GIT
   remote: git://github.com/spree/spree.git
   revision: a504238e478cb98e9b5f229c1f91864d532b0ed6
   branch: 3-0-stable
@@ -103,6 +69,38 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
+      spree_core (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_property_type
+  specs:
+    spree_property_type (3.0.0)
+      spree (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_core
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_hotel
+  specs:
+    spree_travel_hotel (3.0.0)
+      spree_core (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_package
+  specs:
+    spree_travel_package (3.0.0)
+      spree_core (~> 3.0.0)
+      spree_travel_core (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_sample
+  specs:
+    spree_travel_sample (3.0.0)
+      colored
       spree_core (~> 3.0.0)
 
 GEM
@@ -409,6 +407,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree!
   spree_auth_devise!
+  spree_property_type!
   spree_travel_core!
   spree_travel_hotel!
   spree_travel_package!

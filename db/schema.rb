@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825211644) do
+ActiveRecord::Schema.define(version: 20151005125539) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -551,14 +551,27 @@ ActiveRecord::Schema.define(version: 20150825211644) do
 
   create_table "spree_properties", force: :cascade do |t|
     t.string   "name"
-    t.string   "presentation", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "presentation",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "property_type_id"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "spree_properties_prototypes", id: false, force: :cascade do |t|
     t.integer "prototype_id"
     t.integer "property_id"
+  end
+
+  create_table "spree_property_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "show"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "presentation"
   end
 
   create_table "spree_prototypes", force: :cascade do |t|

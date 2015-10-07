@@ -12,3 +12,4 @@
 //= require admin/spree_travel_core
 //= require admin/spree_travel_hotel
 //= require admin/spree_travel_package
+//= require spree/backend/spree_property_type

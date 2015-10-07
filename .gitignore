@@ -33,3 +33,5 @@ bower.json
 
 # Ignore application configuration
 /config/application.yml
+*.sublime-project
+*.sublime-workspace

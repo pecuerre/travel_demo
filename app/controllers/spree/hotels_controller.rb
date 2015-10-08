@@ -2,49 +2,69 @@ module Spree
   class HotelsController < Spree::StoreController
     helper 'spree/products'
     respond_to :html
-    include ApplicationHelper
-    
+
     before_action :get_hotels, only: [:list, :grid, :block]
 
     def index
+      list
     end
-    
+
     def list
-      @property_types = Spree::PropertyType.all
-      @products = Spree::Product.hotels
-      property_ids = get_properties_ids_from_params
-      @products = @products.with_property_ids(property_ids)
     end
 
     def grid
     end
-    
+
     def block
     end
-    
+
     def detail
     end
-    
+
     def booking
     end
-    
+
     def thanks_you
     end
-    
-    private 
 
+    private
     def get_hotels
+      @products = Spree::Product.sample
     end
 
-    def get_properties_ids_from_params
-      big_list = []
-      @property_types.each do |property_type|
-        string = params[ptid(property_type)]
-        list = string.split('_') rescue []
-        big_list += list
+  end
+
+  class Product
+
+    class << self
+
+      def generateProduct
+
+        product = OpenStruct.new
+        product.name = Faker::Company.name
+        product.description=Faker::DizzleIpsum.paragraph(5)
+        product.destination = Faker::DizzleIpsum.phrase
+        product.destination_taxon = Faker::DizzleIpsum.phrase
+        product.variant_images = []
+        product.images=[]
+        product.price = rand(100...1000)
+        product.review=rand(1000)
+        product
       end
-      big_list
-    end
 
+      def sample
+        @products = @@_products ||=
+            begin
+              products= []
+              sample_size=10
+              sample_size.times do
+                products << generateProduct
+              end
+
+              products
+            end
+      end
+
+    end
   end
 end

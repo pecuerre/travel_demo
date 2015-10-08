@@ -3,6 +3,7 @@ module Sample
   class Flight
 
     @flight_ways=['One way flight', 'Two way flight']
+    @stops=['1 stop', '2 stops', '3 stops', 'multistops']
     @flight_types=['Business', 'First Class', 'Economy', 'Premium Economy']
     @inflight_features=['Available', 'Not Available']
     @airlines=['Major Airline', 'United Airlines', 'Delta Airlines', 'Alitalia', 'US airways', 'Air France', 'Air tahiti nui', 'American Airlines', 'Copa Airlines']
@@ -21,13 +22,16 @@ module Sample
                'comfort' => 'soap-icon-comfort',
                'magazines' => 'soap-icon-magazine'
     }
+
+
     class << self
 
       def generate_flight
         f = OpenStruct.new
         f.flight_way=@flight_ways.sample
         f.flight_type=@flight_types.sample
-        f.name = Faker::Address.country + ' - '+ Faker::Address.country
+        f.name = Faker::Address.country + ' to '+ Faker::Address.country
+        f.stops=@stops.sample
 
         takeoff=generate_date
         flight_duration=rand(3600...86400)
@@ -45,8 +49,8 @@ module Sample
 
         keys = @features.keys.to_a
         set = Set.new
-        5.times { set << keys.sample}
-        hash = @features.select {|key, _| set.include?(key) }
+        5.times { set << keys.sample }
+        hash = @features.select { |key, _| set.include?(key) }
 
 
         f.inflight_features=@inflight_features.sample
@@ -60,7 +64,41 @@ module Sample
         f.calendar_description=Faker::Lorem.paragraphs(1)
         f.identifier=f.airline[0]+f.airline[1]+' - '+rand(100...999).to_s+ ' '+f.flight_type
         f.list_of_features_flight=hash
+        f.features_description=Faker::Lorem.paragraphs(1)
+        f.sets_selection_description=Faker::Lorem.paragraphs(1)
+
+        f.number_of_available_seats=rand(1...10)
+        seats=[]
+        f.number_of_available_seats.times do
+          seats<< generate_seat
+        end
+        f.seats=seats
+        f.baggage_information=Faker::Lorem.paragraphs(4)
+        f.fare_rules_description=Faker::Lorem.paragraphs(4)
+
+
+        f.number_of_available_rules=rand(1...10)
+        rules=[]
+        f.number_of_available_rules.times do
+          rules<< generate_rule
+        end
+        f.rules=rules
+        f.countries=Faker::Address.country
         f
+      end
+
+      def generate_seat
+        s= OpenStruct.new
+        s.price='$'+rand(10...20).to_s
+        s.description=Faker::Lorem.sentence
+        s
+      end
+
+      def generate_rule
+        r= OpenStruct.new
+        r.title=Faker::Lorem.word
+        r.description=Faker::Lorem.paragraphs(2)
+        r
       end
 
       def sample

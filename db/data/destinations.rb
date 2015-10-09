@@ -73,11 +73,13 @@ destinations = [
 ]
 
 def create_taxonomy
+	puts "creating taxonomy: destinations"
 	taxonomy = Spree::Taxonomy.where(:name => 'destinations').first_or_create
 end
 
 def create_taxon(taxon_name, parent_taxon, taxonomy)
 	parent_taxon = Spree::Taxon.where(:name => parent_taxon.name, :taxonomy => taxonomy).first_or_create if parent_taxon
+	puts "creating taxon: #{taxon_name} => #{parent_taxon.name rescue nil}"
 	taxon = Spree::Taxon.where(:name => taxon_name, :parent => parent_taxon, :taxonomy => taxonomy).first_or_create
 end
 

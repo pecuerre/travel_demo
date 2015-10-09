@@ -16,3 +16,4 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::LegacyUser"
+StateMachines::Machine.ignore_method_conflicts = true

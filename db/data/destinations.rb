@@ -1,6 +1,6 @@
-destinations = []
-	"HAVANA,"
-	"MATANZAS,"
+destinations = [
+	"HAVANA,",
+	"MATANZAS,",
 	"VARADERO,MATANZAS",
 	"CIEGO DE AVILA,",
 	"CAYO GUILLERMO,CIEGO DE AVILA",

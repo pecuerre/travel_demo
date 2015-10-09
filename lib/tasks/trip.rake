@@ -4,6 +4,40 @@ require 'ffaker'
 namespace :trip do
 
   #############################################################################
+  ### Delete tasks
+  #############################################################################
+  namespace :delete do
+
+    desc 'Delete shipping categories'
+    task :shipping_categories => :environment do
+      Spree::ShippingCategory.delete_all
+    end
+
+    desc 'Delete taxonomies'
+    task :taxonomies => :environment do
+      Spree::Taxonomy.delete_all
+    end
+
+    desc 'Delete trip destinations'
+    task :destinations => :environment do
+      taxonomy = Spree::Taxonomy.where(:name => 'Destination').first
+      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+    end
+
+    desc 'Delete all taxons'
+    task :destinations => :environment do
+      Spree::Taxon.delete_all
+    end
+
+    desc 'Delete all data (clean de project)'
+    task :all => :environment do
+      Rake.application['trip:delete:shipping_categories'].invoke
+      Rake.application['trip:delete:taxons'].invoke
+      Rake.application['trip:delete:taxonomies'].invoke
+    end
+  end
+
+  #############################################################################
   ### Load tasks
   #############################################################################
 	namespace :load do
@@ -23,7 +57,7 @@ namespace :trip do
       require Rails.root + "db/data/destinations"
     end
 
-    desc 'Load all the data'
+    desc 'Load all data [shipping categories, taxonomies, destinations, products, etc.]'
     task :all => :environment do
       Rake.application['trip:load:shipping_categories'].invoke
       Rake.application['trip:load:taxonomies'].invoke
@@ -51,6 +85,11 @@ namespace :trip do
       Rake.application['trip:load:destinations'].invoke
     end
 
+    desc 'Examples of properties types'
+    task :property_types => :environment do
+      require Rails.root + "db/examples/property_types"
+    end
+
     desc 'Examples of properties'
     task :properties => :environment do
       require Rails.root + "db/examples/properties"
@@ -71,6 +110,7 @@ namespace :trip do
       Rake.application['trip:sample:shipping_categories'].invoke
       Rake.application['trip:sample:taxonomies'].invoke
       Rake.application['trip:sample:destinations'].invoke
+      Rake.application['trip:sample:property_types'].invoke
       Rake.application['trip:sample:properties'].invoke
     end
   end

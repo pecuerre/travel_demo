@@ -20,6 +20,12 @@ module TripFunctions
     taxon
   end
 
+  def create_property_type(property_type_attrs)
+    property = Spree::PropertyType.where(:name => property_type_attrs[:name]).first_or_create(property_type_attrs)
+    puts "Property Type: #{property_type_attrs[:name]}"
+    property
+  end
+
   def create_property(property_attrs)
     property = Spree::Property.where(:name => property_attrs[:name]).first_or_create(property_attrs)
     puts "Property: #{property_attrs[:name]}"

@@ -20,7 +20,7 @@ module TripFunctions
     taxon
   end
 
-  def self.create_property(property_attrs)
+  def create_property(property_attrs)
     property = Spree::Property.where(:name => property_attrs[:name]).first_or_create(property_attrs)
     puts "Property: #{property_attrs[:name]}"
     property

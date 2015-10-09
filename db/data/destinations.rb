@@ -74,7 +74,7 @@ destinations = [
 
 def create_taxonomy
 	puts "creating taxonomy: destinations"
-	taxonomy = Spree::Taxonomy.where(:name => 'destinations').first_or_create
+	taxonomy = Spree::Taxonomy.where(:name => 'Destination').first_or_create
 end
 
 def create_taxon(taxon_name, parent_taxon, taxonomy)

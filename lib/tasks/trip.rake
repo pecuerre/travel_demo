@@ -14,7 +14,12 @@ namespace :trip do
 
   namespace :sample do
 
-  	desc 'Examples of hotels (with properties, and property types, etc.)'
+    desc 'Examples of shipping categories'
+    task :shipping_categories => :environment do
+      require Rails.root + "db/examples/shipping_categories"
+    end
+
+  	desc 'Examples of hotels'
   	task :hotels do
   		Rake.application['spree_travel_sample:load:hotels']
   	end
@@ -24,10 +29,10 @@ namespace :trip do
       Rake.application['spree_travel_sample:load:packages']
     end
 
-    desc 'Full sample of all models'
-    task :all do
-      Rake.application['spree_travel_sample:load:all']
-    end
+  #   desc 'Full sample of all models'
+  #   task :all do
+  #     Rake.application['spree_travel_sample:load:all']
+  #   end
   end
 end
 

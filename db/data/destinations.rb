@@ -72,8 +72,22 @@ destinations = []
 	"PLAYA GIRON,MATANZAS"
 ]
 
-taxonomy = Spree::Taxonomy.where(:name => '')
-
-destinations.each do |string|
-	child, parent = string.split(',')
+def create_taxonomy
+	taxonomy = Spree::Taxonomy.where(:name => 'destinations').first_or_create
 end
+
+def create_taxon(taxon_name, parent_taxon, taxonomy)
+	parent_taxon = Spree::Taxon.where(:name => parent_taxon.name, :taxonomy => taxonomy).first_or_create if parent_taxon
+	taxon = Spree::Taxon.where(:name => taxon_name, :parent => parent_taxon, :taxonomy => taxonomy).first_or_create
+end
+
+def create_all_taxons(list, taxonomy)
+	list.each do |string|
+		child, parent = string.split(',')
+		parent_taxon = create_taxon(parent, nil, taxonomy) if parent
+		child_taxon = create_taxon(child, parent_taxon, taxonomy)
+	end
+end
+
+taxonomy = create_taxonomy
+create_all_taxons(destinations, taxonomy)

@@ -12,12 +12,22 @@ namespace :trip do
 
   end
 
-  namespace :example do
+  namespace :sample do
 
-  	desc 'Examples of hotels (with properties, and property types)'
+  	desc 'Examples of hotels (with properties, and property types, etc.)'
   	task :hotels do
-  		#Rake.application['spree_travel_sample:load'].invoke('PRODUCT_TYPE=hotels')
+  		Rake.application['spree_travel_sample:load:hotels']
   	end
+
+    desc 'Examples of packages (with properties, and property types, etc.)'
+    task :packages do
+      Rake.application['spree_travel_sample:load:packages']
+    end
+
+    desc 'Full sample of all models'
+    task :all do
+      Rake.application['spree_travel_sample:load:all']
+    end
   end
 end
 

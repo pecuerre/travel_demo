@@ -41,6 +41,21 @@ namespace :trip do
       Rake.application['trip:load:shipping_categories'].invoke
     end
 
+    desc 'Examples of taxonomies'
+    task :taxonomies => :environment do
+      Rake.application['trip:load:taxonomies'].invoke
+    end
+
+    desc 'Examples of destinations'
+    task :destinations => :environment do
+      Rake.application['trip:load:destinations'].invoke
+    end
+
+    desc 'Examples of properties'
+    task :properties => :environment do
+      require Rails.root + "db/examples/properties"
+    end
+
   	desc 'Examples of hotels'
   	task :hotels do
   		Rake.application['spree_travel_sample:load:hotels']
@@ -53,9 +68,9 @@ namespace :trip do
 
     desc 'Sample for all data'
     task :all => :environment do
-      Rake.application['trip:load:shipping_categories'].invoke
-      Rake.application['trip:load:taxonomies'].invoke
-      Rake.application['trip:load:destinations'].invoke
+      Rake.application['trip:sample:shipping_categories'].invoke
+      Rake.application['trip:sample:taxonomies'].invoke
+      Rake.application['trip:sample:destinations'].invoke
     end
   end
 end

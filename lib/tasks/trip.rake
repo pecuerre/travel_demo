@@ -3,20 +3,36 @@ require 'ffaker'
 
 namespace :trip do
 
+  #############################################################################
+  ### Load tasks
+  #############################################################################
 	namespace :load do
-
-  	desc 'Loads trip destinations'
-  	task :destinations => :environment do
-    	require Rails.root + "db/data/destinations"
-  	end
 
     desc 'Load shipping categories'
     task :shipping_categories => :environment do
       require Rails.root + "db/data/shipping_categories"
     end
 
+    desc 'Load taxonomies'
+    task :taxonomies => :environment do
+      require Rails.root + "db/data/taxonomies"
+    end
+
+    desc 'Loads trip destinations'
+    task :destinations => :environment do
+      require Rails.root + "db/data/destinations"
+    end
+
+    desc 'Load all the data'
+    task :all => :environment do
+      Rake.application['trip:load:shipping_categories'].invoke
+      Rake.application['trip:load:taxonomies'].invoke
+    end
   end
 
+  #############################################################################
+  ### Sample Tasks
+  #############################################################################
   namespace :sample do
 
     desc 'Examples of shipping categories'

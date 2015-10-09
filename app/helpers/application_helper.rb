@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+
+	####################################################################
+	# Propertys
+	####################################################################
+
 	def name_to_link(entity)
 		entity.name.downcase.sub(' ', '-')
 	end
@@ -34,5 +39,17 @@ module ApplicationHelper
 		list.delete(pp.id.to_s)
 		str = list.join('_')
 		params.merge(pt => str, :lastpt => pt)
+	end
+
+	####################################################################
+	# Propertys
+	####################################################################
+
+	def is_sort_in_url?(p)
+		params[:sort] == p
+	end
+
+	def add_sort_to_url(p)
+		params.merge(:sort => p)
 	end
 end

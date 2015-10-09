@@ -32,4 +32,8 @@ Spree::Product.class_eval do
 	def self.hotels
 		with_product_type_name('hotel')
 	end
+
+	def ransackable_attributes(auth_object = nil)
+		['name', 'slug', 'description']
+	end
 end

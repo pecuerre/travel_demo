@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_sample.git
-  revision: 273e426bc521b07aa1438753c6ecedb622d36c56
+  revision: f044710dca3d1d06c5f9d01d7c5fd84406c8ef2c
   branch: combinations_less
   specs:
     spree_travel_sample (3.0.0)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: a504238e478cb98e9b5f229c1f91864d532b0ed6
+  revision: a275c9db4f0c44907c67b64bd6de98d9dbfcb8d7
   branch: 3-0-stable
   specs:
     spree (3.0.5.beta)
@@ -53,7 +53,7 @@ GIT
       spree_frontend (= 3.0.5.beta)
       spree_sample (= 3.0.5.beta)
     spree_api (3.0.5.beta)
-      rabl (~> 0.9.4.pre1)
+      rabl (~> 0.11.6)
       spree_core (= 3.0.5.beta)
       versioncake (~> 2.3.1)
     spree_backend (3.0.5.beta)
@@ -77,7 +77,6 @@ GIT
       font-awesome-rails (~> 4.0)
       friendly_id (~> 5.1.0)
       highline (~> 1.6.18)
-      httparty (~> 0.11)
       json (~> 1.7)
       kaminari (~> 0.15, >= 0.15.1)
       monetize (~> 1.1)
@@ -103,7 +102,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_auth_devise.git
-  revision: 2e8e08759c4d51bb94065478aee53546d0f05f98
+  revision: 7b24ad16239367dc15f96a80cc2a954a822cc6af
   branch: 3-0-stable
   specs:
     spree_auth_devise (3.0.0)
@@ -160,7 +159,7 @@ GEM
       activerecord (>= 3.0)
     addressable (2.3.8)
     arel (6.0.3)
-    autoprefixer-rails (5.2.1.2)
+    autoprefixer-rails (6.0.3)
       execjs
       json
     awesome_nested_set (3.0.2)
@@ -175,7 +174,7 @@ GEM
     byebug (6.0.2)
     camertron-eprun (1.1.0)
     cancancan (1.10.1)
-    canonical-rails (0.0.10)
+    canonical-rails (0.0.11)
       rails (>= 3.1, < 5.0)
     carmen (1.0.2)
       activesupport (>= 3.0.0)
@@ -194,7 +193,7 @@ GEM
     coffee-script-source (1.9.1.1)
     colored (1.2)
     colorize (0.7.7)
-    css_parser (1.3.6)
+    css_parser (1.3.7)
       addressable
     debug_inspector (0.0.2)
     deface (1.0.1)
@@ -237,14 +236,11 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     htmlentities (4.3.4)
-    httparty (0.13.5)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    jbuilder (2.3.1)
+    jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (4.0.4)
+    jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -259,15 +255,14 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.6.1)
+    mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.0)
+    minitest (5.8.1)
     monetize (1.3.1)
       money (~> 6.6)
     money (6.6.1)
       i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.2)
-    multi_xml (0.5.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -278,21 +273,21 @@ GEM
       mime-types
     paranoia (2.1.3)
       activerecord (~> 4.0)
-    pg (0.18.2)
+    pg (0.18.3)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
-    premailer (1.8.4)
+    premailer (1.8.6)
       css_parser (>= 1.3.6)
       htmlentities (>= 4.0.0)
     premailer-rails (1.8.2)
       actionmailer (>= 3, < 5)
       premailer (~> 1.7, >= 1.7.9)
-    pry (0.10.1)
+    pry (0.10.2)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rabl (0.9.4.pre1)
+    rabl (0.11.6)
       activesupport (>= 2.3.14)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -319,8 +314,8 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_serve_static_assets (0.0.3)
-    rails_stdout_logging (0.0.3)
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
     railties (4.2.3)
       actionpack (= 4.2.3)
       activesupport (= 4.2.3)
@@ -334,18 +329,17 @@ GEM
       i18n
       polyamorous (~> 1.1)
     rdoc (4.2.0)
-      json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby_parser (3.7.1)
       sexp_processor (~> 4.1)
     sass (3.4.18)
-    sass-rails (5.0.3)
+    sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-      tilt (~> 1.1)
+      tilt (>= 1.1, < 3)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -353,10 +347,10 @@ GEM
       thor (~> 0.14)
     sexp_processor (4.6.0)
     slop (3.6.0)
-    spring (1.3.6)
-    sprockets (3.3.3)
-      rack (~> 1.0)
-    sprockets-rails (2.3.2)
+    spring (1.4.0)
+    sprockets (3.4.0)
+      rack (> 1, < 3)
+    sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -371,7 +365,7 @@ GEM
     stringex (2.5.2)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (1.4.1)
+    tilt (2.0.1)
     truncate_html (0.9.2)
     turbolinks (2.5.3)
       coffee-rails
@@ -382,7 +376,7 @@ GEM
       tzinfo
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.1)
+    uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     versioncake (2.3.1)
@@ -413,6 +407,7 @@ DEPENDENCIES
   pry
   rails (= 4.2.3)
   rails_12factor
+  ransack
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree!

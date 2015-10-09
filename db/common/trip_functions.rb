@@ -11,4 +11,13 @@ module TripFunctions
     puts "Taxonomy: #{taxonomy_attrs[:name]}"
     taxonomy
   end
+
+  def create_taxon(taxonomy, taxon_attrs)
+    taxon_attrs[:parent] = Spree::Taxon.where(:name => taxon_attrs[:parent]).first if taxon_attrs[:parent]
+    taxon_attrs[:taxonomy] = taxonomy
+    taxon = Spree::Taxon.where(:name => taxon_attrs[:name]).first_or_create(taxon_attrs)
+    puts "Taxon: #{taxon_attrs[:name]}"
+    taxon
+  end
+
 end

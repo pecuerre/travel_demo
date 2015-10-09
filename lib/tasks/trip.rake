@@ -71,6 +71,7 @@ namespace :trip do
       Rake.application['trip:sample:shipping_categories'].invoke
       Rake.application['trip:sample:taxonomies'].invoke
       Rake.application['trip:sample:destinations'].invoke
+      Rake.application['trip:sample:properties'].invoke
     end
   end
 end

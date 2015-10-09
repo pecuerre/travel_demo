@@ -11,7 +11,8 @@ module Spree
     
     def list
       @property_types = Spree::PropertyType.all
-      @products = Spree::Product.hotels
+      search = Spree::Product.ransack(params[:q])
+      @products = search.result.hotels
       property_ids = get_properties_ids_from_params
       @products = @products.with_property_ids(property_ids)
       @products = @products.order(params[:sort]) if params[:sort]

@@ -10,13 +10,18 @@ namespace :trip do
     	require Rails.root + "db/data/destinations"
   	end
 
+    desc 'Load shipping categories'
+    task :shipping_categories => :environment do
+      require Rails.root + "db/data/shipping_categories"
+    end
+
   end
 
   namespace :sample do
 
     desc 'Examples of shipping categories'
     task :shipping_categories => :environment do
-      require Rails.root + "db/examples/shipping_categories"
+      Rake.application['trip:load:shipping_categories'].invoke
     end
 
   	desc 'Examples of hotels'

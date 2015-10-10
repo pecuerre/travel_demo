@@ -7,6 +7,14 @@ GIT
       spree (~> 3.0.0)
 
 GIT
+  remote: git://github.com/openjaf/spree_travel_core.git
+  revision: 3339baa83d003dd664e428f2ec4e14d3a26c7efb
+  branch: combinations_less
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
+
+GIT
   remote: git://github.com/openjaf/spree_travel_hotel.git
   revision: ca514942b94f6a352fd127fbf305905b77483855
   branch: combinations_less
@@ -103,12 +111,6 @@ GIT
       json
       multi_json
       spree_core (~> 3.0.0)
-
-PATH
-  remote: ../gems/spree_travel_core
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -331,7 +333,7 @@ GEM
       railties (>= 4.2.0, < 5)
     ruby_parser (3.7.1)
       sexp_processor (~> 4.1)
-    sass (3.4.18)
+    sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)

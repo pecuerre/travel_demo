@@ -36,4 +36,15 @@ module TripFunctions
     property
   end
 
+  def create_product(product_attrs)
+  	product = Spree::Product.where(:name => product_attrs[:name]).first_of_create(product_attrs)
+  	puts "Product: #{product_attrs[:name]}"
+  	product
+  end
+
+  def create_product_properties(product_properties_attrs)
+    pp = Spree::ProductProperty.create(product_properties_attrs)
+    puts "  - ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
+    pp
+  end
 end

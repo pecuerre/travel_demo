@@ -1,5 +1,5 @@
 
-In order to install follow the next steps: 
+In order to install the application please follow the next steps: 
 
 git clone git@github.com:mytriptocuba/travel_demo.git
 

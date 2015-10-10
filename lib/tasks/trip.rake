@@ -58,7 +58,7 @@ namespace :trip do
 
   	desc 'Examples of hotels'
   	task :hotels do
-  		Rake.application['spree_travel_sample:load:hotels']
+  		Rake.application['spree_travel_sample:load PRODUCT_TYPE=hotels']
   	end
 
     # desc 'Examples of packages (with properties, and property types, etc.)'

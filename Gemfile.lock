@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_sample.git
-  revision: 53d044ee1e31f5a1cff6f5e8265167e620953c88
+  revision: ab55e7cb81d3ccf21be4158b0796a0531f0fd5fc
   branch: combinations_less
   specs:
     spree_travel_sample (3.0.0)

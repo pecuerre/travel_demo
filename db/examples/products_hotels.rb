@@ -8,7 +8,6 @@ amount_of_fake_products = 20
 available_on = Time.now - 1.day
 
 ### Some Global Variables
-place_taxonomy = get_place_taxonomy
 places = get_places_array
 shipping_category = get_shipping_category
 properties = get_properties_array

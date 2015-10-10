@@ -5,7 +5,7 @@ module FakeFunctions
 	end
 
 	def get_places_array
-		place_taxons = Spree::Taxon.where(:taxonomy_id => place_taxonomy.id).to_a
+		place_taxons = Spree::Taxon.where(:taxonomy_id => get_place_taxonomy.id).to_a
 		place_taxons.shift
 		place_taxons
 	end

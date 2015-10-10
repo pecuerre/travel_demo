@@ -103,6 +103,7 @@ namespace :trip do
 
   	desc 'Examples of hotels'
   	task :hotels do
+      Rake.application['trip:delete:hotels'].invoke
       require Rails.root + "db/examples/products_hotels"
   	end
 
@@ -113,7 +114,6 @@ namespace :trip do
       Rake.application['trip:sample:destinations'].invoke
       Rake.application['trip:sample:property_types'].invoke
       Rake.application['trip:sample:properties'].invoke
-      Rake.application['trip:delete:hotels'].invoke
       Rake.application['trip:sample:hotels'].invoke
     end
   end

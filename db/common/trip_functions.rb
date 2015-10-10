@@ -37,7 +37,7 @@ module TripFunctions
   end
 
   def create_product(product_attrs)
-  	product = Spree::Product.where(:name => product_attrs[:name]).first_of_create(product_attrs)
+  	product = Spree::Product.where(:name => product_attrs[:name]).first_or_create(product_attrs)
   	puts "Product: #{product_attrs[:name]}"
   	product
   end

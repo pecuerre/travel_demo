@@ -7,14 +7,6 @@ GIT
       spree (~> 3.0.0)
 
 GIT
-  remote: git://github.com/openjaf/spree_travel_core.git
-  revision: fb38770a012a9137bb6864883c83a1ec5ddeb2ec
-  branch: combinations_less
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
-
-GIT
   remote: git://github.com/openjaf/spree_travel_hotel.git
   revision: ca514942b94f6a352fd127fbf305905b77483855
   branch: combinations_less
@@ -111,6 +103,12 @@ GIT
       json
       multi_json
       spree_core (~> 3.0.0)
+
+PATH
+  remote: ../gems/spree_travel_core
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/

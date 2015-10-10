@@ -29,11 +29,17 @@ namespace :trip do
       Spree::Taxon.delete_all
     end
 
+    desc 'Delete all hotels'
+    task :hotels => :environment do
+      Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel')).destroy_all
+    end
+
     desc 'Delete all data (clean de project)'
     task :all => :environment do
       Rake.application['trip:delete:shipping_categories'].invoke
       Rake.application['trip:delete:taxons'].invoke
       Rake.application['trip:delete:taxonomies'].invoke
+      Rake.application['trip:delete:hotels'].invoke
     end
   end
 
@@ -97,13 +103,8 @@ namespace :trip do
 
   	desc 'Examples of hotels'
   	task :hotels do
-  		Rake.application['spree_travel_sample:load:hotels']
+      require Rails.root + "db/examples/products_hotels"
   	end
-
-    # desc 'Examples of packages (with properties, and property types, etc.)'
-    # task :packages do
-    #   Rake.application['spree_travel_sample:load:packages']
-    # end
 
     desc 'Sample for all data'
     task :all => :environment do
@@ -112,6 +113,8 @@ namespace :trip do
       Rake.application['trip:sample:destinations'].invoke
       Rake.application['trip:sample:property_types'].invoke
       Rake.application['trip:sample:properties'].invoke
+      Rake.application['trip:delete:hotels'].invoke
+      Rake.application['trip:sample:hotels'].invoke
     end
   end
 end

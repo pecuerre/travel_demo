@@ -1,8 +1,13 @@
+
+In order to install follow the next steps: 
+
 git clone git@github.com:mytriptocuba/travel_demo.git
 
 cd travel_demo
 
-bundle
+bundle install
+
+rake db:create
 
 rake db:migrate
 
@@ -12,4 +17,6 @@ rake spree_travel_core:load
 
 rake spree_travel_hotel:load
 
-rake spree_travel_sample:load:hotels 
+rake spree_travel_sample:load PRODUCT_TYPE=hotels
+
+rake trip:load:all

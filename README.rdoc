@@ -1,28 +1,15 @@
-== README
+git clone git@github.com:mytriptocuba/travel_demo.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+cd travel_demo
 
-Things you may want to cover:
+bundle
 
-* Ruby version
+rake db:migrate
 
-* System dependencies
+rake db:seed
 
-* Configuration
+rake spree_travel_core:load
 
-* Database creation
+rake spree_travel_hotel:load
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rake spree_travel_sample:load:hotels 

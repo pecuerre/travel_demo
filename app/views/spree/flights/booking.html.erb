@@ -1,180 +1,180 @@
 <section id="content" class="gray-area">
-    <div class="container">
-        <div class="row">
-            <div id="main" class="col-sms-6 col-sm-8 col-md-9">
-                <div class="booking-section travelo-box">
-                    
-                    <form class="booking-form">
-                        <div class="person-information">
-                            <h2>Your Personal Information</h2>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>first name</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                                <div class="col-sm-6 col-md-5">
-                                    <label>last name</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>email address</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Verify E-mail Address</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Country code</label>
-                                    <div class="selector">
-                                        <select class="full-width">
-                                            <option>United Kingdom (+44)</option>
-                                            <option>United States (+1)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Phone number</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Meal preference <small>(optional)</small></label>
-                                    <div class="selector">
-                                        <select class="full-width">
-                                            <option>United Kingdom (+44)</option>
-                                            <option>United States (+1)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> I want to receive <span class="skin-color">Travelo</span> promotional offers in the future
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="card-information">
-                            <h2>Your Card Information</h2>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Credit Card Type</label>
-                                    <div class="selector">
-                                        <select class="full-width">
-                                            <option>select a card</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Card holder name</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Card number</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Card identification number</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
-                                    <label>Expiration Date</label>
-                                    <div class="constant-column-2">
-                                        <div class="selector">
-                                            <select class="full-width">
-                                                <option>month</option>
-                                            </select>
-                                        </div>
-                                        <div class="selector">
-                                            <select class="full-width">
-                                                <option>year</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-md-2">
-                                    <label>billing zip code</label>
-                                    <input type="text" class="input-text full-width" value="" placeholder="" />
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-6 col-md-5">
-                                <button type="submit" class="full-width btn-large">CONFIRM BOOKING</button>
-                            </div>
-                        </div>
-                    </form>
+  <div class="container">
+    <div class="row">
+      <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+        <div class="booking-section travelo-box">
+
+          <form class="booking-form">
+            <div class="person-information">
+              <h2>Your Personal Information</h2>
+
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>first name</label>
+                  <%= text_field_tag('first_name', '', {"class" => "input-text full-width"}) %>
                 </div>
+                <div class="col-sm-6 col-md-5">
+                  <label>last name</label>
+                  <%= text_field_tag('last_name', '', {"class" => "input-text full-width"}) %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>email address</label>
+                  <%= email_field_tag('email_address', '', {"class" => "input-text full-width"}) %>
+                </div>
+                <div class="col-sm-6 col-md-5">
+                  <label>Verify E-mail Address</label>
+                  <%= email_field_tag('verfi_email_address', '', {"class" => "input-text full-width"}) %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>Country code</label>
+
+                  <div class="selector">
+                    <%= select_tag('country_code', options_for_select(['list of country codes'])) %>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5">
+                  <label>Phone number</label>
+                  <%= text_field_tag('phone_number', '', {"class" => "input-text full-width"}) %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>Meal preference
+                    <small>(optional)</small>
+                  </label>
+
+                  <div class="selector">
+                    <%= select_tag('preferences', options_for_select(['list of meal preferences'])) %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <%= label_tag("receive", 'I want to receive Travelo promotional offers in the future') %>
+                  <%= check_box_tag('receive') %>
+                </div>
+              </div>
             </div>
-            <div class="sidebar col-sms-6 col-sm-4 col-md-3">
-                <div class="booking-details travelo-box">
-                    <h4>Booking Details</h4>
-                    <article class="flight-booking-details">
-                        <figure class="clearfix">
-                            <a title="" href="flight-detailed.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
-                            <div class="travel-title">
-                                <h5 class="box-title">Indianapolis to paris<small>Oneway flight</small></h5>
-                                <a href="flight-detailed.html" class="button">EDIT</a>
-                            </div>
-                        </figure>
-                        <div class="details">
-                            <div class="constant-column-3 timing clearfix">
-                                <div class="check-in">
-                                    <label>Take off</label>
-                                    <span>NOV 30, 2013<br />7:50 am</span>
-                                </div>
-                                <div class="duration text-center">
-                                    <i class="soap-icon-clock"></i>
-                                    <span>13h, 40m</span>
-                                </div>
-                                <div class="check-out">
-                                    <label>landing</label>
-                                    <span>Nov 13 2013<br />9:20 am</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <h4>Other Details</h4>
-                    <dl class="other-details">
-                        <dt class="feature">Airline:</dt><dd class="value">Delta</dd>
-                        <dt class="feature">Flight type:</dt><dd class="value">Economy</dd>
-                        <dt class="feature">base fare:</dt><dd class="value">$320</dd>
-                        <dt class="feature">taxes and fees:</dt><dd class="value">$300</dd>
-                        <dt class="total-price">Total Price</dt><dd class="total-price-value">$620</dd>
-                    </dl>
+            <hr/>
+            <div class="card-information">
+              <h2>Your Card Information</h2>
+
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>Credit Card Type</label>
+
+                  <div class="selector">
+                    <%= select_tag('Credit Card Type', options_for_select(['list of Credit Card Types'])) %>
+                  </div>
                 </div>
-                
-                <div class="travelo-box contact-box">
-                    <h4>Need Travelo Help?</h4>
-                    <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
-                    <address class="contact-details">
-                        <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
-                        <br>
-                        <a class="contact-email" href="#">help@travelo.com</a>
-                    </address>
+                <div class="col-sm-6 col-md-5">
+                  <label>Card holder name</label>
+                  <%= text_field_tag('Card holder name', '', {"class" => "input-text full-width"}) %>   </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>Card number</label>
+                  <%= text_field_tag('Card number', '', {"class" => "input-text full-width"}) %>
                 </div>
+                <div class="col-sm-6 col-md-5">
+                  <label>Card identification number</label>
+                  <%= text_field_tag('Card identification number', '', {"class" => "input-text full-width"}) %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 col-md-5">
+                  <label>Expiration Date</label>
+
+                  <div class="constant-column-2">
+                    <div class="selector">
+                      <%= select_month(Time.now, {'class' => "full-width"}) %>
+                    </div>
+                    <div class="selector">
+                      <%= select_year(Time.now, {'class' => "full-width"}) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-md-2">
+                  <label>billing zip code</label>
+                  <%= text_field_tag('billing zip code', '', {"class" => "input-text full-width"}) %>
+                </div>
+              </div>
             </div>
+            <hr/>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> By continuing, you agree to the
+                  <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6 col-md-5">
+                <button type="submit" class="full-width btn-large">CONFIRM BOOKING</button>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+      <div class="sidebar col-sms-6 col-sm-4 col-md-3">
+        <% if @flights.any? %>
+            <div class="booking-details travelo-box">
+
+              <h4>Booking Details</h4>
+              <% f= @flights.first %>
+              <article class="flight-booking-details">
+                <figure class="clearfix">
+                  <a title="" href="flight-detailed.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
+
+                  <div class="travel-title">
+                    <h5 class="box-title"><%= f.name %>
+                      <small><%= f.flight_way %></small>
+                    </h5>
+                    <a href="flight-detailed.html" class="button">EDIT</a>
+                  </div>
+                </figure>
+                <div class="details">
+                  <div class="constant-column-3 timing clearfix">
+                    <div class="check-in">
+                      <label>Take off</label>
+                      <span><%= f.takeOff %></span>
+                    </div>
+                    <div class="duration text-center">
+                      <i class="soap-icon-clock"></i>
+                      <span><%= f.duration %></span>
+                    </div>
+                    <div class="check-out">
+                      <label>landing</label>
+                      <span><%= f.landing %></span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <h4>Other Details</h4>
+              <dl class="other-details">
+                <dt class="feature">Airline:</dt>
+                <dd class="value"><%= f.airline %></dd>
+                <dt class="feature">Flight type:</dt>
+                <dd class="value"><%= f.flight_type %></dd>
+                <dt class="feature">base fare:</dt>
+                <dd class="value"><%= f.base_fare %></dd>
+                <dt class="feature">taxes and fees:</dt>
+                <dd class="value"><%= f.taxes_fees %></dd>
+                <dt class="total-price">Total Price</dt>
+                <dd class="total-price-value"><%= f.total_price %></dd>
+              </dl>
+
+
+            </div>
+        <% end %>
+        <%= render partial: 'spree/shared/help' %>
+      </div>
     </div>
+  </div>
 </section>

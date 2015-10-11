@@ -7,10 +7,9 @@
                   <li class="ribbon">
                       <a href="#">English</a>
                       <ul class="menu mini">
-                          <li><a href="#" title="Dansk">Dansk</a></li>
-                          <li><a href="#" title="Deutsch">Deutsch</a></li>
                           <li class="active"><a href="#" title="English">English</a></li>
                           <li><a href="#" title="Español">Español</a></li>
+                      <ul>
                   </li>
               </ul>
               <ul class="quick-menu pull-right">
@@ -19,19 +18,7 @@
                   <li class="ribbon currency">
                       <a href="#" title="">USD</a>
                       <ul class="menu mini">
-                          <li><a href="#" title="AUD">AUD</a></li>
-                          <li><a href="#" title="BRL">BRL</a></li>
                           <li class="active"><a href="#" title="USD">USD</a></li>
-                          <li><a href="#" title="CAD">CAD</a></li>
-                          <li><a href="#" title="CHF">CHF</a></li>
-                          <li><a href="#" title="CNY">CNY</a></li>
-                          <li><a href="#" title="CZK">CZK</a></li>
-                          <li><a href="#" title="DKK">DKK</a></li>
-                          <li><a href="#" title="EUR">EUR</a></li>
-                          <li><a href="#" title="GBP">GBP</a></li>
-                          <li><a href="#" title="HKD">HKD</a></li>
-                          <li><a href="#" title="HUF">HUF</a></li>
-                          <li><a href="#" title="IDR">IDR</a></li>
                       </ul>
                   </li>
               </ul>
@@ -47,43 +34,23 @@
           <div class="container">
               <div class="clearfix"></div>
               <h1 class="logo navbar-brand">
-                <a href="index.html" title="Travelo - home">
-                    <%= image_tag 'logo' %>
-                </a>
+                <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
+                   <%= image_tag 'logo' %>
+                <% end %>
               </h1>
               
               <nav id="main-menu" role="navigation">
                 <ul class="menu">
                       <li class="menu-item-has-children">
-                          <a href="index.html">Home</a>
-                          <ul>
-                              <li><%= link_to 'Home Layout 1', home_index_path %></li>
-                              <li><%= link_to 'Home Layout 2', homepage2_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 3', homepage3_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 4', homepage4_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 5', homepage5_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 6', homepage6_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 7', homepage7_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 8', homepage8_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 9', homepage9_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 10', homepage10_home_index_path %></li>
-                              <li><%= link_to 'Home Layout 11', homepage11_home_index_path %></li>
-                          </ul>
-                      </li>
-                      <li class="menu-item-has-children">
                           <%= link_to 'Hotels', hotels_path, class: "#{'active' if params[:controller] == 'spree/hotels'}" %>
                           <ul>
-                              <li><%= link_to 'Home Hotels', hotels_path %></li>
-                              <li><%= link_to 'List View', list_hotels_path %></li>
-                              <li><%= link_to 'Grid View', grid_hotels_path %></li>
-                              <li><%= link_to 'Block View', block_hotels_path %></li>
-                              <li><%= link_to 'Detail', detail_hotels_path %></li>
-                              <li><%= link_to 'Booking', booking_hotels_path %></li>
-                              <li><%= link_to 'Thanks You', thanks_you_hotels_path %></li>
+                              <li><%= link_to 'Hotel City', hotels_path(category: 'Hotel City') %></li>
+                              <li><%= link_to 'Hotel Beach', hotels_path(category: 'Hotel Beach') %></li>
+                              <li><%= link_to 'Hotel Rural', hotels_path(category: 'Hotel Rural') %></li>
                           </ul>
                       </li>
                       <li class="menu-item-has-children">
-                          <%= link_to 'Properties', properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
+                          <%= link_to 'Houses', properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
                           <ul>
                               <li><%= link_to 'Home Hotels', properties_path %></li>
                               <li><%= link_to 'List View', list_properties_path %></li>
@@ -214,6 +181,16 @@
                                <li><%= link_to 'Style Changer', style_changer_shortcodes_path %></li>
                                <li><%= link_to 'Typography', typography_shortcodes_path %></li>
                                <li><%= link_to 'Animations', animations_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 2', homepage2_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 3', homepage3_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 4', homepage4_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 5', homepage5_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 6', homepage6_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 7', homepage7_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 8', homepage8_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 9', homepage9_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 10', homepage10_shortcodes_path %></li>
+                               <li><%= link_to 'Home Layout 11', homepage11_shortcodes_path %></li>
                           </ul>
                       </li>
                       <li class="menu-item-has-children">

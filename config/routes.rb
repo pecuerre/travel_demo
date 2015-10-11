@@ -146,11 +146,6 @@ Rails.application.routes.draw do
         get :tabs
         get :testimonials
         get :typography
-      end
-    end
-    
-    resources :home do
-      collection do
         get :homepage2
         get :homepage3
         get :homepage4
@@ -163,6 +158,8 @@ Rails.application.routes.draw do
         get :homepage11
       end
     end
+    
+    resources :home, only: :index
     
   end
 end

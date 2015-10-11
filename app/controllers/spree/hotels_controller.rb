@@ -22,6 +22,21 @@ module Spree
       @products = @products.order(params[:sort]) if params[:sort]
     end
 
+    def grid
+    end
+
+    def block
+    end
+
+    def detail
+    end
+
+    def booking
+    end
+
+    def thanks_you
+    end
+
     private
 
     def get_properties_ids_from_params

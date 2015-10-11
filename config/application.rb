@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module SpreeTravelDemo4
   class Application < Rails::Application
     
+    config.autoload_paths += %W(#{config.root}/lib)
+    
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|

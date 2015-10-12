@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 gem 'ransack'
+gem 'binding_of_caller'
+gem 'better_errors'
 
 group :development, :test do
   gem 'byebug'

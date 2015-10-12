@@ -3,28 +3,29 @@
 <!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
-<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
-  <head data-hook="inside_head">
-    <%= render partial: 'spree/shared/head' %>
-  </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <div id='page-wrapper'>
-      <%= render partial: 'spree/shared/google_analytics.js' %>
-      <%= render partial: 'spree/shared/header' %>
-      <%= render partial: 'spree/shared/pagetitle' if content_for? :pagetitle %>
-      <%= render partial: 'spree/shared/travel_search_box' if content_for? :travel_search_box %>
-      <% if ['spree/home'].include? params[:controller]  %>
-        <%= flash_messages %>
-        <%= yield %>
-      <% else %>
-        <section id="content">
-          <div class="container">
-            <div id="main">
-              <div class="row" data-hook> 
-                <%= breadcrumbs(@taxon) %>
-                <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
-                <div class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook> 
-                  <%= flash_messages %>
+<!--[if gt IE 9]><!-->
+<html lang="<%= I18n.locale %>"><!--<![endif]-->
+<head data-hook="inside_head">
+  <%= render partial: 'spree/shared/head' %>
+</head>
+<body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+<div id='page-wrapper'>
+  <%= render partial: 'spree/shared/google_analytics.js' %>
+  <%= render partial: 'spree/shared/header' %>
+  <%= render partial: 'spree/shared/pagetitle' if content_for? :pagetitle %>
+  <%= render partial: 'spree/shared/travel_search_box' if content_for? :travel_search_box %>
+  <% if ['spree/home'].include? params[:controller] %>
+      <%= flash_messages %>
+      <%= yield %>
+  <% else %>
+      <section id="content">
+        <div class="container">
+          <div id="main">
+            <div class="row" data-hook>
+              <%= breadcrumbs(@taxon) %>
+              <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+              <div class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+              <%= flash_messages %>
                   <%= yield %>
                 </div>
                 <%= yield :templates %>
@@ -32,23 +33,8 @@
             </div>
           </div>
         </section>
-      <% end %>
-      
-      <section id="content">
-        <div class="container">
-          <div id="main">
-            <div class="row" data-hook> 
-              <%= breadcrumbs(@taxon) %>
-              <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
-              <div class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook> 
-                <%= flash_messages %>
-                <%= yield %>
-              </div>
-              <%= yield :templates %>
-            </div>
-          </div>
-        </div>
-      </section> 
-    </div>
-  </body>
+      </section>
+  <% end %>
+</div>
+</body>
 </html>

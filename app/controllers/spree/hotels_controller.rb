@@ -3,40 +3,41 @@ module Spree
     helper 'spree/products'
     respond_to :html
     include ApplicationHelper
-    
-    before_action :get_hotels, only: [:list, :grid, :block]
 
     def index
-    end
-    
-    def list
       @property_types = Spree::PropertyType.all
-      search = Spree::Product.ransack(params[:q])
-      @products = search.result.hotels
+
+      @searcher = build_searcher(params.merge(include_images: true))
+      @products = @searcher.retrieve_products.hotels
+      
+      @category = params[:category]
+      @destination = params[:destination]
+      taxons = []
+      taxons << Spree::Taxon.find_by(name: @category).id if @category.present?
+      taxons << Spree::Taxon.find_by(name: @destination).id if @destination.present?
+      @products = @products.in_taxons(taxons) if taxons.present?
       property_ids = get_properties_ids_from_params
+      @view = params[:view]
       @products = @products.with_property_ids(property_ids)
       @products = @products.order(params[:sort]) if params[:sort]
     end
 
     def grid
     end
-    
+
     def block
     end
-    
+
     def detail
     end
-    
+
     def booking
     end
-    
+
     def thanks_you
     end
-    
-    private 
 
-    def get_hotels
-    end
+    private
 
     def get_properties_ids_from_params
       big_list = []

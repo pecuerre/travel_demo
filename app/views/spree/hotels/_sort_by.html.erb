@@ -15,18 +15,18 @@
   </ul>
   
   <ul class="swap-tiles clearfix block-sm">
-      <li class="swap-list <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'list' %>">
-          <%= link_to list_hotels_path do %>
+      <li class="swap-list <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'index' %>">
+          <%= link_to hotels_path do %>
             <i class="soap-icon-list"></i>
           <% end %>
       </li>
       <li class="swap-grid <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'grid' %>">
-          <%= link_to grid_hotels_path do %>
+          <%= link_to hotels_path(view: 'grid')  do %>
             <i class="soap-icon-grid"></i>
           <% end %>
       </li>
       <li class="swap-block <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'block' %>">
-          <%= link_to block_hotels_path do %>
+          <%= link_to hotels_path(view: 'block') do %>
             <i class="soap-icon-block"></i>
           <% end %>
       </li>

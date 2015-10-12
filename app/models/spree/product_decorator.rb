@@ -36,4 +36,8 @@ Spree::Product.class_eval do
   def ransackable_attributes(auth_object = nil)
     ['name', 'slug', 'description']
   end
+  
+  def calculate_price(context)
+    calculator_instance.calculate_price(context, self, {}).sort
+  end
 end

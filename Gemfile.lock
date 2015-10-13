@@ -7,22 +7,6 @@ GIT
       spree (~> 3.0.0)
 
 GIT
-  remote: git://github.com/openjaf/spree_travel_core.git
-  revision: e87a77992d6421d639634d1f9f6212678bab5526
-  branch: combinations_less
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
-
-GIT
-  remote: git://github.com/openjaf/spree_travel_hotel.git
-  revision: ca514942b94f6a352fd127fbf305905b77483855
-  branch: combinations_less
-  specs:
-    spree_travel_hotel (3.0.0)
-      spree_core (~> 3.0.0)
-
-GIT
   remote: git://github.com/openjaf/spree_travel_package.git
   revision: 852f6ca7d1f4f83eebe37458541b3f89db9d474f
   branch: 3-0-stable
@@ -110,6 +94,18 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
+      spree_core (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_core
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_hotel
+  specs:
+    spree_travel_hotel (3.0.0)
       spree_core (~> 3.0.0)
 
 GEM

@@ -47,4 +47,5 @@ module TripFunctions
     puts "  - ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
     pp
   end
+
 end

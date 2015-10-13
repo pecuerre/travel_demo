@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/data', as: 'rails_admin'
   mount Spree::Core::Engine, :at => '/'
   Spree::Core::Engine.routes.draw do
+  mount RailsAdmin::Engine => '/data', as: 'rails_admin'
     resources :hotels, only: [:index, :show] do
       collection do
         get :list

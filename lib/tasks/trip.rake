@@ -91,35 +91,44 @@ namespace :trip do
       Rake.application['trip:load:destinations'].invoke
     end
 
-    desc 'Examples of properties types'
-    task :property_types => :environment do
-      require Rails.root + "db/examples/property_types"
+    namespace :property_types do 
+      desc 'Examples of properties types for hotels'
+      task :hotels => :environment do
+        require Rails.root + "db/examples/property_types_hotels"
+      end
     end
 
-    desc 'Examples of properties'
-    task :properties => :environment do
-      require Rails.root + "db/examples/properties"
+    namespace :properties do
+      desc 'Examples of properties for hotels'
+      task :hotels => :environment do
+        require Rails.root + "db/examples/properties_hotels"
+      end
     end
 
-  	desc 'Examples of hotels'
-  	task :hotels do
-      Rake.application['trip:delete:hotels'].invoke
-      require Rails.root + "db/examples/products_hotels"
-  	end
+    namespace :products do
+    	desc 'Examples of product for hotels'
+    	task :hotels do
+        Rake.application['trip:delete:hotels'].invoke
+        require Rails.root + "db/examples/products_hotels"
+    	end
+    end
 
-    # desc 'Examples of packages (with properties, and property types, etc.)'
-    # task :packages do
-    #   Rake.application['spree_travel_sample:load:packages']
-    # end
+    namespace :rates do
+      desc 'Examples of rates for hotels'
+      task :hotels do
+        require Rails.root + "db/examples/rates_hotels"
+      end
+    end
 
     desc 'Sample for all data'
     task :all => :environment do
       Rake.application['trip:sample:shipping_categories'].invoke
       Rake.application['trip:sample:taxonomies'].invoke
       Rake.application['trip:sample:destinations'].invoke
-      Rake.application['trip:sample:property_types'].invoke
-      Rake.application['trip:sample:properties'].invoke
-      Rake.application['trip:sample:hotels'].invoke
+      Rake.application['trip:sample:property_types:hotels'].invoke
+      Rake.application['trip:sample:properties:hotels'].invoke
+      Rake.application['trip:sample:products:hotels'].invoke
+      Rake.application['trip:sample:rates:hotels'].invoke
     end
   end
 end

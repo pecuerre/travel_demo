@@ -7,14 +7,6 @@ GIT
       spree (~> 3.0.0)
 
 GIT
-  remote: git://github.com/openjaf/spree_travel_hotel.git
-  revision: 8cbd23b8c417681ecf595c1dea18064f6c8ea912
-  branch: 3-0-stable
-  specs:
-    spree_travel_hotel (3.0.0)
-      spree_core (~> 3.0.0)
-
-GIT
   remote: git://github.com/openjaf/spree_travel_package.git
   revision: 852f6ca7d1f4f83eebe37458541b3f89db9d474f
   branch: 3-0-stable
@@ -25,8 +17,8 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_sample.git
-  revision: 32b07fa58a4cb529552b2a8fe0678d5f6e19bf25
-  branch: 3-0-stable
+  revision: ab55e7cb81d3ccf21be4158b0796a0531f0fd5fc
+  branch: combinations_less
   specs:
     spree_travel_sample (3.0.0)
       colored
@@ -105,10 +97,16 @@ GIT
       spree_core (~> 3.0.0)
 
 PATH
-  remote: ../gems/spree_travel_core
+  remote: ../openjaf/spree_travel_core
   specs:
     spree_travel_core (3.0.0)
       spree (~> 3.0.0)
+
+PATH
+  remote: ../openjaf/spree_travel_hotel
+  specs:
+    spree_travel_hotel (3.0.0)
+      spree_core (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -167,6 +165,10 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
@@ -265,6 +267,7 @@ GEM
     money (6.6.1)
       i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.2)
+    nested_form (0.3.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -292,6 +295,9 @@ GEM
     rabl (0.11.6)
       activesupport (>= 2.3.14)
     rack (1.6.4)
+    rack-pjax (0.8.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.3)
@@ -316,6 +322,20 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_admin (0.7.0)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (~> 4.0)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (>= 4.0, < 6)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     railties (4.2.3)
@@ -331,10 +351,12 @@ GEM
       i18n
       polyamorous (~> 1.1)
     rdoc (4.2.0)
+    remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby_parser (3.7.1)
       sexp_processor (~> 4.1)
+    safe_yaml (1.0.4)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -400,6 +422,8 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  better_errors
+  binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
   ffaker
@@ -411,6 +435,7 @@ DEPENDENCIES
   pry
   rails (= 4.2.3)
   rails_12factor
+  rails_admin
   ransack
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

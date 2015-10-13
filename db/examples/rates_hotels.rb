@@ -1,4 +1,10 @@
-hotels = Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel'))
+require Rails.root + "db/common/trip_functions"
+require Rails.root + "db/common/fake_functions"
+include TripFunctions
+include FakeFunctions
+
+### Configuration Variables
+hotels = Spree::Product.hotels
 years = 1 # HERE
 seasons = 2 # HERE
 plans = Spree::OptionType.find_by_name('plan').option_values

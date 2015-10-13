@@ -113,10 +113,12 @@ namespace :trip do
     	end
     end
 
-    # desc 'Examples of packages (with properties, and property types, etc.)'
-    # task :packages do
-    #   Rake.application['spree_travel_sample:load:packages']
-    # end
+    namespace :rates do
+      desc 'Examples of rates for hotels'
+      task :hotels do
+        require Rails.root + "db/examples/rates_hotels"
+      end
+    end
 
     desc 'Sample for all data'
     task :all => :environment do
@@ -126,6 +128,7 @@ namespace :trip do
       Rake.application['trip:sample:property_types:hotels'].invoke
       Rake.application['trip:sample:properties:hotels'].invoke
       Rake.application['trip:sample:products:hotels'].invoke
+      Rake.application['trip:sample:rates:hotels'].invoke
     end
   end
 end

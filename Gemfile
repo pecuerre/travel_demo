@@ -21,6 +21,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 gem 'haml-rails'
@@ -31,6 +34,7 @@ gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 gem 'figaro'
 gem 'aws-sdk'
+gem 'rails_admin'
 
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
@@ -40,5 +44,5 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 gem 'spree_travel_core', path: '../openjaf/spree_travel_core'
 gem 'spree_travel_hotel', path: '../openjaf/spree_travel_hotel'
 gem 'spree_travel_package', github: 'openjaf/spree_travel_package', branch: '3-0-stable'
-gem 'spree_travel_sample', github: 'openjaf/spree_travel_sample',branch: 'combinations_less'
+gem 'spree_travel_sample', github: 'openjaf/spree_travel_sample', branch: 'combinations_less'
 gem 'spree_property_type', github: 'openjaf/spree_property_type', branch: '3-0-stable'

@@ -4,7 +4,7 @@ include TripFunctions
 include FakeFunctions
 
 ### Configuration Variables
-amount_of_fake_products = 20 
+amount_of_fake_products = 10 
 available_on = Time.now - 1.day
 
 ### Some Global Variables

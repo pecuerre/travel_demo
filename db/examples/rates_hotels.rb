@@ -10,6 +10,7 @@ seasons = 2 # HERE
 plans = Spree::OptionType.plans
 
 for hotel in hotels
+  puts "Product: #{hotel.name}"
   for room in hotel.variants
     for year in 1..years
       for season in 1..seasons
@@ -32,7 +33,7 @@ for hotel in hotels
             rate.set_persisted_option_value(key, value)
           end
           rate.save
-          puts "  - Rate: #{rate_attrs.value.join(',')}"
+          puts "  - Rate: #{rate_attrs.values.join(',')}"
         end
       end
     end

@@ -28,27 +28,11 @@
       <div id="cartype-filter" class="panel-collapse collapse filters-container">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Full Size
-              <small>(10)</small>
-            </a></li>
-            <li><a href="#">Compact
-              <small>(82)</small>
-            </a></li>
-            <li class="active"><a href="#">Economy
-              <small>(127)</small>
-            </a></li>
-            <li><a href="#">Luxury / Premium
-              <small>(22)</small>
-            </a></li>
-            <li><a href="#">Mini Car
-              <small>(38)</small>
-            </a></li>
-            <li><a href="#">Van / Minivan
-              <small>(39)</small>
-            </a></li>
-            <li><a href="#">Exotic / Special
-              <small>(72)</small>
-            </a></li>
+            <% @cars_types.each do |cartype| %>
+                <li><a href="#"><%= cartype %>
+                  <small><%= rand(10...100) %></small>
+                </a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>
@@ -63,27 +47,11 @@
       <div id="car-rental-agent-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Fox Rent A Car
-              <small>(08)</small>
+            <% @cars.each do |car| %>
+                <li><a href="#"><%= car.rental_company %>
+                  <small><%= rand(10...100) %></small>
             </a></li>
-            <li><a href="#">Payless
-              <small>(32)</small>
-            </a></li>
-            <li class="active"><a href="#">Ez rent a car
-              <small>(227)</small>
-            </a></li>
-            <li><a href="#">Thrifty
-              <small>(22)</small>
-            </a></li>
-            <li><a href="#">Enterprise
-              <small>(18)</small>
-            </a></li>
-            <li><a href="#">Alamo
-              <small>(29)</small>
-            </a></li>
-            <li><a href="#">Dollar
-              <small>(12)</small>
-            </a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>
@@ -98,11 +66,10 @@
       <div id="car-preferences-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Passenger Quantity</a></li>
-            <li class="active"><a href="#">Satellite Navigation</a></li>
-            <li class="active"><a href="#">Air Conditioning</a></li>
-            <li><a href="#">Doors</a></li>
-            <li><a href="#">Diesel Vehicle</a></li>
+            <% lf=@cars.first.list_of_features_car %>
+            <% lf.each do |key, value| %>
+                <li><a href="#"><%= key %></a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>

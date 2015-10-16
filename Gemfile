@@ -18,10 +18,14 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'rails_admin'
 
+gem 'debase-ruby_core_source'
+gem 'debase'
+gem 'ruby-debug-ide'
+
 group :development, :test do
   gem 'ffaker'
 	gem 'sqlite3'
-  gem 'byebug'
+  #gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry'

@@ -1,0 +1,77 @@
+<div class="tab-pane fade active in" id="hotels-tab">
+  <form id="<%= id %>" action="/products" class="search-form container" data-hook="hotels">
+    <div class="row">
+      <input type="hidden" name="search-type" value="hotels">
+      <input type="hidden" name="locale" value="<%= params[:locale] %>">
+      <input type="hidden" name="http-referer" value="root_path">
+      
+      <div class="form-group col-sm-6 col-md-3">
+          <h4 class="title">Where</h4>
+          <label>Your Destination</label>
+          <input type="text" name="search-going-to" id="<%= id %>-search-going-to"  class="input-text full-width" placeholder="enter a destination or hotel name"  value="<%= params['search-going-to'] %>"/>
+      </div>
+      
+      <div class="form-group col-sm-6 col-md-4">
+          <h4 class="title">When</h4>
+          <div class="row">
+              <div class="col-xs-6">
+                  <label><%= t(:check_in) %></label>
+                  <div class="datepicker-wrap">
+                      <input type="text" name="search-check-in-date" class="input-text full-width" id="<%= id %>-search-check-in-date" placeholder="mm/dd/yy" value="<%= params['search-check-in-date'] %>"/>
+                  </div>
+              </div>
+              <div class="col-xs-6">
+                  <label>><%= t(:check_out) %></label>
+                  <div class="datepicker-wrap">
+                      <input type="text" name="search-check-out-date" class="input-text full-width"  id="<%= id %>-search-check-out-date" placeholder="mm/dd/yy" value="<%= params['search-check-out-date'] %>"/>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group col-sm-6 col-md-3">
+          <h4 class="title">Who</h4>
+          <div class="row">
+              <div class="col-xs-4">
+                  <label><%= t(:rooms) %></label>
+                  <div class="selector">
+                      <select name="search-rooms" class="full-width" id="<%= id %>-search-rooms" value="<%= params['search-rooms']|| (t(:adults) if browser.mobile?) %>">
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                          <option value="4">04</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-xs-4">
+                  <label><%= t(:adults) %></label>
+                  <div class="selector">
+                      <select name="search-adults" class="full-width"  id="<%= id %>-search-adults" value="<%= params['search-adults']|| (t(:adults) if browser.mobile?) %>">
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                          <option value="4">04</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-xs-4">
+                  <label><%= t(:kids) %></label>
+                  <div class="selector">
+                      <select name="search-kids" class="full-width" id="<%= id %>-search-kids" value="<%= params['search-kids'] || (t(:kids) if browser.mobile?) %>">
+                          <option value="0">00</option>
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group col-sm-6 col-md-2 fixheight">
+          <label class="hidden-xs">&nbsp;</label>
+          <button type="submit" class="full-width icon-check animated" id="search-submit" name="search-submit" data-animation-type="bounce" data-animation-duration="1"><%= t(:search_now) %></button>
+      </div>
+    </div>
+  </form>
+</div>

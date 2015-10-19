@@ -1,0 +1,18 @@
+<% @body_class = 'search-results-page' %>
+
+<%
+   page = 1 #hotels.current_page
+%>
+
+<% case params['search-type'] %>
+<% when 'hotels' %>
+    <%= render :partial => 'spree/hotels/index2', locals: {hotels: @products, page: page} %>
+<% when 'flights' %>
+    <%#= render :file => 'flights/index', locals: {flights: @products, page: page} %>
+<% when 'cars' %>
+    <%#= render :file => 'cars/index', locals: {cars: @products, page: page} %>
+<% when 'packages' %>
+    <%#= render :file => 'packages/index', locals: {packages: @products, page: page} %>
+<% when 'test' %>
+    <%= @products %>
+<% end %>

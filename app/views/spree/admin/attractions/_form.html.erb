@@ -1,0 +1,18 @@
+<div data-hook="admin_attraction_form_fields" class="row">
+  <%= hidden_field_tag :shipping_category_id, Spree::ShippingCategory.first.id %>
+  <%= hidden_field_tag :price, 0 %>
+  <fieldset class="general no-border-top">
+        <div data-hook="name" class="field">
+          <%= label_tag :name, t(:name) %>
+          <%= text_field_tag :name, @attraction.name, :class => 'fullwidth' %>
+        </div>
+        <div data-hook="name" class="field">
+          <%= label_tag :description, t(:description) %>
+          <%= text_area_tag :description, @attraction.description, :class => 'fullwidth' %>
+        </div>
+        <div data-hook="name" class="field">
+          <%= label_tag :spanish_description, t(:spanish_description) %>
+          <%= text_area_tag :spanish_description, @attraction.property('spanish_description'), :class => 'fullwidth' %>
+        </div>
+  </fieldset>
+</div>

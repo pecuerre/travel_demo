@@ -13,3 +13,4 @@
 //= require admin/spree_travel_hotel
 //= require admin/spree_travel_package
 //= require spree/backend/spree_property_type
+//= require spree/backend/spree_i18n

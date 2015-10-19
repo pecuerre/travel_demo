@@ -1,0 +1,177 @@
+es:
+  departure: "Hora de Partida"
+  returning: "Hora de Regreso"
+  traction: "Transmisión"
+  a_traction: "Automática"
+  m_traction: Manual
+  car_type: Tipo
+  flights: 'vuelos'
+  hotels: 'hoteles'
+  cars: 'autos'
+  packages: 'paquetes'
+  english: 'English'
+  spanish: 'Español'
+  logo: 'Más Mexico por Menos'
+  slogan_1: 'Compara los mejores sitios de viajes a Mexico en un solo'
+  slogan_2: 'lugar y encuentra tus vacaciones ideales más rápido'
+  destiny: 'Destino'
+  destiny_msg: Disfrute su viaje como nunca antes!!!
+  contact: "Contacto"
+  name: "Nombre"
+  email: "Correo"
+  send_message: "Enviar mensaje"
+  home: "Página inicial"
+  copy_right: "Todos los Derechos Reservados "
+  close: "Cerrar"
+  en: English
+  es: Español
+  picking_up: "Ciudad de entrega"
+  dropping_off: "Ciudad de devoluación"
+  pick_up_date: "Fecha de entrega"
+  pick_up_time: "Hora de entrega"
+  drop_off_date: "Fecha de devolución"
+  drop_off_time: "Hora de devolución"
+  search_now: "Buscar"
+  cars_of: "carros de"
+  sort_by: "Ordenar por"
+  by_price: "por Precio"
+  Price: Precio
+  peoples: "pasageros"
+  air_conditioner: aire acondicionado
+  bags: "maletas"
+  Displaying: "Mostrando"
+  prev: "anterior"
+  next: "siguiente"
+  search: "buscar"
+  brand: "marca"
+  filter: "filtrar"
+  flight_type: "Tipo de vuelo"
+  roundtrip: "redondo"
+  one_way: "sencillo"
+  flying_from: "Volar desde"
+  flying_to: "Volar hacia"
+  departing_date: "Fecha de ida"
+  returning_date: "Fecha de retorno"
+  adults: "Adultos"
+  kids: "Niños"
+  flights_of: "vuelos de"
+  Airline: Aerolínea
+  book_now: "RESERVAR"
+  going_to: "Ir a"
+  check_in: "Llegada"
+  check_out: "Salida"
+  rooms: "Habitaciones"
+  room_type: "Tipo de habitación"
+  hotels_of: "hoteles de"
+  by_name: "por Nombre"
+  by_stars: "por Estrellas"
+  Name: Nombre
+  Stars: "Estrellas"
+  hotel_name: "nombre de hotel"
+  airport_name_or_destination: "nombre del aeropuerto o destino"
+  arrival_date: "Fecha de llegada"
+  departure_date: "Fecha de salida"
+  packages_of: "paquetes de"
+  by_airline: "por Aerolinea"
+  static_content: "Contenido Estático"
+  sources_statistics: "Estadística de Fuentes"
+  sources_statistics_description: "Estadística de todas las Fuentes"
+  source: "fuente"
+  count: "cantidad"
+  destinations: "Destinos"
+  listing_destinations: "Listando Destinos"
+  new_destiny: "Nuevo Destino"
+  editing_destination: "Editando Destino"
+  back_to_destinations_list: "retroceder a la lista de destinos"
+  custom_log: "Log Personalizado"
+  download: "descargar"
+  invalid_date: "fecha inválida"
+  invalid_time: "hora inválida"
+  search_type: "tipo de búsqueda"
+  wrong_arguments: "parámetros inválidos"
+  listing_static_contents: "Listando Contenido Estático"
+  new_static_content: "Nuevo Contenido Estático"
+  key: "llave"
+  title: "título"
+  content: "contenido"
+  image: "imagen"
+  editing_static_content: "Editando Contenido Estático"
+  back_to_static_contents_list: "retroceder a la lista de contenidos estáticos"
+  invalid_chronological_order: "Orden cronológico inválido entre fechas"
+  about_us: "Acerca de"
+  privacy_policy: "Aviso de Privacidad"
+  faq: Preguntas Frecuentes
+  terms_and_conditions: "Términos &amp; Condiciones"
+  terms_and_conditions_message: "<p>More Mexico For Less LLC no es un agente de reservas o operador de viajes, y no cobra honorarios por sus servicios a los usuarios de nuestro sitio. Nuestros socios (compañías aéreas y agentes de reserva) que ofrecen pasajes aéreos y paquetes turísticos en MoreMexicoForLess.com están obligados por ley a incluir todas las tasas y recargos en sus precios de lista. Los ejemplos incluyen el Cargo Federal de Seguridad de 11 de septiembre, los impuestos y honorarios de de salida y de llegada internacional, impuesto federal y otros servicios, el manejo, las tasas y recargos diversos. Cuando usted reserva con uno de nuestros socios, por favor asegúrese de revisar la publicación completa de todos los cargos aplicables requeridos por el Departamento de Transporte de Estados Unidos que aparecen en su sitio. Las Tarifas son generalmente cotizadas por persona en USD a menos que se indique lo contrario.</p>
+  <p>Para los paquetes de viaje u ofertas cotizadas, More Mexico For Less LLC no garantiza ninguna tasa o precios específicos. Además, los precios medios de hoteles se actualizan cada noche y se muestran en su moneda preferida utilizando las tasas de conversión vigentes. Dado que estos precios convertidos son estimaciones, por favor consulte con el sitio de reservas por la cantidad exacta y la moneda.</p>
+  <p>Por otra parte, More Mexico For Less LLC no garantiza la disponibilidad de los precios anunciados en nuestro sitio. Los precios indicados pueden requerir una estancia de una longitud determinada o tienen fechas sin informacion, calificaciones o restricciones.</p>
+  <p>More Mexico For Less LLC no es responsable del contenido de los sitios web externos. Impuestos y tarifas no aparecen incluidos en las ofertas.</p>
+  <p>Como condición para el uso de este sitio web, usted garantiza que:</p>
+  <ol>
+    <li>Tiene por lo menos 18 años de edad</li>
+    <li>Usted tiene la autoridad legal para crear una obligación legal vinculante</li>
+    <li>Que va a utilizar esta web de acuerdo con los Términos de Uso</li>
+    <li>Debe utilizar este sitio para buscar informacion sobre reservaciones legítimas para usted o para otra persona para quien usted está legalmente autorizado para actuar</li>
+    <li>Si usted busca informacion en nombre de otra persona, usted tiene el deber de informar a dicha persona acerca de los términos y usos que se aplican a la informacion que busco para ellos</li>
+    <li>Toda la información proporcionada por usted en este sitio web es verdadera, precisa, actualizada y completa</li>
+  </ol>
+  <p>Nos reservamos el derecho de denegar el acceso a cualquier persona a este sitio web y los servicios que ofrecemos, en cualquier momento y por cualquier razón, incluyendo, pero no limitado a la violación de estos términos y su uso</p>"
+
+  about_us_message: <p>Bienvenidos a More Mexico For Less donde puedes comparar los mejores sitios de viajes a Mexico en un solo lugar y encontrar tus vacaciones ideales más rápido.</p>
+                                <p>More Mexico For Less se especializa en darle a los viajeros la mejor selección de hoteles, aviones y renta de carros cuando planean su viaje a Mexico.</p>
+                                <p>Usted puede reservar con nosotros y tenga garantizado que aquí encontrara los mejores precios para sus siguientes vacaciones.</p>
+                                <p>Gracias por visitar y usar More Mexico For Less.</p>
+  privacy_policy_message: "<p>En More Mexico For Less nos comprometemos a cuidar su información y a obtener su confianza.</p>
+                                <p><i>¿Cómo usamos y compartimos la información?</i></p>
+                                <p>Cuando reserva su viaje usando la página de internet More Mexico For Less, nosotros le proporcionamos su información personal a las aerolíneas, hoteles, renta de carros y otras agencias de viajes que están encargadas de finalizar el proceso de reserva de los servicios que usted ha seleccionado.</p>
+                                <p>Nosotros usamos información que no es personal como demografía e intereses en áreas específicas de nuestra página para crear mejor servicios y tener mejor calidad en nuestra página y con nuestros clientes.</p>
+                                <p>También compartimos información personal si es requerido por la ley o si es necesario identificar, contactar o emprender acciones legales contra alguien que podría estar causando interferencias con nuestros derechos o propiedades.</p>
+                                <p><i>¿Cómo protegemos su información?</i></p>
+                                <p>Nosotros nos comprometemos a proteger la información que obtenemos. Solo empleados autorizados tienen permiso de acceder a información personal de los clientes y solo lo pueden hacer para funciones que están permitidas dentro de la empresa.</p>
+                                <p><i>Ligas externas</i></p>
+                                <p>Si esta página, moremexicoforless.com, lo dirige a otras páginas web, esos sitios no operan bajo nuestros términos de privacidad. Nosotros recomendamos que revise los términos de privacidad y términos de esas páginas para entender sus procedimientos de como usan la información personal que obtienen de sus usuarios.</p>
+                                <p><i>Las actualizaciones y cambios a estos términos </i></p>
+                                <p>More Mexico For Less tiene el derecho de cambiar y hacer modificaciones a estos términos si es necesario. Al usar este sitio y el proceso de reservación con More Mexico For Less usted acepta estos términos.</p>"
+  faq_message: <p><i>¿Qué tipo de reservaciones puedo hacer en moremexicoforless.com?</i></p>
+                          <p>En moremexicoforless.com usted puede reservar hoteles, vuelos, y renta de carros en los mejores destinos de Mexico.</p>
+                          <p><i>¿Puedo hacer la reservación sin una tarjeta de crédito?</i></p>
+                          <p>Usted necesita una tarjeta de crédito válida para poder hacer su reservación.</p>
+                          <p><i>¿Puedo reservar mis vacaciones a cualquier país o destino que yo decida?</i></p>
+                          <p>More Mexico For Less solo ofrece paquetes de viajes a destinos en Mexico.</p>
+  fecha: "fecha"
+  destinations_of: "destinos de"
+  number_of_attractions: "Número de atracciones"
+  attractions: "atracciones"
+  destination_name: "nombre del destino"
+  deals: "Promociones"
+  hot_deals: " Las mejores Promociones"
+  news: "News"
+  popular_destinations: "Popular Destinations"
+  news: "Noticias"
+  popular_destinations: "Los destinos más buscados"
+  attractions: "Atracciones"
+  new_attraction: "nueva atracción"
+  listing_attractions_for: "Listando atracciones de"
+  powered: "Impulsado por:  "
+  coming: "Proximamente: "
+  more_flights: "Más Vuelos"
+  more_hotels: "Más Hotels"
+  more_cars: "Más Carros"
+  more_packages: "Más Paquetes"
+  details: Detalles
+  produced_by: "Producido por "
+  start_traveling_now: comienza a viajar ahora
+  more: ver más
+  first_name: Nombre
+  last_name: Apellidos
+  age: Edad
+  email: Email
+  country: 'País/Ciudadanía'
+  destination: 'Seleccione su destino'
+  reason: "¿Cuál es su principal razon para convertirce en voluntario con Nomad Republic?"
+  skills: '¿Cuáles son tu habilidades?'
+  expect: '¿Qué esperas de esta experiencia?'
+  delivery_success: 'Email enviado a Nomad Republic'
+  delivery_error: 'Error en el envío del Email'
+
+

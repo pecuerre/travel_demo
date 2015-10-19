@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @nomad.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @nomad.last_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @nomad.age %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @nomad.email %>
+</p>
+
+<p>
+  <strong>Contry:</strong>
+  <%= @nomad.contry %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @nomad.destination %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @nomad.reason %>
+</p>
+
+<p>
+  <strong>Expect:</strong>
+  <%= @nomad.expect %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @nomad.skills %>
+</p>
+
+<%= link_to 'Edit', edit_nomad_path(@nomad) %> |
+<%= link_to 'Back', nomads_path %>

@@ -1,0 +1,24 @@
+<% content_for :page_title do %>
+    <%= t(:sources_statistics) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <li><%= link_to_with_icon 'arrow-left', t(:back_to_reports_list), spree.admin_reports_url, :class => 'button' %></li>
+<% end %>
+
+<table class="admin-report" data-hook="sources_statistics">
+  <thead>
+  <tr>
+    <th><%= t(:source) %></th>
+    <th><%= t(:count) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @sources.each do |source| %>
+      <tr class="align-center">
+        <td><%= source.source %></td>
+        <td><%= source.count %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

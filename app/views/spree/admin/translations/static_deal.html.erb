@@ -1,0 +1,11 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<%#= render :partial => 'spree/admin/shared/product_tabs', locals: { current: 'Translations' } %>
+<%= render :partial => 'spree/shared/error_messages', locals: { target: @static_deal } %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_static_deal_list), admin_static_deals_path, icon: 'arrow-left' %>
+  </li>
+<% end %>
+
+<%= render 'form' %>

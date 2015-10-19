@@ -1,0 +1,27 @@
+<div data-hook="admin_static_event_form_fields" class="row">
+  <fieldset class="general no-border-top">
+    <%= hidden_field_tag :shipping_category_id, Spree::ShippingCategory.first.id %>
+    <%= hidden_field_tag :price, 0 %>
+    <div class="field">
+      <%= label_tag :name %>
+      <br />
+      <%= text_field_tag :name, @object.name, class: 'fullwidth' %>
+    </div>
+    <div class="field">
+      <%= label_tag :description %>
+      <br />
+      <%= text_area_tag :description, @object.description, class: 'fullwidth' %>
+    </div>
+    <div class="field">
+      <%= label_tag :link %>
+      <br />
+      <%= text_field_tag :link, @object.property('link'), class: 'fullwidth' %>
+    </div>
+    <div class="filed">
+      <br />
+      <br />
+      <%= button_link_to(Spree.t(:images), admin_product_images_url(@object), :icon => 'picture-o') unless @object.id.blank? %>
+    </div>
+
+  </fieldset>
+</div>

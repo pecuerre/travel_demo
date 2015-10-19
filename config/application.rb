@@ -37,5 +37,8 @@ module SpreeTravelDemo4
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.i18n.default_locale = :en
+    config.mode_offline = false
   end
 end

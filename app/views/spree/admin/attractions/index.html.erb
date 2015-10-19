@@ -1,0 +1,43 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:listing_attractions_for) %>
+  <%= link_to @destination.name, edit_admin_destination_path(@destination) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <ul class="actions inline-menu">
+    <li><%= link_to_with_icon 'arrow-left', t(:back_to_destinations_list), admin_destinations_path, :class => 'button' %></li>
+    <li>
+      <%= button_link_to t(:new_attraction), new_admin_destination_attraction_path, { :icon => 'plus', :id => 'admin_new_attractions' } %>
+    </li>
+  </ul>
+<% end %>
+
+<table class="index" id='listing_attractions' data-hook>
+  <colgroup>
+    <col style="width: 30%" />
+    <col style="width: 50%" />
+    <col style="width: 20%" />
+  </colgroup>
+  <thead>
+    <tr data-hook="tax_header">
+      <th><%= t(:image) %></th>
+      <th><%= t(:name) %></th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @attractions.each do |attraction| %>
+      <tr id="<%= spree_dom_id attraction %>" data-hook="attraction_row" class="<%= cycle('odd', 'even')%>">
+        <td class="align-center"><%= mini_image(attraction) %></td>
+        <td><%= attraction.name %></td>
+        <td class="actions">
+          <%= link_to_with_icon('image', Spree.t(:image), admin_product_images_url(attraction), {:data=>{:action=>'image'},:no_text=>true}) %>
+          <%= link_to_edit attraction, :no_text => true %>
+          <%= link_to_delete attraction, :no_text => true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

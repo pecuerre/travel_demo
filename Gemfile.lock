@@ -1,17 +1,21 @@
 GIT
+  remote: git://github.com/ambethia/recaptcha.git
+  revision: f4450fb4088e172651cc4d5080edb42cc4af4e3f
+  specs:
+    recaptcha (0.4.0)
+
+GIT
+  remote: git://github.com/cyu/rack-cors.git
+  revision: 42ebe6caa8e85ffa9c8a171bda668ba1acc7a5e6
+  specs:
+    rack-cors (0.4.0)
+
+GIT
   remote: git://github.com/openjaf/spree_property_type.git
   revision: 4b64e2573ea56c327dea6ac989437b8e8bc588a0
   branch: 3-0-stable
   specs:
     spree_property_type (3.0.0)
-      spree (~> 3.0.0)
-
-GIT
-  remote: git://github.com/openjaf/spree_travel_core.git
-  revision: e87a77992d6421d639634d1f9f6212678bab5526
-  branch: combinations_less
-  specs:
-    spree_travel_core (3.0.0)
       spree (~> 3.0.0)
 
 GIT
@@ -38,6 +42,44 @@ GIT
   specs:
     spree_travel_sample (3.0.0)
       colored
+      spree_core (~> 3.0.0)
+
+GIT
+  remote: git://github.com/spree-contrib/spree_i18n.git
+  revision: 53853ad1f1f1c94ba90c6ec177568550354a65d4
+  branch: 3-0-stable
+  specs:
+    spree_i18n (3.0.0)
+      friendly_id-globalize
+      globalize (~> 5.0.1)
+      i18n_data (~> 0.7.0)
+      kaminari-i18n (~> 0.3.2)
+      rails-i18n (~> 4.0.1)
+      spree_core (~> 3.0.4)
+
+GIT
+  remote: git://github.com/spree-contrib/spree_mail_settings.git
+  revision: 99af7e4a137ac76fe4e93b1c8e5a38d81583904c
+  branch: 3-0-stable
+  specs:
+    spree_mail_settings (2.2.0)
+      spree_backend (~> 3.0.0)
+
+GIT
+  remote: git://github.com/spree-contrib/spree_slider.git
+  revision: a39469a3514df887e20a12d781b025c90399deec
+  branch: 3-0-stable
+  specs:
+    spree_slider (1.2.0)
+      spree_backend (>= 3.0.0)
+      spree_core (>= 3.0.0)
+
+GIT
+  remote: git://github.com/spree-contrib/spree_static_content.git
+  revision: 80a74e1ad8e1843c6bfabcd700dc8edb84822fdd
+  branch: 3-0-stable
+  specs:
+    spree_static_content (3.0.1)
       spree_core (~> 3.0.0)
 
 GIT
@@ -112,6 +154,12 @@ GIT
       multi_json
       spree_core (~> 3.0.0)
 
+PATH
+  remote: ../gems/spree_travel_core
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -178,6 +226,7 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    browser (1.0.1)
     builder (3.2.2)
     byebug (6.0.2)
     camertron-eprun (1.1.0)
@@ -186,6 +235,9 @@ GEM
       rails (>= 3.1, < 5.0)
     carmen (1.0.2)
       activesupport (>= 3.0.0)
+    ckeditor (4.1.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
     cldr-plurals-runtime-rb (1.0.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -220,6 +272,8 @@ GEM
       devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffaker (1.32.1)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -227,8 +281,13 @@ GEM
       railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha2)
+      friendly_id (~> 5.1.0, < 6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -245,6 +304,7 @@ GEM
       ruby_parser (~> 3.5)
     htmlentities (4.3.4)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -255,9 +315,13 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    jwt (1.5.1)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-i18n (0.3.2)
+      kaminari
+      rails
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -271,9 +335,18 @@ GEM
     money (6.6.1)
       i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nested_form (0.3.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    non-stupid-digest-assets (1.0.5)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     orm_adapter (0.5.0)
     paperclip (4.2.4)
       activemodel (>= 3.2.0)
@@ -323,6 +396,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.5)
+      i18n (~> 0.6)
+      railties (~> 4.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -391,6 +467,8 @@ GEM
       activerecord (~> 4.1)
       state_machines-activemodel (>= 0.3.0)
     stringex (2.5.2)
+    stringjs-rails (3.3.1)
+      railties (> 3.1)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
@@ -420,6 +498,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    world_airports (1.1.3)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -428,30 +508,44 @@ DEPENDENCIES
   aws-sdk
   better_errors
   binding_of_caller
+  browser
   byebug
+  ckeditor
   coffee-rails (~> 4.1.0)
   ffaker
   figaro
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  non-stupid-digest-assets
+  oauth2
   pg
   pry
+  rack-cors!
   rails (= 4.2.3)
+  rails-i18n
   rails_12factor
   rails_admin
   ransack
+  recaptcha!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree!
   spree_auth_devise!
+  spree_i18n!
+  spree_mail_settings!
   spree_property_type!
+  spree_slider!
+  spree_static_content!
   spree_travel_core!
   spree_travel_hotel!
   spree_travel_package!
   spree_travel_sample!
   spring
   sqlite3
+  stringjs-rails
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  world_airports
+  xml-simple

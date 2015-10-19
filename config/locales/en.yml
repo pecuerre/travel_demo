@@ -20,4 +20,174 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  departure: "Departure Time"
+  returning: "Returning Time"
+  traction: "Transmission"
+  a_traction: "Automatic"
+  m_traction: Manual
+  car_type: Type
   hello: "Hello world"
+  flights: 'flights'
+  hotels: 'hotels'
+  cars: 'cars'
+  packages: 'packages'
+  english: 'English'
+  spanish: 'Español'
+  logo: 'More Mexico For Less'
+  slogan_1: 'Compare the best travel sites to Mexico'
+  slogan_2: 'at once and find your dream vacation faster'
+  destiny: 'Destination'
+  destiny_msg: Enjoy your trip like never before!!!
+  contact: "Contact"
+  name: "Name"
+  email: "Email"
+  send_message: "Send message"
+  home: "Home"
+  close: "Close"
+  en: English
+  es: Español
+  picking_up: "Picking up"
+  dropping_off: "Dropping off"
+  pick_up_date: "Pick up date"
+  pick_up_time: "Pick up time"
+  drop_off_date: "Drop off date"
+  drop_off_time: "Drop off time"
+  search_now: "Search Now"
+  cars_of: "cars of"
+  sort_by: "Sort by"
+  by_price: "by Price"
+  Price: Price
+  peoples: "passengers"
+  air_conditioner: aire conditioner
+  bags: "suitcases"
+  Displaying: "Displaying"
+  prev: "prev"
+  next: "next"
+  search: "search"
+  brand: "brand"
+  filter: "filter"
+  copy_right: "All Rights Reserved "
+  flight_type: "Flight type"
+  roundtrip: "Roundtrip"
+  one_way: "One way"
+  flying_from: "Flying from"
+  flying_to: "Flying to"
+  departing_date: "Departing date"
+  returning_date: "Returning date"
+  adults: "Adults"
+  kids: "Kids"
+  flights_of: "flights of"
+  by_airline: "by Airline"
+  Airline: Airline
+  book_now: "BOOK"
+  going_to: "Going to"
+  check_in: "Check in"
+  check_out: "Check out"
+  rooms: "Rooms"
+  room_type: "Room Type"
+  hotels_of: "hotels of"
+  by_name: "by Name"
+  by_stars: "by Stars"
+  Name: Name
+  Stars: "Stars"
+  hotel_name: "hotel name"
+  airport_name_or_destination: "airport name or destination"
+  arrival_date: "Arrival date"
+  departure_date: "Departure date"
+  packages_of: "packages of"
+  static_content: "Static Content"
+  sources_statistics: "Sources Statistics"
+  sources_statistics_description: "Statistics for all Sources"
+  source: "source"
+  count: "count"
+  destinations: "Destinations"
+  listing_destinations: "Listing Destinations"
+  new_destiny: "New Destination"
+  editing_destination: "Editing Destination"
+  back_to_destinations_list: "back to destinations list"
+  custom_log: "Custom Log"
+  download: "download"
+  invalid_date: "invalid date"
+  invalid_time: "invalid time"
+  search_type: "search type"
+  wrong_arguments: "wrong arguments"
+  listing_static_contents: "Listing Static Content"
+  new_static_content: "New Static Content"
+  key: "key"
+  title: "title"
+  content: "content"
+  image: "image"
+  editing_static_content: "Editing Static Content"
+  invalid_chronological_order: "Invalid chronological order betwen dates"
+  about_us_message: <p>Welcome to More Mexico For Less were you can compare the best travel sites to Mexico at once and find your dream vacation faster.</p>
+                              <p>More Mexico For Less specializes in giving travelers one of the best selections of accommodations online when planning their trip to Mexico.</p>
+                              <p>You can book the hotel, flight, and car rental with us and be guaranteed that you will find the best prices for your next trip.</p>
+                              <p>Thank you for visiting and using More Mexico For Less.</p>
+  about_us: "About Us"
+  privacy_policy: "Privacy Policy"
+  faq: Frequently Asked Question
+  terms_and_conditions: "Terms &amp; Conditions"
+  privacy_policy_message: "<p>At More Mexico For Less we are committed to ensure your trust and protecting your information.</p>
+                              <p><i>How is the information used and shared?</i></p>
+                              <p>When you book your travel using the More Mexico For Less website, we provide to the airline, hotel, car rental company or other Third Party Supplier involved  the portion of your personal information that is needed in order to have successful fulfillment of your reservation and travel arrangements.</p>
+                              <p>We use non-personal information to generate better quality, better online services by measuring demographics and interests regarding specific areas of our sites. We may also use such information to inform third parties as to the number of people who have seen or clicked on links to their websites.</p>
+                              <p>We may also disclose personal information if required by law or when it is necessary to identify, contact or bring legal action against someone who may be causing interference with our rights or properties.</p>
+                              <p><i>How we protect your information</i></p>
+                              <p>We are committed to protect all the information that we collect. Only authorized employees are permitted to access personal information, and they may only do so for permitted business functions.</p>
+                              <p><i>External links</i></p>
+                              <p>If this website links you to other sites, those sites do not operate under this Privacy Policy. We recommend you review their policies and terms on those websites to understand their procedures for collecting, using, and disclosing personal information.</p>
+                              <p><i>Updates and changes to this policy</i></p>
+                              <p>More Mexico For Less reserves the right to change or make modifications to this policy if necessary. By using this site and the process of reservation with More Mexico For Less you accept this privacy policy.</p>"
+  faq_message: <p><i>What kind of reservations can I make on moremexicoforless.com?</i></p>
+                        <p>At moremexicoforless.com you can book hotels, flights, and car rentals in Mexico’s top destinations.</p>
+                        <p><i>Can I make a reservation without a credit card?</i></p>
+                        <p>You will need a valid credit card to guarantee your reservation.</p>
+                        <p><i>Can I book my vacation to any country that I want?</i></p>
+                        <p>More Mexico For Less only sells vacation packages for Mexico.</p>
+  terms_and_conditions_message: <p>More Mexico For Less LLC is not a booking agent or tour operator, and does not charge any service fees to users of our site. Our partners (airlines and booking agents) who list airfare and travel packages on MoreMexicoForLess.com are required by law to include all fees and surcharges in their listed prices. Examples include the Federal September 11th Security Fee, international departure and arrival taxes and fees, federal excise tax, and other service, handling and miscellaneous fees and surcharges. When you book with one of our partners, please be sure to check their site for a full disclosure of all applicable fees as required by the U.S. Department of Transportation. Airfares are generally quoted per person in USD unless otherwise noted.</p>
+                                <p>For any travel packages or deals listed, More Mexico For Less LLC does not guarantee any specific rates or prices. In addition, average hotel prices are updated nightly and displayed in your preferred currency using prevailing conversion rates. Since these converted prices are estimates, please check with the booking site for the exact amount and currency.</p>
+                                <p>Furthermore, More Mexico For Less LLC makes no guarantees for availability of prices advertised on our site. Listed prices may require a stay of a particular length or have blackout dates, qualifications or restrictions.<p/>
+                                <p>More Mexico For Less LLC is not responsible for content on external web sites. Taxes, fees not included for deals content.<p/>
+                                <p>As a condition of your use of this website, you warrant that:</p>
+                                  <ol>
+                                     <li>You are at least 18 years of age </li>
+                                     <li>You have the legal authority to create a binding legal obligation </li>
+                                     <li>You will use this website in accordance with Terms of Use </li>
+                                     <li>You must use this website to make legitimate reservations for you or for someone else for whom you are legally authorized to act </li>
+                                     <li>If you make a reservation on the behalf of someone else, you are entitled to inform such person about the terms and uses that applies to the reservation you made for them </li>
+                                     <li>All information supplied by you on this website is true, accurate, current and complete </li>
+                                  </ol>
+                                <p>We maintain the right to deny access to anyone to this website and the services that we offer, at any time and for any reason, including, but not limited to, for violation of these terms and use.</p>
+  fecha: "date"
+  destinations_of: "destinations of"
+  number_of_attractions: "Number of attractions"
+  attractions: "attractions"
+  destination_name: "destination name"
+  deals: "Deals"
+  hot_deals: "Hot Deals"
+  news: "News"
+  popular_destinations: "Popular Destinations"
+  attractions: "Attractions"
+  new_attraction: "new attraction"
+  listing_attractions_for: "Listing attractions for"
+  powered: "Powered by:  "
+  coming: "Coming soon:"
+  more_flights: "More Flights"
+  more_hotels: "More Hotels"
+  more_cars: "More Cars"
+  more_packages: "More Packages"
+  details: Details
+  produced_by: "Produced by the "
+  start_traveling_now: start traveling now
+  more: more
+  first_name: First Name *
+  last_name: Last Name
+  age: Age *
+  email: Email *
+  country: 'Country/Citizenship *'
+  destination: 'Choose your destination *'
+  reason: 'What are your main reasons for volunteering with Nomad Republic? *'
+  skills: 'What are your skills? *'
+  expect: 'What do you expect from this experience? *'
+  delivery_success: 'Email successfully send to Nomad Republic'
+  delivery_error: 'Email was not delivered'

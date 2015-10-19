@@ -1,0 +1,53 @@
+<%= form_for [:admin, @nomad] do |f| %>
+  <% if @nomad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nomad.errors.count, "error") %> prohibited this nomad from being saved:</h2>
+
+      <ul>
+      <% @nomad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field four columns">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field four columns">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field four columns">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field four columns">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :contry %><br>
+    <%= f.text_field :contry %>
+  </div>
+  <div class="field">
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :expect %><br>
+    <%= f.text_area :expect %>
+  </div>
+  <div class="field">
+    <%= f.label :skills %><br>
+    <%= f.text_area :skills %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

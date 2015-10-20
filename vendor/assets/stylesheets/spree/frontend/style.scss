@@ -2375,7 +2375,7 @@ body.pace-running {  }
 #header, #footer, .chaser {
   .logo {
     a { background: url($skin-logo) no-repeat 0 0; display: block; }
-    img { @include opacity(0); }
+    //img { @include opacity(0); }
   }
 }
 

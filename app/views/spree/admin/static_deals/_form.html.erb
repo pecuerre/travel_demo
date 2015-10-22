@@ -1,0 +1,47 @@
+<%= form_for [:admin, @static_deal] do |f| %>
+  <% if @static_deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@static_deal.errors.count, "error") %> prohibited this static_deal from being saved:</h2>
+
+      <ul>
+      <% @static_deal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'fullwidth' %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: 'fullwidth' %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link, class: 'fullwidth' %>
+  </div>
+  <div class="field">
+    <%= f.label :stars %><br>
+    <%= f.number_field :stars %>
+  </div>
+    <div class="field">
+      <%= f.label :attachment %><br>
+      <%= f.file_field :attachment %>
+    </div>
+    <div class="field">
+      mini: "48x48>"<%#= image_tag @static_deal.attachment.url(:mini) %><br>
+      small: "100x100>"<%#= image_tag @static_deal.attachment.url(:small) %><br>
+      product: "240x240>"<%#= image_tag @static_deal.attachment.url(:product) %><br>
+      large: "600x600>"<%#= image_tag @static_deal.attachment.url(:large) %><br>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

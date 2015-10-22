@@ -1,0 +1,14 @@
+<div data-hook="admin_static_image_form_fields" class="row">
+  <fieldset class="general no-border-top">
+    <div class="field">
+      <%= f.label :key %>
+      <br />
+      <%= f.select :key, StaticImage::KEYS %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <br />
+      <%= f.file_field :image, class: 'fullwidth' %>
+    </div>
+  </fieldset>
+</div>

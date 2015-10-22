@@ -8,13 +8,15 @@ module Spree
       @property_types = Spree::PropertyType.all
 
       @searcher = build_searcher(params.merge(include_images: true))
+      @destinations = Spree::Taxon.find_by(:name => "Destinations")
+      
       @products = @searcher.retrieve_products.hotels
       
       @category = params[:category]
       @destination = params[:destination]
       taxons = []
-      taxons << Spree::Taxon.find_by(name: @category).id if @category.present?
-      taxons << Spree::Taxon.find_by(name: @destination).id if @destination.present?
+      taxons << Spree::Taxon.where(name: @category).first if @category.present?
+      taxons << Spree::Taxon.where(name: @destination).first if @destination.present?
       @products = @products.in_taxons(taxons) if taxons.present?
       property_ids = get_properties_ids_from_params
       @view = params[:view]

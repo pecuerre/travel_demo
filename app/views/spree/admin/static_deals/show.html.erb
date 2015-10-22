@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @static_deal.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @static_deal.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @static_deal.price %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @static_deal.link %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @static_deal.stars %>
+</p>
+
+<%= link_to 'Edit', edit_static_deal_path(@static_deal) %> |
+<%= link_to 'Back', static_deals_path %>

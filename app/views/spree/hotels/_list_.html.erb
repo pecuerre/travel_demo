@@ -1,0 +1,72 @@
+<header class="clearfix">
+  <h2 class="pull-left"></h2>
+
+  <div class="order-by-selector dropdown pull-right">
+    <div data-toggle="dropdown">
+      <p><a href="#"><%#= "#{t(:sort_by)} #{t(@searcher.properties['sort-by'].camelcase)}" %>
+        <i class="glyphicon glyphicon-chevron-down"></i></a></p>
+    </div>
+    <ul role="menu" aria-labelledby="" class="dropdown-menu">
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="<%= products_path(params.merge({'sort-by' => 'price'})) %>"><%= t(:by_price) %></a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="<%= products_path(params.merge({'sort-by' => 'name'})) %>"><%= t(:by_name) %></a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="<%= products_path(params.merge({'sort-by' => 'stars'})) %>"><%= t(:by_stars) %></a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div>
+  <% hotels.each do |hotel| %>
+      <article class="offer-box hotel">
+        <div class="img-container">
+          <%= image_tag hotel.image %>
+        </div>
+        <div class="data">
+          <header><span class="offer-name"><%= hotel.name %></span>
+
+            <div class="clearfix">
+          <span class="hotel-category pull-left">
+            <span class="icon icon-star-<%= hotel.stars %>"></span>
+          </span>
+              <% if hotel.reviews %>
+                  <span class="reviews pull-left"><%= hotel.reviews %> reviews</span>
+              <% end %>
+            </div>
+          </header>
+          <p class="features-list">
+            <%= raw(hotel.description.first(250)) + ' ...' %>
+          </p>
+          <footer class="clearfix">
+            <div class="row">
+              <div class="col-md-7">
+                <span class="offer-price pull-right"><%= hotel.prices[hotel.cheaper_api].to_money %> USD</span>
+                <span class="current-site"><%= hotel.cheaper_api.to_s.titleize %></span>
+              </div>
+              <div class="col-md-5">
+                <% booking_uri = hotel.booking_uri[hotel.cheaper_api] %>
+                <%= raw item_booking_uri(booking_uri) %>
+              </div>
+            </div>
+          </footer>
+        </div>
+        <ul class="sites-list">
+          <% hotel.prices.sort_by { |k, v| v }.each do |api| %>
+              <li>
+                <% booking_uri = hotel.booking_uri[api[0]]
+                   api_name = api[0]
+                   price = api[1].to_money %>
+                <%= raw list_item_booking_uri(booking_uri, api_name, price) %>
+              </li>
+          <% end %>
+        </ul>
+      </article>
+  <% end %>
+</div>
+<footer class="clearfix">
+  <%= paginate hotels %>
+  <p class="pull-right"><%= "#{t(:Displaying)} #{hotels.count} #{t(:hotels_of)} #{hotels.total_count}" %></p>
+</footer>

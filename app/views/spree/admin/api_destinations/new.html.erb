@@ -1,0 +1,18 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:new_destiny) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= link_to_with_icon 'arrow-left', t(:back_to_destinations_list), admin_api_destinations_path, :class => 'button' %></li>
+<% end %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @destinations } %>
+
+<%= form_for [:admin, @destination], url: admin_api_destinations_path do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>

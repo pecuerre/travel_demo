@@ -1,13 +1,13 @@
 <% product ||= @product %>
 
-<div id="cart-form" data-hook="cart_form">
-  <%= form_for :order, :url => populate_orders_path, :html => {:id => 'cart-form'} do |f| %>
+<div class="cart-form-div" data-hook="cart_form">
+  <%= form_for :order, :url => populate_orders_path, :html => {:class => 'cart-form'} do |f| %>
       <div id="inside-product-cart-form-<%=product.id%>" data-hook="inside_product_cart_form"
            itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
         <% if product.price_in(current_currency) and !product.price.nil? %>
-            <!--TODO this is extemaly RARO the value of the master variant is not shown-->
-            <%#= hidden_field_tag "variant_id", @product.master.id %>
+            <%= hidden_field_tag "variant_id", variant_id %>
+            <%= hidden_field_tag "rate_id", rate_id %>
             <input type="hidden" id="template-hidden-<%=product.id%>" >
             <%= hidden_field_tag :quantity, 1 %>
 

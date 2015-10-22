@@ -35,7 +35,6 @@ end
 
 gem 'haml-rails'
 gem 'ffaker'
-gem 'pry', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
@@ -47,8 +46,7 @@ gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
-#gem 'spree_travel_core', github: 'openjaf/spree_travel_core', branch: 'combinations_less'
-gem 'spree_travel_core', path: '../gems/spree_travel_core'
+gem 'spree_travel_core', github: 'openjaf/spree_travel_core', branch: 'combinations_less'
 gem 'spree_travel_hotel', github: 'openjaf/spree_travel_hotel', branch: 'combinations_less'
 gem 'spree_travel_package', github: 'openjaf/spree_travel_package', branch: '3-0-stable'
 gem 'spree_travel_sample', github: 'openjaf/spree_travel_sample', branch: 'combinations_less'

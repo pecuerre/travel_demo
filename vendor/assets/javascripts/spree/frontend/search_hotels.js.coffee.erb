@@ -29,8 +29,8 @@ class Products.Base
   to_dom: ->
     if @dom? then @dom else @dom = $(@template())
 
+#klass can be 'outward' or 'return'
 class Products.FlightDetail
-  #klass can be 'outward' or 'return'
   constructor: (@flight) ->
 
   time: (type) ->
@@ -424,6 +424,7 @@ class Products.Backend
 class Products.Filter
   update_info: (new_products) ->
     #Nothing to update
+    request = undefined
 
 class Products.TextFilter extends Products.Filter
   constructor: (@dom_options, @trigger_filters) ->

@@ -1,4 +1,4 @@
-module PriceTravel
+module SpreeApi
   class Api
     
     def initialize
@@ -6,22 +6,14 @@ module PriceTravel
     end
 
     def hotels(params)
-
-      if SpreeTravelDemo4::Application.config.mode_offline
-        body = File.open('project/price_travel/hotels.txt').readline()
-        hotels = PriceTravel::Utils.parse_hotels(JSON.parse(body) )#, params, data)
-        # hotels = Kaminari.paginate_array(hotels).page(params[:page])
-        return PriceTravel::Response.new(hotels)
-      else
-
         destination = Destination.like_name(params['search-going-to']).first
-        return PriceTravel::Response.new([], ['Destination not found.']) unless destination
+        return SpreeApi::Response.new([], ['Destination not found.']) unless destination
 
         if not params['search-going-to'] or params['search-going-to'] == '' or not params['search-check-in-date'] or params['search-check-in-date'] == '' or not params['search-check-out-date'] or params['search-check-out-date'] == ''
-          return PriceTravel::Response.new([], ['There is not enough information to verify availability of hotels.'])
+          return SpreeApi::Response.new([], ['There is not enough information to verify availability of hotels.'])
         end
 
-        p = PriceTravel::Utils.prepare_for_hotels(destination.price_travel_id, params)
+        p = SpreeApi::Utils.prepare_for_hotels(destination.price_travel_id, params)
 
         begin
           response = PriceTravel::HTTPService.make_request('/services/hotels/availability', p)

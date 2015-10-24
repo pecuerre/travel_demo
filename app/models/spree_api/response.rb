@@ -1,4 +1,4 @@
-module PriceTravel
+module SpreeApi
     class Response < Master::Response
 
 

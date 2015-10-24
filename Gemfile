@@ -36,7 +36,7 @@ gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 group :development, :test do
   gem 'ffaker'
   gem 'sqlite3'
-  gem 'byebug'
+  #gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry'

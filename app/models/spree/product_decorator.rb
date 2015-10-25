@@ -16,6 +16,14 @@ Spree::Product.class_eval do
     list
   end
 
+  def self.with_option_value(option_type_name, option_value, operator = "=")
+    string = "spree_rate_option_values.value #{operator} ?"
+    temporal = joins(:rates => {:option_values => :option_value})
+    temporal = temporal.where('spree_option_values.name' => option_type_name)
+    temporal = temporal.where(string, option_value)
+    temporal
+  end
+
   def self.with_property_type(property_type)
     joins(:product_properties => {:property => :property_type}).where('spree_property_types.id' => property_type.id)
   end

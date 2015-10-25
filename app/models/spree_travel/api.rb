@@ -1,4 +1,4 @@
-module SpreeApi
+module SpreeTravel
   class Api
     
     def initialize
@@ -6,24 +6,32 @@ module SpreeApi
     end
 
     def hotels(params)
-        destination = Destination.like_name(params['search-going-to']).first
-        return SpreeApi::Response.new([], ['Destination not found.']) unless destination
+        destination = Spree::Taxon.like_any(params['search-going-to']).first
 
-        if not params['search-going-to'] or params['search-going-to'] == '' or not params['search-check-in-date'] or params['search-check-in-date'] == '' or not params['search-check-out-date'] or params['search-check-out-date'] == ''
-          return SpreeApi::Response.new([], ['There is not enough information to verify availability of hotels.'])
-        end
+        return SpreeTravel::Response.empty_destination unless destination
+        return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
+
+        searcher = build_searcher(params.merge(include_images: true))
+        products = searcher.retrieve_products.hotels
+
+        # params['search-check-in-date']
+        # params['search-check-out-date']
+        # params['search-rooms']
+        # params['search-adults']
+        # params['search-kids']
+
+        taxons = [destination]
+        products = products.in_taxons(taxons)
+
+        # property_ids = get_properties_ids_from_params
+        # products = products.with_property_ids(property_ids)
+        # products = products.order(params[:sort]) if params[:sort]
+
 
         p = SpreeApi::Utils.prepare_for_hotels(destination.price_travel_id, params)
-
-        begin
-          response = PriceTravel::HTTPService.make_request('/services/hotels/availability', p)
-        rescue StandardError => e
-          return BestDay::Response.new([], [e.to_s])
-        else
-          body = JSON.parse(response.body)
-          hotels = PriceTravel::Utils.parse_hotels(body, params, p)
-        end
-
+        response = PriceTravel::HTTPService.make_request('/services/hotels/availability', p)
+        body = JSON.parse(response.body)
+        hotels = SpreeTravel::Utils.parse_hotels(body, params, p)
         PriceTravel::Response.new(hotels)
 
       end

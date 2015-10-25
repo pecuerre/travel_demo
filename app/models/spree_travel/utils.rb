@@ -1,10 +1,17 @@
-module SpreeApi
+module SpreeTravel
   class Utils
 
     LANGUAGES = {
         :en => 'en-US',
         :es => 'es-MX'
     }
+
+    def self.availability_params_present?(params)
+      return false if params['search-going-to'].empty?
+      return false if params['search-check-in-date'].empty?
+      return false if params['search-check-out-date'].empty?
+      true
+    end
 
     def self.parse_hotels(resources, params=nil, data=nil)
       hotels = []

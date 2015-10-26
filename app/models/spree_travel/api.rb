@@ -6,37 +6,36 @@ module SpreeTravel
     end
 
     def hotels(params)
-        destination = Spree::Taxon.like_any(params['search-going-to']).first
+      destination = Spree::Taxon.like_any(params['search-going-to']).first
 
-        return SpreeTravel::Response.empty_destination unless destination
-        return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
+      return SpreeTravel::Response.empty_destination unless destination
+      return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
 
-        searcher = build_searcher(params.merge(include_images: true))
-        products = searcher.retrieve_products.hotels
+      taxons = [destination]
+      products = Spree::Product.hotels
+      products = products.in_taxons(taxons)
 
-        # params['search-check-in-date']
-        # params['search-check-out-date']
-        # params['search-rooms']
-        # params['search-adults']
-        # params['search-kids']
-
-        taxons = [destination]
-        products = products.in_taxons(taxons)
-
-        # property_ids = get_properties_ids_from_params
-        # products = products.with_property_ids(property_ids)
-        # products = products.order(params[:sort]) if params[:sort]
+      # TODO: aqui va toda la logica de filtrar por los params
+      # params['search-check-in-date']
+      # params['search-check-out-date']
+      # params['search-rooms']
+      # params['search-adults']
+      # params['search-kids']
 
 
-        p = SpreeApi::Utils.prepare_for_hotels(destination.price_travel_id, params)
-        response = PriceTravel::HTTPService.make_request('/services/hotels/availability', p)
-        body = JSON.parse(response.body)
-        hotels = SpreeTravel::Utils.parse_hotels(body, params, p)
-        PriceTravel::Response.new(hotels)
+      # property_ids = get_properties_ids_from_params
+      # products = products.with_property_ids(property_ids)
+      # products = products.order(params[:sort]) if params[:sort]
 
-      end
-
+      hotels = SpreeTravel::Utils.parse_hotels(products, params)
+      PriceTravel::Response.new(hotels)
     end
+
+
+
+
+
+
 
     def flights(params)
 

@@ -13,105 +13,45 @@ module SpreeTravel
       true
     end
 
-    def self.parse_hotels(resources, params=nil, data=nil)
+    def self.normalize(phrase)
+      Master::Match.normalize(phrase)
+    end
+
+    def self.hotel_booking_uri(product, params)
+
+    end
+
+    def self.parse_hotels(products, params)
       hotels = []
-      resources.each do |resource|
+      products.each do |product|
+        product = Spree::Produc.new
         hotel = Hotel.new
-        hotel.id = resource['Id']
-        hotel.name = resource['Name']
+        hotel.id = product.id
+        hotel.name = product.name
         hotel.name_slug = normalize(hotel.name)
-        hotel.description = resource['HotelInformation']['ShortDescription']
-        hotel.address = resource['HotelInformation']['Address']
-        hotel.address_slug = normalize(hotel.address)
-        hotel.city = resource['HotelInformation']['City']
-        hotel.state = resource['HotelInformation']['State']
-        hotel.country = resource['HotelInformation']['Country']
-        hotel.image_uri = resource['HotelInformation']['HotelImageUri'].sub('_th.jpg','_gp.jpg')
-        hotel.low_rate = {:price_travel => resource['LowestAverageRate'].to_f}
-        hotel.high_rate = {}
-        hotel.chain = resource['HotelInformation']['Chain']
-        hotel.rating = resource['HotelInformation']['Category'].to_f
+        hotel.description = product.description
+        # hotel.address = product.address
+        # hotel.address_slug = normalize(hotel.address)
+        # hotel.city = product.city
+        # hotel.state = product.state
+        # hotel.country = product.country
+        hotel.image_uri = product.images.first.attachment.url
+        # hotel.low_rate = {}
+        # hotel.high_rate = {}
+        # hotel.chain = product.chain
+        # hotel.rating = product.rating
         hotel.reviews = 'No'
-        #hotel.latitude =
-        #hotel.longitude =
-        resource['RatePlans'].sort_by! {|h| h['TotalAmount']}
-        hotel.prices = {:price_travel => resource['RatePlans'].first['TotalAmount'].to_f.round}
-        hotel.api = {name: :price_travel, string: 'PriceTravel'}
-        rate_plan = resource['RatePlans'].first
-        hotel.room_type = rate_plan['RoomName']
-
-        # puts 'rate_plan'
-        # puts rate_plan = resource['RatePlans'].first
-
-        if params &&  data
-
-          hotel.booking_uri = {:url=>'http://rez.pricetravel.com/more-mexico-for-less/book/reservation-details?',
-                                                 :params=>{"keyWordId"=>data['destinationId'],
-                                                               "keyWordTable"=>"Cities",
-                                                               "URI"=>params['search-going-to'],
-                                                               "Display"=>params['search-going-to'],
-                                                               "idHotel"=>hotel.id,
-                                                               "idRoom"=>rate_plan['RoomId'],
-                                                               "idRate"=>rate_plan['RatePlanId'],
-                                                               "Rooms"=>params['search-rooms'],
-                                                               "CheckIn"=>data['arrivalDate'],
-                                                               "CheckOut"=>data['departureDate'],
-                                                               "Adults"=>params['search-adults'],
-                                                               "Kids"=>params['search-kids'],
-                                                               "AgeKids"=>([7]*params['search-kids'].to_i).join(','),
-                                                               "Infants"=>"0",
-                                                               "AgeInfants"=>"0",
-                                                               "Seniors"=>"0",
-                                                               "PackageType"=>"0",
-                                                               "CheckInWasModified"=>"false",
-                                                               "CheckInWasModifiedFromTransport"=>"false",
-                                                               "checkInWasModifiedFromUser"=>"false",
-                                                               "HasTour"=>"false",
-                                                               "HasTourTransfer"=>"false",
-                                                               "selectedFilter"=>"0",
-                                                               "isPackage"=>"false",
-                                                               "QuoteList"=>"false"},
-                                                 :method=>:post}
-
-          rooms = params['search-rooms'].to_i
-          rooms.times do |i|
-            hotel.booking_uri[:params]["room#{i}.Adults"] = data["rooms[#{i}].adults"]
-            hotel.booking_uri[:params]["room#{i}.Kids"] = data["rooms[#{i}].childAges"].count
-            hotel.booking_uri[:params]["room#{i}.Seniors"] = '0'
-            hotel.booking_uri[:params]["room#{i}.Infants"] = '0'
-            hotel.booking_uri[:params]["room#{i}.AgeKids"] = data["rooms[#{i}].childAges"].join(',')
-            hotel.booking_uri[:params]["room#{i}.AgeInfants"] = ''
-          end
-
-          hotel.same_booking_uri = ApplicationController.helpers.list_item_booking_uri(hotel.booking_uri, hotel.api[:name], hotel.prices[:price_travel])
-          hotel.booking_uri = ApplicationController.helpers.item_booking_uri(hotel.booking_uri)
-
-        end
-
+        # hotel.latitude =
+        # hotel.longitude =
+        product['RatePlans'].sort_by! {|h| h['TotalAmount']}
+        hotel.prices = {:spree_travel => product.price }
+        hotel.api = {name: :spree_travel, string: 'SpreeTravel'}
+        hotel.room_type = product.variant.name
+        hotel.booking_uri = hotel_booking_uri(product, params)
+        # hotel.same_booking_uri = hotel.booking_uri
         hotels << hotel
       end
       hotels
-    end
-
-    def self.prepare_for_hotels(destination_id, params)
-      p = {}
-      p['language'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
-      p['currency'] = Spree::Config.currency
-      p['ExcludeContentInfo'] = false
-      p['OnlyAvailableHotels'] = true
-      p['destinationId'] = destination_id
-      p['destinationType'] = 3
-      p['arrivalDate'] = Date.strptime(params['search-check-in-date'], '%m/%d/%Y').to_s
-      p['departureDate'] = Date.strptime(params['search-check-out-date'], '%m/%d/%Y').to_s
-      rooms = params['search-rooms'].to_i
-      adults = params['search-adults'].to_i
-      kids = params['search-kids'].to_i
-      dist = Master::Utils.distribute_adults_and_kids(rooms, adults, kids)
-      rooms.times do |i|
-        p["rooms[#{i}].adults"] = dist[:adults][i]
-        p["rooms[#{i}].childAges"] = dist[:kids][i]
-      end
-      p
     end
 
     def self.parse_flights(resources, params=nil, data=nil)
@@ -240,9 +180,6 @@ module SpreeTravel
       p
     end
 
-    def self.normalize(phrase)
-      Master::Match.normalize(phrase)
-    end
 
   end
 end

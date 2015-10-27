@@ -345,6 +345,14 @@ class Products.PriceTravelHotel extends Products.Hotel
     if @item.api.name == "price_travel"
       "<li>#{ @item.same_booking_uri }</li>"
 
+class Products.SpreeTravelHotel extends Products.Hotel
+  bu_value: () ->
+    @item.booking_uri
+
+  same_bu_value: () ->
+    if @item.api.name == "spree_travel"
+      "<li>#{ @item.same_booking_uri }</li>"
+
 class Products.BestDayCar extends Products.Base
   constructor: (@item) ->
     super
@@ -588,6 +596,7 @@ class Products.BaseApp
   constructor: ->
     @backend = new Products.Backend()
     @gui = new Products.Gui()
+    @st_api_name = "spree_travel"
     @bd_api_name = "best_day"
     @pt_api_name = "price_travel"
     @am_api_name = "aeromexico"
@@ -699,13 +708,17 @@ class Products.HotelsApp extends Products.BaseApp
   start: ->
     @gui.start_ajax_search()
 
-    @backend.get_products_page(@bd_api_name)
-        .done(@on_request_success.bind(@, Products.BestDayHotel))
-        .fail(@gui.on_request_error)
+    @backend.get_products_page(@st_api_name)
+    .done(@on_request_success.bind(@, Products.SpreeTravelHotel))
+    .fail(@gui.on_request_error)
 
-    @backend.get_products_page(@pt_api_name)
-        .done(@on_request_success.bind(@, Products.PriceTravelHotel))
-        .fail(@gui.on_request_error)
+    #@backend.get_products_page(@bd_api_name)
+    #    .done(@on_request_success.bind(@, Products.BestDayHotel))
+    #    .fail(@gui.on_request_error)
+
+    #@backend.get_products_page(@pt_api_name)
+    #    .done(@on_request_success.bind(@, Products.PriceTravelHotel))
+    #    .fail(@gui.on_request_error)
 
 class Products.PackagesApp extends Products.BaseApp
   constructor: ->

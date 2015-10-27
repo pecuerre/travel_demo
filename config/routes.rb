@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, :at => '/'
   Spree::Core::Engine.routes.draw do
     post 'products/get_ajax_best_day'
+    post 'products/get_ajax_spree_travel'
     post 'products/get_ajax_price_travel'
     post 'products/get_ajax_aeromexico'
     get 'nomads/new'

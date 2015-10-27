@@ -13,7 +13,7 @@ module SpreeTravel
 
       taxons = [destination]
       products = Spree::Product.hotels
-      products = products.in_taxons(taxons)
+      # products = products.in_taxons(taxons)
 
       # TODO: aqui va toda la logica de filtrar por los params
       # params['search-check-in-date']
@@ -22,6 +22,9 @@ module SpreeTravel
       # params['search-adults']
       # params['search-kids']
 
+      # ov_adult = Spree::OptionType.find_by(name: 'adult').option_values.first.id
+      # rates = Spree::Rate.includes(:option_values).where(spree_rate_option_values: {option_value_id: ov_adult})
+      # Spree::Variant.includes(:rates).where(spree_rates: {id: rates.ids})
 
       # property_ids = get_properties_ids_from_params
       # products = products.with_property_ids(property_ids)

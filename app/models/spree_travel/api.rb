@@ -6,10 +6,10 @@ module SpreeTravel
     end
 
     def hotels(params)
-      destination = Spree::Taxon.like_any(params['search-going-to']).first
+      destination = Spree::Taxon.where('name LIKE ?', params['search-going-to']).first
 
-      return SpreeTravel::Response.empty_destination unless destination
-      return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
+      #return SpreeTravel::Response.empty_destination unless destination
+      #return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
 
       taxons = [destination]
       products = Spree::Product.hotels

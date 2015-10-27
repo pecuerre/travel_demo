@@ -24,7 +24,7 @@ module SpreeTravel
     def self.parse_hotels(products, params)
       hotels = []
       products.each do |product|
-        product = Spree::Produc.new
+        #product = Spree::Product.new
         hotel = Hotel.new
         hotel.id = product.id
         hotel.name = product.name
@@ -35,7 +35,7 @@ module SpreeTravel
         # hotel.city = product.city
         # hotel.state = product.state
         # hotel.country = product.country
-        hotel.image_uri = product.images.first.attachment.url
+        hotel.image_uri = (product.images.first.attachment.url rescue nil)
         # hotel.low_rate = {}
         # hotel.high_rate = {}
         # hotel.chain = product.chain
@@ -43,10 +43,9 @@ module SpreeTravel
         hotel.reviews = 'No'
         # hotel.latitude =
         # hotel.longitude =
-        product['RatePlans'].sort_by! {|h| h['TotalAmount']}
         hotel.prices = {:spree_travel => product.price }
         hotel.api = {name: :spree_travel, string: 'SpreeTravel'}
-        hotel.room_type = product.variant.name
+        hotel.room_type = product.variants.first.name
         hotel.booking_uri = hotel_booking_uri(product, params)
         # hotel.same_booking_uri = hotel.booking_uri
         hotels << hotel

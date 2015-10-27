@@ -1,4 +1,292 @@
 /*
  * Title:   Custom Style File
- * Author:  http://themeforest.net/user/soaptheme 
- */
+ * Author:  Travel_Demo
+*/
+/*
+/***********************************************************************************************/
+/*
+ *                                            Variables
+*/
+/***********************************************************************************************/
+
+$main-menu-color: black;
+$orange_color: #ffa600;
+$general-text-color: #1b6a75;
+$form-elements-bg-color: #17a9af;
+$search-box-color: #f5f5f5;
+
+/***********************************************************************************************/
+/*
+ *                                            Fonts
+*/
+/***********************************************************************************************/
+
+@font-face {
+  font-family: 'yanonekaffeesatz-regular';
+  src: font-url('yanonekaffeesatz-regular-webfont.eot?') format('eot'),
+  font-url('yanonekaffeesatz-regular-webfont.svg') format('svg'),
+  font-url('yanonekaffeesatz-regular-webfont.ttf') format('truetype'),
+  font-url('yanonekaffeesatz-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'yanonekaffeesatz-light';
+  src: font-url('yanonekaffeesatz-light-webfont.eot?') format('eot'),
+  font-url('yanonekaffeesatz-light-webfont.svg') format('svg'),
+  font-url('yanonekaffeesatz-light-webfont.ttf') format('truetype'),
+  font-url('yanonekaffeesatz-light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'yanonekaffeesatz-thin';
+  src: font-url('yanonekaffeesatz-thin-webfont.eot?') format('eot'),
+  font-url('yanonekaffeesatz-thin-webfont.svg') format('svg'),
+  font-url('yanonekaffeesatz-thin-webfont.ttf') format('truetype'),
+  font-url('yanonekaffeesatz-thin-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'yanonekaffeesatz-bold';
+  src: font-url('yanonekaffeesatz-bold-webfont.eot?') format('eot'),
+  font-url('yanonekaffeesatz-bold-webfont.svg') format('svg'),
+  font-url('yanonekaffeesatz-bold-webfont.ttf') format('truetype'),
+  font-url('yanonekaffeesatz-bold-webfont.woff') format('woff');
+}
+
+/***********************************************************************************************/
+/*
+ *                                            Styles
+*/
+/***********************************************************************************************/
+
+/******************** Header ******************/
+
+#header {
+  background: image_url('header_background') no-repeat center;
+  background-size: contain;
+}
+
+.logo img {
+  opacity: 1 !important;
+}
+
+/*
+******************* Main Menu **************/
+
+
+#main-menu ul.menu, .chaser ul.menu {
+    margin-top: 100px;
+}
+/*
+/******************** Search Box ******************/
+
+.search-box-wrapper {
+  background: none repeat scroll 0% 0% $search-box-color;
+}
+
+.search-tab-content {
+  padding: 30px 30px !important;
+  background: none repeat scroll 0 0 $search-box-color !important;
+}
+
+.search-box-wrapper div.search-box ul.search-tabs {
+  background: none repeat scroll 0 0 $orange_color !important;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+ul.search-tabs li a {
+  background: none repeat scroll 0% 0% $orange_color;
+}
+
+/******************** Forms elements ******************/
+
+input.input-text, select, textarea, span.custom-select {
+  background: $form-elements-bg-color !important;
+  color: white;
+}
+
+span.custom-select {
+  &:before {
+    background: $orange_color !important;
+  }
+}
+
+.datepicker-wrap {
+  position: relative;
+  .ui-datepicker-trigger {
+  }
+  &:after {
+    background: $orange_color !important;
+  }
+}
+
+button {
+
+  background: none repeat scroll 0% 0% $orange_color !important;
+
+}
+
+form label {
+  color: #203f83;
+}
+
+a.button.btn-small {
+  height: 28px;
+  padding: 0px 24px;
+  line-height: 28px;
+  background: $form-elements-bg-color;
+  font-family: yanonekaffeesatz-regular;
+  color: white !important;
+  font-size: 1.6667em !important;
+  font-variant: titling-caps;
+}
+
+a.button {
+  display: inline-block;
+  background: $form-elements-bg-color none repeat scroll 0% 0% !important;
+  font-family: yanonekaffeesatz-regular;
+  color: white !important;
+  font-size: 0.8333em;
+  line-height: 1.8333em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/******************* Sections **************/
+
+div.section > h2 {
+  font-family: yanonekaffeesatz-bold;
+  color: $form-elements-bg-color;
+}
+
+/******************** Footer ******************/
+#footer {
+  // background: -moz-image-rect(image_url(footer_background), 35%, 100%, 100%, 0%);
+  background: image_url(footer_background);
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100% !important;
+  background-size: contain !important;
+  background-color: #107579;
+}
+
+#footer .footer-wrapper {
+  padding-top: 80px !important;
+  padding-bottom: 250px !important;
+}
+
+.footer-wrapper .container {
+  background-color: #35565d;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  padding: 20px;
+  color: $orange_color;
+}
+
+.footer-wrapper .container h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-family: yanonekaffeesatz-bold;
+}
+
+.leftfootercolum {
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-color: $orange_color;
+  font-size: 15px;
+}
+
+.rigthfootercolum {
+  font-size: 15px;
+}
+
+#footer a:hover, a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+/******************** Misc. ******************/
+
+.hover-effect:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 70% !important;
+  width: 100%;
+  height: 30% !important;
+  background: image_url('icon/hover-effect.png') no-repeat scroll right center rgba(255, 187, 0, 0.6) !important;
+
+}
+
+/******************** Testing ****************/
+
+body {
+  color: $general-text-color !important;
+}
+.title {
+  color:$general-text-color;
+}
+section#content {
+  background: white !important;
+}
+
+.fligthicon {
+  whith: 49px !important;
+  heigh: 22px !important;
+  margin: 5px !important;
+}
+
+#icon-box {
+  width: 49px;
+  heigt: 22px;
+  margin-left: 180px;
+}
+
+.price {
+  color: $orange_color !important;
+}
+
+.box-title {
+  color: red;
+}
+
+// Popular Hotels h2
+div.section:nth-child(4) > h2:nth-child(1) {
+  color: $orange_color
+}
+
+// Cheap Flights title
+div.container:nth-child(5) > h3:nth-child(1) {
+  color: $form-elements-bg-color
+}
+
+.box-title {
+  margin-bottom: 0px;
+  color: $form-elements-bg-color !important;
+  font-weight: bold;
+}
+
+// Cheap Flights title row
+div.container:nth-child(5) > div:nth-child(2) {
+  background-color: $search-box-color;
+  margin-bottom: 30px;
+}
+
+// Cheap Flights box
+div.container:nth-child(5) > div:nth-child(2) > div > article {
+  margin-top: 30px;
+}
+
+/******************** Paralax ***************
+.global-map-area {
+  background: image_url('https://s3-us-west-2.amazonaws.com/webtriptocuba/parallax.jpg') no-repeat;
+  .description {
+    p {
+      color: $form-elements-bg-color;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #fff;
+    }
+  }
+}*/

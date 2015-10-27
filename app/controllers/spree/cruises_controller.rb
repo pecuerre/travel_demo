@@ -12,7 +12,7 @@ module Spree
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
-    
+
     def list
     end
 
@@ -27,7 +27,7 @@ module Spree
 
     def booking
     end
-    
+
     def thanks_you
     end
 

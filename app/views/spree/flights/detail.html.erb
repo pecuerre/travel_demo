@@ -1,371 +1,371 @@
-<section id="content">
 <% if @flights.any? %>
     <div class="container flight-detail-page">
-    <% f= @flights.first %>
-    <div class="row">
-    <div id="main" class="col-md-9">
-    <div class="tab-container style1 box" id="flight-main-content">
-      <ul class="tabs">
-        <li class="active"><a data-toggle="tab" href="#photo-tab">photo</a></li>
-        <li><a data-toggle="tab" href="#calendar-tab">calendar</a></li>
-        <li class="pull-right"><a class="button btn-small yellow-bg white-color" href="#">BEFORE YOU FLY</a></li>
-      </ul>
-      <div class="tab-content">
-        <div id="photo-tab" class="tab-pane fade in active">
-          <div class="featured-image image-container">
-            <img src="http://placehold.it/870x530" alt="">
-          </div>
-        </div>
-        <div id="calendar-tab" class="tab-pane fade">
-          <label>SELECT MONTH</label>
+      <% f= @flights.first %>
+      <div class="row">
+        <div id="main" class="col-md-9">
+          <div class="tab-container style1 box" id="flight-main-content">
+            <ul class="tabs">
+              <li class="active"><a data-toggle="tab" href="#photo-tab">photo</a></li>
+              <li><a data-toggle="tab" href="#calendar-tab">calendar</a></li>
+              <li class="pull-right"><a class="button btn-small yellow-bg white-color" href="#">BEFORE YOU FLY</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="photo-tab" class="tab-pane fade in active">
+                <div class="featured-image image-container">
+                  <img src="http://placehold.it/870x530" alt="">
+                </div>
+              </div>
+              <div id="calendar-tab" class="tab-pane fade">
+                <label>SELECT MONTH</label>
 
-          <div class="col-sm-6 col-md-4 no-float no-padding">
-            <div class="selector">
-              <%= select_month(Time.now) %>
+                <div class="col-sm-6 col-md-4 no-float no-padding">
+                  <div class="selector">
+                    <%= select_month(Time.now) %>
 
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-              <div class="calendar"></div>
-              <div class="calendar-legend">
-                <label class="available">available</label>
-                <label class="unavailable">unavailable</label>
-                <label class="past">past</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="calendar"></div>
+                    <div class="calendar-legend">
+                      <label class="available">available</label>
+                      <label class="unavailable">unavailable</label>
+                      <label class="past">past</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p class="description"><%= f.calendar_description %> </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <p class="description"><%= f.calendar_description %> </p>
+          </div>
+
+          <div id="flight-features" class="tab-container">
+            <ul class="tabs">
+              <li class="active"><a href="#flight-details" data-toggle="tab">Flight Details</a></li>
+              <li><a href="#inflight-features" data-toggle="tab">Inflight Features</a></li>
+              <li><a href="#flgiht-seat-selection" data-toggle="tab">Seat Selection</a></li>
+              <li><a href="#flight-baggage" data-toggle="tab">Baggage</a></li>
+              <li><a href="#flight-fare-rules" data-toggle="tab">Fare Rules</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="flight-details">
+                <div class="intro table-wrapper full-width hidden-table-sm box">
+                  <div class="col-md-4 table-cell travelo-box">
+                    <dl class="term-description">
+                      <dt>Airline:</dt>
+                      <dd><%= f.airline %></dd>
+                      <dt>Flight Type:</dt>
+                      <dd><%= f.flight_type %></dd>
+                      <dt>Fare type:</dt>
+                      <dd><%= f.airline %></dd>
+                      <dt>Cancellation:</dt>
+                      <dd><%= f.cancellation %></dd>
+                      <dt>Flight CHange:</dt>
+                      <dd><%= f.flight_change %></dd>
+                      <dt>Seats &amp; Baggage:</dt>
+                      <dd><%= f.seat_baggage %></dd>
+                      <dt>Inflight Features:</dt>
+                      <dd><%= f.inflight_features %></dd>
+                      <dt>Base fare:</dt>
+                      <dd><%= f.base_fare %></dd>
+                      <dt>Taxes &amp; Fees:</dt>
+                      <dd><%= f.taxes_fees %></dd>
+                      <dt>total price:</dt>
+                      <dd><%= f.total_price %></dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-8 table-cell">
+                    <div class="detailed-features booking-details">
+                      <div class="travelo-box">
+                        <a href="#" class="button btn-mini yellow pull-right"><%= f.stops %></a>
+                        <h4 class="box-title"><%= f.name %>
+                          <small><%= f.flight_way %></small>
+                        </h4>
+                      </div>
+                      <div class="table-wrapper flights">
+                        <div class="table-row first-flight">
+                          <div class="table-cell logo">
+                            <img src="http://placehold.it/140x30" alt="">
+                            <label><%= f.identifier %></label>
+                          </div>
+                          <div class="table-cell timing-detail">
+                            <div class="timing">
+                              <div class="check-in">
+                                <label>Take off</label>
+                                <span><%= f.takeOff %></span>
+                              </div>
+                              <div class="duration text-center">
+                                <i class="soap-icon-clock"></i>
+                                <span><%= f.duration %></span>
+                              </div>
+                              <div class="check-out">
+                                <label>landing</label>
+                                <span><%= f.landing %></span>
+                              </div>
+                            </div>
+                            <label class="layover">Layover : <%= f.lay_over %></label>
+                          </div>
+                        </div>
+                        <div class="table-row second-flight">
+                          <div class="table-cell logo">
+                            <img src="http://placehold.it/140x30" alt="">
+                            <label><%= f.identifier %></label>
+                          </div>
+                          <div class="table-cell timing-detail">
+                            <div class="timing">
+                              <div class="check-in">
+                                <label>Take off</label>
+                                <span><%= f.takeOff %></span>
+                              </div>
+                              <div class="duration text-center">
+                                <i class="soap-icon-clock"></i>
+                                <span><%= f.duration %></span>
+                              </div>
+                              <div class="check-out">
+                                <label>landing</label>
+                                <span><%= f.duration %></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="long-description">
+                  <h2>About <%= f.airline %></h2>
+
+                  <p><%= f.airline_description %></p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="inflight-features">
+                <h2>Features <%= f.identifier %></h2>
+
+                <p><%= f.features_description %></p>
+                <ul class="amenities clearfix style1 box">
+                  <% f.list_of_features_flight.each do |key, value| %>
+                      <li class="col-md-4 col-sm-6">
+                        <div class="icon-box style1"><i class="<%= value %>"></i><%= key %></div>
+                      </li>
+                  <% end %>
+                </ul>
+
+              </div>
+              <div class="tab-pane fade" id="flgiht-seat-selection">
+                <h2>Select your Seats</h2>
+
+                <p><%= f.sets_selection_description %></p>
+                <hr>
+                <div class="image-box style12">
+                  <% f.seats.each do |s| %>
+                      <article class="box">
+                        <figure>
+                          <img src="http://placehold.it/120x100" alt="" class="middle-item"/>
+                        </figure>
+                        <div class="details">
+                          <h4 class="box-title">Standard advance seat selection</h4>
+
+                          <p><%= s.description %></p>
+                        </div>
+                        <div class="action">
+                          <span class="price"><small>starting at</small><%= s.price %></span>
+                          <a href="#" class="button btn-small">SELECT NOW</a>
+                        </div>
+                      </article>
+                  <% end %>
+                  <hr>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="flight-baggage">
+                <div class="travelo-box border-box box clearfix">
+                  <%= form_tag(method: "get") do %>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">From</h5>
+                          <%= text_field_tag('from', 'city, airport or country name', {"class" => "input-text full-width"}) %>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">To</h5>
+                          <%= text_field_tag('to', 'city, airport or country name', {"class" => "input-text full-width"}) %>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">Top Tier Status</h5>
+
+                          <div class="selector full-width">
+                            <%= select_tag('Top Tier Status', options_for_select(["super elite 100K", "super elite 200K"], "super elite 100K")) %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">Bag weight</h5>
+
+                          <div class="selector full-width">
+                            <%= select_tag('Bag weight', options_for_select(["20kgs (44lbs)", "40kgs (88lbs)"], "20kgs (44lbs)")) %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">Class of service</h5>
+                          <%= text_field_tag('Class of service', 'economy class', {"class" => "input-text full-width"}) %>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                          <h5 class="title">&nbsp;</h5>
+                          <%= button_tag('View baggage allowance', {'class' => 'full-width icon-check uppercase'}) %>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                          <%= label_tag("infant", 'Infant/child (0 to 11 years) occupying a seat (with own ticket)') %>
+                          <%= check_box_tag('infant', 'Infant/child (0 to 11 years) occupying a seat (with own ticket)') %>
+                          </label>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+                <h2>Baggage</h2>
+
+                <p>In this section you'll find information on baggage allowances, special equipment and sports items
+                  as well as
+                  restricted items. We've also included some tips to make your trip more enjoyable.</p>
+
+                <div class="baggage column-5">
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-carryon"></i>
+                        <h5 class="box-title">Carry-on<br>Allowance</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-baggage"></i>
+                        <h5 class="box-title">Baggage<br>Allowance</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-delayed-baggage"></i>
+                        <h5 class="box-title">Delayed<br>Baggage</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-damaged-baggage"></i>
+                        <h5 class="box-title">Damaged<br>Baggage</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-baggage-status"></i>
+                        <h5 class="box-title">Baggage<br>Status</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-phone"></i>
+                        <h5 class="box-title">Baggage<br>Services</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-status"></i>
+                        <h5 class="box-title">Baggage<br>Tips</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-restricted"></i>
+                        <h5 class="box-title">Restricted<br>Items</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-liability"></i>
+                        <h5 class="box-title">Liability<br>Limitations</h5>
+                    <% end %>
+                  </div>
+                  <div class="icon-box style9">
+                    <%= link_to() do %>
+                        <i class="soap-icon-lost-found"></i>
+                        <h5 class="box-title">Lost and<br>Found</h5>
+                    <% end %>
+                  </div>
+                </div>
+
+                <hr>
+                <h2>Basic Information</h2>
+
+                <p><%= f.baggage_information %></p>
+              </div>
+              <div class="tab-pane fade" id="flight-fare-rules">
+                <h2>Fare Rules for your Flight</h2>
+
+                <div class="topics">
+                  <ul class="check-square clearfix">
+                    <% f.rules.each do |r| %>
+                        <li class="col-sm-6 col-md-4"><%= link_to r.title %></li>
+                    <% end %>
+                  </ul>
+                </div>
+                <p><%= f.fare_rules_description %></p>
+
+                <div class="toggle-container">
+                  <% f.rules.each do |r| %>
+                      <div class="panel style1 arrow-right">
+                        <h4 class="panel-title">
+                          <a class="collapsed" href="#<%= r.title %>" data-toggle="collapse"><%= r.title %></a>
+                        </h4>
+
+                        <div class="panel-collapse collapse" id="<%= r.title %>">
+                          <div class="panel-content">
+                            <p><%= r.description %></p>
+                          </div>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div id="flight-features" class="tab-container">
-    <ul class="tabs">
-      <li class="active"><a href="#flight-details" data-toggle="tab">Flight Details</a></li>
-      <li><a href="#inflight-features" data-toggle="tab">Inflight Features</a></li>
-      <li><a href="#flgiht-seat-selection" data-toggle="tab">Seat Selection</a></li>
-      <li><a href="#flight-baggage" data-toggle="tab">Baggage</a></li>
-      <li><a href="#flight-fare-rules" data-toggle="tab">Fare Rules</a></li>
-    </ul>
-    <div class="tab-content">
-    <div class="tab-pane fade in active" id="flight-details">
-      <div class="intro table-wrapper full-width hidden-table-sm box">
-        <div class="col-md-4 table-cell travelo-box">
-          <dl class="term-description">
-            <dt>Airline:</dt>
-            <dd><%= f.airline %></dd>
-            <dt>Flight Type:</dt>
-            <dd><%= f.flight_type %></dd>
-            <dt>Fare type:</dt>
-            <dd><%= f.airline %></dd>
-            <dt>Cancellation:</dt>
-            <dd><%= f.cancellation %></dd>
-            <dt>Flight CHange:</dt>
-            <dd><%= f.flight_change %></dd>
-            <dt>Seats &amp; Baggage:</dt>
-            <dd><%= f.seat_baggage %></dd>
-            <dt>Inflight Features:</dt>
-            <dd><%= f.inflight_features %></dd>
-            <dt>Base fare:</dt>
-            <dd><%= f.base_fare %></dd>
-            <dt>Taxes &amp; Fees:</dt>
-            <dd><%= f.taxes_fees %></dd>
-            <dt>total price:</dt>
-            <dd><%= f.total_price %></dd>
-          </dl>
-        </div>
-        <div class="col-md-8 table-cell">
-          <div class="detailed-features booking-details">
-            <div class="travelo-box">
-              <a href="#" class="button btn-mini yellow pull-right"><%= f.stops %></a>
-              <h4 class="box-title"><%= f.name %>
+        <div class="sidebar col-md-3">
+          <article class="detailed-logo">
+            <figure>
+              <img src="http://placehold.it/270x160" alt="">
+            </figure>
+            <div class="details">
+              <h2 class="box-title"><%= f.name %>
                 <small><%= f.flight_way %></small>
-              </h4>
-            </div>
-            <div class="table-wrapper flights">
-              <div class="table-row first-flight">
-                <div class="table-cell logo">
-                  <img src="http://placehold.it/140x30" alt="">
-                  <label><%= f.identifier %></label>
-                </div>
-                <div class="table-cell timing-detail">
-                  <div class="timing">
-                    <div class="check-in">
-                      <label>Take off</label>
-                      <span><%= f.takeOff %></span>
-                    </div>
-                    <div class="duration text-center">
-                      <i class="soap-icon-clock"></i>
-                      <span><%= f.duration %></span>
-                    </div>
-                    <div class="check-out">
-                      <label>landing</label>
-                      <span><%= f.landing %></span>
-                    </div>
-                  </div>
-                  <label class="layover">Layover : <%= f.lay_over %></label>
-                </div>
-              </div>
-              <div class="table-row second-flight">
-                <div class="table-cell logo">
-                  <img src="http://placehold.it/140x30" alt="">
-                  <label><%= f.identifier %></label>
-                </div>
-                <div class="table-cell timing-detail">
-                  <div class="timing">
-                    <div class="check-in">
-                      <label>Take off</label>
-                      <span><%= f.takeOff %></span>
-                    </div>
-                    <div class="duration text-center">
-                      <i class="soap-icon-clock"></i>
-                      <span><%= f.duration %></span>
-                    </div>
-                    <div class="check-out">
-                      <label>landing</label>
-                      <span><%= f.duration %></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="long-description">
-        <h2>About <%= f.airline %></h2>
-
-        <p><%= f.airline_description %></p>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="inflight-features">
-      <h2>Features <%= f.identifier %></h2>
-
-      <p><%= f.features_description %></p>
-      <ul class="amenities clearfix style1 box">
-        <% f.list_of_features_flight.each do |key, value| %>
-            <li class="col-md-4 col-sm-6">
-              <div class="icon-box style1"><i class="<%= value %>"></i><%= key %></div>
-            </li>
-        <% end %>
-      </ul>
-
-    </div>
-    <div class="tab-pane fade" id="flgiht-seat-selection">
-      <h2>Select your Seats</h2>
-
-      <p><%= f.sets_selection_description %></p>
-      <hr>
-      <div class="image-box style12">
-        <% f.seats.each do |s| %>
-            <article class="box">
-              <figure>
-                <img src="http://placehold.it/120x100" alt="" class="middle-item"/>
-              </figure>
-              <div class="details">
-                <h4 class="box-title">Standard advance seat selection</h4>
-
-                <p><%= s.description %></p>
-              </div>
-              <div class="action">
-                <span class="price"><small>starting at</small><%= s.price %></span>
-                <a href="#" class="button btn-small">SELECT NOW</a>
-              </div>
-            </article>
-        <% end %>
-        <hr>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="flight-baggage">
-      <div class="travelo-box border-box box clearfix">
-        <%= form_tag(method: "get") do %>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">From</h5>
-                <%= text_field_tag('from', 'city, airport or country name', {"class" => "input-text full-width"}) %>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">To</h5>
-                <%= text_field_tag('to', 'city, airport or country name', {"class" => "input-text full-width"}) %>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">Top Tier Status</h5>
-
-                <div class="selector full-width">
-                  <%= select_tag('Top Tier Status', options_for_select(["super elite 100K", "super elite 200K"], "super elite 100K")) %>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">Bag weight</h5>
-
-                <div class="selector full-width">
-                  <%= select_tag('Bag weight', options_for_select(["20kgs (44lbs)", "40kgs (88lbs)"], "20kgs (44lbs)")) %>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">Class of service</h5>
-                <%= text_field_tag('Class of service', 'economy class', {"class" => "input-text full-width"}) %>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <div class="form-group">
-                <h5 class="title">&nbsp;</h5>
-                <%= button_tag('View baggage allowance', {'class' => 'full-width icon-check uppercase'}) %>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="checkbox">
-                <%= label_tag("infant", 'Infant/child (0 to 11 years) occupying a seat (with own ticket)') %>
-                <%= check_box_tag('infant', 'Infant/child (0 to 11 years) occupying a seat (with own ticket)') %>
-                </label>
-              </div>
-            </div>
-        <% end %>
-      </div>
-      <h2>Baggage</h2>
-
-      <p>In this section you'll find information on baggage allowances, special equipment and sports items as well as
-        restricted items. We've also included some tips to make your trip more enjoyable.</p>
-
-      <div class="baggage column-5">
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-carryon"></i>
-              <h5 class="box-title">Carry-on<br>Allowance</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-baggage"></i>
-              <h5 class="box-title">Baggage<br>Allowance</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-delayed-baggage"></i>
-              <h5 class="box-title">Delayed<br>Baggage</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-damaged-baggage"></i>
-              <h5 class="box-title">Damaged<br>Baggage</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-baggage-status"></i>
-              <h5 class="box-title">Baggage<br>Status</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-phone"></i>
-              <h5 class="box-title">Baggage<br>Services</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-status"></i>
-              <h5 class="box-title">Baggage<br>Tips</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-restricted"></i>
-              <h5 class="box-title">Restricted<br>Items</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-liability"></i>
-              <h5 class="box-title">Liability<br>Limitations</h5>
-          <% end %>
-        </div>
-        <div class="icon-box style9">
-          <%= link_to() do %>
-              <i class="soap-icon-lost-found"></i>
-              <h5 class="box-title">Lost and<br>Found</h5>
-          <% end %>
-        </div>
-      </div>
-
-      <hr>
-      <h2>Basic Information</h2>
-
-      <p><%= f.baggage_information %></p>
-    </div>
-    <div class="tab-pane fade" id="flight-fare-rules">
-      <h2>Fare Rules for your Flight</h2>
-
-      <div class="topics">
-        <ul class="check-square clearfix">
-          <% f.rules.each do |r| %>
-              <li class="col-sm-6 col-md-4"><%= link_to r.title %></li>
-          <% end %>
-        </ul>
-      </div>
-      <p><%= f.fare_rules_description %></p>
-
-      <div class="toggle-container">
-        <% f.rules.each do |r| %>
-            <div class="panel style1 arrow-right">
-              <h4 class="panel-title">
-                <a class="collapsed" href="#<%= r.title %>" data-toggle="collapse"><%= r.title %></a>
-              </h4>
-
-              <div class="panel-collapse collapse" id="<%= r.title %>">
-                <div class="panel-content">
-                  <p><%= r.description %></p>
-                </div>
-              </div>
-            </div>
-        <% end %>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="sidebar col-md-3">
-      <article class="detailed-logo">
-        <figure>
-          <img src="http://placehold.it/270x160" alt="">
-        </figure>
-        <div class="details">
-          <h2 class="box-title"><%= f.name %>
-            <small><%= f.flight_way %></small>
-          </h2>
+              </h2>
                         <span class="price clearfix">
                             <small class="pull-left">avg/person</small>
                             <span class="pull-right"><%= f.price %></span>
                         </span>
 
-          <div class="duration">
-            <i class="soap-icon-clock"></i>
-            <dl>
-              <dt class="skin-color">Total Time:</dt>
-              <dd><%= f.duration_long_style %></dd>
-            </dl>
-          </div>
+              <div class="duration">
+                <i class="soap-icon-clock"></i>
+                <dl>
+                  <dt class="skin-color">Total Time:</dt>
+                  <dd><%= f.duration_long_style %></dd>
+                </dl>
+              </div>
 
-          <p class="description"><%= f.short_description %></p>
-          <a href="flight-booking.html" class="button green full-width uppercase btn-medium">book flight now</a>
+              <p class="description"><%= f.short_description %></p>
+              <a href="flight-booking.html" class="button green full-width uppercase btn-medium">book flight now</a>
+            </div>
+          </article>
+          <%= render partial: 'spree/shared/help' %>
         </div>
-      </article>
-      <%= render partial: 'spree/shared/help' %>
-    </div>
-    </div>
+      </div>
 <% end %>
 </div>
-</section>

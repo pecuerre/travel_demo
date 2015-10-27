@@ -18,6 +18,16 @@ Rails.application.routes.draw do
         get :thanks_you
       end
     end
+  resources :cruises, only: [:index, :show] do
+    collection do
+      get :list
+      get :grid
+      get :block
+      get :detail
+      get :booking
+      get :thanks_you
+    end
+  end
     resources :properties, only: [:index, :show] do
       collection do
         get :list

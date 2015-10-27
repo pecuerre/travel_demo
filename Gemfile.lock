@@ -19,6 +19,14 @@ GIT
       spree (~> 3.0.0)
 
 GIT
+  remote: git://github.com/openjaf/spree_travel_core.git
+  revision: ddbc8a54b750032693270b3855b1ac5d1d8e15f3
+  branch: combinations_less
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
+
+GIT
   remote: git://github.com/openjaf/spree_travel_hotel.git
   revision: ca514942b94f6a352fd127fbf305905b77483855
   branch: combinations_less
@@ -84,7 +92,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: a275c9db4f0c44907c67b64bd6de98d9dbfcb8d7
+  revision: 2f7322cdd764fd84bcb802eb157ad55118ff7ea0
   branch: 3-0-stable
   specs:
     spree (3.0.5.beta)
@@ -153,12 +161,6 @@ GIT
       json
       multi_json
       spree_core (~> 3.0.0)
-
-PATH
-  remote: ../gems/spree_travel_core
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -238,7 +240,7 @@ GEM
     ckeditor (4.1.4)
       cocaine
       orm_adapter (~> 0.5.0)
-    cldr-plurals-runtime-rb (1.0.0)
+    cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)

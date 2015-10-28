@@ -28,8 +28,10 @@
                             </div>
                         </div>
                         
+                  
+                        
                         <div class="form-group col-sm-6 col-md-3">
-                            <div class="row">
+                            <div class="row room_1">
                                 <div class="col-xs-4">
                                     <label>Rooms</label>
                                     <div class="selector">
@@ -41,7 +43,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-xs-4">
+                                <div class="col-xs-3">
                                     <label>Adults</label>
                                     <div class="selector">
                                         <select class="full-width">
@@ -52,19 +54,15 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-xs-4">
-                                    <label>Kids</label>
+                                <div class="col-xs-3">
+                                    <label><%=Spree.t(:kids)%></label>
                                     <div class="selector">
-                                        <select class="full-width">
-                                            <option value="1">01</option>
-                                            <option value="2">02</option>
-                                            <option value="3">03</option>
-                                            <option value="4">04</option>
-                                        </select>
+                                      <%= select_tag "room[room1][child_count]", options_for_select([[0,0],[1,1],[2,2],[3,3]]), 
+                                          :class => 'full-width children_select' , :id => 'children_1' %>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                         </div>
                         
                         <div class="form-group col-sm-6 col-md-2">
                             <label class="hidden-xs">&nbsp;</label>

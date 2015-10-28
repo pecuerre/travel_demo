@@ -1,0 +1,72 @@
+var count = 2;
+
+$('#rooms').change(function () {
+    $('.extra').remove();
+    var rooms_count = this.value; // esta es la cantidad que hay que crear
+
+    if (+this.value > 1) {
+        var to_append = $('#room_1')
+        for (i = count; i < (+this.value)+1  ; i++) {
+            var html = '';
+            html += "<div class='form-group col-sm-6 col-md-4 extra' style='margin-left: 589px;'>\
+                    <div class='row " + "room_"+i+"  '>\
+                        <div class='col-xs-3'>\
+                        Room "+" "+i+ "</div>\
+                        <div class='col-xs-2'>\
+                            <div class='selector'>\
+                                <select name='room[room"+i+"][adult_count]' class='full-width' id='room_room"+i+"_adult_count'"+">\
+                                <option value='1'>1</option>\
+                                <option value='2'>2</option>\
+                                <option value='3'>3</option>\
+                                </select>\
+                            </div>\
+                        </div>\
+                        <div class='col-xs-2'>\
+                            <div class='selector'>\
+                                <select name='room[room"+i+"][child_count]' class='full-width children_select' id='children_"+i+"'"+">\
+                                <option value='1'>1</option>\
+                                <option value='2'>2</option>\
+                                <option value='3'>3</option>\
+                                </select>\
+                           </div>\
+                        </div>\
+                    </div>\
+                    </div>\
+                            </div>"
+
+            to_append.append(html);
+
+        }
+    }else{
+        $('#hotel_adults_child').removeClass();
+        $('#hotel_adults_child').addClass('form-group col-sm-4 col-md-2');
+        $('#labelRooms').text('');
+    }
+});
+
+
+
+$(function () {
+    $("[id^=children_]").change(function() {
+        $('#children_'+ this.id.match(/\d+/)).change(children_changed);
+    });
+});
+
+$(function () {
+    $("[id^=remove_]").click(function() {
+        $('#remove_'+ this.id.match(/\d+/)).change(remove_room);
+    });
+});
+
+function give_the_number(id) {
+    var parts = id.split("_");
+    var number = parts[parts.length - 1];
+    return number;
+}
+
+function remove_room(event) {
+    var number = give_the_number(event.target.id);
+    $("#room_" + number).remove();
+    //count --;
+}
+

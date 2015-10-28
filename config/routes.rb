@@ -2,8 +2,23 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/data', as: 'rails_admin'
   mount Spree::Core::Engine, :at => '/'
   Spree::Core::Engine.routes.draw do
-  mount RailsAdmin::Engine => '/data', as: 'rails_admin'
+    post 'products/get_ajax_best_day'
+    post 'products/get_ajax_price_travel'
+    post 'products/get_ajax_aeromexico'
+    get 'nomads/new'
+    post 'nomads/create'
+    
     resources :hotels, only: [:index, :show] do
+      collection do
+        get :list
+        get :grid
+        get :block
+        get :detail
+        get :booking
+        get :thanks_you
+      end
+    end
+    resources :cruises, only: [:index, :show] do
       collection do
         get :list
         get :grid
@@ -161,7 +176,35 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :home, only: :index
+    resources :home, only: :index do
+      collection do
+        get :index2
+      end
+    end
+    
+    namespace :admin do
+      resources :static_images
+      resources :static_events
+      resources :static_deals
+      resources :api_destinations
+      resources :nomads
+      resources :destinations do
+        resources :attractions
+      end
+
+      resources :reports, only: [:index] do
+        collection do
+          get :sources_statistics
+          post :sources_statistics
+
+          get :custom_log
+          post :custom_log
+
+          get :custom_log_download
+          post :custom_log_download
+        end
+      end
+    end
     
   end
 end

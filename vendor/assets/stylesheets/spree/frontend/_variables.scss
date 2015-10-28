@@ -24,10 +24,10 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* 1. Global */
-$font-stack:    'Lato', Arial, Helvetica, sans-serif;
-$primary-color: #838383;
-$heading-color: #2d3e52;
-$button-color: #98ce44;
+$font-stack:    'YanoneKaffeesatz-light', Arial, Helvetica, sans-serif;
+$primary-color: rgba(255, 255, 255, 1);
+$heading-color: #203f83;
+$button-color: #efa300;
 
 /* 2. Skin colors */
 $light-blue-color: #01b7f2;
@@ -56,13 +56,13 @@ $skin10-logo: image-url('logo/skin10-logo');
 /* 4. Important colors */
 $yellow-theme-color: #fdb714;
 $dark-yellow-theme-color: #efa300;
-$green-theme-color: #98ce44;
-$blue-theme-color: #01b7f2;
+$green-theme-color: #e0a400;
+$blue-theme-color: #18a8b0;
 $dark-blue-theme-color: #2d3e52;
 $red-theme-color: #e01a33;
 $light-blue-theme-color: #7c9abd;
 
-/* 5. Skin1 (Light Blue) */
+/* 5. Skin1 (Light Blue)
 $skin-logo: $skin1-logo;
 $skin-bg-color: $light-blue-color;
 $skin-active-color: $light-blue-color;
@@ -71,7 +71,7 @@ $skin-hover-color: #40cbf8;
 $skin-mobile-menu-color: #04afe7;
 $skin-light-color: $light-blue-theme-color;
 $skin-dark-color: $dark-blue-theme-color;
-
+*/
 /* 6. Skin2 (Red) */
 /*$skin-logo: $skin2-logo;
 $skin-bg-color: $red-color;
@@ -133,14 +133,14 @@ $skin-light-color: #fd7979;
 $skin-dark-color: #c91a1a;*/
 
 /* 12. Skin8 (Dark Blue) */
-/*$skin-logo: $skin8-logo;
+/**/$skin-logo: $skin8-logo;
 $skin-bg-color: $blue-theme-color;
 $skin-active-color: $dark-blue-color;
 $skin-select-color: $blue-theme-color;
 $skin-hover-color: #40cbf8;
 $skin-mobile-menu-color: #04afe7;
 $skin-light-color: $light-blue-theme-color;
-$skin-dark-color: $dark-blue-theme-color;*/
+$skin-dark-color: $dark-blue-theme-color;
 
 /* 13. Skin9 (Light Yellow) */
 /*$skin-logo: $skin9-logo;

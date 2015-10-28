@@ -35,6 +35,9 @@ module Spree
     def get_flights
       @flights= ::Sample::Flight.sample
       @airlines=::Sample::Flight.airlines
+      @stops=::Sample::Flight.stops
+      @flight_types=::Sample::Flight.flight_types
+      @features=::Sample::Flight.features
       @booking=::Sample::Booking_Order.sample
     end
   end

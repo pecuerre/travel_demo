@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+    <%= t(:custom_log) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <li><%= link_to_with_icon 'arrow-left', t(:back_to_reports_list), spree.admin_reports_url, :class => 'button' %></li>
+    <li><%= link_to_with_icon 'arrow-down', t(:download), custom_log_download_admin_reports_path, :class => 'button' %></li>
+<% end %>
+
+<ul>
+  <% @logs.each do |log| %>
+      <% if log.start_with?('[WARN]') %>
+          <li style="background-color: #f2dede"><%= log %></li>
+      <% else %>
+        <li><%= log %></li>
+      <% end %>
+  <% end %>
+</ul>

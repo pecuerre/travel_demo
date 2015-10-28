@@ -1,0 +1,102 @@
+<div class="tab-pane fade" id="flights-tab">
+    <form action="flight-list-view.html" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="title">Where</h4>
+                <div class="form-group">
+                    <label>Leaving From</label>
+                    <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                </div>
+                <div class="form-group">
+                    <label>Going To</label>
+                    <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <h4 class="title">When</h4>
+                <label>Departing On</label>
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <div class="datepicker-wrap">
+                            <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">anytime</option>
+                                <option value="2">morning</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <label>Arriving On</label>
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <div class="datepicker-wrap">
+                            <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">anytime</option>
+                                <option value="2">morning</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <h4 class="title">Who</h4>
+                <div class="form-group row">
+                    <div class="col-xs-3">
+                        <label>Adults</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <label>Kids</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Promo Code</label>
+                        <input type="text" class="input-text full-width" placeholder="type here" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-xs-3">
+                        <label>Infants</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 pull-right">
+                        <label>&nbsp;</label>
+                        <button class="full-width icon-check">SERACH NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

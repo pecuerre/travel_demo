@@ -1,0 +1,31 @@
+<% url_photos = google_map_photos(nil,nil) %>
+<!-- Carousel
+================================================== -->
+
+ <div id="myCarousel" class="carousel slide"> 
+    <!-- Carousel items -->
+    <div class="carousel-inner">           
+      <% flag = true %>  
+      <% for i in 0...url_photos.length do %>                                    
+        <div class="item <%= 'active' if flag %>" >
+          <div class="container">
+           <% for j in 0..3 %>    
+              <% break if (i + j) >= url_photos.length %> 
+              <% photo_url = url_photos[i + j] %>                  
+              <!--div class="col-sm-2"-->                   
+                <%= image_tag photo_url, size: "75x75" %>
+              <!--/div-->	                  	             
+            <% end %> 	
+          </div>			
+          <!--/row-->
+        </div>	
+        <% flag = false %> 
+        <% i = i + 4 %>                 
+      <% end %> 	             
+    </div>
+    <!--/carousel-inner--> 
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+  </div>
+  <!--/myCarousel-->
+

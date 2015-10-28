@@ -1,0 +1,50 @@
+<header class="clearfix">
+  <h2 class="pull-left"></h2>
+
+  <div class="order-by-selector dropdown pull-right">
+    <div data-toggle="dropdown">
+      <p><a href="#"><%#= "#{t(:sort_by)} #{t(@searcher.properties['sort-by'].camelcase)}" %>
+        <i class="glyphicon glyphicon-chevron-down"></i></a></p>
+    </div>
+    <ul role="menu" aria-labelledby="" class="dropdown-menu">
+      <li role="presentation">
+        <a role="menuitem" data-control-type="ordering" tabindex="-1" data-order-by="offer_price" href="#"><%= t(:by_price) %></a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" data-control-type="ordering" tabindex="-1"  data-order-by="name" href="#"><%= t(:by_name) %></a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" data-control-type="ordering" tabindex="-1" data-order-by="rating" href="#"><%= t(:by_stars) %></a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div id="results-slot">
+</div>
+<div id="loading" class="">
+  <%= image_tag "ajax-loader.gif" %>
+</div>
+<div id="bottom-jplist-panel" class="jplist-panel hidden">
+  <div
+    class="jplist-pagination"
+    data-control-type="pagination"
+    data-control-name="paging"
+    data-control-action="paging"
+    data-items-per-page="10">
+  </div>
+</div>
+<footer class="clearfix">
+  <nav class="pagination">
+        <span class="page">
+            <button id="more-results" style="display:none"> <%= t(:more_hotels) %></button>
+        </span>
+  </nav>
+  <p class="pull-right" style="margin-top: 50px;"></p>
+</footer>
+
+<script type="text/javascript">
+    $(function() {
+        var app = new Products.HotelsApp()
+        app.start();
+    });
+</script>

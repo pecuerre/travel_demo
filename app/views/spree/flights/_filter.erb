@@ -46,10 +46,9 @@
       <div id="flight-stops-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">1 Stop</a></li>
-            <li><a href="#">2 Stops</a></li>
-            <li class="active"><a href="#">3 Stops</a></li>
-            <li><a href="#">MultiStops</a></li>
+            <% @stops.each do |fs| %>
+                <li><a href="#"><%= fs %></a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>
@@ -83,10 +82,9 @@
       <div id="flight-type-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Business</a></li>
-            <li><a href="#">First class</a></li>
-            <li class="active"><a href="#">Economy</a></li>
-            <li><a href="#">Premium Economy</a></li>
+            <% @flight_types.each do |ft| %>
+                <li><a href="#"><%= ft %></a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>
@@ -101,11 +99,9 @@
       <div id="inflight-experience-filter" class="panel-collapse collapse">
         <div class="panel-content">
           <ul class="check-square filters-option">
-            <li><a href="#">Inflight Dining</a></li>
-            <li><a href="#">Music</a></li>
-            <li class="active"><a href="#">Sky Shopping</a></li>
-            <li><a href="#">Wi-fi</a></li>
-            <li><a href="#">Seats &amp; Cabin</a></li>
+            <% @features.each do |key, value| %>
+                <li><a href="#"><%= key %></a></li>
+            <% end %>
           </ul>
           <a class="button btn-mini">MORE</a>
         </div>

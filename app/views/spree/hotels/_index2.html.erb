@@ -1,0 +1,125 @@
+<% content_for :travel_search_box do %>
+  <section id="search-form-container" data-hook="search-form-container">
+    <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels'} %>
+  </section>
+<% end %>
+
+
+
+<div id="nav-and-slider-wrapper">
+
+  <div id="main-content" class="clearfix">
+    <div class="mm4less-wrapper">
+      <div id="ad-zone-1">
+        <div class="container">
+          <%#= insert_banner_box(category: "horizontal#{rand(1..4)}", :style => :original, class: 'responsive-img' ) %>
+          <%#= render 'spree/shared/slider_horizontal' %>
+        </div>
+      </div>
+      <div id="search-results" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <form id="filters" action="/products" class="jplist-panel">
+              <input type="hidden" name="search-type" value="hotels">
+              <input type="hidden" name="locale" value="<%= params[:locale] %>">
+              <input type="hidden" name="http-referer" value="products_path">
+              <input type="hidden" name="search-going-to" value="<%= params['search-going-to'] %>">
+              <input type="hidden" name="search-check-in-date" value="<%= params['search-check-in-date'] %>">
+              <input type="hidden" name="search-check-out-date" value="<%= params['search-check-out-date'] %>">
+              <input type="hidden" name="search-rooms" value="<%= params['search-rooms'] %>">
+              <input type="hidden" name="search-adults" value="<%= params['search-adults'] %>">
+              <input type="hidden" name="search-kids" value="<%= params['search-kids'] %>">
+              <input type="hidden" name="sort-by" value="<%= params['sort-by'] %>">
+              <div id="price-filter" class="filter-box">
+                <h2 class="filter-name"><%= t(:Price) %></h2>
+                <div class="filter-options row">
+                  <div
+                    id ="price-slider"
+                    class="jplist-range-slider filter-option form-group col-lg-12"
+                    data-control-type="range-slider"
+                    data-control-name="range-slider-price"
+                    data-control-action="filter"
+                    data-path=".offer-price"
+                    data-item-function="offer_price"
+                    data-slider-func="priceSlider"
+                    data-setvalues-func="priceValues">
+                    <div class="price-filter-min-label">
+                      <span style="font-weight: bold;" for="filter-min-price">Min <%= t(:Price) %></span>
+                      <span class="value" data-type="prev-value"></span>
+                    </div>
+                    <div class="ui-slider" data-type="ui-slider"></div>
+                    <div class="price-filter-max-label">
+                      <span style="font-weight: bold;" for="filter-min-price">Max <%= t(:Price) %></span>
+                      <span class="value" data-type="next-value"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-box" id="stars-filter">
+                <h2 class="filter-name"><%= t(:rating) %></h2>
+                <div class="filter-options jplist-group" data-logic="or" data-control-action="filter" data-control-type="checkbox-group-filter" data-control-name="stars" data-item-property="rating">
+                  <div class="filter-option clearfix">
+                    <div class="checkbox pull-left filter-margin">
+                      <label>
+                        <input type="checkbox" value="5" name="filter-stars[]" data-path=".icon-star-5" <%= 'checked="checked"' if params['filter-stars'] and params['filter-stars'].include?('5') %>><span class="icon icon-star-5"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-option clearfix">
+                    <div class="checkbox pull-left filter-margin">
+                      <label>
+                        <input type="checkbox" value="4" name="filter-stars[]" data-path=".icon-star-4"<%= 'checked="checked"' if params['filter-stars'] and params['filter-stars'].include?('4') %>><span class="icon icon-star-4"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-option clearfix">
+                    <div class="checkbox pull-left filter-margin">
+                      <label>
+                        <input type="checkbox" value="3" name="filter-stars[]" data-path=".icon-star-3"<%= 'checked="checked"' if params['filter-stars'] and params['filter-stars'].include?('3') %>><span class="icon icon-star-3"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-option clearfix">
+                    <div class="checkbox pull-left filter-margin">
+                      <label>
+                        <input type="checkbox" value="2" name="filter-stars[]" data-path=".icon-star-2" <%= 'checked="checked"' if params['filter-stars'] and params['filter-stars'].include?('2') %>><span class="icon icon-star-2"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="room-type-filter" class="filter-box">
+                <h2 class="filter-name"><%= t(:room_type) %></h2>
+                <div class="filter-options" data-logic="or" data-control-action="filter" data-control-type="checkbox-group-filter" data-control-name="room_types" data-item-property="room_type_substr">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-8">
+            <section id="results">
+            <%= render :partial => 'spree/hotels/list2', locals: {hotels: hotels} %>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".dropdown-menu li a.rooms").click(function(){
+      $(this).parents("#search-rooms-dropdown").find('.btn').text($(this).text() );
+      $(this).parents("#search-rooms-dropdown").find('.btn').val($(this).data('value'));
+      $(this).parents("#search-rooms-dropdown").find('.rooms-hidden-input').val($(this).data('value'));
+  });
+  $(".dropdown-menu li a.adults").click(function(){
+      $(this).parents("#search-adults-dropdown").find('.btn').text($(this).text() );
+      $(this).parents("#search-adults-dropdown").find('.btn').val($(this).data('value'));
+      $(this).parents("#search-adults-dropdown").find('.adults-hidden-input').val($(this).data('value'));
+  });
+  $(".dropdown-menu li a.kids").click(function(){
+      $(this).parents("#search-kids-dropdown").find('.btn').text($(this).text() );
+      $(this).parents("#search-kids-dropdown").find('.btn').val($(this).data('value'));
+      $(this).parents("#search-kids-dropdown").find('.kids-hidden-input').val($(this).data('value'));
+  });
+</script>

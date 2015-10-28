@@ -86,7 +86,9 @@ $search-box-color: #f5f5f5;
 }
 
 .menu > li > a:hover {
-  border-bottom-style: solid 10px $general-text-color;
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
+  border-bottom-color: $general-text-color;
   font-weight: bolder;
 }
 
@@ -94,6 +96,11 @@ $search-box-color: #f5f5f5;
   border-top: 1px solid #FFFFFF !important;
   color: #fff;
   font-size: 17px !important;
+  font-family: yanonekaffeesatz-regular;
+}
+
+#main-menu ul.menu > li ul li > a:hover {
+  font-weight: bold;
 }
 
 /*

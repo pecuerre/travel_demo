@@ -1,0 +1,32 @@
+<div data-hook="admin_destination_form_fields" class="row">
+  <%= hidden_field_tag :shipping_category_id, Spree::ShippingCategory.first.id %>
+  <%= hidden_field_tag :price, 0 %>
+  <fieldset class="general no-border-top">
+        <div data-hook="name" class="field">
+          <%= label_tag :name, t(:name) %>
+          <%= text_field_tag :name, @destination.name, :class => 'fullwidth' %>
+        </div>
+        <div data-hook="name" class="field">
+          <%= label_tag :description, t(:description) %>
+          <%= text_area_tag :description, @destination.description, :class => 'fullwidth' %>
+        </div>
+        <div data-hook="name" class="field">
+          <%= label_tag :spanish_description, t(:spanish_description) %>
+          <%= text_area_tag :spanish_description, @destination.property('spanish_description'), :class => 'fullwidth' %>
+        </div>
+      <div class="alpha four columns">
+        <div data-hook="price_travel_id" class="field">
+          <%= label_tag :price_travel_id, 'price travel id' %>
+          <br>
+          <%= text_field_tag :price_travel_id, @destination.property('price_travel_id') %>
+        </div>
+      </div>
+      <div class="omega four columns">
+        <div data-hook="best_day_id" class="field">
+          <%= label_tag :best_day_id, 'best day id' %>
+          <br>
+          <%= text_field_tag :best_day_id, @destination.property('best_day_id') %>
+        </div>
+      </div>
+  </fieldset>
+</div>

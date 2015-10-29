@@ -1,0 +1,742 @@
+window.Products = {}
+################TODO#############
+#####Refactor common methods#####
+#####ver booking url parent div##
+################TODO#############
+class Products.Base
+  constructor: (@item) ->
+    prices = @item.prices ? {}
+    @offer_price = Math.floor(prices[@item.api.name] ? 0 )
+
+  booking_uri: () ->
+    if @item.booking_uri != undefined
+      @bu_value()
+    else
+      ""
+
+  same_booking_uri: () ->
+    if @item.same_booking_uri != undefined
+      @same_bu_value()
+    else
+      ""
+
+  _eval: (name) ->
+    if @.hasOwnProperty(name)
+      @[name]
+    else
+      @[name]()
+
+  to_dom: ->
+    if @dom? then @dom else @dom = $(@template())
+
+class Products.FlightDetail
+  #klass can be 'outward' or 'return'
+  constructor: (@flight) ->
+
+  time: (type) ->
+    [d, time ] = @get_date_and_time(type)
+    time
+
+  get_date_and_time: (type) ->
+    date_time = type + '_date_time'
+    if @flight[date_time].length > 0
+      t = @flight[date_time].split("T")
+      date = t[0]
+      time = t[1].substring(0, 5)
+      [date, time]
+
+  date_time: (type) ->
+    d_klass = {departure: 'from-at', arrival: 'to-at'}[type]
+    [date, time] = @get_date_and_time(type)
+    if date? && time?
+      "<span class='#{ d_klass }'>#{ date}  #{ time }</span>"
+    else
+      ""
+
+  template: (klass)->
+    """
+      <div class='#{ klass }'>
+        <span class='from'>#{ @flight.departure_airport_code }</span>
+        #{ @date_time('departure') }
+        <span class='arrow'><i class='glyphicon glyphicon-arrow-right'></i></span>
+        <span class='to'>#{ @flight.arrival_airport_code }</span>
+        #{ @date_time('arrival') }
+        <span class='flight-number'>#{ @flight.flight_number }</span>
+        <span class='time'>#{ @flight.duration_in_minutes } mins </span>
+      </div>
+    """
+
+class Products.Flight extends Products.Base
+  constructor: (@item) ->
+    @airline = @item.airline
+    @all_flights = [this] #Store self and extra flights when the same flight is present in several providers
+    @flight_numbers = _.map( @item.departure_flights.concat(@item.returning_flights), 'flight_number').join('-')
+    @departure_hour = parseInt((new Products.FlightDetail(@item.departure_flights[0])).time('departure').slice(0, 2), 10)
+    @returning_hour = parseInt((new Products.FlightDetail(@item.returning_flights[0])).time('departure').slice(0, 2), 10)
+    super
+
+  merge: (another) ->
+    @all_flights.push(another)
+    @dom = undefined    #To render again the dom, taking into account the extra flights
+    @all_flights =  _.sortBy(@all_flights, 'offer_price')
+
+  get_footer: () ->
+    @all_flights[0].footer_template()
+
+  get_site_list_items: () ->
+    _.map(@all_flights, (f) -> f.same_booking_uri()).join("\n")
+
+  template: ->
+    """
+      <article class='offer-box flight'>
+        <div class='img-container hidden-xs'><img src='#{ @item.image_uri }'></div>
+        <div class='data-flight'>
+          <header>
+            <span class='offer-name'>#{ @airline }</span>
+          </header>
+          <div class='flight-details'>
+            #{ @flight_details(@item.departure_flights, 'outward') }
+
+            #{ if (@item.departure_flights.length + @item.returning_flights.length > 2) then "<br/>" else "" }
+
+            #{ @flight_details(@item.returning_flights, 'return') }
+          </div>
+          <footer class='clearfix'>
+            #{@get_footer()}
+          </footer>
+        </div>
+        <ul class='sites-list'>
+          #{ @get_site_list_items() }
+        </ul>
+      </article>
+    """
+
+  footer_template : ->
+    """
+      <div class='row'>
+        <div class='col-md-7 col-xs-8'>
+          <span class='offer-price pull-right'><b>#{ @offer_price }</b> USD</span>
+          <span class='current-site'>#{ @item.api.string }</span>
+        </div>
+        <div class='col-md-5 col-xs-4'>
+          #{ @booking_uri() }
+        </div>
+      </div>
+    """
+
+  flight_details: (flights, type)->
+    details = ( (new Products.FlightDetail(f)).template(type) for f in flights)
+    details.join('\n')
+
+class Products.BestDayFlight extends Products.Flight
+  bu_value: ->
+    """
+      <a href=\" #{ @get_booking_uri() }\" class='offer-book-btn pull-right' target='_blank'>
+      #{ '<%= "#{I18n.t(:book_now)}" %>' }
+      <i class='icon icon-green-folder hidden-xs'></i></a>
+    """
+
+  same_bu_value: ->
+    "<li><a href=\" #{ @get_booking_uri() }\" target='_blank'><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>"
+
+  get_booking_uri: ->
+    @item.booking_uri[@item.api.name]
+
+class Products.PriceTravelFlight extends Products.Flight
+  bu_value: ->
+    "#{ @item.booking_uri } <span class='hidden pt_sbu'>#{ @item.same_booking_uri }</span>"
+
+  same_bu_value: ->
+    "<li>#{ @get_booking_uri() }</li>"
+
+  get_booking_uri: ->
+    @item.same_booking_uri
+
+class Products.AeroMexicoFlight extends Products.BestDayFlight
+  #Dont know what to do with same_booking_uri
+
+class Products.BestDayPackage extends Products.Base
+  constructor: (@item) ->
+    super
+    @rating = Math.floor(@item.hotel.rating)
+    @name = @item.hotel.name
+    @room_type = @item.hotel.room_type
+    @room_type_substr = get_first_word(@room_type)
+    @departure_hour = parseInt((new Products.FlightDetail(@item.flight.departure_flights[0])).time('departure').slice(0, 2), 10)
+    @returning_hour = parseInt((new Products.FlightDetail(@item.flight.returning_flights[0])).time('departure').slice(0, 2), 10)
+
+#Refactor into a single method with more params
+  bu_value: ->
+    if @item.api.name == "best_day"
+      "<a href=\"#{ @item.booking_uri.best_day }\" class='offer-book-btn pull-right' target='_blank'>#{ '<%= I18n.t(:details) %>' }<i 'lass='icon icon-green-folder hidden-xs'></i></a>"
+
+  same_bu_value: ()->
+    if @item.api.name == "best_day"
+      "<li><a href=\" #{ @item.booking_uri.best_day }\" target='_blank'><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>"
+
+  from_time: (departure) ->
+    if departure.departure_date_time.length > 0
+      t = departure.departure_date_time.split ("T")
+      time = t[1].substring(0, 5)
+      "<span class='from-at'>#{ time }</span>"
+    else
+      ""
+
+  at_time: (departure) ->
+    if departure.arrival_date_time.length > 0
+      t = departure.arrival_date_time.split ("T")
+      time = t[1].substring(0, 5)
+      "<span class='to-at'>#{ time }</span>"
+    else
+      ""
+
+  flight_sep: ->
+    if (@item.flight.departure_flights.length + @item.flight.returning_flights.length > 2)
+      "<br/>"
+    else
+      ""
+
+  flight_details: (type) ->
+    klass = {departure_flights: 'outward', returning_flights: 'return'}[type]
+    flights = ("""
+      <div class='#{klass}'>
+        <span class='airline-name'>#{ f.airline }</span>
+        <span class='from'><i class='glyphicon glyphicon-plane'></i>#{ f.departure_airport_code }</span>
+        #{@from_time(f)}
+        <span class='arrow'><i class='glyphicon glyphicon-arrow-right'></i></span>
+        <span class='to'>#{ f.arrival_airport_code }</span>
+        #{@at_time(f)}
+        <span class='time'>#{ f.duration_in_minutes} mins</span>
+      </div>
+     """ for f in @item.flight[type])
+
+    flights.join('\n')
+
+  template:  ->
+    """
+      <article class='offer-box package'>
+        <div class='img-container'><img src='#{@item.hotel.image_uri}'>
+          <div class='' style='padding: 0px; float: left; color: rgb(165, 165, 165);'>#{ @item.hotel.room_type }</div><br/>
+          <div class='' style='padding: 0px; float: left; color: rgb(165, 165, 165);'>#{ @item.hotel.meal_plan }</div>
+        </div>
+
+        <div class='data'>
+          <header><span class='offer-name'>#{ @item.hotel.name }</span></header>
+          <div class='clearfix'>
+           <span class='hotel-category pull-left'>
+            <span class='icon icon-star-#{ @rating }'></span>
+           </span>
+          </div>
+
+          <p class='features-list'>#{ @item.hotel.description.substring(0,250) }...</p>
+
+          <div class='flight-details'>
+            #{ @flight_details('departure_flights') }
+            #{ @flight_sep() }
+            #{ @flight_details('returning_flights') }
+          </div>
+
+          <footer class='clearfix'>
+            <div class='row'>
+              <div class='col-md-7 col-xs-7'>
+                <span class='offer-price pull-right'>#{ @item.prices.best_day.toFixed(0) } USD</span>
+                <span class='current-site'>#{ @item.api.string }</span>
+              </div>
+              <div class='col-md-5 col-xs-5'>
+                #{ @booking_uri() }
+              </div>
+            </div>
+          </footer>
+        </div>
+
+        <ul class='sites-list'>
+          #{@same_booking_uri()}
+        </ul>
+      </article>
+    """
+
+get_first_word =  (data) ->
+  first_word = data.split(' ')[0]
+  #Add the second word for a subset of room types
+  not_alone = ["one", "two", "three", "de", "un", "dos", "tres"]
+  is_int = /^\d+$/
+  lower_fw = first_word.toLowerCase()
+  filters_for_two_words = [
+    (w) -> _.contains(not_alone, w),
+    (w) -> is_int.test(w)
+  ]
+  if _.any(filters_for_two_words, (f) -> f(lower_fw))
+    first_word += " #{data.split(' ')[1]}"
+  first_word
+
+
+class Products.Hotel extends Products.Base
+  constructor: (@item) ->
+    super
+    @rating = Math.floor(@item.rating)
+    @name = @item.name
+    @room_type = @item.room_type
+    @room_type_substr = get_first_word(@room_type)
+
+  meal_plan: () ->
+    ""
+
+  template: () ->
+    tpl = """
+            <article class='offer-box hotel'>
+
+            <div class='img-container'><img src='#{@item.image_uri}'>
+              <div class='' style='padding: 0px; float: left; color: rgb(165, 165, 165);'>#{ @item.room_type }</div><br/>
+              #{ @meal_plan() }
+            </div>
+
+            <div class='data'>
+
+            <header><span class='offer-name'>#{ @name }</span>
+
+            <div class='clearfix'>
+            <span class='hotel-category pull-left'>
+            <span class='icon icon-star-#{ @rating }'></span>
+            </span>
+
+            <span class='reviews pull-left'>#{ @item.reviews } reviews</span>
+            </div></header>
+
+            <p class='features-list'>#{ @item.description.substring(0,250)}...</p>
+
+            <footer class='clearfix'><div class='row'>
+
+            <div class='col-md-7 col-xs-7'>
+
+            <span class='offer-price pull-right'>#{ @offer_price } USD</span>
+            <span class='current-site'>#{ @item.api.string }</span>
+            </div>
+
+            <div class='col-md-5 col-xs-5'>
+              #{ @booking_uri() }
+            </div>
+
+            </div></footer>
+            </div>
+
+            <ul class='sites-list'>
+              #{@same_booking_uri()}
+            </ul>
+            </article>
+          """
+
+class Products.BestDayHotel extends Products.Hotel
+  meal_plan: () ->
+    "<div class='' style='padding: 0px; float: left; color: rgb(165, 165, 165);'>#{  @item.meal_plan }</div>"
+
+  bu_value: () ->
+    "<a href=\" #{ @item.booking_uri.best_day }\" class='offer-book-btn pull-right' target='_blank'>#{ '<%= "#{I18n.t(:book_now)}" %>' }<i class='icon icon-green-folder hidden-xs'></i></a>"
+
+  same_bu_value: () ->
+    if @item.api.name == "best_day"
+      "<li><a href=\" #{ @item.booking_uri.best_day } \" target='_blank' ><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>";
+
+
+class Products.PriceTravelHotel extends Products.Hotel
+  bu_value: () ->
+    @item.booking_uri
+
+  same_bu_value: () ->
+    if @item.api.name == "price_travel"
+      "<li>#{ @item.same_booking_uri }</li>"
+
+class Products.BestDayCar extends Products.Base
+  constructor: (@item) ->
+    super
+    @car_brand = @item.name
+    @type = @item.type
+    @passengers = @item.passengers
+    @suitcases = @item.suitcases
+    @transmission = @item.transmission
+    @transmission_as_int = {"A": 0, "M": 1}[@transmission]
+
+  air_conditioning: ->
+    if @item.air_conditioning
+      "<li class='icon-ac'></li>"
+    else
+      ""
+
+  bu_value: ->
+    if @item.api.name == "best_day"
+      "<a href=\" #{ @item.booking_uri.best_day } \" class='offer-book-btn pull-right' target='_blank'>#{ '<%= "#{I18n.t(:details)}" %>' }<i class='icon icon-green-folder hidden-xs'></i></a>"
+    else
+      ""
+
+  same_bu_value: ->
+    if @item.api.name == "best_day"
+      "<li><a href=\" #{ @item.booking_uri.best_day }\" target='_blank'><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>"
+
+  template: ->
+    """
+      <article class='offer-box car'>
+        <div class='img-container'><img src='#{ @item.image }'></div>
+        <div class='data'>
+          <header>
+            <span class='offer-name'>#{ @item.agency }</span>
+            <span class='car-brand'>#{ @item.name }</span>
+          </header>
+          <div>
+            <ul class='features-list'>
+             <li>#{ @item.type }</li>
+             <li>#{ @item.passengers + '<%= I18n.t(:peoples) %>' }</li>
+             <li>#{ @item.suitcases + '<%= I18n.t(:bags) %>' }</li>
+             <li>#{ @item.transmission }</li>
+             #{ @air_conditioning() }
+            </ul>
+          </div>
+
+          <footer class='clearfix'>
+            <div class='row'>
+              <div class='col-md-7 col-xs-7'>
+                <span class='offer-price pull-right'>#{ @offer_price} USD</span>
+                <span class='current-site'>#{ @item.api.string }</span>
+              </div>
+              <div class='col-md-5 col-xs-5'>
+                #{ @booking_uri() }
+              </div>
+            </div>
+          </footer>
+        </div>
+
+        <ul class='sites-list'>
+          #{ @same_booking_uri() }
+        </ul>
+      </article>
+    """
+
+class Products.Backend
+  get_products_page: (api_name) ->
+    request = $.ajax(
+      data_type: "JSON",
+      type: "POST",
+      headers: {
+        Accept : "application/json; charset=utf-8",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      url: "/products/get_ajax_#{api_name}#{window.location.search}"
+      )
+
+class Products.Filter
+  update_info: (new_products) ->
+    #Nothing to update
+
+class Products.TextFilter extends Products.Filter
+  constructor: (@dom_options, @trigger_filters) ->
+    @p_property = @dom_options.data('item-property')
+    @dom_options.on('input', => @trigger_filters() )
+
+  filter: (products) ->
+    text = @dom_options.val().toLowerCase()
+    if !text? || text.length == 0
+      return products
+    else
+      return _.filter(products, (p) => S(p._eval(@p_property).toLowerCase()).contains(text))
+
+class Products.SliderFilter extends Products.Filter
+  constructor: (@dom_options, @trigger_filters, @max_val = 8000,  @min_val = 0, @step = 10, @values_text = ' USD', @include_upper_bound = true) ->
+    @p_function = @dom_options.data('item-function')
+    @min_span = @dom_options.find("[data-type='prev-value']")
+    @max_span = @dom_options.find("[data-type='next-value']")
+    @slider =  @dom_options.find('.ui-slider')
+    if @include_upper_bound
+      @filter_by = (p) => @current_min <= p._eval(@p_function) <= @current_max
+    else
+      @filter_by = (p) => @current_min <= p._eval(@p_function) < @current_max
+    @current_min = 0
+    @current_max = Number.MAX_VALUE
+    @reset_slider(@min_val, @max_val)
+
+  show_values: (min, max) ->
+    @min_span.text(min + @values_text)
+    @max_span.text(max + @values_text)
+
+  reset_slider: (min_val, max_val) =>
+    @min_val = Math.min(min_val, @min_val)
+    @max_val = Math.max(min_val, @max_val)
+    @show_values(@min_val, @max_val)
+#    @slider.slider({
+#      min: @min_val
+#      max: @max_val
+#      range: true
+#      step: @step
+#      values: [@min_val, @max_val]
+#      slide:  (event, ui) =>
+#        @show_values(ui.values[0], ui.values[1])
+#      change:  (event, ui) =>
+#        @current_min = ui.values[0]
+#        @current_max = ui.values[1]
+#        @show_values(@current_min, @current_max)
+#        @trigger_filters()
+#    })
+
+  update_info: (new_products) ->
+    max_from_new_products = 0
+    for p in new_products
+      max_from_new_products = Math.max(max_from_new_products, p._eval(@p_function))
+    if max_from_new_products > @max_val
+      @max_val = max_from_new_products
+      @reset_slider(@min_val, @max_val)
+
+  filter: (products) ->
+    if @current_min == @min_val && @current_max == @max_val
+      return products
+    else
+      return _.filter(products, @filter_by)
+
+
+
+class Products.CheckboxFilter extends Products.Filter
+  constructor: (@dom_options, @trigger_filters, @live_update = false) ->
+    @product_property = @dom_options.data('item-property')
+    @control_name = @dom_options.data('control-name')
+    @dom_elements = {}
+    @dom_options.on('click', 'input:checkbox', =>
+      @trigger_filters()
+    )
+
+  #Select the elements that fullfil the conditions
+  filter: (products) ->
+    results = []
+    filter_by = @dom_options.find('input:checked')
+    if filter_by.length == 0
+      return products
+    else
+      is_int = /\d+/
+      values = _.map(filter_by, (cb) ->
+        v = $(cb).attr('value')
+        if is_int.test(v)
+          v = parseInt(v)
+        v
+      )
+      return _.filter(products, (p) =>  _.contains(values, p[@product_property]))
+
+  dom_template: (filter_name, filter_value) ->
+    """
+      <div class="filter-option clearfix">
+        <div class="checkbox pull-left filter-margin">
+          <label>
+            <input type="checkbox" value="#{filter_value}" name="#{filter_name}[]"><span>#{filter_value}</span>
+          </label>
+        </div>
+      </div>
+    """
+
+  update_info: (new_products) ->
+    if @live_update
+      filter_name = "filter-#{@control_name}"
+      for p in new_products
+        filter_value = p[@product_property]
+        if !@dom_elements[filter_value]?
+          $el = $(@dom_template(filter_name, filter_value))
+          @dom_options.append($el)
+          @dom_elements[filter_value] = $el
+
+class Products.Gui
+  constructor: () ->
+    @container = $('#search-results')
+    @itemsBox = @container.find('#results-slot')
+    $('#content').on('click', '.mobile-nav a.next', ->
+      $('ul.simplePagerNav > li.next > a').click())
+    $('#content').on('click', '.mobile-nav a.previous', ->
+      $('ul.simplePagerNav > li.previous > a').click())
+
+  start_ajax_search: () ->
+    $('#more-results').hide()
+    $('#loading').show()
+
+  end_ajax_search: (product_count) ->
+    if product_count  == 10
+      $('#more-results').show()
+    $('#loading').hide()
+    $('#fetching-results').hide()
+
+  on_request_error: ()->
+    $('#loading').hide()
+
+  product_name_i18n: (product_type)->
+    switch product_type
+      when "hotels" then '<%= "#{I18n.t(:hotels)}" %>'
+      when "packages" then '<%= "#{I18n.t(:packages)}" %>'
+      when "cars" then '<%= "#{I18n.t(:cars)}" %>'
+      when "flights" then '<%= "#{I18n.t(:flights)}" %>'
+
+  update_products_count: (total_products, type)->
+    h2 = $('#results>header>h2')
+    p = $('#results>footer>p')
+    text = "<%= "#{I18n.t(:Displaying)} " %> #{total_products} #{@product_name_i18n(type)}"
+    h2.html(text)
+    p.html(text)
+
+  clear_items_box: ->
+    @itemsBox.empty()
+
+  reset_pagination: ->
+    @itemsBox.quickPager();
+
+  add_products: (products) ->
+    results = _.map(products, (p) -> p.to_dom())
+    for $el in results
+      @itemsBox.append($el)
+
+class Products.BaseApp
+  constructor: ->
+    @backend = new Products.Backend()
+    @gui = new Products.Gui()
+    @bd_api_name = "best_day"
+    @pt_api_name = "price_travel"
+    @am_api_name = "aeromexico"
+    @min_price = 0
+    @max_price = 6000
+    @products = []
+    @rendered_products = []
+    @filters = []
+    $('.order-by-selector').on('click', "[data-control-type='ordering']", {_order: @order_by}, (e) ->
+      prop = $(this).data('order-by')
+      e.data._order(prop)
+    )
+
+  preprocess_new_products: (new_products)->
+    new_products
+
+  on_request_success: (product_ctor, result) ->
+    products = []
+    for item in result.resources
+      h = new product_ctor(item)
+      if h.offer_price > 0
+        products.push(h)
+
+    products = @preprocess_new_products(products)
+    total_products = products.length + @products.length
+    @gui.end_ajax_search(result.resources.length)
+    @gui.update_products_count(total_products, @product_type)
+    @products.push(products...)
+    @products = _.sortBy(@products, 'offer_price')
+    for f in @filters
+      f.update_info(products)
+    @render(@products)
+
+
+  render: (products) ->
+    @rendered_products = products
+    @gui.clear_items_box()
+    @gui.add_products(products)
+    @gui.reset_pagination()
+
+  filter_products: ->
+    filtered = (p for p in @products)
+    for f in @filters
+      filtered = f.filter(filtered)
+    filtered
+
+  exec_filters: =>
+    filtered = @filter_products()
+    @gui.update_products_count(filtered.length, @product_type)
+    @render(filtered)
+
+  order_by: (prop) =>
+    ordered = _.sortBy(@rendered_products, prop)
+    @render(ordered)
+
+####################TODO####################
+# Refactors the apps... Try the following
+# Split the classes name as objects, so they can
+# be indexed , for instance Products.BestDayCar
+# would be Products.BestDay.Car so it's easier
+# to select the correct classes acording to the
+# given app.
+####################TODO####################
+
+class Products.FlightsApp extends Products.BaseApp
+  constructor: ->
+    @product_type = "flights"
+    @flightNumbers = {}
+    super
+    @filters.push(new Products.SliderFilter($("#price-slider"), @exec_filters, 4000))
+    @filters.push(new Products.SliderFilter($("#departure-slider"), @exec_filters, 24, 0, 1, ':00 H', false))
+    @filters.push(new Products.SliderFilter($("#returning-slider"), @exec_filters, 24, 0, 1, ':00 H', false))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='airlines']"), @exec_filters, true))
+
+  start: ->
+    @gui.start_ajax_search()
+
+    @backend.get_products_page(@bd_api_name)
+        .done(@on_request_success.bind(@, Products.BestDayFlight))
+        .fail(@gui.on_request_error)
+
+#    @backend.get_products_page(@am_api_name)
+#        .done(@on_request_success.bind(@, Products.AeroMexicoFlight))
+#        .fail(@gui.on_request_error)
+
+    @backend.get_products_page(@pt_api_name)
+        .done(@on_request_success.bind(@, Products.PriceTravelFlight))
+        .fail(@gui.on_request_error)
+
+  preprocess_new_products: (new_products) ->
+    results = []
+    for new_p in new_products
+      num = new_p.flight_numbers
+      if  (old_p = @flightNumbers[num])?
+        old_p.merge(new_p)
+      else
+        @flightNumbers[num] = new_p
+        results.push(new_p)
+    results
+
+class Products.HotelsApp extends Products.BaseApp
+  constructor: ->
+    @product_type = "hotels"
+    super
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='room_types']"), @exec_filters, true))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='stars']"), @exec_filters))
+    @filters.push(new Products.SliderFilter($("#price-slider"), @exec_filters))
+
+  start: ->
+    @gui.start_ajax_search()
+
+    @backend.get_products_page(@bd_api_name)
+        .done(@on_request_success.bind(@, Products.BestDayHotel))
+        .fail(@gui.on_request_error)
+
+    @backend.get_products_page(@pt_api_name)
+        .done(@on_request_success.bind(@, Products.PriceTravelHotel))
+        .fail(@gui.on_request_error)
+
+class Products.PackagesApp extends Products.BaseApp
+  constructor: ->
+    @product_type = "packages"
+    super
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='room_types']"), @exec_filters, true))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='stars']"), @exec_filters))
+    @filters.push(new Products.SliderFilter($("#price-slider"), @exec_filters))
+    @filters.push(new Products.SliderFilter($("#departure-slider"), @exec_filters, 24, 0, 1, ':00 H', false))
+    @filters.push(new Products.SliderFilter($("#returning-slider"), @exec_filters, 24, 0, 1, ':00 H', false))
+
+  start: ->
+    @gui.start_ajax_search()
+
+    @backend.get_products_page(@bd_api_name)
+        .done(@on_request_success.bind(@, Products.BestDayPackage))
+        .fail(@gui.on_request_error)
+
+class Products.CarsApp extends Products.BaseApp
+  constructor: ->
+    super
+    @product_type = "cars"
+    @filters.push(new Products.SliderFilter($("#suitcases-slider"), @exec_filters, 8, 2, 1, ''))
+    @filters.push(new Products.SliderFilter($("#price-slider"), @exec_filters, 700))
+    @filters.push(new Products.TextFilter($("#filter-brand"), @exec_filters))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='type']"), @exec_filters, true))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='passengers']"), @exec_filters))
+    @filters.push(new Products.CheckboxFilter($("[data-control-name='transmission']"), @exec_filters))
+
+  start: ->
+    @gui.start_ajax_search()
+
+    @backend.get_products_page(@bd_api_name)
+        .done(@on_request_success.bind(@, Products.BestDayCar))
+        .fail(@gui.on_request_error)

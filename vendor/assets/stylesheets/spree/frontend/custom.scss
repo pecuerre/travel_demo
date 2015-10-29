@@ -11,9 +11,10 @@
 
 $main-menu-color: black;
 $orange_color: #ffa600;
-$general-text-color: #1b6a75;
+$general-text-color: #1b6975;
 $form-elements-bg-color: #17a9af;
 $search-box-color: #f5f5f5;
+$dark_blue: #08333a;
 
 /***********************************************************************************************/
 /*
@@ -58,6 +59,11 @@ $search-box-color: #f5f5f5;
  *                                            Styles
 */
 /***********************************************************************************************/
+/* Generals */
+
+.section {
+  padding-top: 30px !important;
+}
 
 /******************** Header ******************/
 
@@ -147,14 +153,28 @@ $search-box-color: #f5f5f5;
 .menu > li ul li > a:active {
   font-weight: bold;
 }
+
 /*******
 
 
 /*
 /******************** Search Box ******************/
 
-.search-box-wrapper {
-  background: none repeat scroll 0% 0% $search-box-color;
+ul.search-tabs li {
+  float: left;
+  background-color: rgba(255, 166, 0, 0.5);
+  padding-right: 0px !important;
+  font-size: 18px;
+}
+
+ul.search-tabs li.active {
+  background-color: rgba(255, 166, 0, 1);
+}
+
+ul.search-tabs li a {
+  color: $dark_blue !important;
+  background: none !important;
+  opacity: 1 !important;
 }
 
 .search-tab-content {
@@ -162,14 +182,46 @@ $search-box-color: #f5f5f5;
   background: none repeat scroll 0 0 $search-box-color !important;
 }
 
-.search-box-wrapper div.search-box ul.search-tabs {
-  background: none repeat scroll 0 0 $orange_color !important;
-  opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+.search-tab-content h4.title {
+  margin: 10px 0;
+  height: 20px;
+  color: $general-text-color;
+  font-family: yanonekaffeesatz-regular;
+  font-size: 22px;
 }
 
-ul.search-tabs li a {
-  background: none repeat scroll 0% 0% $orange_color;
+.search-tab-content form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 1.2em;
+  color: $general-text-color;
+  font-family: yanonekaffeesatz-regular;
+}
+
+.search-tab-content form input.input-text, select, textarea, span.custom-select {
+  background: #17a9af !important;
+  color: white;
+  font-size: 15px;
+  font-family: yanonekaffeesatz-regular;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
 }
 
 /******************** Forms elements ******************/

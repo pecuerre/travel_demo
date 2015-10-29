@@ -11121,22 +11121,22 @@ button.ui-button::-moz-focus-inner {
     float: none;
   }
   &.style1 {
-    background-color: #1a232f;
-    background-image: -moz-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
-    background-image: -webkit-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
-    background-image: -o-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
-    background-image: -ms-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
-    background-image: radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
+    background-color: white;//background-color: #1a232f;
+   // background-image: -moz-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
+   // background-image: -webkit-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
+   // background-image: -o-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
+   // background-image: -ms-radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
+   // background-image: radial-gradient(center center, circle cover, rgba(39, 54, 72, 1), #0d1218 100%);
     .loading-text {
       font-size: 1.3333em;
       font-weight: bold;
-      color: #7c9abd;
+      color: #1b6975;//  #1b6975
       letter-spacing: 0.4em;
       text-transform: uppercase;
     }
     .loading-progress-bar {
       height: 18px;
-      background: #0e1319;
+      background: #ffa600;//background: #0e1319;
       @include border-radius(9px, 9px, 9px, 9px);
       @include opacity(0.95);
       box-shadow: 0 1px 0 #3b4857;

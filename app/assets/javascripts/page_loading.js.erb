@@ -9,7 +9,7 @@ if (typeof Pace != "undefined") {
     var soapPageLoadingContent = false;
     //document.write('<img alt="" src="images/logo2.png" style="display: none;">');
     var logoImg = new Image();
-    logoImg.src = '<%= asset_path('logo2') %>';
+    logoImg.src = '<%= image_path('logo/my_trip_logo') %>';
     var soapPageLoadingProgressInterval = setInterval(function() {
         try {
             if (document.body.className.indexOf("pace-done") != -1) {
@@ -24,7 +24,7 @@ if (typeof Pace != "undefined") {
                                                     '<div class="container">' +
                                                             '<h1 class="logo block">' +
                                                                 '<a title="Travelo" href="#">' +
-                                                                    '<img alspree has bundlet="" src="<%= asset_path('logo2') %>">' +
+                                                                    '<img alspree has bundlet="" src="<%= image_path('logo/my_trip_logo') %>">' +
                                                                 '</a>' +
                                                             '</h1>' +
                                                             '<div class="loading-progress-bar block col-sm-10 col-md-9 col-lg-8">' +

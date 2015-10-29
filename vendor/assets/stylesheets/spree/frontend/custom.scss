@@ -11,9 +11,10 @@
 
 $main-menu-color: black;
 $orange_color: #ffa600;
-$general-text-color: #1b6a75;
+$general-text-color: #1b6975;
 $form-elements-bg-color: #17a9af;
 $search-box-color: #f5f5f5;
+$dark_blue: #08333a;
 
 /***********************************************************************************************/
 /*
@@ -58,6 +59,11 @@ $search-box-color: #f5f5f5;
  *                                            Styles
 */
 /***********************************************************************************************/
+/* Generals */
+
+.section {
+  padding-top: 30px !important;
+}
 
 /******************** Header ******************/
 
@@ -73,17 +79,102 @@ $search-box-color: #f5f5f5;
 }
 
 /*
+******************* Floating Menu **************/
+
+.chaser .logo {
+  margin-top: 12px;
+}
+
+.chaser .logo img {
+  height: 52px !important;
+}
+
+.chaser ul.menu {
+  margin-top: 30px !important;
+
+}
+
+/*
 ******************* Main Menu **************/
 
-
-#main-menu ul.menu, .chaser ul.menu {
-    margin-top: 100px;
+#main-menu ul.menu {
+  margin-top: 100px !important;
+  float: right;
 }
+
+/* This groups of styles will be applied to main menu and floating menu*/
+
+.menu > li > a:link {
+  font-weight: bold !important;
+  font-size: 20px;
+  color: $general-text-color !important;
+}
+
+.menu > li > a:visited {
+  font-weight: bold !important;
+  font-size: 20px;
+  color: $general-text-color !important;
+}
+
+.menu > li > a:hover {
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
+  border-bottom-color: $general-text-color;
+  color: $general-text-color !important;
+  font-weight: bold;
+}
+
+.menu > li > a:active {
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
+  border-bottom-color: $general-text-color;
+  color: $general-text-color !important;
+  font-weight: bold;
+}
+
+.menu > li ul li > a:link {
+  border-top: 1px solid #FFFFFF !important;
+  color: #fff;
+  font-size: 17px !important;
+  font-family: yanonekaffeesatz-regular;
+}
+
+.menu > li ul li > a:visited {
+  border-top: 1px solid #FFFFFF !important;
+  color: #fff;
+  font-size: 17px !important;
+  font-family: yanonekaffeesatz-regular;
+}
+
+.menu > li ul li > a:hover {
+  font-weight: bold;
+}
+
+.menu > li ul li > a:active {
+  font-weight: bold;
+}
+
+/*******
+
+
 /*
 /******************** Search Box ******************/
 
-.search-box-wrapper {
-  background: none repeat scroll 0% 0% $search-box-color;
+ul.search-tabs li {
+  float: left;
+  background-color: rgba(255, 166, 0, 0.5);
+  padding-right: 0px !important;
+  font-size: 18px;
+}
+
+ul.search-tabs li.active {
+  background-color: rgba(255, 166, 0, 1);
+}
+
+ul.search-tabs li a {
+  color: $dark_blue !important;
+  background: none !important;
+  opacity: 1 !important;
 }
 
 .search-tab-content {
@@ -91,14 +182,46 @@ $search-box-color: #f5f5f5;
   background: none repeat scroll 0 0 $search-box-color !important;
 }
 
-.search-box-wrapper div.search-box ul.search-tabs {
-  background: none repeat scroll 0 0 $orange_color !important;
-  opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+.search-tab-content h4.title {
+  margin: 10px 0;
+  height: 20px;
+  color: $general-text-color;
+  font-family: yanonekaffeesatz-regular;
+  font-size: 22px;
 }
 
-ul.search-tabs li a {
-  background: none repeat scroll 0% 0% $orange_color;
+.search-tab-content form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 1.2em;
+  color: $general-text-color;
+  font-family: yanonekaffeesatz-regular;
+}
+
+.search-tab-content form input.input-text, select, textarea, span.custom-select {
+  background: #17a9af !important;
+  color: white;
+  font-size: 15px;
+  font-family: yanonekaffeesatz-regular;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
 }
 
 /******************** Forms elements ******************/
@@ -160,6 +283,8 @@ a.button {
 div.section > h2 {
   font-family: yanonekaffeesatz-bold;
   color: $form-elements-bg-color;
+  text-transform: uppercase;
+  font-size: 25px;
 }
 
 /******************** Footer ******************/
@@ -221,14 +346,43 @@ div.section > h2 {
 
 }
 
-/******************** Testing ****************/
+.box-title {
+  margin-bottom: 0px;
+  color: $form-elements-bg-color !important;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.image-box.style3 .details .description {
+  font-size: 15px;
+  color: $general-text-color;
+}
+
+/************  Buttons ************************/
+
+.button {
+  -webkit-border-radius: 8px !important;
+  height: auto !important;
+}
+
+a.button {
+  font-size: 20px !important;
+}
+
+.button:hover {
+  background-color: $orange_color !important;
+}
+
+/******************* Testing ****************/
 
 body {
   color: $general-text-color !important;
 }
+
 .title {
-  color:$general-text-color;
+  color: $general-text-color;
 }
+
 section#content {
   background: white !important;
 }
@@ -249,10 +403,6 @@ section#content {
   color: $orange_color !important;
 }
 
-.box-title {
-  color: red;
-}
-
 // Popular Hotels h2
 div.section:nth-child(4) > h2:nth-child(1) {
   color: $orange_color
@@ -261,12 +411,6 @@ div.section:nth-child(4) > h2:nth-child(1) {
 // Cheap Flights title
 div.container:nth-child(5) > h3:nth-child(1) {
   color: $form-elements-bg-color
-}
-
-.box-title {
-  margin-bottom: 0px;
-  color: $form-elements-bg-color !important;
-  font-weight: bold;
 }
 
 // Cheap Flights title row
@@ -278,6 +422,14 @@ div.container:nth-child(5) > div:nth-child(2) {
 // Cheap Flights box
 div.container:nth-child(5) > div:nth-child(2) > div > article {
   margin-top: 30px;
+}
+
+.image-section {
+  padding-top: 30px;
+  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
+  background-position: center top;
+  background-size: 100% auto;
+  background-position: bottom;
 }
 
 /******************** Paralax ***************
@@ -292,3 +444,8 @@ div.container:nth-child(5) > div:nth-child(2) > div > article {
     }
   }
 }*/
+/* *********** Icons ******************/
+
+.mytrp_icon {
+  margin-left: 10px;
+}

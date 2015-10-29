@@ -39,13 +39,13 @@ module Sample
 
         f.takeOff= takeoff.strftime('%d %b %Y,%I:%M %p')
         f.landing=landing.strftime('%d %b %Y,%I:%M %p')
-        f.duration=(flight_duration/3600).to_s+'H '+((flight_duration%3600)/60).to_s+' M'
-        f.duration_long_style=(flight_duration/3600).to_s+'Hours,'+((flight_duration%3600)/60).to_s+' Minutes'
+        f.duration="#{(flight_duration/3600)} H #{(flight_duration%3600)/60} M"
+        f.duration_long_style="#{(flight_duration/3600)} Hours #{(flight_duration%3600)/60} Minutes"
 
         f.airline= @airlines.sample
-        f.cancellation='$'+rand(40...200).to_s+'/person' #$78 / person
-        f.flight_change='$'+rand(40...200).to_s+'/person' #$78 / person
-        f.seat_baggage='$'+rand(40...200).to_s+'/person' #$78 / person
+        f.cancellation="$ #{rand(40...200)} /person"
+        f.flight_change="$ #{rand(40...200)} /person"
+        f.seat_baggage="$ #{rand(40...200)} /person"
 
         keys = @features.keys.to_a
         set = Set.new
@@ -54,15 +54,15 @@ module Sample
 
 
         f.inflight_features=@inflight_features.sample
-        f.base_fare='$'+rand(300...900).to_s #$320.00
-        f.taxes_fees='$'+rand(300...900).to_s #$320.00
-        f.total_price='$'+rand(300...900).to_s #$320.00
+        f.base_fare="$ #{rand(300...900)}"
+        f.taxes_fees="$ #{rand(300...900)}"
+        f.total_price="$ #{rand(300...900)}"
         f.long_description=Faker::Lorem.paragraph(5)
-        f.lay_over=rand(1...4).to_s+'h '+rand(5...50).to_s+'m' #3h 50m
+        f.lay_over="#{rand(1...4)} h #{rand(5...50)} m"
         f.short_description=Faker::Lorem.sentence
         f.airline_description=Faker::Lorem.paragraph(10)
         f.calendar_description=Faker::Lorem.paragraphs(1)
-        f.identifier=f.airline[0]+f.airline[1]+' - '+rand(100...999).to_s+ ' '+f.flight_type
+        f.identifier="#{f.airline[0]} #{f.airline[1]} - #{rand(100...999)} #{f.flight_type}"
         f.list_of_features_flight=hash
         f.features_description=Faker::Lorem.paragraphs(1)
         f.sets_selection_description=Faker::Lorem.paragraphs(1)
@@ -105,7 +105,7 @@ module Sample
         @@_flights ||=
             begin
               flights= []
-              sample_size=3
+              sample_size=10
               sample_size.times do
                 flights << generate_flight
               end
@@ -115,6 +115,18 @@ module Sample
 
       def airlines
         @airlines
+      end
+
+      def stops
+        @stops
+      end
+
+      def flight_types
+        @flight_types
+      end
+
+      def features
+        @features
       end
 
       def generate_date

@@ -283,6 +283,8 @@ a.button {
 div.section > h2 {
   font-family: yanonekaffeesatz-bold;
   color: $form-elements-bg-color;
+  text-transform: uppercase;
+  font-size: 25px;
 }
 
 /******************** Footer ******************/
@@ -344,7 +346,34 @@ div.section > h2 {
 
 }
 
-/******************** Testing ****************/
+.box-title {
+  margin-bottom: 0px;
+  color: $form-elements-bg-color !important;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.image-box.style3 .details .description {
+  font-size: 15px;
+  color: $general-text-color;
+}
+
+/************  Buttons ************************/
+
+.button {
+  -webkit-border-radius: 8px !important;
+  height: auto !important;
+}
+
+a.button {
+  font-size: 20px !important;
+}
+
+.button:hover {
+  background-color: $orange_color !important;
+}
+
+/******************* Testing ****************/
 
 body {
   color: $general-text-color !important;
@@ -374,10 +403,6 @@ section#content {
   color: $orange_color !important;
 }
 
-.box-title {
-  color: red;
-}
-
 // Popular Hotels h2
 div.section:nth-child(4) > h2:nth-child(1) {
   color: $orange_color
@@ -386,12 +411,6 @@ div.section:nth-child(4) > h2:nth-child(1) {
 // Cheap Flights title
 div.container:nth-child(5) > h3:nth-child(1) {
   color: $form-elements-bg-color
-}
-
-.box-title {
-  margin-bottom: 0px;
-  color: $form-elements-bg-color !important;
-  font-weight: bold;
 }
 
 // Cheap Flights title row
@@ -417,3 +436,8 @@ div.container:nth-child(5) > div:nth-child(2) > div > article {
     }
   }
 }*/
+/* *********** Icons ******************/
+
+.mytrp_icon {
+  margin-left: 10px;
+}

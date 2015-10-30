@@ -25,40 +25,16 @@
               </ul>
             </li>
             <li class="menu-item-has-children">
+              <%= link_to 'Flights', list_flights_path, class: "#{'active' if params[:controller] == 'spree/flights'}" %>
+            </li>
+            <li class="menu-item-has-children">
               <%= link_to 'Houses', properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Flights', list_flights_path, class: "#{'active' if params[:controller] == 'spree/flights'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_flights_path %></li>
-                <li><%= link_to 'Grid View', grid_flights_path %></li>
-                <li><%= link_to 'Block View', block_flights_path %></li>
-                <li><%= link_to 'Detail', detail_flights_path %></li>
-                <li><%= link_to 'Booking', booking_flights_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_flights_path %></li>
-              </ul>
-            </li>
-            <li class="menu-item-has-children">
-              <%= link_to 'Cars',  list_cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_cars_path %></li>
-                <li><%= link_to 'Grid View', grid_cars_path %></li>
-                <li><%= link_to 'Block View', block_cars_path %></li>
-                <li><%= link_to 'Detail', detail_cars_path %></li>
-                <li><%= link_to 'Booking', booking_cars_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_cars_path %></li>
-              </ul>
+              <% link_to 'Cars',  list_cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
             </li>
             <li class="menu-item-has-children">
               <%= link_to 'Cruises', list_cruises_path, class: "#{'active' if params[:controller] == 'spree/cruises'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_cruises_path %></li>
-                <li><%= link_to 'Grid View', grid_cruises_path %></li>
-                <li><%= link_to 'Block View', block_cruises_path %></li>
-                <li><%= link_to 'Detail', detail_cruises_path %></li>
-                <li><%= link_to 'Booking', booking_cruises_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_cruises_path %></li>
-              </ul>
             </li>
             <li class="menu-item-has-children">
               <%= link_to 'Tours', tours_path, class: "#{'active' if params[:controller] == 'spree/tours'}" %>

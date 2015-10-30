@@ -15,6 +15,7 @@ $general-text-color: #1b6975;
 $form-elements-bg-color: #17a9af;
 $search-box-color: #f5f5f5;
 $dark_blue: #08333a;
+$blue: #1b6975;
 
 /***********************************************************************************************/
 /*
@@ -172,7 +173,7 @@ ul.search-tabs li.active {
 }
 
 ul.search-tabs li a {
-  color: $dark_blue !important;
+  color: $blue !important;
   background: none !important;
   opacity: 1 !important;
 }

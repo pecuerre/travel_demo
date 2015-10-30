@@ -34,6 +34,11 @@ namespace :trip do
       Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel')).destroy_all
     end
 
+    desc 'Delete all fligths'
+    task :flights => :environment do
+      Spree::Product.where(:product_type => Spree::ProductType.find_by_name('flight')).destroy_all
+    end
+
     desc 'Delete all data (clean de project)'
     task :all => :environment do
       Rake.application['trip:delete:shipping_categories'].invoke
@@ -63,11 +68,17 @@ namespace :trip do
       require Rails.root + "db/data/destinations"
     end
 
+    desc 'Loads trip flights'
+    task :flights => :environment do
+      require Rails.root + "db/data/flights"
+    end
+
     desc 'Load all data [shipping categories, taxonomies, destinations, products, etc.]'
     task :all => :environment do
       Rake.application['trip:load:shipping_categories'].invoke
       Rake.application['trip:load:taxonomies'].invoke
       Rake.application['trip:load:destinations'].invoke
+      Rake.application['trip:load:flights'].invoke
     end
   end
 

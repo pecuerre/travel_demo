@@ -18,14 +18,6 @@ module FakeFunctions
 		Spree::Property.all.to_a
 	end
 
-	def get_hotel_product_type
-		Spree::ProductType.where(:name => 'hotel').first
-	end
-
-	def get_hotel_calculator
-		Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
-	end
-
 	def get_piece_of_array(array)
 		 (1..rand(array.length)).map { array.sample }.uniq
 	end

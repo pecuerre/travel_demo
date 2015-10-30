@@ -48,4 +48,16 @@ module TripFunctions
     pp
   end
 
+  def get_hotel_product_type
+    Spree::ProductType.where(:name => 'hotel').first
+  end
+
+  def get_flight_product_type
+    Spree::ProductType.where(:name => 'flight').first
+  end
+
+  def get_hotel_calculator
+    Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
+  end
+
 end

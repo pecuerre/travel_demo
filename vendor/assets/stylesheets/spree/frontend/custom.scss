@@ -69,14 +69,18 @@ $blue: #1b6975;
 /******************** Header ******************/
 
 #header {
-  background: image_url('header_background') no-repeat center;
-  background-size: contain;
-  background-position: center top;
-  background-size: 100% auto;
+  background: image_url('header') no-repeat center;
+  //  background-size: contain;
+  background-position: left top;
+  background-size: 2008px 200px;
 }
 
 .logo img {
   opacity: 1 !important;
+}
+
+#header .logo {
+  margin: 0 !important;
 }
 
 /*
@@ -163,13 +167,19 @@ $blue: #1b6975;
 
 ul.search-tabs li {
   float: left;
-  background-color: rgba(255, 166, 0, 0.5);
+  background-color: rgba(245, 242, 255, 0.8);
   padding-right: 0px !important;
-  font-size: 18px;
+  font-size: 25px;
+  font-family: yanonekaffeesatz-bold;
 }
 
 ul.search-tabs li.active {
   background-color: rgba(255, 166, 0, 1);
+
+}
+
+ul.search-tabs li a.active {
+  color: white !important;
 }
 
 ul.search-tabs li a {
@@ -188,14 +198,14 @@ ul.search-tabs li a {
   height: 20px;
   color: $general-text-color;
   font-family: yanonekaffeesatz-regular;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .search-tab-content form label {
   display: block;
   margin-bottom: 5px;
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: $general-text-color;
   font-family: yanonekaffeesatz-regular;
 }
@@ -203,7 +213,7 @@ ul.search-tabs li a {
 .search-tab-content form input.input-text, select, textarea, span.custom-select {
   background: #17a9af !important;
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   font-family: yanonekaffeesatz-regular;
 }
 
@@ -279,6 +289,10 @@ a.button {
   text-align: center;
 }
 
+button.full-width, a.button.full-width {
+  font-size: 18px;
+}
+
 /******************* Sections **************/
 
 div.section > h2 {
@@ -305,11 +319,10 @@ div.section > h2 {
 }
 
 .footer-wrapper .container {
-  background-color: #35565d;
-  opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+  background-color: rgba(53, 86, 93, 0.6);
   padding: 20px;
   color: $orange_color;
+  font-family: yanonekaffeesatz-regular;
 }
 
 .footer-wrapper .container h2 {
@@ -329,7 +342,15 @@ div.section > h2 {
   font-size: 15px;
 }
 
-#footer a:hover, a:focus {
+#footer a:link {
+  font-size: 18px;
+}
+
+#footer a:visited {
+  color: $orange_color;
+}
+
+#footer a:hover, a:active {
   color: white;
   text-decoration: none;
 }
@@ -362,7 +383,7 @@ div.section > h2 {
 /************  Buttons ************************/
 
 .button {
-  -webkit-border-radius: 8px !important;
+  -webkit-border-radius: 0px !important;
   height: auto !important;
 }
 
@@ -389,8 +410,8 @@ section#content {
 }
 
 .fligthicon {
-  whith: 49px !important;
-  heigh: 22px !important;
+  width: 49px !important;
+  height: 22px !important;
   margin: 5px !important;
 }
 
@@ -423,14 +444,24 @@ div.container:nth-child(5) > div:nth-child(2) {
 // Cheap Flights box
 div.container:nth-child(5) > div:nth-child(2) > div > article {
   margin-top: 30px;
+  padding: 15px;
 }
 
 .image-section {
   padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
+//  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
+  background: image_url('1');
   background-position: center top;
   background-size: 100% auto;
   background-position: bottom;
+}
+
+#cheapflight .box-title{
+  padding-top: 6px;
+}
+
+#cheapflight .price{
+  float: left;
 }
 
 /******************** Paralax ***************

@@ -28,10 +28,10 @@
               <%= link_to 'Flights', list_flights_path, class: "#{'active' if params[:controller] == 'spree/flights'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Houses', properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
+              <%= link_to 'Houses', list_properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
             </li>
             <li class="menu-item-has-children">
-              <% link_to 'Cars',  list_cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
+              <% link_to 'Cars', list_cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
             </li>
             <li class="menu-item-has-children">
               <%= link_to 'Cruises', list_cruises_path, class: "#{'active' if params[:controller] == 'spree/cruises'}" %>

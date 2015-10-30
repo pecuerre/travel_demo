@@ -68,9 +68,33 @@ namespace :trip do
       require Rails.root + "db/data/destinations"
     end
 
-    desc 'Loads trip flights'
-    task :flights => :environment do
-      require Rails.root + "db/data/flights"
+    namespace :property_types do
+      desc 'Properties types for flights'
+      task :flights => :environment do
+        require Rails.root + "db/data/property_types_flights"
+      end
+    end
+
+    namespace :properties do
+      desc 'Properties for flights'
+      task :flights => :environment do
+        require Rails.root + "db/data/properties_flights"
+      end
+    end
+
+    namespace :products do
+      desc 'Product for flights'
+      task :flights do
+        Rake.application['trip:delete:flights'].invoke
+        require Rails.root + "db/data/products_flights"
+      end
+    end
+
+    namespace :rates do
+      desc 'Rates for flights'
+      task :flights do
+        require Rails.root + "db/data/rates_flights"
+      end
     end
 
     desc 'Load all data [shipping categories, taxonomies, destinations, products, etc.]'
@@ -78,7 +102,10 @@ namespace :trip do
       Rake.application['trip:load:shipping_categories'].invoke
       Rake.application['trip:load:taxonomies'].invoke
       Rake.application['trip:load:destinations'].invoke
-      Rake.application['trip:load:flights'].invoke
+      Rake.application['trip:load:property_types:flights'].invoke
+      Rake.application['trip:load:properties:flights'].invoke
+      Rake.application['trip:load:products:flights'].invoke
+      Rake.application['trip:load:rates:flights'].invoke
     end
   end
 

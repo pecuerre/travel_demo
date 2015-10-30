@@ -449,18 +449,17 @@ div.container:nth-child(5) > div:nth-child(2) > div > article {
 
 .image-section {
   padding-top: 30px;
-//  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
-  background: image_url('1');
+  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
   background-position: center top;
   background-size: 100% auto;
   background-position: bottom;
 }
 
-#cheapflight .box-title{
+#cheapflight .box-title {
   padding-top: 6px;
 }
 
-#cheapflight .price{
+#cheapflight .price {
   float: left;
 }
 

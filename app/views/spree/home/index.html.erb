@@ -53,7 +53,7 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"> <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/vinales.jpg', size: "270x160", alt: "Vinales") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"> <%= image_tag('habana', size: "270x160", alt: "Vinales") %></a>
           </figure>
           <div class="details text-center">
             <h4 class="box-title">Viñales</h4>
@@ -118,68 +118,69 @@
     </div>
   </div>
   <div class="image-section">
-  <div class="container">
+    <div class="container">
 
-    <div class="text-center description">
-      <h1>We Provide You An Ultimate Travel Experience</h1>
+      <div class="text-center description">
+        <h1>We Provide You An Ultimate Travel Experience</h1>
 
-      <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque.</p>
+        <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque.</p>
 
-      <p>Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
+        <p>Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
+      </div>
+      <br/>
+
+      <div class="row image-box style8">
+        <div class="col-md-4">
+          <article class="box animated" data-animation-type="fadeInUp">
+            <figure class="middle-block">
+              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <span class="opacity-wrapper"></span>
+            </figure>
+            <div class="details">
+              <h2 class="box-title">Travel</h2>
+
+              <p>
+                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
+                mi id faucibus iaculis vitae pulvinar.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="box animated" data-animation-type="fadeInUp">
+            <figure class="middle-block">
+              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <span class="opacity-wrapper"></span>
+            </figure>
+            <div class="details">
+              <h2 class="box-title">Discover</h2>
+
+              <p>
+                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
+                mi id faucibus iaculis vitae pulvinar.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="box animated" data-animation-type="fadeInUp">
+            <figure class="middle-block">
+              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <span class="opacity-wrapper"></span>
+            </figure>
+            <div class="details">
+              <h2 class="box-title">Enjoy</h2>
+
+              <p>
+                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
+                mi id faucibus iaculis vitae pulvinar.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
     </div>
-    <br/>
-    <div class="row image-box style8">
-      <div class="col-md-4">
-        <article class="box animated" data-animation-type="fadeInUp">
-          <figure class="middle-block">
-            <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
-            <span class="opacity-wrapper"></span>
-          </figure>
-          <div class="details">
-            <h2 class="box-title">Travel</h2>
-
-            <p>
-              Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-              mi id faucibus iaculis vitae pulvinar.
-            </p>
-          </div>
-        </article>
-      </div>
-      <div class="col-md-4">
-        <article class="box animated" data-animation-type="fadeInUp">
-          <figure class="middle-block">
-            <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
-            <span class="opacity-wrapper"></span>
-          </figure>
-          <div class="details">
-            <h2 class="box-title">Discover</h2>
-
-            <p>
-              Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-              mi id faucibus iaculis vitae pulvinar.
-            </p>
-          </div>
-        </article>
-      </div>
-      <div class="col-md-4">
-        <article class="box animated" data-animation-type="fadeInUp">
-          <figure class="middle-block">
-            <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
-            <span class="opacity-wrapper"></span>
-          </figure>
-          <div class="details">
-            <h2 class="box-title">Enjoy</h2>
-
-            <p>
-              Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-              mi id faucibus iaculis vitae pulvinar.
-            </p>
-          </div>
-        </article>
-      </div>
-    </div>
-
-  </div>
   </div>
   <div class="section container">
     <h2>Popular Hotels <%= image_tag('icon/hotel.png', class: 'mytrp_icon') %></h2>
@@ -295,62 +296,52 @@
 
     <div class="row image-box hotel listing-style1">
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Santa Clara</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small">SELECT</a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Matanzas</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small">SELECT</a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">La Habana</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small">SELECT</a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Camaguey</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small">SELECT</a></div>
           </div>
         </article>
       </div>
+
     </div>
+  </div>
   </div>
   <div class="global-map-area promo-box no-margin parallax" data-stellar-background-ratio="1.5">
     <div class="container">

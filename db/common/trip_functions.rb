@@ -48,6 +48,10 @@ module TripFunctions
     pp
   end
 
+  #############################################################################
+  ### Get functions
+  #############################################################################
+
   def get_hotel_product_type
     Spree::ProductType.where(:name => 'hotel').first
   end

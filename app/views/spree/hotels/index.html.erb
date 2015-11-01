@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :travel_search_box do %>
-  <%= render partial: 'spree/shared/index_search_box' %>
+  <%= render :partial => 'spree/hotels/search_box', :locals => {id: 'hotels', active: true} %> 
 <% end %>
 
 <% content_for :sidebar do %>

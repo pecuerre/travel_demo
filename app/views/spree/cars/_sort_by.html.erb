@@ -9,18 +9,18 @@
   </ul>
   
   <ul class="swap-tiles clearfix block-sm">
-      <li class="swap-list <%= 'active' if params[:controller] == 'spree/cars' && params[:action] == 'list' %>">
-          <%= link_to list_cars_path do %>
+      <li class="swap-list <%= 'active' if params[:controller] == 'spree/cars' && params[:view].nil? %>">
+          <%= link_to cars_path do %>
             <i class="soap-icon-list"></i>
           <% end %>
       </li>
-      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/cars' && params[:action] == 'grid' %>">
-          <%= link_to grid_cars_path do %>
+      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/cars' && params[:view] == 'grid' %>">
+          <%= link_to cars_path(view: :grid) do %>
             <i class="soap-icon-grid"></i>
           <% end %>
       </li>
-      <li class="swap-block <%= 'active' if params[:controller] == 'spree/cars' && params[:action] == 'block' %>">
-          <%= link_to block_cars_path do %>
+      <li class="swap-block <%= 'active' if params[:controller] == 'spree/cars' && params[:view] == 'block' %>">
+          <%= link_to cars_path(view: :block) do %>
             <i class="soap-icon-block"></i>
           <% end %>
       </li>

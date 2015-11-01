@@ -1,20 +1,27 @@
 es:
+  enter_destination: "entre un destino"
   departure: "Hora de Partida"
   returning: "Hora de Regreso"
   traction: "Transmisión"
   a_traction: "Automática"
   m_traction: Manual
+  login: login
   car_type: Tipo
-  flights: 'vuelos'
-  hotels: 'hoteles'
-  cars: 'autos'
-  packages: 'paquetes'
+  flights: 'Vuelos'
+  hotels: 'Hoteles'
+  cars: 'Autos'
+  your_destination: 'Su destino'
+  cruises: 'Cruceros'
+  tours: 'Excursiones'
+  home_rentals: 'renta de casas'
+  packages: 'Paquetes'
   english: 'English'
   spanish: 'Español'
   logo: 'Más Mexico por Menos'
   slogan_1: 'Compara los mejores sitios de viajes a Mexico en un solo'
   slogan_2: 'lugar y encuentra tus vacaciones ideales más rápido'
   destiny: 'Destino'
+  destinations: 'Destinos'
   destiny_msg: Disfrute su viaje como nunca antes!!!
   contact: "Contacto"
   name: "Nombre"
@@ -25,6 +32,9 @@ es:
   close: "Cerrar"
   en: English
   es: Español
+  where: Donde
+  when: Cuando
+  who: Quienes
   picking_up: "Ciudad de entrega"
   dropping_off: "Ciudad de devoluación"
   pick_up_date: "Fecha de entrega"
@@ -146,9 +156,9 @@ es:
   deals: "Promociones"
   hot_deals: " Las mejores Promociones"
   news: "News"
-  popular_destinations: "Popular Destinations"
   news: "Noticias"
   popular_destinations: "Los destinos más buscados"
+  popular_hotels: "Los hotels más buscados"
   attractions: "Atracciones"
   new_attraction: "nueva atracción"
   listing_attractions_for: "Listando atracciones de"

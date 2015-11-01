@@ -56,3 +56,5 @@ gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-0-stable'
 gem 'spree_slider', github: 'spree-contrib/spree_slider', branch: '3-0-stable'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '3-0-stable'
+gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-0-stable'
+gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-0-stable'

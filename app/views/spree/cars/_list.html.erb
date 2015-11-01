@@ -1,0 +1,42 @@
+<% @cars.each do |c| %>
+  <div class="car-list listing-style3 car">
+    <article class="box">
+      <figure class="col-xs-3">
+        <span><img alt="" src="http://placehold.it/270x160"></span>
+      </figure>
+      <div class="details col-xs-9 clearfix">
+        <div class="col-sm-8">
+          <div class="clearfix">
+            <h4 class="box-title"><%= c.car_type %> Car
+              <small><%= c.car_name %></small>
+            </h4>
+            <div class="logo">
+              <img src="http://placehold.it/110x25" alt=""/>
+            </div>
+          </div>
+          <div class="amenities">
+            <ul>
+              <% c.list_of_features_car.each do |key, value| %>
+                  <li><i class="<%= value %>"></i></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-2 character">
+          <dl class="">
+            <dt class="skin-color">mileage</dt>
+            <dd><%= c.mileage %></dd>
+            <dt class="skin-color">Pickup Time</dt>
+            <dd><%= c.pick_off_short %></dd>
+            <dt class="skin-color">Location</dt>
+            <dd><%= c.location %> city</dd>
+          </dl>
+        </div>
+        <div class="action col-xs-6 col-sm-2">
+          <span class="price"><small>per day</small><%= c.per_day %></span>
+          <a href="car-detailed.html" class="button btn-small full-width">select</a>
+        </div>
+      </div>
+    </article>
+  </div>
+<% end %>

@@ -1,0 +1,77 @@
+<div class="tab-pane fade <%= 'active in' if active %>" id="cruises-tab">
+    <form action="cruise-list-view.html" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Your Destination</label>
+                    <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <label>Departure Date</label>
+                        <div class="datepicker-wrap">
+                            <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Cruise Length</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="">select length</option>
+                                <option value="1">1-2 Nights</option>
+                                <option value="2">3-4 Nights</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <label>Cruise Line</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="">select cruise line</option>
+                                <option>Azamara Club Cruises</option>
+                                <option>Carnival Cruise Lines</option>
+                                <option>Celebrity Cruises</option>
+                                <option>Costa Cruise Lines</option>
+                                <option>Cruise &amp; Maritime Voyages</option>
+                                <option>Crystal Cruises</option>
+                                <option>Cunard Line Ltd.</option>
+                                <option>Disney Cruise Line</option>
+                                <option>Holland America Line</option>
+                                <option>Hurtigruten Cruise Line</option>
+                                <option>MSC Cruises</option>
+                                <option>Norwegian Cruise Line</option>
+                                <option>Oceania Cruises</option>
+                                <option>Orion Expedition Cruises</option>
+                                <option>P&amp;O Cruises</option>
+                                <option>Paul Gauguin Cruises</option>
+                                <option>Peter Deilmann Cruises</option>
+                                <option>Princess Cruises</option>
+                                <option>Regent Seven Seas Cruises</option>
+                                <option>Royal Caribbean International</option>
+                                <option>Seabourn Cruise Line</option>
+                                <option>Silversea Cruises</option>
+                                <option>Star Clippers</option>
+                                <option>Swan Hellenic Cruises</option>
+                                <option>Thomson Cruises</option>
+                                <option>Viking River Cruises</option>
+                                <option>Windstar Cruises</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>&nbsp;</label>
+                        <button class="icon-check full-width">SEARCH NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -7,19 +7,10 @@ module Spree
   class FlightsController < Spree::StoreController
 
     respond_to :html
-    before_action :get_flights, only: [:list, :grid, :block, :detail, :booking, :thanks_you]
+    before_action :get_flights, only: [:index, :list, :grid, :block, :detail, :booking, :thanks_you]
 
     def index
-
-    end
-
-    def list
-    end
-
-    def grid
-    end
-
-    def block
+      @view = params[:view]
     end
 
     def detail
@@ -39,6 +30,7 @@ module Spree
       @flight_types=::Sample::Flight.flight_types
       @features=::Sample::Flight.features
       @booking=::Sample::Booking_Order.sample
+      @products = @flights
     end
   end
 end

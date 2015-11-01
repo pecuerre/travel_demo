@@ -21,33 +21,37 @@
       <ul class="search-tabs clearfix">
         <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
         <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-        <li><a id="houses" href="#houses-tab" data-toggle="tab"><b><%= t(:houses) %></b></a></li>
-        <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
-        <li><a href="#tours-tab" data-toggle="tab">TOURS </a></li>
+        <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
+        <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
+        <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
+        <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
       </ul>
       <div class="visible-mobile">
         <ul id="mobile-search-tabs" class="search-tabs clearfix">
           <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
           <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-          <li><a id="houses" href="#houses-tab" data-toggle="tab"><b><%= t(:houses) %></b></a></li>
-          <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
-          <li><a href="#tours-tab" data-toggle="tab">TOURS </a></li>
-        </ul>
+          <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
+          <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
+          <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
+          <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
+          </ul>
       </div>
 
       <section id="search-form-container" data-hook="search-form-container">
         <div class="search-tab-content">
-          <%= render :partial => 'spree/flights/inputs', :locals => {id: 'flights'} %>
-          <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels'} %>
-          <%#= render :partial => 'cars/inputs', :locals => {id: 'cars'} %>
-          <%#= render :partial => 'packages/inputs', :locals => {id: 'packages'} %>
+          <%= render :partial => 'spree/flights/inputs', :locals => {id: 'flights', active: true} %>
+          <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels', active: false} %>
+          <%= render :partial => 'spree/properties/inputs', :locals => {id: 'properties', active: false} %>
+          <%= render :partial => 'spree/cars/inputs', :locals => {id: 'cars', active: false} %>
+          <%= render :partial => 'spree/cruises/inputs', :locals => {id: 'cruises', active: false} %>
+          <%= render :partial => 'spree/tours/inputs', :locals => {id: 'tours', active: false} %>
         </div>
       </section>
     </div>
   </div>
 
   <div class="section container">
-    <h2>Popular Destination <%= image_tag('icon/top-destination', class: 'mytrp_icon') %></h2>
+    <h2><%= t(:popular_destinations) %> <%= image_tag('icon/top-destination', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
@@ -183,7 +187,7 @@
     </div>
   </div>
   <div class="section container">
-    <h2>Popular Hotels <%= image_tag('icon/hotel.png', class: 'mytrp_icon') %></h2>
+    <h2><%= t(:popular_hotels) %>  <%= image_tag('icon/hotel.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box hotel listing-style1">
       <div class="col-sms-6 col-sm-6 col-md-3">
@@ -378,16 +382,19 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tourr.jpg', size: "270x160", alt: "Tour1") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/cuba_private.jpg', size: "270x160", alt: "Tour1") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Greece</h4>
+            <h4 class="box-title">Cuba Private</h4>
 
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description">This 4 day tour will give you greater insight and different perspectives of Cuba beyond the exciting 
+capital city or the beautiful blue of the many beach resorts. The images captured during this tour are 
+those which will leave a profound impression and you are surely to see that this Caribbean island is 
+unique in many ways.</p>
             <a class="button" href="cruise-detailed.html">SEE ALL</a>
           </div>
         </article>
@@ -395,16 +402,19 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tours.jpg', size: "270x160", alt: "Tour2") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/discover_cuba.jpg', size: "270x160", alt: "Tour2") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Singapore</h4>
+            <h4 class="box-title">Discover Cuba</h4>
 
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description">Your tour guide will reveal the Caribbean’s most intriguing country, by showing you passionate, 
+charming and historical cities like Havana, Santiago de Cuba and Camagüey, Viñales and its 
+surrounding tobacco plantations, picturesque Trinidad and the rugged, beautiful nature of the 
+Sierra Maestra mountain range.</p>
             <a class="button" href="cruise-detailed.html">SEE ALL</a>
           </div>
         </article>
@@ -412,33 +422,35 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ttour.jpg', size: "270x160", alt: "Tour3") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/b2.png', size: "270x160", alt: "Tour3") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Malaysia</h4>
+            <h4 class="box-title">HAVANA ARTS & CULTURE</h4>
 
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description">This specially designed itinerary immerses ten to twenty travelers in Cuba’s rich
+artistic, musical, and cultural heritage. Walking tour of the main historic streets and squares of Old Havana’s historic center, including Plaza de Armas, Convento de San Francisco de Asis, old Spanish colonial churches.</p>
             <a class="button" href="cruise-detailed.html">SEE ALL</a>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
-          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tourss.jpg', size: "270x160", alt: "Tour4") %></a>
+          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/b2.png', size: "270x160", alt: "Tour3") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Europe</h4>
+            <h4 class="box-title">HAVANA ARTS & CULTURE</h4>
 
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description">This specially designed itinerary immerses ten to twenty travelers in Cuba’s rich
+artistic, musical, and cultural heritage. Walking tour of the main historic streets and squares of Old Havana’s historic center, including Plaza de Armas, Convento de San Francisco de Asis, old Spanish colonial churches.</p>
             <a class="button" href="cruise-detailed.html">SEE ALL</a>
           </div>
         </article>

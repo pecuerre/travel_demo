@@ -15,20 +15,20 @@
   </ul>
   
   <ul class="swap-tiles clearfix block-sm">
-      <li class="swap-list <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'index' %>">
-          <%= link_to hotels_path do %>
-            <i class="soap-icon-list"></i>
-          <% end %>
-      </li>
-      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'grid' %>">
-          <%= link_to hotels_path(view: 'grid')  do %>
-            <i class="soap-icon-grid"></i>
-          <% end %>
-      </li>
-      <li class="swap-block <%= 'active' if params[:controller] == 'spree/hotels' && params[:action] == 'block' %>">
-          <%= link_to hotels_path(view: 'block') do %>
-            <i class="soap-icon-block"></i>
-          <% end %>
-      </li>
+    <li class="swap-list <%= 'active' if params[:controller] == 'spree/hotels' && params[:view].nil? %>">
+        <%= link_to hotels_path do %>
+          <i class="soap-icon-list"></i>
+        <% end %>
+    </li>
+    <li class="swap-grid <%= 'active' if params[:controller] == 'spree/hotels' && params[:view] == :grid %>">
+        <%= link_to hotels_path(view: 'grid')  do %>
+          <i class="soap-icon-grid"></i>
+        <% end %>
+    </li>
+    <li class="swap-block <%= 'active' if params[:controller] == 'spree/hotels' && params[:view] == :block %>">
+        <%= link_to hotels_path(view: 'block') do %>
+          <i class="soap-icon-block"></i>
+        <% end %>
+    </li>
   </ul>
 </div>

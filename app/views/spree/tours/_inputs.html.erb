@@ -1,0 +1,43 @@
+<div class="tab-pane fade <%= 'active in' if active %>" id="tours-tab">
+    <form action="tour-list-view.html" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Your Destination</label>
+                    <input type="text" class="input-text full-width" placeholder="<%= t(:enter_destination)%>" />
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <label>Pick Up</label>
+                        <div class="datepicker-wrap">
+                            <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Tour Length</label>
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="">select length</option>
+                                <option value="1">1-2 Hours</option>
+                                <option value="2">4 Hours</option>
+                                <option value="3">8 Hours</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <label>&nbsp;</label>
+                        <button class="icon-check full-width">SEARCH NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

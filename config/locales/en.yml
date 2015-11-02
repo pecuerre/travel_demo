@@ -215,3 +215,19 @@ en:
   select_cruise_line: 'select cruise line'
   tour_length: 'Tour Length'
   hours: 'Hours'
+
+  tour_cuba_private_title: 'CUBA PRIVATE'
+  tour_cuba_private_short_description: 'This 4 day tour will give you greater insight and different perspectives of Cuba beyond the exciting capital city or the beautiful blue of the many beach resorts. The images captured during this tour are those which will leave a profound impression and you are surely to see that this Caribbean island is unique in many ways.
+'
+  tour_discover_cuba_title: 'EXPLORE CUBA'
+  tour_discover_cuba_short_description: 'Your tour guide will reveal the Caribbean’s most intriguing country, by showing you passionate, charming and historical cities like Havana, Santiago de Cuba and Camagüey, Viñales and its surrounding tobacco plantations, picturesque Trinidad and the rugged, beautiful nature of the Sierra Maestra mountain range. '
+
+  tour_havana_arts_title: 'HAVANA ARTS & CULTURE'
+  tour_havana_arts_short_description: 'This specially designed itinerary immerses ten to twenty travelers in Cuba’s rich artistic, musical, and cultural heritage.Walking tour of the main historic streets and squares of Old Havana’s historic center, including Plaza de Armas, Convento de San Francisco de Asis, old Spanish colonial churches.'
+
+  tour_professional_title: 'PROFESSIONAL RESEARCH & ACADEMIC ENGAGEMENT'
+  tour_professional_short_description: 'U.S. architects, medical professionals, art and cigar aficionados, US chambers of commerce, entrepreneurs, university professors, researchers and other educators join travelers interested in advancing certain disciplines and sharing best practices.'
+
+  see_all: 'See all'
+  view_on_map: 'VIEW ON MAP'
+  select: 'Select'

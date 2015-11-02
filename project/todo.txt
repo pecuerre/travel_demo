@@ -1,0 +1,17 @@
+Preguntas
+=========
+* como modelar los vuelos esos?
+  - un producto para cada vuelo (WQ901) y lo demas son variantes?
+  - un producto y una variante para cada vuelo y lo demas son rates?
+  - cuales serian los context option values y los rates option values?
+  - no se que hacer con los datos de peso de maletas
+  - modelamos tambien el precio de infante?
+  - hacemos rangos de fechas? o lo hacemos dia por dia?
+  - hay alguna regla para definir esos precios?
+
+* veo que solo hay precios hasta enero (en los vuelos)
+  - luego vendran mas ficheros con vuelos?
+  - siempre te van a dar csv? o te pueden dar cualquier cosa?
+
+TODO
+====

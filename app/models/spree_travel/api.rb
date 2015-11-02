@@ -31,7 +31,7 @@ module SpreeTravel
       # products = products.order(params[:sort]) if params[:sort]
 
       hotels = SpreeTravel::Utils.parse_hotels(products, params)
-      PriceTravel::Response.new(hotels)
+      SpreeTravel::Response.new(hotels)
     end
 
 

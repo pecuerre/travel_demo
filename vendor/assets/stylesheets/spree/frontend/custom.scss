@@ -305,7 +305,7 @@ div.section > h2 {
 /******************** Footer ******************/
 #footer {
   // background: -moz-image-rect(image_url(footer_background), 35%, 100%, 100%, 0%);
-  background: image_url(footer_background);
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   width: 100% !important;
@@ -487,4 +487,15 @@ div.container:nth-child(5) > div:nth-child(2) > div > article {
 
 .mytrp_icon {
   margin-left: 10px;
+}
+
+
+/***/
+
+li#help {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+  float: right;
 }

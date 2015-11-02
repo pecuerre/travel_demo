@@ -64,4 +64,45 @@ module TripFunctions
     Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
   end
 
+  def get_flight_calculator
+    Spree::TravelCalculator.find_by_name('Spree::CalculatorFlight')
+  end
+
+  #############################################################################
+  ### Normalize functions
+  #############################################################################
+
+  def normalize_date(date_string)
+    month, day, year = date_string.split("/")
+    month = "0" + month if month.length == 1
+    day = "0" + day if day.length == 1
+    year = "20" + year if year.length == 2
+    "#{year}-#{month}-#{day}".to_date
+  end
+
+  # TODO: implementar esto
+  def normalize_price(price_string)
+    price_string
+  end
+
+  #############################################################################
+  ### Extract functions
+  #############################################################################
+
+  def get_flight_parts(csv_row)
+    {
+      :flight_number   => row[0],
+      :charter         => row[1],
+      :date            => normalize_date(row[2]),
+      :origin          => row[3],
+      :destination     => row[4],
+      :adult_price     => normalize_price(row[5]),
+      :child_price     => normalize_price(row[6]),
+      :infant_price    => normalize_price(row[7]),
+      :included_weight => row[8],
+      :suitcase_price  => row[9],
+      :box_price       => row[10],
+    }
+  end
+
 end

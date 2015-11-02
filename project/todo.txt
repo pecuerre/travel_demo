@@ -8,6 +8,10 @@ Preguntas
   - modelamos tambien el precio de infante?
   - hacemos rangos de fechas? o lo hacemos dia por dia?
   - hay alguna regla para definir esos precios?
+  - como modelamos los "flight destinations"?
+    . hacemos una taxonomia que sea "flight destination"?
+    . lo modelamos dentro de los mismos destinations? (adicionamos unos taxons)
+    . lo ponemos como unos option_types?
 
 * veo que solo hay precios hasta enero (en los vuelos)
   - luego vendran mas ficheros con vuelos?

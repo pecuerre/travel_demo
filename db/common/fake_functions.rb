@@ -36,7 +36,8 @@ module FakeFunctions
 		number
 	end
 
-	def get_fake_sku
-		Faker.bothify('???-######').upcase
+	def get_fake_sku(prefix = nil)
+		prefix = '???' unless prefix
+		Faker.bothify("#{prefix}-######").upcase
 	end
 end

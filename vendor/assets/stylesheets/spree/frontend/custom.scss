@@ -489,7 +489,6 @@ div.container:nth-child(5) > div:nth-child(2) > div > article {
   margin-left: 10px;
 }
 
-
 /***/
 
 li#help {
@@ -498,4 +497,8 @@ li#help {
   font-weight: bold;
   margin-top: 5px;
   float: right;
+}
+
+#hotels::before {
+  content: image_url('icons/hotel.png');
 }

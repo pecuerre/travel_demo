@@ -3,26 +3,26 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Your Destination</label>
-                    <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
+                    <label><%= t(:your_destination) %></label>
+                    <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
                 </div>
             </div>
             
             <div class="col-md-4">
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <label>Departure Date</label>
+                        <label><%= t(:departure_date) %></label>
                         <div class="datepicker-wrap">
-                            <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                            <input type="text" class="input-text full-width" placeholder="<%= t(:m_d_y) %>" />
                         </div>
                     </div>
                     <div class="col-xs-6">
-                        <label>Cruise Length</label>
+                        <label><%= t(:cruise_length) %></label>
                         <div class="selector">
                             <select class="full-width">
-                                <option value="">select length</option>
-                                <option value="1">1-2 Nights</option>
-                                <option value="2">3-4 Nights</option>
+                                <option value=""><%= t(:select_length) %></option>
+                                <option value="1">1-2 <%= t(:nights) %></option>
+                                <option value="2">3-4 <%= t(:nights) %></option>
                             </select>
                         </div>
                     </div>
@@ -32,10 +32,10 @@
             <div class="col-md-4">
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <label>Cruise Line</label>
+                        <label><%= t(:cruise_Line) %></label>
                         <div class="selector">
                             <select class="full-width">
-                                <option value="">select cruise line</option>
+                                <option value=""><%= t(:select_cruise_line) %></option>
                                 <option>Azamara Club Cruises</option>
                                 <option>Carnival Cruise Lines</option>
                                 <option>Celebrity Cruises</option>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-xs-6">
                         <label>&nbsp;</label>
-                        <button class="icon-check full-width">SEARCH NOW</button>
+                        <button class="icon-check full-width"><%= t(:search_now) %></button>
                     </div>
                 </div>
             </div>

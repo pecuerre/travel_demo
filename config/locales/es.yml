@@ -1,20 +1,27 @@
 es:
+  enter_destination: "entre un destino"
   departure: "Hora de Partida"
   returning: "Hora de Regreso"
   traction: "Transmisión"
   a_traction: "Automática"
   m_traction: Manual
+  login: login
   car_type: Tipo
-  flights: 'vuelos'
-  hotels: 'hoteles'
-  cars: 'autos'
-  packages: 'paquetes'
+  flights: 'Vuelos'
+  hotels: 'Hoteles'
+  cars: 'Autos'
+  your_destination: 'Su destino'
+  cruises: 'Cruceros'
+  tours: 'Excursiones'
+  home_rentals: 'renta de casas'
+  packages: 'Paquetes'
   english: 'English'
   spanish: 'Español'
   logo: 'Más Mexico por Menos'
   slogan_1: 'Compara los mejores sitios de viajes a Mexico en un solo'
   slogan_2: 'lugar y encuentra tus vacaciones ideales más rápido'
   destiny: 'Destino'
+  destinations: 'Destinos'
   destiny_msg: Disfrute su viaje como nunca antes!!!
   contact: "Contacto"
   name: "Nombre"
@@ -25,8 +32,11 @@ es:
   close: "Cerrar"
   en: English
   es: Español
+  where: Donde
+  when: Cuando
+  who: Quienes
   picking_up: "Ciudad de entrega"
-  dropping_off: "Ciudad de devoluación"
+  dropping_off: "Ciudad de devolución"
   pick_up_date: "Fecha de entrega"
   pick_up_time: "Hora de entrega"
   drop_off_date: "Fecha de devolución"
@@ -146,9 +156,9 @@ es:
   deals: "Promociones"
   hot_deals: " Las mejores Promociones"
   news: "News"
-  popular_destinations: "Popular Destinations"
   news: "Noticias"
   popular_destinations: "Los destinos más buscados"
+  popular_hotels: "Los hotels más buscados"
   attractions: "Atracciones"
   new_attraction: "nueva atracción"
   listing_attractions_for: "Listando atracciones de"
@@ -173,5 +183,43 @@ es:
   expect: '¿Qué esperas de esta experiencia?'
   delivery_success: 'Email enviado a Nomad Republic'
   delivery_error: 'Error en el envío del Email'
+  leaving_from: 'Saliendo desde'
+  departing_on: 'Saliendo el'
+  arriving_on: 'Arribando el'
+  infants: 'Bebés'
+  city_distirct_or_specific_airpot: 'ciudad, distrito o aeropuerto'
+  m_d_y: 'mm/dd/aa'
+  any_time: 'en cualquier momento'
+  morning: 'en la mañana'
+  pick_up: 'recogida'
+  drop_off: 'destino'
+  economy: 'Económico'
+  compact: 'Compacto'
+  select_a_car_type: 'seleccione un tipo de auto'
+  pick_up_date_time: "Fecha y hora de entrega"
+  drop_off_date_time: "Fecha y hora de devolución"
+  your_destination: 'Su Destino'
+  cruise_length: 'Duración del Crucero'
+  select_length: 'Seleccione una duración'
+  nights: 'Noches'
+  cruise_line: 'Línea de Cruceros'
+  select_cruise_line: 'Seleccione una Línea de Cruceros'
+  tour_length: 'Duración de la Excursión'
+  hours: 'Horas'
+
+  tour_cuba_private_title: 'CUBA TOUR PRIVADO'
+  tour_cuba_private_short_description: 'Este tour 4 días le dará un mayor conocimiento y diferentes perspectivas de Cuba más allá de la atractiva ciudad capital o en el hermoso azul de los muchos centros turísticos de playa. Las imágenes capturadas durante esta gira son las que dejará una impresión profunda y que son sin duda ver que esta isla del Caribe es única en muchos sentidos.'
+
+  tour_discover_cuba_title: 'EXPLORE CUBA'
+  tour_discover_cuba_short_description: 'Su guía le revelará país más intrigante del Caribe, mostrándole ciudades apasionados, encantadoras e históricas como La Habana, Santiago de Cuba y Camagüey, Viñales y sus plantaciones de tabaco de los alrededores, pintoresco Trinidad y la hermosa naturaleza agreste, de la Sierra Maestra .'
+
+  tour_havana_arts_title: 'LA HABANA ARTE & CULTURA'
+  tour_havana_arts_short_description: 'Este itinerario especialmente diseñado sumerge diez a veinte viajeros en artística rica, musical de Cuba, y gira heritage.Walking cultural de las principales calles y plazas del centro histórico de La Habana Vieja históricos, como la Plaza de Armas, el Convento de San Francisco de Asís, viejo colonial español iglesias.'
+
+  tour_professional_title: 'INVESTIGACIÓN PROFESIONAL y académica'
+  tour_professional_short_description: 'Arquitectos estadounidenses, profesionales de la medicina, el arte y los aficionados del cigarro, US cámaras de comercio, empresarios, profesores universitarios, investigadores y otros educadores se unen los viajeros interesados ​​en el avance de ciertas disciplinas y compartir las mejores prácticas.'
 
 
+  see_all: 'Ver todo'
+  view_on_map: 'Ver en el mapa'
+  select: 'Seleccionar'

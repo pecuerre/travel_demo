@@ -1,0 +1,20 @@
+<div class="flight-list row image-box listing-style2 flight">
+  <% if @flights.any? %>
+      <% @flights.each do |f| %>
+          <div class="col-sms-6 col-sm-6 col-md-4">
+            <article class="box">
+              <figure>
+                <span><img src="http://placehold.it/270x160" alt="" width="270" height="160"/></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-mini uppercase">select</a>
+                <h4 class="box-title"><%= f.name %></h4>
+                <label class="price-wrapper">
+                  <%= f.flight_way %> </br><span class="price-per-unit"><%= f.total_price %></span>
+                </label>
+              </div>
+            </article>
+          </div>
+      <% end %>
+  <% end %>
+</div>

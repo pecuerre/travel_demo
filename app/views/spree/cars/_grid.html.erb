@@ -1,0 +1,29 @@
+<div class="row image-box car listing-style1">
+  <% @cars.each do |c| %>
+      <div class="col-sms-6 col-sm-6 col-md-4">
+        <article class="box">
+          <figure>
+            <a title="" href="#"><img alt="" src="http://placehold.it/270x160"></a>
+          </figure>
+          <div class="details">
+            <span class="price"><small>per day</small><%= c.per_day %></span>
+            <h4 class="box-title"><%= c.car_type %> Car
+              <small><%= c.car_name %></small>
+            </h4>
+            <div class="amenities">
+              <ul>
+                <% c.list_of_features_car.each do |key, value| %>
+                    <li><i class="<%= value %>"></i></li>
+                <% end %>
+              </ul>
+            </div>
+            <p class="mile"><span class="skin-color">Mileage:</span> <%= c.mileage %></p>
+
+            <div class="action">
+              <a class="button btn-small full-width" href="car-detailed.html">SELECT NOW</a>
+            </div>
+          </div>
+        </article>
+      </div>
+  <% end %>
+</div>

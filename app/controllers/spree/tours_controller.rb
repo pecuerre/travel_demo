@@ -1,42 +1,33 @@
+require 'travel_demo/tours'
+require 'travel_demo/booking_order'
+
 module Spree
   class ToursController < Spree::StoreController
     helper 'spree/products'
     respond_to :html
+    before_action :get_tours, only: [:index, :detail, :booking, :thanks_you]
 
     def index
+      @searcher = build_searcher(params.merge(include_images: true))
+      @products = @searcher.retrieve_products
+      @taxonomies = Spree::Taxonomy.includes(root: :children)
+    end
+
+    def detail
     end
 
     def booking
     end
 
-    def detail1
+    def thanks_you
     end
 
-    def detail2
+    private
+    def get_tours
+      @cruises = ::Sample::Cruise.sample
+      @booking = ::Sample::Booking_Order.sample
+      @products = @tours
     end
 
-    def fancy_package_2column
-    end
-
-    def fancy_package_3column
-    end
-
-    def fancy_package_4column
-    end
-
-    def location_europe
-    end
-
-    def location_north_america
-    end
-
-    def simple_package_2column
-    end
-
-    def simple_package_3column
-    end
-
-    def simple_package_4column
-    end
   end
 end

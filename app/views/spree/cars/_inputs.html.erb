@@ -1,0 +1,98 @@
+<div class="tab-pane fade <%= 'active in' if active %>" id="cars-tab">
+  <form action="car-list-view.html" method="post">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label><%= t(:picking_up) %></label>
+                  <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+              </div>
+              <div class="form-group">
+                  <label><%= t(:dropping_off) %></label>
+                  <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label><%= t(:pick_up_date_time) %></label>
+                  <div class="row">
+                      <div class="col-xs-6">
+                          <div class="datepicker-wrap">
+                              <input type="text" name="date_from" class="input-text full-width" placeholder="<%= t(:m_d_y) %>" />
+                          </div>
+                      </div>
+                      <div class="col-xs-6">
+                          <div class="selector">
+                              <select class="full-width">
+                                  <option value="1"><%= t(:any_time) %></option>
+                                  <option value="2"><%= t(:morning) %></option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label><%= t(:drop_off_date_time) %></label>
+                  <div class="row">
+                      <div class="col-xs-6">
+                          <div class="datepicker-wrap">
+                              <input type="text" name="date_to" class="input-text full-width" placeholder="<%= t(:m_d_y) %>" />
+                          </div>
+                      </div>
+                      <div class="col-xs-6">
+                          <div class="selector">
+                              <select class="full-width">
+                                  <option value="1"><%= t(:any_time) %></option>
+                                  <option value="2"><%= t(:morning) %></option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              <div class="form-group row">
+                  <div class="col-xs-3">
+                      <label><%= t(:adults) %></label>
+                      <div class="selector">
+                          <select class="full-width">
+                              <option value="1">01</option>
+                              <option value="2">02</option>
+                              <option value="3">03</option>
+                              <option value="4">04</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="col-xs-3">
+                      <label><%= t(:kids) %></label>
+                      <div class="selector">
+                          <select class="full-width">
+                              <option value="1">01</option>
+                              <option value="2">02</option>
+                              <option value="3">03</option>
+                              <option value="4">04</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <div class="col-xs-6">
+                      <label><%= t(:car_type) %></label>
+                      <div class="selector">
+                          <select class="full-width">
+                              <option value=""><%= t(:select_a_car_type) %></option>
+                              <option value="economy"><%= t(:economy) %></option>
+                              <option value="compact"><%= t(:compact) %></option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <label>&nbsp;</label>
+                      <button class="full-width icon-check"><%= t(:search_now) %></button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>

@@ -5,21 +5,12 @@ module Spree
   class CruisesController < Spree::StoreController
     helper 'spree/products'
     respond_to :html
-    before_action :get_cruises, only: [:list, :grid, :block, :detail, :booking, :thanks_you]
+    before_action :get_cruises, only: [:index, :detail, :booking, :thanks_you]
 
     def index
       @searcher = build_searcher(params.merge(include_images: true))
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-    end
-
-    def list
-    end
-
-    def grid
-    end
-
-    def block
     end
 
     def detail
@@ -33,8 +24,9 @@ module Spree
 
     private
     def get_cruises
-      @cruises= ::Sample::Cruise.sample
-      @booking=::Sample::Booking_Order.sample
+      @cruises = ::Sample::Cruise.sample
+      @booking = ::Sample::Booking_Order.sample
+      @products = @cruises
     end
 
   end

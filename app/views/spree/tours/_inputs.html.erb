@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Your Destination</label>
+                    <label><%= t(:your_destination) %></label>
                     <input type="text" class="input-text full-width" placeholder="<%= t(:enter_destination)%>" />
                 </div>
             </div>
@@ -11,19 +11,19 @@
             <div class="col-md-4">
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <label>Pick Up</label>
+                        <label><%= t(:pick_up) %></label>
                         <div class="datepicker-wrap">
-                            <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                            <input type="text" class="input-text full-width" placeholder="<%= t(:m_d_y) %>" />
                         </div>
                     </div>
                     <div class="col-xs-6">
-                        <label>Tour Length</label>
+                        <label><%= t(:tour_length) %></label>
                         <div class="selector">
                             <select class="full-width">
-                                <option value="">select length</option>
-                                <option value="1">1-2 Hours</option>
-                                <option value="2">4 Hours</option>
-                                <option value="3">8 Hours</option>
+                                <option value=""><%= t(:select_length) %></option>
+                                <option value="1">1-2 <%= t(:hours) %></option>
+                                <option value="2">4 <%= t(:hours) %></option>
+                                <option value="3">8 <%= t(:hours) %></option>
                             </select>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <div class="col-xs-6">
                         <label>&nbsp;</label>
-                        <button class="icon-check full-width">SEARCH NOW</button>
+                        <button class="icon-check full-width"><%= t(:search_now) %></button>
                     </div>
                 </div>
             </div>

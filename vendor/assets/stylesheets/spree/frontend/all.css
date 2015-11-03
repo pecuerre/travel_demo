@@ -13,4 +13,5 @@
  *= require spree/frontend/spree_property_type
  *= require spree/frontend/spree_static_content
  *= require spree/frontend/spree_social
+ *= require store/spree_travel_flight
 */

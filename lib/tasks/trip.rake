@@ -105,7 +105,6 @@ namespace :trip do
       Rake.application['trip:load:property_types:flights'].invoke
       Rake.application['trip:load:properties:flights'].invoke
       Rake.application['trip:load:products:flights'].invoke
-      Rake.application['trip:load:rates:flights'].invoke
     end
   end
 

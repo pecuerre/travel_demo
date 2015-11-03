@@ -1,5 +1,42 @@
 <div id="temp-spree-header">
   <header id="header" class="navbar-static-top">
+    <div class="topnav hidden-xs">
+        <div class="container">
+            <ul class="quick-menu pull-left">
+               <% if SpreeI18n::Config.supported_locales.size > 1 %>
+                 <li id="locale-select" data-hook>
+                   <%= form_tag spree.set_locale_path do %>
+                     <div class="menu mini">
+                       <label for="locale" class="sr-only"><%= Spree.t(:'i18n.language') %></label>
+                       <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale), data: { href: spree.set_locale_path }) %>
+                       <noscript><%= submit_tag %></noscript>
+                     </div>
+                   <% end %>
+                 </li>
+               <% end %>
+            </ul>
+            <ul class="quick-menu pull-right">
+                <% if spree_current_user %>
+                  <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+                  <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+                <% else %>
+                  <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+                  <li id="link-to-login"><%= link_to Spree.t(:signup), spree.signup_path %></li>
+                <% end %>
+                
+                <li id="currency-select"  class="ribbon currency" data-hook>
+                  <%= form_tag set_currency_path(format: :html) do %>
+                    <div class="menu mini">
+                      <label for="currency" class="sr-only"><%= Spree.t(:currency) %></label>
+                      <%= select_tag(:currency, options_for_select(supported_currencies, current_currency), data: { href: set_currency_path(format: :json) }) %>
+                      <noscript><%= submit_tag %></noscript>
+                    </div>
+                  <% end %>
+                </li>
+              <li id="help">Need help? Contact us  US Office +1-844-836-2822</li>
+            </ul>
+        </div>
+    </div>
     <div class="main-header">
 
       <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
@@ -10,61 +47,32 @@
         <div class="clearfix"></div>
         <h1 class="logo navbar-brand">
           <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
-              <%= image_tag 'logo/my_trip_logo.png' %>
+              <%= image_tag 'logo/logo.png' %>
           <% end %>
         </h1>
 
         <nav id="main-menu" role="navigation">
           <ul class="menu">
             <li class="menu-item-has-children">
-              <%= link_to 'Hotels', hotels_path, class: "#{'active' if params[:controller] == 'spree/hotels'}" %>
-              <ul>
-                <li><%= link_to 'Hotel City', hotels_path(category: 'Hotel City') %></li>
-                <li><%= link_to 'Hotel Beach', hotels_path(category: 'Hotel Beach') %></li>
-                <li><%= link_to 'Hotel Rural', hotels_path(category: 'Hotel Rural') %></li>
-              </ul>
+              <%= link_to t(:flights), flights_path, class: "#{'active' if params[:controller] == 'spree/flights'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Houses', properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
+              <%= link_to t(:hotels), hotels_path, class: "#{'active' if params[:controller] == 'spree/hotels'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Flights', list_flights_path, class: "#{'active' if params[:controller] == 'spree/flights'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_flights_path %></li>
-                <li><%= link_to 'Grid View', grid_flights_path %></li>
-                <li><%= link_to 'Block View', block_flights_path %></li>
-                <li><%= link_to 'Detail', detail_flights_path %></li>
-                <li><%= link_to 'Booking', booking_flights_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_flights_path %></li>
-              </ul>
+              <%= link_to t(:home_rentals), properties_path, class: "#{'active' if params[:controller] == 'spree/properties'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Cars',  list_cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_cars_path %></li>
-                <li><%= link_to 'Grid View', grid_cars_path %></li>
-                <li><%= link_to 'Block View', block_cars_path %></li>
-                <li><%= link_to 'Detail', detail_cars_path %></li>
-                <li><%= link_to 'Booking', booking_cars_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_cars_path %></li>
-              </ul>
+              <%= link_to t(:cars), cars_path , class: "#{'active' if params[:controller] == 'spree/cars'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Cruises', list_cruises_path, class: "#{'active' if params[:controller] == 'spree/cruises'}" %>
-              <ul>
-                <li><%= link_to 'List View', list_cruises_path %></li>
-                <li><%= link_to 'Grid View', grid_cruises_path %></li>
-                <li><%= link_to 'Block View', block_cruises_path %></li>
-                <li><%= link_to 'Detail', detail_cruises_path %></li>
-                <li><%= link_to 'Booking', booking_cruises_path %></li>
-                <li><%= link_to 'Thanks You', thanks_you_cruises_path %></li>
-              </ul>
+              <%= link_to t(:cruises), cruises_path, class: "#{'active' if params[:controller] == 'spree/cruises'}" %>
             </li>
             <li class="menu-item-has-children">
-              <%= link_to 'Tours', tours_path, class: "#{'active' if params[:controller] == 'spree/tours'}" %>
+              <%= link_to t(:tours), tours_path, class: "#{'active' if params[:controller] == 'spree/tours'}" %>
             </li>
             <li class="menu-item-has-children ">
-              <%= link_to 'Destinations', destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
+              <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
             </li>
           </ul>
         </nav>

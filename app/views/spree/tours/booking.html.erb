@@ -1,51 +1,104 @@
 <section id="content" class="gray-area">
     <div class="container">
         <div class="row">
-            <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+            <div id="main" class="col-sm-8 col-md-9">
                 <div class="booking-section travelo-box">
-                    
-                    <form class="booking-form" method="post" action="booking-handler.php">
+                    <form class="cruise-booking-form">
                         <div class="person-information">
                             <h2>Your Personal Information</h2>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>first name</label>
-                                    <input type="text" name="first_name" class="input-text full-width" value="" placeholder="" />
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>last name</label>
-                                    <input type="text" name="last_name" class="input-text full-width" value="" placeholder="" />
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>email address</label>
-                                    <input type="text" name="email_address" class="input-text full-width" value="" placeholder="" />
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Verify E-mail Address</label>
-                                    <input type="text" name="r_email_address" class="input-text full-width" value="" placeholder="" />
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
+                                    <label>Country of Citizenship</label>
+                                    <div class="selector">
+                                        <select class="full-width">
+                                            <option>United Kingdom</option>
+                                            <option>United States</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6 col-md-5">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label>Date of Birth</label>
+                                            <div class="datepicker-wrap">
+                                                <input type="text" class="input-text full-width" placeholder="mm/dd/yy" data-min-date="01/01/1900">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label>Gender</label>
+                                            <div>
+                                                <label class="radio radio-inline radio-square">
+                                                    <input type="radio" name="gender" checked="checked">Male
+                                                </label>
+                                                <label class="radio radio-inline radio-square">
+                                                    <input type="radio" name="gender">Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Country code</label>
                                     <div class="selector">
-                                        <select name="country_code" class="full-width">
+                                        <select class="full-width">
                                             <option>United Kingdom (+44)</option>
                                             <option>United States (+1)</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Phone number</label>
-                                    <input type="text" name="phone_number" class="input-text full-width" value="" placeholder="" />
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
+                                    <label>Home Address</label>
+                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                </div>
+                                <div class="form-group col-sm-6 col-md-5">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label>State</label>
+                                            <div class="selector full-width">
+                                                <select>
+                                                    <option value="uk">UK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label>Zipcode</label>
+                                            <input type="text" class="input-text full-width">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="is_receive_promotion" value="1"> I want to receive <span class="skin-color">Travelo</span> promotional offers in the future
+                                        <input type="checkbox"> I want to receive <span class="skin-color">Travelo</span> promotional offers in the future
                                     </label>
                                 </div>
                             </div>
@@ -53,8 +106,8 @@
                         <hr />
                         <div class="card-information">
                             <h2>Your Card Information</h2>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Credit Card Type</label>
                                     <div class="selector">
                                         <select class="full-width">
@@ -62,23 +115,23 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Card holder name</label>
                                     <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Card number</label>
                                     <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Card identification number</label>
                                     <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 col-md-5">
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-md-5">
                                     <label>Expiration Date</label>
                                     <div class="constant-column-2">
                                         <div class="selector">
@@ -93,7 +146,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3 col-md-2">
+                                <div class="form-group col-sm-3 col-md-2">
                                     <label>billing zip code</label>
                                     <input type="text" class="input-text full-width" value="" placeholder="" />
                                 </div>
@@ -115,54 +168,49 @@
                     </form>
                 </div>
             </div>
-            <div class="sidebar col-sms-6 col-sm-4 col-md-3">
+            <div class="sidebar col-sm-4 col-md-3">
                 <div class="booking-details travelo-box">
                     <h4>Booking Details</h4>
-                    <article class="tour-detail">
+                    <article class="image-box cruise listing-style1">
                         <figure class="clearfix">
-                            <a title="" href="tour-detailed1.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/124x78"></a>
+                            <a title="" href="cruise-detailed.html" class="hover-effect middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
                             <div class="travel-title">
-                                <h5 class="box-title">Rome City Tour<small>3 Days Tour</small></h5>
-                                <a href="tour-detailed1.html" class="button green">EDIT</a>
+                                <h5 class="box-title">Carnival<small>baja mexico</small></h5>
+                                <a href="cruise-detailed.html" class="button">EDIT</a>
                             </div>
                         </figure>
                         <div class="details">
-                            <div class="icon-box style11 full-width">
-                                <div class="icon-wrapper">
-                                    <i class="soap-icon-calendar"></i>
-                                </div>
-                                <dl class="details">
-                                    <dt class="skin-color">Date</dt>
-                                    <dd>27 jan 2015 to 30 jan 2015</dd>
-                                </dl>
+                            <div class="feedback">
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container"><span style="width: 80%;" class="five-stars"></span></div>
+                                <span class="review">270 reviews</span>
                             </div>
-                            <div class="icon-box style11 full-width">
-                                <div class="icon-wrapper">
+                            <div class="constant-column-3 timing clearfix">
+                                <div class="check-in">
+                                    <label>Departs</label>
+                                    <span>FEB 10, 2014<br />10 am</span>
+                                </div>
+                                <div class="duration text-center">
                                     <i class="soap-icon-clock"></i>
+                                    <span>4 Nights</span>
                                 </div>
-                                <dl class="details">
-                                    <dt class="skin-color">Duration</dt>
-                                    <dd>1 day 3 hours</dd>
-                                </dl>
+                                <div class="check-out">
+                                    <label>Returns</label>
+                                    <span>feb 15, 2014<br />2 PM</span>
+                                </div>
                             </div>
-                            <div class="icon-box style11 full-width">
-                                <div class="icon-wrapper">
-                                    <i class="soap-icon-departure"></i>
-                                </div>
-                                <dl class="details">
-                                    <dt class="skin-color">Location</dt>
-                                    <dd>Rome</dd>
-                                </dl>
+                            <div class="guest">
+                                <small class="uppercase">1 grand suite for <span class="skin-color">2 Persons</span></small>
                             </div>
                         </div>
                     </article>
                     
                     <h4>Other Details</h4>
                     <dl class="other-details">
-                        <dt class="feature">Tour:</dt><dd class="value">3 days</dd>
-                        <dt class="feature">Extra benefits:</dt><dd class="value">No</dd>
-                        <dt class="feature">taxes and fees:</dt><dd class="value">Free</dd>
-                        <dt class="total-price">Total Price</dt><dd class="total-price-value">$534.00</dd>
+                        <dt class="feature">room Type:</dt><dd class="value">Grand Suite</dd>
+                        <dt class="feature">food &amp; dining:</dt><dd class="value">$121</dd>
+                        <dt class="feature">Cruise price:</dt><dd class="value">$529</dd>
+                        <dt class="feature">taxes and fees:</dt><dd class="value">$173</dd>
+                        <dt class="total-price">Total Price</dt><dd class="total-price-value">$823</dd>
                     </dl>
                 </div>
                 

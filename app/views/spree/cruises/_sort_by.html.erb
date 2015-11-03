@@ -6,18 +6,18 @@
       <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>duration</span></a></li>
   </ul>
   <ul class="swap-tiles clearfix block-sm">
-      <li class="swap-list <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'list' %>">
-          <%= link_to list_cruises_path do %>
+      <li class="swap-list <%= 'active' if params[:controller] == 'spree/cruises' && params[:view].nil? %>">
+          <%= link_to cruises_path do %>
             <i class="soap-icon-list"></i>
           <% end %>
       </li>
-      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'grid' %>">
-          <%= link_to grid_cruises_path do %>
+      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/cruises' && params[:view] == 'grid' %>">
+          <%= link_to cruises_path(view: :block) do %>
             <i class="soap-icon-grid"></i>
           <% end %>
       </li>
-      <li class="swap-block <%= 'active' if params[:controller] == 'spree/cruises' && params[:action] == 'block' %>">
-          <%= link_to block_cruises_path do %>
+      <li class="swap-block <%= 'active' if params[:controller] == 'spree/cruises' && params[:view] == 'block' %>">
+          <%= link_to cruises_path(view: :block) do %>
             <i class="soap-icon-block"></i>
           <% end %>
       </li>

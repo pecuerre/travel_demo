@@ -1,111 +1,109 @@
-<div class="col-sm-4 col-md-3">
-  <h4 class="search-results-title"><i class="soap-icon-search"></i><b>627</b> results found.</h4>
+<h4 class="search-results-title"><i class="soap-icon-search"></i><b>627</b> results found.</h4>
 
-  <div class="toggle-container filters-container">
-    <div class="panel style1 arrow-right">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#price-filter" class="collapsed">Price</a>
-      </h4>
+<div class="toggle-container filters-container">
+  <div class="panel style1 arrow-right">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#price-filter" class="collapsed">Price</a>
+    </h4>
 
-      <div id="price-filter" class="panel-collapse collapse">
-        <div class="panel-content">
-          <div id="price-range"></div>
+    <div id="price-filter" class="panel-collapse collapse">
+      <div class="panel-content">
+        <div id="price-range"></div>
+        <br/>
+        <span class="min-price-label pull-left"></span>
+        <span class="max-price-label pull-right"></span>
+
+        <div class="clearer"></div>
+      </div>
+      <!-- end content -->
+    </div>
+  </div>
+
+  <div class="panel style1 arrow-right">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#cartype-filter" class="collapsed">Car Type</a>
+    </h4>
+
+    <div id="cartype-filter" class="panel-collapse collapse filters-container">
+      <div class="panel-content">
+        <ul class="check-square filters-option">
+          <% @cars_types.each do |cartype| %>
+              <li><a href="#"><%= cartype %>
+                <small><%= rand(10...100) %></small>
+              </a></li>
+          <% end %>
+        </ul>
+        <a class="button btn-mini">MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel style1 arrow-right">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#car-rental-agent-filter" class="collapsed">Car Rental Agent</a>
+    </h4>
+
+    <div id="car-rental-agent-filter" class="panel-collapse collapse">
+      <div class="panel-content">
+        <ul class="check-square filters-option">
+          <% @cars.each do |car| %>
+              <li><a href="#"><%= car.rental_company %>
+                <small><%= rand(10...100) %></small>
+              </a></li>
+          <% end %>
+        </ul>
+        <a class="button btn-mini">MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel style1 arrow-right">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#car-preferences-filter" class="collapsed">Car Preferences</a>
+    </h4>
+
+    <div id="car-preferences-filter" class="panel-collapse collapse">
+      <div class="panel-content">
+        <ul class="check-square filters-option">
+          <% lf=@cars.first.list_of_features_car %>
+          <% lf.each do |key, value| %>
+              <li><a href="#"><%= key %></a></li>
+          <% end %>
+        </ul>
+        <a class="button btn-mini">MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel style1 arrow-right">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#modify-search-panel" class="collapsed">Modify Search</a>
+    </h4>
+
+    <div id="modify-search-panel" class="panel-collapse collapse">
+      <div class="panel-content">
+        <form method="post">
+          <div class="form-group">
+            <label>pickup from</label>
+            <input type="text" class="input-text full-width" placeholder="city, district, or specific airpot" value=""/>
+          </div>
+          <div class="form-group">
+            <label>pick-up date</label>
+
+            <div class="datepicker-wrap">
+              <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>drop-off date</label>
+
+            <div class="datepicker-wrap">
+              <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy"/>
+            </div>
+          </div>
           <br/>
-          <span class="min-price-label pull-left"></span>
-          <span class="max-price-label pull-right"></span>
-
-          <div class="clearer"></div>
-        </div>
-        <!-- end content -->
-      </div>
-    </div>
-
-    <div class="panel style1 arrow-right">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#cartype-filter" class="collapsed">Car Type</a>
-      </h4>
-
-      <div id="cartype-filter" class="panel-collapse collapse filters-container">
-        <div class="panel-content">
-          <ul class="check-square filters-option">
-            <% @cars_types.each do |cartype| %>
-                <li><a href="#"><%= cartype %>
-                  <small><%= rand(10...100) %></small>
-                </a></li>
-            <% end %>
-          </ul>
-          <a class="button btn-mini">MORE</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel style1 arrow-right">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#car-rental-agent-filter" class="collapsed">Car Rental Agent</a>
-      </h4>
-
-      <div id="car-rental-agent-filter" class="panel-collapse collapse">
-        <div class="panel-content">
-          <ul class="check-square filters-option">
-            <% @cars.each do |car| %>
-                <li><a href="#"><%= car.rental_company %>
-                  <small><%= rand(10...100) %></small>
-                </a></li>
-            <% end %>
-          </ul>
-          <a class="button btn-mini">MORE</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel style1 arrow-right">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#car-preferences-filter" class="collapsed">Car Preferences</a>
-      </h4>
-
-      <div id="car-preferences-filter" class="panel-collapse collapse">
-        <div class="panel-content">
-          <ul class="check-square filters-option">
-            <% lf=@cars.first.list_of_features_car %>
-            <% lf.each do |key, value| %>
-                <li><a href="#"><%= key %></a></li>
-            <% end %>
-          </ul>
-          <a class="button btn-mini">MORE</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel style1 arrow-right">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#modify-search-panel" class="collapsed">Modify Search</a>
-      </h4>
-
-      <div id="modify-search-panel" class="panel-collapse collapse">
-        <div class="panel-content">
-          <form method="post">
-            <div class="form-group">
-              <label>pickup from</label>
-              <input type="text" class="input-text full-width" placeholder="city, district, or specific airpot" value=""/>
-            </div>
-            <div class="form-group">
-              <label>pick-up date</label>
-
-              <div class="datepicker-wrap">
-                <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>drop-off date</label>
-
-              <div class="datepicker-wrap">
-                <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy"/>
-              </div>
-            </div>
-            <br/>
-            <button class="btn-medium icon-check uppercase full-width">search again</button>
-          </form>
-        </div>
+          <button class="btn-medium icon-check uppercase full-width">search again</button>
+        </form>
       </div>
     </div>
   </div>

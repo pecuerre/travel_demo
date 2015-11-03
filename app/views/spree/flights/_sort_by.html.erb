@@ -7,18 +7,18 @@
   </ul>
   
   <ul class="swap-tiles clearfix block-sm">
-      <li class="swap-list <%= 'active' if params[:controller] == 'spree/flights' && params[:action] == 'list' %>">
-          <%= link_to list_flights_path do %>
+      <li class="swap-list <%= 'active' if params[:controller] == 'spree/flights' && params[:view].nil? %>">
+          <%= link_to flights_path do %>
             <i class="soap-icon-list"></i>
           <% end %>
       </li>
-      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/flights' && params[:action] == 'grid' %>">
-          <%= link_to grid_flights_path do %>
+      <li class="swap-grid <%= 'active' if params[:controller] == 'spree/flights' && params[:view] == 'grid' %>">
+          <%= link_to flights_path(view: 'grid') do %>
             <i class="soap-icon-grid"></i>
           <% end %>
       </li>
-      <li class="swap-block <%= 'active' if params[:controller] == 'spree/flights' && params[:action] == 'block' %>">
-          <%= link_to block_flights_path do %>
+      <li class="swap-block <%= 'active' if params[:controller] == 'spree/flights' && params[:view] == 'block' %>">
+          <%= link_to flights_path(view: 'block') do %>
             <i class="soap-icon-block"></i>
           <% end %>
       </li>

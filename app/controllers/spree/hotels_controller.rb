@@ -24,12 +24,6 @@ module Spree
       @products = @products.order(params[:sort]) if params[:sort]
     end
 
-    def grid
-    end
-
-    def block
-    end
-
     def detail
     end
 

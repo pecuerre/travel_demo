@@ -13,7 +13,10 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  #config[:check_for_spree_alerts] = true
+  
+ # config.supported_currencies   = 'USD,EUR,CAD'
+ #  config.allow_currency_change  = true
+ # config.show_currency_selector = true
 end
 
 Spree.user_class = "Spree::LegacyUser"

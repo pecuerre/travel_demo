@@ -74,6 +74,14 @@ GIT
       spree_backend (~> 3.0.0)
 
 GIT
+  remote: git://github.com/spree-contrib/spree_multi_currency.git
+  revision: cfaf64a2ce02f95a41ff0fb984620295395e0a2b
+  branch: 3-0-stable
+  specs:
+    spree_multi_currency (3.0.0.beta)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_slider.git
   revision: a39469a3514df887e20a12d781b025c90399deec
   branch: 3-0-stable
@@ -81,6 +89,21 @@ GIT
     spree_slider (1.2.0)
       spree_backend (>= 3.0.0)
       spree_core (>= 3.0.0)
+
+GIT
+  remote: git://github.com/spree-contrib/spree_social.git
+  revision: 1ba6a7dfb5ee1021422c09e740d5b312551b6272
+  branch: 3-0-stable
+  specs:
+    spree_social (3.0.0.rc4)
+      oa-core
+      omniauth
+      omniauth-amazon
+      omniauth-facebook
+      omniauth-github
+      omniauth-google-oauth2
+      omniauth-twitter
+      spree_core (~> 3.0.0.rc4)
 
 GIT
   remote: git://github.com/spree-contrib/spree_static_content.git
@@ -308,6 +331,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashie (3.4.3)
     highline (1.6.21)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -356,12 +380,40 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     non-stupid-digest-assets (1.0.5)
+    oa-core (0.3.2)
+    oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-amazon (1.0.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-github (1.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.2.9)
+      addressable (~> 2.3)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (~> 1.3.1)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    omniauth-twitter (1.2.1)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
     paperclip (4.2.4)
       activemodel (>= 3.2.0)
@@ -554,8 +606,10 @@ DEPENDENCIES
   spree_auth_devise!
   spree_i18n!
   spree_mail_settings!
+  spree_multi_currency!
   spree_property_type!
   spree_slider!
+  spree_social!
   spree_static_content!
   spree_travel_core!
   spree_travel_flight!

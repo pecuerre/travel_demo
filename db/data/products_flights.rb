@@ -16,7 +16,7 @@ CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   index += 1
   next if index == 1
   flight_data = get_flight_parts(row)
-  next if flight_data[:flight_number] == ''
+  next if flight_data[:flight_number].to_s == ''
   flight_name   = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
   flight_price = flight_data[:adult_price]
 
@@ -44,6 +44,7 @@ CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
     rate.set_persisted_option_value(:one_child, flight_data[:child_price])
     rate.set_persisted_option_value(:one_infant, flight_data[:infant_price])
     rate
+    puts " - Rate: #{flight_data[:date]},#{flight_data[:origin]},#{flight_data[:adult_price]}"
     rate.save
   else
     product = create_product(product_attrs)

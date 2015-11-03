@@ -77,11 +77,13 @@ module TripFunctions
   #############################################################################
 
   def normalize_date(date_string)
-    month, day, year = date_string.split("/")
+    date, time = date_string.to_s.split(" ")
+    month, day, year = date.split("/")
     month = "0" + month if month.length == 1
     day = "0" + day if day.length == 1
     year = "20" + year if year.length == 2
-    "#{year}-#{month}-#{day}".to_date
+    string = "#{year}-#{month}-#{day}"
+    string.to_date
   end
 
   # TODO: implementar esto

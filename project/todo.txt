@@ -17,5 +17,9 @@ Preguntas
   - luego vendran mas ficheros con vuelos?
   - siempre te van a dar csv? o te pueden dar cualquier cosa?
 
+=======
+
+* que hago con la hora de salida?
+
 TODO
 ====

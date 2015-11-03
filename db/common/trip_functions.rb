@@ -68,6 +68,10 @@ module TripFunctions
     Spree::TravelCalculator.find_by_name('Spree::CalculatorFlight')
   end
 
+  def get_shipping_category
+    Spree::ShippingCategory.first
+  end
+
   #############################################################################
   ### Normalize functions
   #############################################################################
@@ -89,7 +93,7 @@ module TripFunctions
   ### Extract functions
   #############################################################################
 
-  def get_flight_parts(csv_row)
+  def get_flight_parts(row)
     {
       :flight_number   => row[0],
       :charter         => row[1],

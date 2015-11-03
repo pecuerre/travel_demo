@@ -1,5 +1,7 @@
 require Rails.root + "db/common/trip_functions"
+require Rails.root + "db/common/fake_functions"
 include TripFunctions
+include FakeFunctions
 require "csv"
 
 shipping_category = get_shipping_category
@@ -12,9 +14,9 @@ hash = {}
 
 CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   index += 1
-  return if index == 1
+  next if index == 1
   flight_data = get_flight_parts(row)
-  return if flight_data[:flight_number] == ''
+  next if flight_data[:flight_number] == ''
   flight_name   = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
   flight_price = flight_data[:adult_price]
 

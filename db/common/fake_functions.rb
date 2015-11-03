@@ -10,10 +10,6 @@ module FakeFunctions
 		place_taxons
 	end
 
-	def get_shipping_category
-		Spree::ShippingCategory.first
-	end
-
 	def get_properties_array
 		Spree::Property.all.to_a
 	end

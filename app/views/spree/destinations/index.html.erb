@@ -1,25 +1,56 @@
-
 <section id="content">
+  <div class="search-box-wrapper">
+    <div class="search-box container">
+      <ul class="search-tabs clearfix">
+        <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
+        <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
+        <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
+        <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
+        <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
+        <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
+      </ul>
+      <div class="visible-mobile">
+        <ul id="mobile-search-tabs" class="search-tabs clearfix">
+          <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
+          <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
+          <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
+          <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
+          <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
+          <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
+        </ul>
+      </div>
 
-
+      <section id="search-form-container" data-hook="search-form-container">
+        <div class="search-tab-content">
+          <%= render :partial => 'spree/flights/inputs', :locals => {id: 'flights', active: true} %>
+          <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels', active: false} %>
+          <%= render :partial => 'spree/properties/inputs', :locals => {id: 'properties', active: false} %>
+          <%= render :partial => 'spree/cars/inputs', :locals => {id: 'cars', active: false} %>
+          <%= render :partial => 'spree/cruises/inputs', :locals => {id: 'cruises', active: false} %>
+          <%= render :partial => 'spree/tours/inputs', :locals => {id: 'tours', active: false} %>
+        </div>
+      </section>
+    </div>
+  </div>
   <div class="section container">
-    <h2>Popular Destination <%= image_tag('icon/top-destination') %></h2>
+    <h2><%= t(:popular_destinations) %> <%= image_tag('icon/top-destination.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-          </figure>
+        <article class="box" id="destiny1">
           <div class="details text-center">
-            <h4 class="box-title">Greece</h4>
-
-            <p class="offers-content">(15 deal offers)</p>
-
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+            <h4 class="box-title">La Habana</h4>
+            <h5 class="box-title">270 reviews</h5>
+            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+          </div>
+          <div class="details text-center secondbox">
+            <%= image_tag('icon/fligth.png', class: 'small_icon') %>
+            <%= image_tag('icon/hotel.png', class: 'small_icon') %>
+            <%= image_tag('icon/tours.png', class: 'small_icon') %>
+          </div>
+          <div class="details text-center secondbox">
             <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
           </div>
         </article>
@@ -27,14 +58,12 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg', size: "270x160", alt: "Varadero") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Singapore</h4>
+            <h4 class="box-title">Varadero</h4>
 
-            <p class="offers-content">(15 deal offers)</p>
-
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+            <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
             <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
@@ -45,14 +74,13 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg', size: "270x160", alt: "Trinidad") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Malaysia</h4>
+            <h4 class="box-title">Trinidad</h4>
 
-            <p class="offers-content">(15 deal offers)</p>
 
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+            <div data-placement="bottom" data-toggle="tooltip" title="5 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
             <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
@@ -63,14 +91,12 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg', size: "270x160", alt: "Pinar") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Europe</h4>
+            <h4 class="box-title">Pinar</h4>
 
-            <p class="offers-content">(15 deal offers)</p>
-
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+            <div data-placement="bottom" data-toggle="tooltip" title="5 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
             <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
@@ -80,8 +106,9 @@
       </div>
     </div>
   </div>
-  <div class="global-map-area section parallax" data-stellar-background-ratio="1.5">
+  <div class="image-section">
     <div class="container">
+
       <div class="text-center description">
         <h1>We Provide You An Ultimate Travel Experience</h1>
 
@@ -95,7 +122,7 @@
         <div class="col-md-4">
           <article class="box animated" data-animation-type="fadeInUp">
             <figure class="middle-block">
-              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/travel.jpg', size: "100x172", alt: "Travel") %>
               <span class="opacity-wrapper"></span>
             </figure>
             <div class="details">
@@ -111,7 +138,7 @@
         <div class="col-md-4">
           <article class="box animated" data-animation-type="fadeInUp">
             <figure class="middle-block">
-              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/discover.jpg', size: "100x172", alt: "Discover") %>
               <span class="opacity-wrapper"></span>
             </figure>
             <div class="details">
@@ -127,7 +154,7 @@
         <div class="col-md-4">
           <article class="box animated" data-animation-type="fadeInUp">
             <figure class="middle-block">
-              <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172"/>
+              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/enjoy.jpg', size: "100x172", alt: "Enjoy") %>
               <span class="opacity-wrapper"></span>
             </figure>
             <div class="details">
@@ -141,10 +168,11 @@
           </article>
         </div>
       </div>
+
     </div>
   </div>
   <div class="section container">
-    <h2>Popular Hotels <%= image_tag('icon/hotel.png') %></h2>
+    <h2><%= t(:popular_hotels) %>  <%= image_tag('icon/hotel.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box hotel listing-style1">
       <div class="col-sms-6 col-sm-6 col-md-3">
@@ -169,8 +197,8 @@
               nequetiam.</p>
 
             <div class="action">
-              <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-              <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+              <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
+              <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222"><%= t(:view_on_map) %></a>
             </div>
           </div>
         </article>
@@ -194,8 +222,8 @@
               nequetiam.</p>
 
             <div class="action">
-              <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-              <a href="#" class="button btn-small yellow popup-map" data-box="37.089072, -8.247880">VIEW ON MAP</a>
+              <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
+              <a href="#" class="button btn-small yellow popup-map" data-box="37.089072, -8.247880"><%= t(:view_on_map) %></a>
             </div>
           </div>
         </article>
@@ -219,8 +247,8 @@
               nequetiam.</p>
 
             <div class="action">
-              <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-              <a href="#" class="button btn-small yellow popup-map" data-box="40.463667, -3.749220">VIEW ON MAP</a>
+              <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
+              <a href="#" class="button btn-small yellow popup-map" data-box="40.463667, -3.749220"><%= t(:view_on_map) %></a>
             </div>
           </div>
         </article>
@@ -244,8 +272,8 @@
               nequetiam.</p>
 
             <div class="action">
-              <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-              <a href="#" class="button btn-small yellow popup-map" data-box="40.705631, -73.978003">VIEW ON MAP</a>
+              <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
+              <a href="#" class="button btn-small yellow popup-map" data-box="40.705631, -73.978003"><%= t(:view_on_map) %></a>
             </div>
           </div>
         </article>
@@ -257,61 +285,50 @@
 
     <div class="row image-box hotel listing-style1">
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Santa Clara</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Matanzas</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">La Habana</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <div class="details">
-            <div id="icon-box"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-            <h4 class="box-title">Camaguey</h4>
-
-            <div class="feedback">
-                        <span class="price">
-                            $360
-                        </span><a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-            </div>
+        <article class="box" id="cheapflight">
+          <div class="row">
+            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><div class="price">$89.8</div></div>
+            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
           </div>
         </article>
       </div>
+
     </div>
   </div>
   <div class="global-map-area promo-box no-margin parallax" data-stellar-background-ratio="1.5">
@@ -343,23 +360,22 @@
     </div>
   </div>
   <div class="section container">
-    <h2>Popular Tours <%= image_tag('icon/tours') %></h2>
+    <h2>Popular Tours <%= image_tag('icon/tours.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/cuba_private.jpg', size: "270x160", alt: "Tour1") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Greece</h4>
+            <h4 class="box-title"><%= t(:tour_cuba_private_title) %></h4>
 
-            <p class="offers-content">(15 deal offers)</p>
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description"><%= t(:tour_cuba_private_short_description) %></p>
             <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
           </div>
         </article>
@@ -367,17 +383,16 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/discover_cuba.jpg', size: "270x160", alt: "Tour2") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Singapore</h4>
+            <h4 class="box-title"><%= t(:tour_discover_cuba_title) %></h4>
 
-            <p class="offers-content">(15 deal offers)</p>
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description"><%= t(:tour_discover_cuba_short_description) %></p>
             <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
           </div>
         </article>
@@ -385,35 +400,33 @@
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/b2.png', size: "270x160", alt: "Tour3") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Malaysia</h4>
+            <h4 class="box-title"><%= t(:tour_havana_arts_title) %></h4>
 
-            <p class="offers-content">(15 deal offers)</p>
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description"><%= t(:tour_havana_arts_short_description) %></p>
             <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
-          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/profesional.jpg', size: "270x160", alt: "Tour3") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title">Europe</h4>
+            <h4 class="box-title"><%= t(:tour_professional_title) %></h4>
 
-            <p class="offers-content">(15 deal offers)</p>
 
             <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
             </div>
-            <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+            <p class="description"><%= t(:tour_professional_short_description) %></p>
             <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
           </div>
         </article>
@@ -421,23 +434,3 @@
     </div>
   </div>
 </section>
-
-<script>
-    tjq(document).ready(function () {
-        tjq('.revolution-slider').revolution(
-                {
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    startwidth: 1170,
-                    startheight: 646,
-                    onHoverStop: "on",
-                    hideThumbs: 10,
-                    fullWidth: "on",
-                    forceFullWidth: "on",
-                    navigationType: "none",
-                    shadow: 0,
-                    spinner: "spinner4",
-                    hideTimerBar: "on",
-                });
-    });
-</script>

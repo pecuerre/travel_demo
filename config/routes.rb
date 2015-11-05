@@ -59,6 +59,11 @@ Rails.application.routes.draw do
         get :thanks_you
       end
     end
+    resources :aboutus, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
     resources :destinations, only: [:index, :show] do
       collection do
         get :list

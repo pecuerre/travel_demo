@@ -257,10 +257,56 @@ en:
   if_you_cancell: 'If You Cancel Your Booking'
   if_you_cancell_text_html: '<p>If you cancel your arrangements, you may be entitled to a full refund. We need to receive from you your original voucher before any applicable refund can be considered. 30 days before the booking ->100% refund, less then 30Days 80% refund, the 20% will remain as Lifetime Deposit</p>'
 
-
   terms_conditions: 'Terms & Conditions'
   terms_conditions_text_html: '<p>These terms and conditions describe what you are legally entitled to expect from us when you purchase travel related services through us, as well as your own obligations as a customer.</p>'
 
 
-  privacy_policy: 'Privacy Policy'
-  contac_us: 'Contact Us'
+  our_agreement: 'Our Agreement With You'
+
+  products_and_supliers: 'Products and Suppliers'
+  products_and_supliers_text_html: '<p>We sell a variety of travel related products from different suppliers and service providers. Each supplier(HOSTAL or CASA) has its own terms and conditions that are applicable to your particular arrangements in addition to our general terms and conditions, and you should make sure you understand them. </p><p>Venacuba is acting as intermediary or a "Booking Agent" for products and services that are not directly supplied by us. We are not a co-vendor of such products and services. You will be entering into a separate contract with such suppliers in connection with such products and services. </p>'
+
+  deposits_and_paiment: 'Deposits and Payment'
+  deposits_and_paiment_text_html: '<p>Upon your provision of your payment information, you are authorizing us to make the payment arrangements with the corresponding suppliers.</p>'
+
+  documentation: 'Documentation'
+  documentation_text_html: '<p>Our general practice is to send documents to our customers electronically whenever possible. We reserve the right to charge an administration fee should you make a request that such documents to be sent as a hard copy.</p>'
+
+ terms_cancellation_text_html: '<p>As your booking agent, we will ensure that you are promptly notified of any significant changes once we become aware of ANY change, but we accept no liability for any changes or costs incurred that as result of this. Subject to the supplier’s terms and conditions, you will then have the choice of accepting the change of arrangements, accepting an offer of alternative travel arrangements if one is made available by the supplier, or canceling your booked arrangements and receiving any applicable refunds.</p><p>Please ensure that you have given your contact email address to us and that you regularly check for messages before you leave.</p>'
+
+ your_agreement: 'Your Agreement With Us'
+ your_aceptance: 'Your Acceptance of these Terms and Conditions'
+
+ your_aceptance_text_html: '<p>By booking your arrangement with us or using our website, you are agreeing to be bound by the terms of this agreement and any additional terms and conditions of any supplier that are applicable to your booking, travel arrangements or use of any website content. You agree on behalf of yourself and those you represent to comply with all such terms and conditions, including the payment of all amounts when due. You agree that any violation of such terms and conditions may result in (a) the cancellation of your reservation or purchase, (b) your forfeiture of amount paid for your reservation or purchase, (c) you being denied access to the applicable travel related product or service</p><p> You represent and warrant that (a) you are of sufficient age to use our services and website and can create binding legal obligations in connection with your use, (b) you are legally authorized to act on behalf of those you represent and accept these terms and conditions on their behalf, and (c) the information supplied by you or members of your group is true and correct. </p><p>You are responsible for informing such other persons of all terms and conditions applicable to their travel arrangements. You understand that you are financially responsible for any use of our services or website by you and those using your name or account.</p>'
+
+ if_you_change: 'If You Change Your Booking'
+ if_you_change_text_html: '<p>Where a change requested by you to your travel arrangements is permitted and possible, our standard service fees will apply in addition to any additional supplier charges. Please note that all reservation changes are subject to availability and the terms and conditions of the product purchased. </p>'
+
+ if_you_have: 'If You Have A Complaint'
+ if_you_have_text_html: '<p>If you have a problem during your holiday, please inform the relevant supplier (e.g. the B&B owners) immediately. Should they be unable to resolve the matter, please contact us as soon as possible via the contact information on the website. It is our pleasure to resolve any disputes and ensure the complete satisfaction of our clients. However, if you fail to contact us in a timely manner, we will not be permitted the opportunity to investigate your complaint and attempt to rectify any error while you are away.  </p>'
+
+ travel_documents: 'Travel Documents and Destinations'
+ travel_documents_text_html: '<p>It is your responsibility to ensure that all of the details on your travel documents are correct and to bring to our attention any errors or discrepancies immediately. Your travel documents are valuable and should be safeguarded as if they were cash. It is not always possible to replace travel documents in the case of loss, theft, damage, etc. </p>'
+
+ passport: 'Passport, Visa and Immigration Requirements'
+ passport_text_html: '<p>It is your responsibility to fulfill the passport, visa and other immigration requirements applicable to your itinerary. You should confirm these with the relevant embassies and/or consulates. We do not accept any responsibility in the case of you being unable to travel due to not complying with any such requirements.</p>'
+
+ insurance: 'Insurance'
+ insurance_text_html: '<p>Travel insurance is a vital part of your arrangements. We strongly recommend that you have taken out adequate insurance for the duration of your journey. Travel insurance is a mandatory element of some travel arrangements. We may be able to arrange travel insurance to be provided to you, furnish you a quote, and answer any queries you may have regarding the insurance.  </p>'
+
+ use_of_service: 'Use of our Services and Website'
+ use_of_service_text_html: '<p>You agree you will only use our website or services to make legitimate reservations or purchases and shall not make speculative, false or fraudulent reservations. You agree that you will only use our website and services in compliance with applicable law.</p><p>Without our prior written permission, you may not (a) access, monitor or copy any content or information on our website using any "robot," "spider," or other automated or manual device or program, (b) deep link to any portion of our website, or (c) "frame" or incorporate any portion of our website into any other website.</p>'
+
+ indemnification: 'Indemnification'
+ indemnification_text_html: '<p>You agree to indemnify us and our affiliates, and any of our suppliers, and any such parties’ officers, directors, employees and agents from and against any claims, causes of action, demands, losses, damages, or other costs, (including reasonable legal and accounting fees) brought by you or third parties as a result of (a) your breach of this Agreement, (b) your violation of any law or rights of any third party, or (c) your use of our website</p>'
+
+ privacy_policy: 'Privacy Policy'
+ contac_us: 'Contact Us'
+
+ privacy_policy: 'Privacy Policy'
+ privacy_policy_text_html: '<p>We are committed to protecting the confidentiality and privacy of personal information we hold about our customers.</p> '
+
+ what_is_personal: 'What is Personal Information? '
+ what_is_personal_text_html: '<p>Personal information could be used to identify a specific individual. It may include but not be limited to information such as your name, home address, phone numbers, e-mail addresses, web site URL, matches, absentee instructions and emergency contacts.</p>'
+
+ how_do_we_use_text_html: '<p>We require your personal information in order to establish your record (i.e. guest, owner or partner record) and we collect the information from you.</p><p> We use your personal information for the purposes reasonably required in order for us to carry on business, including the following:</p><ul></ul>'

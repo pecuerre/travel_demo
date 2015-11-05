@@ -14,9 +14,11 @@ module SpreeTravel
     end
 
     def self.params_for_flights?(params)
-      return false if params['search-going-to'].empty?
-      return false if params['search-check-in-date'].empty?
-      return false if params['search-check-out-date'].empty?
+      return false if params['search-flight-type'].empty?
+      return false if params['search-flying-from'].empty?
+      return false if params['search-flying-to'].empty?
+      return false if params['search-departing-date'].empty?
+      return false if params['search-flight-type'] == 'Roundtrip' && params['search-returning-date'].empty?
       true
     end
 

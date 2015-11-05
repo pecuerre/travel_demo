@@ -32,6 +32,7 @@ CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
       :calculator_id => flight_calculator.id,
   }
   product = Spree::Product.where(:name => flight_name).first
+
   if product
     rate = Spree::Rate.new
     rate.variant_id = product.master.id

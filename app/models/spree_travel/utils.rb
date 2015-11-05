@@ -6,7 +6,14 @@ module SpreeTravel
         :es => 'es-MX'
     }
 
-    def self.availability_params_present?(params)
+    def self.params_for_hotels?(params)
+      return false if params['search-going-to'].empty?
+      return false if params['search-check-in-date'].empty?
+      return false if params['search-check-out-date'].empty?
+      true
+    end
+
+    def self.params_for_flights?(params)
       return false if params['search-going-to'].empty?
       return false if params['search-check-in-date'].empty?
       return false if params['search-check-out-date'].empty?

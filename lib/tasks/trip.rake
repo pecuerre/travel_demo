@@ -45,6 +45,7 @@ namespace :trip do
       Rake.application['trip:delete:taxons'].invoke
       Rake.application['trip:delete:taxonomies'].invoke
       Rake.application['trip:delete:hotels'].invoke
+      Rake.application['trip:delete:flights'].invoke
     end
   end
 
@@ -93,7 +94,7 @@ namespace :trip do
     namespace :rates do
       desc 'Rates for flights'
       task :flights do
-        require Rails.root + "db/data/rates_flights"
+        #require Rails.root + "db/data/rates_flights"
       end
     end
 

@@ -8,8 +8,8 @@ module SpreeTravel
     def hotels(params)
       destination = Spree::Taxon.where('name LIKE ?', params['search-going-to']).first
 
-      #return SpreeTravel::Response.empty_destination unless destination
-      #return SpreeTravel::Response.not_enough_info unless SpreeTravel::Utils.availability_params_present?(params)
+      # return SpreeTravel::Response.empty_destination unless destination
+      # return SpreeTravel::Response.not_enough_info_for_hotels unless SpreeTravel::Utils.params_for_hotels?(params)
 
       taxons = [destination]
       products = Spree::Product.hotels
@@ -34,19 +34,14 @@ module SpreeTravel
       SpreeTravel::Response.new(hotels)
     end
 
-
-
-
-
-
-
     def flights(params)
+        departure_airport = Spree::OptionValue.where('value LIKE ?', params['search-flying-from']).first
+        arrival_airport = Spree::OptionValue.where('value LIKE ?', params['search-flying-to']).first
 
-        departure_airport = Airport.like_location_and_iata(params['search-flying-from']).first
-        return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-from']}."]) unless departure_airport
+        # return SpreeTravel::Response.invalid_airport unless departure_airport
+        # return SpreeTravel::Response.invalid_airport unless arrival_airport
+        return SpreeTravel::Response.not_enough_info_for_flights unless SpreeTravel::Utils.availability_params_present?(params)
 
-        arrival_airport = Airport.like_location_and_iata(params['search-flying-to']).first
-        return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-to']}."]) unless arrival_airport
 
         if not params['search-flight-type'] or params['search-flight-type'] == '' or not params['search-flying-from'] or params['search-flying-from'] == '' or not params['search-flying-to'] or params['search-flying-to'] == '' or not params['search-departing-date'] or params['search-departing-date'] == '' or (params['search-flight-type'] == 'Roundtrip' and (not params['search-returning-date'] or params['search-returning-date'] == ''))
           return PriceTravel::Response.new([], ['There is not enough information to verify availability of flights.'])

@@ -223,3 +223,35 @@ es:
   see_all: 'Ver todo'
   view_on_map: 'Ver en el mapa'
   select: 'Seleccionar'
+
+  about_us: 'Acerca de nosotros'
+
+  who_we_are: 'Quiénes somos'
+  who_we_are_text_html: "<p> Somos los expertos en Cuba! En medio de un mar de resorts de propiedad extranjera, mi viaje a la misión de Cuba es mostrar Cuba! </p><p> Nos conectamos a los viajeros con vuelos, hoteles, los propietarios locales, restaurantes que ofrecen alojamiento y experiencias que hacen hincapié en lo personal memorables. Representamos B & B cubana propietarios directamente, lo que significa un amplio catálogo de fotos, descripciones y comentarios para usted! </p><p> Cuba es más que la arena y el sol. Con Mi viaje a Cuba, puede esperar aventura. Descubre con nosotros las personas, lugares, y de la cultura que no encontrará en ningún otro lugar. </p>"
+
+
+  what_do_we_do: 'Qué hacemos'
+  what_do_we_do_text_html: '<h3> Su satisfacción es nuestro negocio </ h3><p> Nos conocemos B & B propietario personalmente y trabajar con ellos porque son los mejores. Pero incluso con la mejor preparación, todavía pueden surgir problemas. Póngase en contacto con mi viaje a Cuba para cualquier problema, preguntas, discrepancias o algún descontento en absoluto con su estancia y vamos a trabajar para enderezarlo. A veces, las barreras del idioma y las diferencias culturales hacen que la comunicación clara difícil. Entendemos cubanos y entendemos VISITANTES. Es un placer para mediar en los problemas y en última instancia, le proporcionará un reembolso en caso necesario. Debido a que estamos involucrados en la resolución de disputas, utilizamos esta información para asegurar que los B & B descripciones son exactas y actualizar el contenido para asegurarse de que lo que estabas esperando es exactamente lo que obtienes.</p> '
+
+  what_do_we_offer: 'Qué ofrecemos?'
+  what_do_we_offer_text_html: '<h3> Línea B & B cubana calendario de disponibilidad </ h3><p> Ofrecemos la única línea B & B cubana calendario de disponibilidad para que pueda reservar con confianza. Porque representamos cada propiedad, usted nunca tendrá que preocuparse por exceso de reservas. </p><p> Pagar un depósito, normalmente el 20% o el importe total, Utilice Visa, Mastercard o Paypal </p> '
+
+
+
+  payment_policies: 'Políticas de Pago'
+  deposits_and_payment: 'Depósitos y pago'
+  deposits_and_payment_text_html: '. <p> A su provisión de la información de pago, se nos autoriza a hacer los arreglos de pago con los proveedores correspondientes </ p>'
+
+  cancellations_and_change: 'Cancelaciones y cambios'
+  cancellations_and_change_text_html: '<p> A medida que su agente de reservas, nos aseguraremos de que se le notifique de inmediato de cualquier cambio significativo una vez que nos damos cuenta de cualquier cambio, pero no aceptará ninguna responsabilidad por cualquier cambio o los costos incurridos que, como resultado de esto. Sujeto a los términos y condiciones del proveedor, a continuación, tendrá la opción de aceptar el cambio de los acuerdos, de aceptar una oferta de los arreglos de viaje alternativos si uno se pone a disposición por el proveedor, o cancelar sus arreglos reservado y recibir cualquier reembolso aplicables.</ p> '
+
+  if_you_cancell: 'Si usted cancela su reserva'
+  if_you_cancell_text_html: '<p> Si usted cancela sus arreglos, usted puede tener derecho a un reembolso completo. Tenemos que recibir de usted su bono original antes de cualquier reembolso aplicable puede ser considerado. 30 días antes de la reserva - reembolso> 100%, menos de 30Días 80% de reembolso, el 20% se mantendrá como Lifetime fuerte </ p> '
+
+  terms_conditions: 'Términos y Condiciones'
+
+
+
+
+  privacy_policy: 'Políticas de Privacidad'
+  contac_us: 'Contáctenos'

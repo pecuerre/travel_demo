@@ -231,3 +231,36 @@ en:
   see_all: 'See all'
   view_on_map: 'VIEW ON MAP'
   select: 'Select'
+
+  about_us: 'About us'
+
+  who_we_are: 'Who we are?'
+  who_we_are_text_html: "<p>We’re the Cuba experts! Amid a sea of foreign-owned resorts, My Trip to Cuba’s mission is to show Cuba!</p><p>We connect travellers with Flight, Hotels, local property managers, Restaurants  that provide memorable accommodations and experiences that emphasize the personal. We represent Cuban B&B owners directly, which means an extensive catalogue of photos, descriptions and reviews for you!</p><p> Cuba is more than sand and sun. With My Trip to Cuba, you can expect adventure. Discover with us people, places, and culture you won’t find anywhere else.</p>"
+
+  what_do_we_do: 'What do we do?'
+  what_do_we_do_text_html: '<h3>Your Satisfaction is Our Business</h3>
+                        <p> We know each B&B Owner personally and work with them because they are the best.  But even with the best preparation, problems can still arise.  Contact My Trip To Cuba for any issues, questions, discrepancies or any dissatisfaction at all with your stay and we will work to set it right. Sometimes language barriers and cultural differences make clear communication difficult. We understand Cubans and we understand VISITORS.  It is our pleasure to mediate any problems and ultimately provide you a refund where necessary.  Because we are involved in dispute resolution, we use this information to ensure that the B&B descriptions are accurate and update content to ensure that what you were expecting is exactly what you get.</p>'
+
+
+  what_do_we_offer: 'What do we offer?'
+  what_do_we_offer_text_html: '<h3>Online Cuban B&B availability calendar</h3><p>We offer the only online Cuban B&B availability calendar so you can book with confidence. Because we represent each property, you never have to worry about overbooking.</p><p> Pay a deposit, usually 20% or the full amount, Using Visa, MasterCard or Paypal</p>'
+
+
+  payment_policies: 'Payment Policies'
+
+  deposits_and_payment: 'Deposits and Payment'
+  deposits_and_payment_text_html: '<p>Upon your provision of your payment information, you are authorizing us to make the payment arrangements with the corresponding suppliers.</p>'
+
+  cancellations_and_change: 'Cancellations and Changes'
+  cancellations_and_change_text_html: '<p>As your booking agent, we will ensure that you are promptly notified of any significant changes once we become aware of ANY change, but we accept no liability for any changes or costs incurred that as result of this. Subject to the supplier’s terms and conditions, you will then have the choice of accepting the change of arrangements, accepting an offer of alternative travel arrangements if one is made available by the supplier, or canceling your booked arrangements and receiving any applicable refunds.</p>'
+
+  if_you_cancell: 'If You Cancel Your Booking'
+  if_you_cancell_text_html: '<p>If you cancel your arrangements, you may be entitled to a full refund. We need to receive from you your original voucher before any applicable refund can be considered. 30 days before the booking ->100% refund, less then 30Days 80% refund, the 20% will remain as Lifetime Deposit</p>'
+
+
+  terms_conditions: 'Terms & Conditions'
+  terms_conditions_text_html: '<p>These terms and conditions describe what you are legally entitled to expect from us when you purchase travel related services through us, as well as your own obligations as a customer.</p>'
+
+
+  privacy_policy: 'Privacy Policy'
+  contac_us: 'Contact Us'

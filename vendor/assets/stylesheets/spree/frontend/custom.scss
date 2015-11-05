@@ -489,7 +489,7 @@ li#help {
 
 .image-box .box {
   div {
-    color: white !important;
+    color: white;
   }
 }
 
@@ -554,4 +554,34 @@ li#help {
   text-align: right;
   padding-right: 10px;
   padding-top: 5px;
+}
+
+/****  FOOTER RELATED PAGES ***************************************/
+
+.details {
+  p {
+    color: $dark-blue-color;
+    font-size: 18px;
+    font-family: yanonekaffeesatz-regular;
+    text-align: justify;
+  }
+  h3 {
+    font-family: yanonekaffeesatz-bold;
+    color: $orange_color;
+  }
+}
+
+.panel-content {
+  p {
+    color: $dark-blue-color;
+    font-size: 18px;
+    font-family: yanonekaffeesatz-regular;
+    text-align: justify;
+  }
+}
+
+.panel-title {
+  color: #17a9af !important;
+  font-weight: bold;
+  font-size: 22px;
 }

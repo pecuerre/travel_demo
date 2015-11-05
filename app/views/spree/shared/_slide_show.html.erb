@@ -1,0 +1,36 @@
+<div id="slideshow">
+  <div class="fullwidthbanner-container">
+    <div class="revolution-slider" style="height: 0; overflow: hidden;">
+      <ul>
+        <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner1.jpg" alt="">
+        </li>
+        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner2.jpg" alt="">
+        </li>
+        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner3.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+    tjq(document).ready(function () {
+        tjq('.revolution-slider').revolution(
+                {
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    startwidth: 1170,
+                    startheight: 646,
+                    onHoverStop: "on",
+                    hideThumbs: 10,
+                    fullWidth: "on",
+                    forceFullWidth: "on",
+                    navigationType: "none",
+                    shadow: 0,
+                    spinner: "spinner4",
+                    hideTimerBar: "on",
+                });
+    });
+</script>

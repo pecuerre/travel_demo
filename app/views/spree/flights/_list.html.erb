@@ -10,7 +10,7 @@
                 <div class="first-row">
                   <div>
                     <h4 class="box-title"><%= f.name %>
-                      <small><%= f.fligh_type %></small>
+                      <small><%= f.flight_type %></small>
                     </h4>
                     <a><strong><%= f.stops %></strong></a>
 
@@ -21,7 +21,7 @@
                     </div>
                   </div>
                   <div>
-                    <span class="price"><small>AVG/PERSON</small><%= f.total_price %></span>
+                    <span class="price"><small>AVG/PERSON</small><%= f.prices[:spree_travel] %></span>
                   </div>
                 </div>
                 <div class="second-row">
@@ -29,7 +29,7 @@
                     <div class="take-off col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">Take off</span><br/><%= f.takeOff %>
+                        <span class="skin-color">Take off</span><br/><%= f.take_off %>
                       </div>
                     </div>
                     <div class="landing col-sm-4">
@@ -41,7 +41,7 @@
                     <div class="total-time col-sm-4">
                       <div class="icon"><i class="soap-icon-clock yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">total time</span><br/><%= f.duration_long_style %>
+                        <span class="skin-color">total time</span><br/><%= f.duration %>
                       </div>
                     </div>
                   </div>

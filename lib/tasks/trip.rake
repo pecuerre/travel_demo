@@ -25,13 +25,18 @@ namespace :trip do
     end
 
     desc 'Delete all taxons'
-    task :destinations => :environment do
+    task :taxons => :environment do
       Spree::Taxon.delete_all
     end
 
     desc 'Delete all hotels'
     task :hotels => :environment do
       Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel')).destroy_all
+    end
+
+    desc 'Delete all rates'
+    task :rates => :environment do
+      Spree::Rate.destroy_all
     end
 
     desc 'Delete all fligths'
@@ -42,10 +47,12 @@ namespace :trip do
     desc 'Delete all data (clean de project)'
     task :all => :environment do
       Rake.application['trip:delete:shipping_categories'].invoke
+      Rake.application['trip:delete:destinations'].invoke
       Rake.application['trip:delete:taxons'].invoke
       Rake.application['trip:delete:taxonomies'].invoke
       Rake.application['trip:delete:hotels'].invoke
       Rake.application['trip:delete:flights'].invoke
+      Rake.application['trip:delete:rates'].invoke
     end
   end
 

@@ -29,10 +29,10 @@ module Spree
       @flight_types=::Sample::Flight.flight_types
       @features=::Sample::Flight.features
       @booking=::Sample::Booking_Order.sample
-      @products = @flights
 
       api = SpreeTravel::Api.new
-      @flights = api.flights(params)
+      @flights = api.flights(params).resources
+      @products = @flights
     end
   end
 end

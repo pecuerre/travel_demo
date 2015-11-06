@@ -69,6 +69,7 @@ module SpreeTravel
     def self.parse_flights(products, params)
       flights = []
       products.each do |resource|
+        rate = resource.rates.first
         flight = Flight.new
         flight.name = resource.name
         # flight.airline = resource.airline
@@ -84,16 +85,16 @@ module SpreeTravel
         # departure.departure_date_time = resource.get_persistent_option_value(:departure_date)
         # departure.arrival_date_time = departure.departure_date_time + resource.duration
         # departure.terminal = resource.terminal
-        departure.departure_airport = resource.get_persistent_option_value(:origin)
+        departure.departure_airport = rate.get_persisted_option_value(:origin)
         # departure.departure_airport_code = resourse.departure_airport_code
-        departure.arrival_airport = resource.get_persistent_option_value(:destination)
+        departure.arrival_airport = rate.get_persisted_option_value(:destination)
         # departure.arrival_airport_code = resourse.arrival_airport_code
         departure.flight_number = resource.name
         # departure.booking_class = resource.booking_class
         flight.departure_flights << departure
 
         flight.same_booking_uri = flight_booking_uri(resource, params)
-        flight.booking_uri flight.same_booking_uri
+        flight.booking_uri = flight.same_booking_uri
         flights << flight
       end
       flights

@@ -1,4 +1,4 @@
-# This migration comes from spree_api (originally 20100107141738)
+# This migration comes from spree_travel (originally 20100107141738)
 class AddApiKeyToSpreeUsers < ActiveRecord::Migration
   def change
     unless defined?(User)

@@ -43,3 +43,4 @@
 //= require spree/frontend/search_hotels
 //= require spree/frontend/waypoints.min
 //= require spree/frontend/spree_multi_currency
+//= require store/spree_travel_flight

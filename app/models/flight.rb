@@ -2,12 +2,25 @@ class Flight
   include Resource
   attr_accessor :airline, :duration_in_minutes,
                 :departure_flights, :returning_flights,
-                :image_uri
+                :image_uri, :flight_type, :stops,
+                :list_of_departure_flights, :duration
 
   def flight_numbers
     departure_flight_numbers = @departure_flights.collect{|f| f.flight_number}
     returning_flight_numbers = @returning_flights.collect{|f| f.flight_number}
     departure_flight_numbers + returning_flight_numbers
+  end
+
+  def list_of_features_flight
+    []
+  end
+
+  def take_off
+    self.departure_flights.first.departure_airport
+  end
+
+  def landing
+    self.departure_flights.first.arrival_airport
   end
 
   def image

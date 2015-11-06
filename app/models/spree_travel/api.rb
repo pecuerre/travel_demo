@@ -36,14 +36,14 @@ module SpreeTravel
     end
 
     def flights(params)
-      departure_airport = Spree::OptionValue.where('value LIKE ?', params['search-flying-from']).first
-      arrival_airport = Spree::OptionValue.where('value LIKE ?', params['search-flying-to']).first
+      departure_airport = Spree::RateOptionValue.where('value LIKE ?', params['search-flying-from']).first
+      arrival_airport = Spree::RateOptionValue.where('value LIKE ?', params['search-flying-to']).first
 
       # return SpreeTravel::Response.invalid_airport unless departure_airport
       # return SpreeTravel::Response.invalid_airport unless arrival_airport
       # return SpreeTravel::Response.not_enough_info_for_flights unless SpreeTravel::Utils.params_for_flights?(params)
 
-      produdcs = Spree::Product.flights
+      products = Spree::Product.flights
       flights = SpreeTravel::Utils.parse_flights(products, params)
       SpreeTravel::Response.new(flights)
     end

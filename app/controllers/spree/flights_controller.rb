@@ -3,7 +3,6 @@ require 'travel_demo/booking_order'
 
 module Spree
 
-
   class FlightsController < Spree::StoreController
 
     respond_to :html
@@ -24,13 +23,16 @@ module Spree
 
     private
     def get_flights
-      @flights= ::Sample::Flight.sample
+      # @flights= ::Sample::Flight.sample
       @airlines=::Sample::Flight.airlines
       @stops=::Sample::Flight.stops
       @flight_types=::Sample::Flight.flight_types
       @features=::Sample::Flight.features
       @booking=::Sample::Booking_Order.sample
       @products = @flights
+
+      api = SpreeTravel::Api.new
+      @flights = api.flights(params)
     end
   end
 end

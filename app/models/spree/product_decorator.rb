@@ -41,7 +41,7 @@ Spree::Product.class_eval do
     with_product_type_name('hotel')
   end
 
-  def self.flighs
+  def self.flights
     with_product_type_name('flight')
   end
 

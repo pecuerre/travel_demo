@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-2">
-          <h2>About us</h2>
+          <h2><%= t(:about_us) %></h2>
           <ul class="leftfootercolum">
-            <li><a href="#">What do we do?</a></li>
-            <li><a href="#">Who we are?</a></li>
-            <li><a href="#">What do we offer?</a></li>
-            <li><a href="#">Payment Policies</a></li>
+            <li><%= link_to t(:who_we_are), aboutus_path(@aboutus, anchor: "who_we_are"), class: "#{'active' if params[:controller] == 'spree/aboutus'}"  %></li>
+            <li><%= link_to t(:what_do_we_do), aboutus_path(@aboutus, anchor: "what_do_we_do"), class: "#{'active' if params[:controller] == 'spree/aboutus'}"  %></li>
+            <li><%= link_to t(:what_do_we_offer), aboutus_path(@aboutus, anchor: "what_do_we_offer"), class: "#{'active' if params[:controller] == 'spree/aboutus'}"  %></li>
+            <li><%= link_to t(:payment_policies), aboutus_path(@aboutus, anchor: "payment_policies"), class: "#{'active' if params[:controller] == 'spree/aboutus'}"  %></li>
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -61,7 +61,7 @@
         </div>
         <div class="col-sm-2">
           <h2>Find Us Online</h2>
-          <ul class="rigthfootercolum">
+          <ul>
             <li><a href="#">Like us on Facebook</a></li>
             <li><a href="#">Follow us on Instagram</a></li>
             <li><a href="#">Follow us on Twitter</a></li>

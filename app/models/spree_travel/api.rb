@@ -46,9 +46,7 @@ module SpreeTravel
       produdcs = Spree::Product.flights
       flights = SpreeTravel::Utils.parse_flights(products, params)
       SpreeTravel::Response.new(flights)
-
     end
-
 
   end
 end

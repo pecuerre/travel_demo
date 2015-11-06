@@ -62,9 +62,9 @@ module SpreeTravel
       hotels
     end
 
-    def self.parse_flights(resources, params=nil, data=nil)
+    def self.parse_flights(products, params)
       flights = []
-      resources.each do |resource|
+      prducts.each do |resource|
         flight = Flight.new
         flight.airline = resource['Airline']
         flight.duration_in_minutes = resource['DurationHours'].to_i * 60 + resource['DurationMinutes']

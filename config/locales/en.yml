@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  flag: 'usa.png'
   enter_destination: "enter a destination or hotel name"
   departure: "Departure Time"
   returning: "Returning Time"

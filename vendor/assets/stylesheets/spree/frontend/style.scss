@@ -5037,7 +5037,7 @@ body.pace-running {
   position: relative;
   z-index: 999;
   .topnav {
-    height: 30px;
+    height: 35px;
     background: $skin-bg-color;
     width: 100%;
     ul.quick-menu > li {
@@ -5102,7 +5102,7 @@ body.pace-running {
     padding: 0;
     text-align: left;
     margin: 22px 0 0;
-    height: auto;
+   // height: auto;
     a {
       display: block;
     }
@@ -5671,8 +5671,8 @@ body.pace-running {
       font-weight: normal;
       display: block;
       padding: 0;
-      height: 68px;
-      line-height: 68px;
+      height: 33px;
+     // line-height: 68px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }

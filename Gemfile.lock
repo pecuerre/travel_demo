@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/cyu/rack-cors.git
-  revision: 42ebe6caa8e85ffa9c8a171bda668ba1acc7a5e6
+  revision: e26a164cca1872235a677646b57a80690b5f9489
   specs:
     rack-cors (0.4.0)
 
@@ -20,15 +20,23 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_core.git
-  revision: ddbc8a54b750032693270b3855b1ac5d1d8e15f3
+  revision: 6331bc447456968ba23bff258894d927ca59dedc
   branch: combinations_less
   specs:
     spree_travel_core (3.0.0)
       spree (~> 3.0.0)
 
 GIT
+  remote: git://github.com/openjaf/spree_travel_flight.git
+  revision: 35092d309e1e19277b9dfb867d3ec262d5cbaac7
+  branch: combination_less
+  specs:
+    spree_travel_flight (3.0.0)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/openjaf/spree_travel_hotel.git
-  revision: ca514942b94f6a352fd127fbf305905b77483855
+  revision: 7f88152c47fe12db95a7b51999a9232f5b8a1873
   branch: combinations_less
   specs:
     spree_travel_hotel (3.0.0)
@@ -175,7 +183,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_auth_devise.git
-  revision: 7b24ad16239367dc15f96a80cc2a954a822cc6af
+  revision: f231fce43686d66fe3e6d65ba8595b4474c49895
   branch: 3-0-stable
   specs:
     spree_auth_devise (3.0.0)
@@ -183,12 +191,6 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
-      spree_core (~> 3.0.0)
-
-PATH
-  remote: ../travel/spree_travel_flight
-  specs:
-    spree_travel_flight (3.0.0)
       spree_core (~> 3.0.0)
 
 GEM
@@ -238,15 +240,17 @@ GEM
       activerecord (>= 3.0)
     addressable (2.3.8)
     arel (6.0.3)
-    autoprefixer-rails (6.0.3)
+    autoprefixer-rails (6.1.0.1)
       execjs
       json
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
-    aws-sdk (1.27.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
-      uuidtools (~> 2.1)
+    aws-sdk (2.1.35)
+      aws-sdk-resources (= 2.1.35)
+    aws-sdk-core (2.1.35)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.1.35)
+      aws-sdk-core (= 2.1.35)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -347,6 +351,7 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.1.3)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -354,7 +359,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.1)
+    jwt (1.5.2)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -368,7 +373,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.1)
+    minitest (5.8.2)
     monetize (1.3.1)
       money (~> 6.6)
     money (6.6.1)
@@ -399,7 +404,7 @@ GEM
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-google-oauth2 (0.2.9)
+    omniauth-google-oauth2 (0.2.10)
       addressable (~> 2.3)
       jwt (~> 1.0)
       multi_json (~> 1.3)
@@ -420,7 +425,7 @@ GEM
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
-    paranoia (2.1.3)
+    paranoia (2.1.4)
       activerecord (~> 4.0)
     pg (0.18.3)
     polyamorous (1.2.0)
@@ -432,7 +437,7 @@ GEM
     premailer-rails (1.8.2)
       actionmailer (>= 3, < 5)
       premailer (~> 1.7, >= 1.7.9)
-    pry (0.10.2)
+    pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -463,8 +468,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails-i18n (4.0.5)
-      i18n (~> 0.6)
+    rails-i18n (4.0.6)
+      i18n (~> 0.7)
       railties (~> 4.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
@@ -498,12 +503,13 @@ GEM
       i18n
       polyamorous (~> 1.1)
     rdoc (4.2.0)
+      json (~> 1.4)
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby-debug-ide (0.6.0)
       rake (>= 0.8.1)
-    ruby_parser (3.7.1)
+    ruby_parser (3.7.2)
       sexp_processor (~> 4.1)
     safe_yaml (1.0.4)
     sass (3.4.19)
@@ -527,7 +533,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
+    sqlite3 (1.3.11)
     state_machines (0.4.0)
     state_machines-activemodel (0.3.0)
       activemodel (~> 4.1)
@@ -554,7 +560,6 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    uuidtools (2.1.5)
     versioncake (2.3.1)
       actionpack (>= 3.2)
       activesupport (>= 3.2)

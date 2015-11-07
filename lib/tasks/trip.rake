@@ -4,6 +4,59 @@ require 'ffaker'
 namespace :trip do
 
   #############################################################################
+  ### Delete tasks
+  #############################################################################
+  namespace :delete do
+
+    desc 'Delete shipping categories'
+    task :shipping_categories => :environment do
+      Spree::ShippingCategory.delete_all
+    end
+
+    desc 'Delete taxonomies'
+    task :taxonomies => :environment do
+      Spree::Taxonomy.delete_all
+    end
+
+    desc 'Delete trip destinations'
+    task :destinations => :environment do
+      taxonomy = Spree::Taxonomy.where(:name => 'Destination').first
+      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+    end
+
+    desc 'Delete all taxons'
+    task :taxons => :environment do
+      Spree::Taxon.delete_all
+    end
+
+    desc 'Delete all hotels'
+    task :hotels => :environment do
+      Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel')).destroy_all
+    end
+
+    desc 'Delete all rates'
+    task :rates => :environment do
+      Spree::Rate.destroy_all
+    end
+
+    desc 'Delete all fligths'
+    task :flights => :environment do
+      Spree::Product.where(:product_type => Spree::ProductType.find_by_name('flight')).destroy_all
+    end
+
+    desc 'Delete all data (clean de project)'
+    task :all => :environment do
+      Rake.application['trip:delete:shipping_categories'].invoke
+      Rake.application['trip:delete:destinations'].invoke
+      Rake.application['trip:delete:taxons'].invoke
+      Rake.application['trip:delete:taxonomies'].invoke
+      Rake.application['trip:delete:hotels'].invoke
+      Rake.application['trip:delete:flights'].invoke
+      Rake.application['trip:delete:rates'].invoke
+    end
+  end
+
+  #############################################################################
   ### Load tasks
   #############################################################################
 	namespace :load do
@@ -23,11 +76,43 @@ namespace :trip do
       require Rails.root + "db/data/destinations"
     end
 
-    desc 'Load all the data'
+    namespace :property_types do
+      desc 'Properties types for flights'
+      task :flights => :environment do
+        require Rails.root + "db/data/property_types_flights"
+      end
+    end
+
+    namespace :properties do
+      desc 'Properties for flights'
+      task :flights => :environment do
+        require Rails.root + "db/data/properties_flights"
+      end
+    end
+
+    namespace :products do
+      desc 'Product for flights'
+      task :flights do
+        Rake.application['trip:delete:flights'].invoke
+        require Rails.root + "db/data/products_flights"
+      end
+    end
+
+    namespace :rates do
+      desc 'Rates for flights'
+      task :flights do
+        #require Rails.root + "db/data/rates_flights"
+      end
+    end
+
+    desc 'Load all data [shipping categories, taxonomies, destinations, products, etc.]'
     task :all => :environment do
       Rake.application['trip:load:shipping_categories'].invoke
       Rake.application['trip:load:taxonomies'].invoke
       Rake.application['trip:load:destinations'].invoke
+      Rake.application['trip:load:property_types:flights'].invoke
+      Rake.application['trip:load:properties:flights'].invoke
+      Rake.application['trip:load:products:flights'].invoke
     end
   end
 
@@ -51,27 +136,44 @@ namespace :trip do
       Rake.application['trip:load:destinations'].invoke
     end
 
-    desc 'Examples of properties'
-    task :properties => :environment do
-      require Rails.root + "db/examples/properties"
+    namespace :property_types do 
+      desc 'Examples of properties types for hotels'
+      task :hotels => :environment do
+        require Rails.root + "db/examples/property_types_hotels"
+      end
     end
 
-  	desc 'Examples of hotels'
-  	task :hotels do
-  		Rake.application['spree_travel_sample:load PRODUCT_TYPE=hotels']
-  	end
+    namespace :properties do
+      desc 'Examples of properties for hotels'
+      task :hotels => :environment do
+        require Rails.root + "db/examples/properties_hotels"
+      end
+    end
 
-    # desc 'Examples of packages (with properties, and property types, etc.)'
-    # task :packages do
-    #   Rake.application['spree_travel_sample:load:packages']
-    # end
+    namespace :products do
+    	desc 'Examples of product for hotels'
+    	task :hotels do
+        Rake.application['trip:delete:hotels'].invoke
+        require Rails.root + "db/examples/products_hotels"
+    	end
+    end
+
+    namespace :rates do
+      desc 'Examples of rates for hotels'
+      task :hotels do
+        require Rails.root + "db/examples/rates_hotels"
+      end
+    end
 
     desc 'Sample for all data'
     task :all => :environment do
       Rake.application['trip:sample:shipping_categories'].invoke
       Rake.application['trip:sample:taxonomies'].invoke
       Rake.application['trip:sample:destinations'].invoke
-      Rake.application['trip:sample:properties'].invoke
+      Rake.application['trip:sample:property_types:hotels'].invoke
+      Rake.application['trip:sample:properties:hotels'].invoke
+      Rake.application['trip:sample:products:hotels'].invoke
+      Rake.application['trip:sample:rates:hotels'].invoke
     end
   end
 end

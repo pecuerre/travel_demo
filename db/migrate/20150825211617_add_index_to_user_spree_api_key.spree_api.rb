@@ -1,4 +1,4 @@
-# This migration comes from spree_api (originally 20131017162334)
+# This migration comes from spree_travel (originally 20131017162334)
 class AddIndexToUserSpreeApiKey < ActiveRecord::Migration
   def change
     unless defined?(User)

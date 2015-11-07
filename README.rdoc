@@ -17,6 +17,8 @@ rake spree_travel_core:load
 
 rake spree_travel_hotel:load
 
-rake spree_travel_sample:load PRODUCT_TYPE=hotels
+rake spree_travel_flight:load
 
 rake trip:load:all
+
+rake trip:sample:all

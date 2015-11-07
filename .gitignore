@@ -1,3 +1,4 @@
+.idea/
 *.rbc
 capybara-*.html
 .rspec
@@ -35,3 +36,4 @@ bower.json
 /config/application.yml
 *.sublime-project
 *.sublime-workspace
+*.swp

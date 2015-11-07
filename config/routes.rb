@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'products/get_ajax_aeromexico'
     get 'nomads/new'
     post 'nomads/create'
-    
+
     resources :hotels, only: [:index, :show] do
       collection do
         get :detail
@@ -65,6 +65,26 @@ Rails.application.routes.draw do
         get :index
       end
     end
+    resources :payment_policies, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :terms_and_conditions, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :privacy_policies, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :contact_us, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
     resources :destinations, only: [:index, :show] do
       collection do
         get :list
@@ -81,7 +101,7 @@ Rails.application.routes.draw do
         get :index2
       end
     end
-    
+
     namespace :admin do
       resources :static_images
       resources :static_events
@@ -105,6 +125,6 @@ Rails.application.routes.draw do
         end
       end
     end
-    
+
   end
 end

@@ -297,3 +297,17 @@ es:
 
   privacy_policy: 'Políticas de Privacidad'
   contac_us: 'Contáctenos'
+
+    # Destinos ================================================
+
+  destinohabana: 'La Habana'
+  description_destino_habana_html: '<p class = "description"> Centro Habana es la transición entre antigua y moderna Habana y pertenece al centro tradicional de la capital cubana. <br/> Esta parte de la ciudad apareció después de la expansión urbana más allá de las murallas de la ciudad, donde los edificios majestuosos comenzó a ser construido. Esta parte de la ciudad se caracteriza por El Prado, el Capitolio. </p>'
+
+  destinovaradero: 'Varadero'
+  description_destino_varadero_html: '<p class="description"> Es uno de los destinos más apreciados del Caribe. Usted encontrará las tradiciones artesanales locales y la hospitalidad en una veintena de kilómetros de playa y sol. <br/> Sus playas se complementan con atractivos culturales, históricos y ambientales relacionados con las ciudades de Matanzas y Cárdenas. </p>'
+
+  destinovaradero: 'Trinidad'
+  description_destino_trinidad_html: '<p class = "description"> Trinidad de Cuba es la ciudad colonial más conservado, por lo que su apodo es El Museo de la Ciudad. <br/> Está situado en un gran valle rodeado por las montañas del Escambray y es uno de los más importantes destinos turísticos cubanos si quieren conocer de primera mano las tradiciones, la cultura y la originalidad del pueblo cubano. </p>'
+
+  destinovaradero: 'Pinar del Rio'
+  description_destino_pinardelrio_html: '<p class = "description"> Es único en belleza natural y paisajística. El Valle de Viñales se coloca en la provincia de Pinar del Río y es uno de los lugares más atractivos de Cuba. <br> La llegada al Valle es increíble debido a su agradable temperatura y la presencia de la antigüedad y la prehistoria en su paisaje. </p>'

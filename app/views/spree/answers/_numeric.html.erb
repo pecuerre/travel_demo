@@ -1,0 +1,10 @@
+<div class="pull-left confirm-input">
+  <% params = { class: 'form-control', type: 'number', placeholder: answer.question.help } %>
+  <% params.merge!(step: answer.question.step) if answer.question.step.present? %>
+  <%= f.text_field :answer_text, params %>
+</div>
+<% if answer.question.units.present? %>
+  <div class="col-sm-2 confirm-units">
+    <h4><%= answer.question.units %></h4>
+  </div>
+<% end %>

@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/data', as: 'rails_admin'
   mount Spree::Core::Engine, :at => '/'
+  
+  
   Spree::Core::Engine.routes.draw do
+    get 'question_groups',  to: "question_groups#index"
+
     post 'products/get_ajax_best_day'
     post 'products/get_ajax_spree_travel'
     post 'products/get_ajax_price_travel'
     post 'products/get_ajax_aeromexico'
     get 'nomads/new'
     post 'nomads/create'
+
+    resources :question_groups, only: :index do
+      resources :answer_groups, only: [:new, :create]
+    end
 
     resources :hotels, only: [:index, :show] do
       collection do

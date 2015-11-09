@@ -1,0 +1,25 @@
+<h2>Please answer these Questions</h2>
+<hr/>
+
+<%= form_for([@question_group, @answer_group_builder]) do |f| %>
+  <%- @answer_group_builder.answers.each do |answer| %>
+    <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+    
+    <div class=" col-sm-4 col-md-4">
+      <h4><%= answer_form.label :answer_text, answer_form.object.question.question_text %> <%= answer_form.object.question.required? ? '*' : '' %> </h4>
+    </div>
+    <%= render_answer_form_helper(answer_form) %>
+    
+    <% end %>
+    <br/><br/><br/><br/>
+  <% end %>
+  
+  
+  <div class="col-md-6 col-sm-6">
+    <div class="text-right form-buttons" data-hook="buttons">
+      <br/>
+      <%= f.submit "Submit", :class => 'order_confirmation btn btn-success bump-down' %>
+    </div>
+  </div>
+  
+<% end %>

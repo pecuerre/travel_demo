@@ -16,11 +16,11 @@
   </div>
 </div>
 <section id="content">
-  <% render partial: 'spree/shared/general_search_box' %> 
+  <% render partial: 'spree/shared/general_search_box' %>
   <%= render partial: 'spree/shared/temporal_search_box' %>
 
   <div class="section container">
-    <h2><%= t(:popular_destinations) %> <%= image_tag('icon/top-destination.png', class: 'mytrp_icon') %></h2>
+    <h2><%= t(:popular_destinations) %> <%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
@@ -45,7 +45,7 @@
             <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg', size: "270x160", alt: "Varadero") %></a>
           </figure>
           <div class="details text-center">
-            <h4 class="box-title"><%= t(:destinovaradero) %></h4>
+            <h4 class="box-title"><%= t(:varadero) %></h4>
 
             <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
               <span style="width: 80%;" class="five-stars"></span>
@@ -90,7 +90,6 @@
       </div>
     </div>
   </div>
-  <div class="image-section">
     <div class="container">
 
       <div class="text-center description">
@@ -156,7 +155,7 @@
     </div>
   </div>
   <div class="section container">
-    <h2><%= t(:popular_hotels) %>  <%= image_tag('icon/hotel.png', class: 'mytrp_icon') %></h2>
+    <h2><%= t(:popular_hotels) %>  <%= image_tag('icon/hotel_orange_32x32.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box hotel listing-style1">
       <div class="col-sms-6 col-sm-6 col-md-3">
@@ -177,7 +176,8 @@
                 <span class="five-stars" style="width: 80%;"></span></div>
               <span class="review">270 reviews</span>
             </div>
-            <p class="description">Uno de los últimos hoteles inaugurados en la Habana Vieja y el primero en la Plaza San Francisco de Asís...</p>
+            <p class="description">Uno de los últimos hoteles inaugurados en la Habana Vieja y el primero en la Plaza
+              San Francisco de Asís...</p>
 
             <div class="action">
               <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
@@ -225,7 +225,8 @@
                 <span class="five-stars" style="width: 80%;"></span></div>
               <span class="review">485 reviews</span>
             </div>
-            <p class="description">Es uno de los hoteles más lujosos y caros de La Habana, en la remodelación del inmueble fue respetado cada detalle...</p>
+            <p class="description">Es uno de los hoteles más lujosos y caros de La Habana, en la remodelación del
+              inmueble fue respetado cada detalle...</p>
 
             <div class="action">
               <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
@@ -249,7 +250,8 @@
                 <span class="five-stars" style="width: 80%;"></span></div>
               <span class="review">75 reviews</span>
             </div>
-            <p class="description">Ubicado en una de las más famosas esquinas de La Habana: Prado y Neptuno, famosa por haber sido instalado en ella el primer semáforo...</p>
+            <p class="description">Ubicado en una de las más famosas esquinas de La Habana: Prado y Neptuno, famosa por
+              haber sido instalado en ella el primer semáforo...</p>
 
             <div class="action">
               <a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a>
@@ -261,87 +263,168 @@
     </div>
   </div>
   <div class="container">
-    <h3>Cheap Flights & Air Tickets </h3>
+    <h2 class="CheapFlightTitle">Cheap Flights & Air
+      Tickets <%= image_tag('icon/flight_blue_32x32.png', class: 'mytrp_icon') %></h2>
 
-    <div class="row image-box hotel listing-style1">
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="cheapflight">
-          <div class="row">
-            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6"><div class="price">$89.8</div></div>
-            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="cheapflight">
-          <div class="row">
-            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6"><div class="price">$89.8</div></div>
-            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="cheapflight">
-          <div class="row">
-            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6"><div class="price">$89.8</div></div>
-            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="cheapflight">
-          <div class="row">
-            <div class="col-sm-6"><h4 class="box-title">Santa Clara</h4></div><div class="col-sm-6"><%= image_tag('icon/fligth.png', class: 'fligthicon') %></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6"><div class="price">$89.8</div></div>
-            <div class="col-sm-6"><a href="hotel-detailed.html" class="button btn-small"><%= t(:select) %></a></div>
-          </div>
-        </article>
-      </div>
+    <div class="image-carousel style2 block" data-animation="slide" data-item-width="270" data-item-margin="30">
 
+      <div class="flex-viewport" style="overflow: hidden; position: relative;">
+        <ul class="slides image-box listing-style2 flight" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(0px, 0px, 0px);">
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline1.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">La Habana</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Pinar del Rio</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline3.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Trinidad</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Cienfuegos</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline1.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Santiago de Cuba</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Varadero</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline3.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Paris</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+          <li style="width: 270px; float: left; display: block;">
+            <article class="box">
+              <figure>
+                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+              </figure>
+              <div class="details">
+                <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
+                <h4 class="box-title">Paris</h4>
+                <label class="price-wrapper">
+                  <span class="price">$620</span>oneway
+                </label>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <ol class="flex-control-nav flex-control-paging">
+        <li><a class="flex-active">1</a></li>
+        <li><a class="">2</a></li>
+      </ol>
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev" href="#">Previous</a></li>
+        <li><a class="flex-next" href="#">Next</a></li>
+      </ul>
     </div>
   </div>
   </div>
   <div class="image-section">
     <div class="container">
-      <div class="content-section description pull-right col-sm-9">
-        <div class="table-wrapper hidden-table-sm">
-          <div class="table-cell">
-            <h2 class="m-title animated" data-animation-type="fadeInDown" data-animation-duration="1.5">
-              Tell us where you would like to go.<br/><em>12,000+ Hotel and Resorts Available!</em>
-            </h2>
-          </div>
-          <div class="table-cell action-section col-md-4 no-float">
-            <form method="post" action="hotel-list-view.html">
-              <div class="row">
-                <div class="col-xs-6 col-md-12">
-                  <input type="text" class="input-text input-large full-width" value="" placeholder="Enter destination or hotel name"/>
-                </div>
-                <div class="col-xs-6 col-md-12">
-                  <button class="full-width btn-large">search hotels</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
       <div class="image-container col-sm-4">
-        <img src="http://placehold.it/342x258" alt="" width="342" height="258" class="animated" data-animation-type="fadeInUp"/>
+        <%= image_tag('h-nacional.jpg', size: '342x258', class: "animated") %>
+
+      </div>
+      <div class="col-xs-6">
+        <h2 class="m-title animated searchoteltitle" data-animation-type="fadeInDown" data-animation-duration="1.5">
+          Tell us where you would like to go.<br/>2,000+ Hotel and Resorts Available!
+        </h2>
+
+      </div>
+      <div class="col-xs-6 searchotelform">
+        <form method="post" action="hotel-list-view.html">
+          <div class="row">
+            <div class="col-lg-12">
+              <input type="text" class="input-text input-large full-width" value="" placeholder="Enter destination or hotel name"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <button class="full-width btn-large">Search</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <div class="section container">
-    <h2>Popular Tours <%= image_tag('icon/tours.png', class: 'mytrp_icon') %></h2>
+    <h2>Popular Tours <%= image_tag('icon/tours_blue_32x32.png', class: 'mytrp_icon') %></h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">

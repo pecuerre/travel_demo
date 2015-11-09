@@ -52,4 +52,10 @@ module ApplicationHelper
 	def add_sort_to_url(p)
 		params.merge(:sort => p)
 	end
+  
+  def render_answer_form_helper(form)
+    answer = form.object
+    partial = answer.question.type.to_s.split("::").last.downcase
+    render partial: "spree/answers/#{partial}", locals: { f: form, answer: answer }
+  end
 end

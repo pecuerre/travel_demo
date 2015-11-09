@@ -225,7 +225,7 @@ en:
   tour_havana_arts_title: 'HAVANA ARTS & CULTURE'
   tour_havana_arts_short_description: 'This specially designed itinerary immerses ten to twenty travelers in Cuba’s rich artistic, musical, and cultural heritage.Walking tour of the main historic streets and squares of Old Havana’s historic center, including Plaza de Armas, Convento de San Francisco de Asis, old Spanish colonial churches.'
 
-  tour_professional_title: 'PROFESSIONAL RESEARCH & ACADEMIC ENGAGEMENT'
+  tour_professional_title: 'PROFESSIONAL RESEARCH'
   tour_professional_short_description: 'U.S. architects, medical professionals, art and cigar aficionados, US chambers of commerce, entrepreneurs, university professors, researchers and other educators join travelers interested in advancing certain disciplines and sharing best practices.'
 
   see_all: 'See all'
@@ -324,3 +324,5 @@ en:
 
   destinopinardelrio: 'Pinar del Rio'
   description_destino_pinardelrio_html: '<p class="description">It is unique in natural beauty and landscape. The Viñales Valley is placed in the province of Pinar del Río and it is one of the most attractive places in Cuba.<br>The arrival to the Valley is amazing due to its nice temperature and the presence of antiquity and prehistory in its landscape.</p>'
+
+   # Hoteles ================================================

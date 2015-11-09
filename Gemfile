@@ -32,6 +32,7 @@ gem 'debase'
 gem 'ruby-debug-ide'
 
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
+gem 'wannabe_bool'
 
 group :development, :test do
   gem 'ffaker'
@@ -53,10 +54,10 @@ gem 'google_places'
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
-gem 'spree_travel_core', github: 'openjaf/spree_travel_core', branch: 'combinations_less'
+# gem 'spree_travel_core', github: 'openjaf/spree_travel_core', branch: 'combinations_less'
+gem 'spree_travel_core', path: '../gems/spree_travel_core'
 gem 'spree_travel_hotel', github: 'openjaf/spree_travel_hotel', branch: 'combinations_less'
 gem 'spree_travel_flight', github: 'openjaf/spree_travel_flight', branch: 'combination_less'
-# gem 'spree_travel_flight', path: '../travel/spree_travel_flight'
 gem 'spree_travel_package', github: 'openjaf/spree_travel_package', branch: '3-0-stable'
 gem 'spree_travel_sample', github: 'openjaf/spree_travel_sample', branch: 'combinations_less'
 gem 'spree_property_type', github: 'openjaf/spree_property_type', branch: '3-0-stable'

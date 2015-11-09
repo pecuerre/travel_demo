@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101231858) do
+ActiveRecord::Schema.define(version: 20151109030436) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "iata"
@@ -122,6 +122,29 @@ ActiveRecord::Schema.define(version: 20151101231858) do
   add_index "spree_adjustments", ["eligible"], name: "index_spree_adjustments_on_eligible"
   add_index "spree_adjustments", ["order_id"], name: "index_spree_adjustments_on_order_id"
   add_index "spree_adjustments", ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
+
+  create_table "spree_answer_groups", force: :cascade do |t|
+    t.integer  "question_group_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pax_id"
+  end
+
+  add_index "spree_answer_groups", ["pax_id"], name: "index_spree_answer_groups_on_pax_id"
+  add_index "spree_answer_groups", ["question_group_id"], name: "index_spree_answer_groups_on_question_group_id"
+  add_index "spree_answer_groups", ["user_id"], name: "index_spree_answer_groups_on_user_id"
+
+  create_table "spree_answers", force: :cascade do |t|
+    t.integer  "answer_group_id"
+    t.integer  "question_id"
+    t.text     "answer_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_answers", ["answer_group_id"], name: "index_spree_answers_on_answer_group_id"
+  add_index "spree_answers", ["question_id"], name: "index_spree_answers_on_question_id"
 
   create_table "spree_assets", force: :cascade do |t|
     t.integer  "viewable_id"
@@ -768,6 +791,30 @@ ActiveRecord::Schema.define(version: 20151101231858) do
     t.integer "taxon_id"
     t.integer "prototype_id"
   end
+
+  create_table "spree_question_groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_questions", force: :cascade do |t|
+    t.string   "type"
+    t.string   "question_text"
+    t.integer  "position"
+    t.text     "answer_options"
+    t.text     "validation_rules"
+    t.string   "help"
+    t.boolean  "prefill",           default: false
+    t.string   "units"
+    t.string   "label"
+    t.integer  "question_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_questions", ["question_group_id"], name: "index_spree_questions_on_question_group_id"
 
   create_table "spree_rate_option_values", force: :cascade do |t|
     t.integer "rate_id"

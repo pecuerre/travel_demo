@@ -3,15 +3,15 @@
       <% @flights.each do |f| %>
           <article class="box">
             <figure class="col-xs-3 col-sm-2">
-              <span><img alt="" src="http://placehold.it/270x160"></span>
+              <span><%= image_tag 'airlines/choice_aire.jpg' %></span>
             </figure>
             <div class="details col-xs-9 col-sm-10">
               <div class="details-wrapper">
                 <div class="first-row">
                   <div>
-                    <h4 class="box-title"><%= f.name %>
-                      <small><%= f.flight_type %></small>
+                    <h4 class="box-title"><%= f.name.gsub('(CHOICE AIRE)', ' ') %> - <%= f.take_off %> / <%= f.landing %>
                     </h4>
+                    <div class='clearfix'><h5><%= f.flight_type || 'ONEWAY FLIGHT' %></h5></div>
                     <a><strong><%= f.stops %></strong></a>
 
                     <div class="amenities">
@@ -29,19 +29,19 @@
                     <div class="take-off col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">Take off</span><br/><%= f.take_off %>
+                        <span class="skin-color">Take off</span><br/>WED NOV 13, 2015 7:50 AM
                       </div>
                     </div>
                     <div class="landing col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">landing</span><br/><%= f.landing %>
+                        <span class="skin-color">landing</span><br/>WED NOV 13, 2015 9:20 AM
                       </div>
                     </div>
                     <div class="total-time col-sm-4">
                       <div class="icon"><i class="soap-icon-clock yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">total time</span><br/><%= f.duration %>
+                        <span class="skin-color">total time</span><br/>2 HOUR, 30 MINUTES
                       </div>
                     </div>
                   </div>

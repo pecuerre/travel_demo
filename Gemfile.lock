@@ -19,14 +19,6 @@ GIT
       spree (~> 3.0.0)
 
 GIT
-  remote: git://github.com/openjaf/spree_travel_core.git
-  revision: 6331bc447456968ba23bff258894d927ca59dedc
-  branch: combinations_less
-  specs:
-    spree_travel_core (3.0.0)
-      spree (~> 3.0.0)
-
-GIT
   remote: git://github.com/openjaf/spree_travel_flight.git
   revision: 35092d309e1e19277b9dfb867d3ec262d5cbaac7
   branch: combination_less
@@ -192,6 +184,12 @@ GIT
       json
       multi_json
       spree_core (~> 3.0.0)
+
+PATH
+  remote: ../gems/spree_travel_core
+  specs:
+    spree_travel_core (3.0.0)
+      spree (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -565,6 +563,7 @@ GEM
       activesupport (>= 3.2)
       railties (>= 3.2)
       tzinfo
+    wannabe_bool (0.3.0)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.2.1)
@@ -626,6 +625,10 @@ DEPENDENCIES
   stringjs-rails
   turbolinks
   uglifier (>= 1.3.0)
+  wannabe_bool
   web-console (~> 2.0)
   world_airports
   xml-simple
+
+BUNDLED WITH
+   1.10.6

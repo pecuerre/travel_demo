@@ -1,0 +1,10 @@
+<tr id= "question_group_<%= question_group.id %>">
+  <td>
+      <%= question_group.name %>
+  </td>
+  <td>
+    <ul class="horizontal-list">
+      <li><%= link_to "Answer Questions", new_question_group_answer_group_path(question_group) %></li>
+    </ul>
+  </td>
+</tr>

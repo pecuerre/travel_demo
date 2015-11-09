@@ -87,6 +87,35 @@ Spree::ProductsController.class_eval do
     end
   end
 
+  def get_ajax_spree_travel
+    @searcher = build_searcher(params.merge(include_images: true))
+
+    case @searcher.properties['search-type']
+      when 'hotels'
+        validate_params_for_hotels
+        validate_params_for_filters
+        @products = SpreeTravel::Api.new.hotels(@searcher.properties)
+      when 'flights'
+        validate_params_for_flights
+        validate_params_for_filters
+        @products = PriceTravel::Api.new.flights(@searcher.properties)
+      when 'cars'
+        validate_params_for_cars
+        validate_params_for_filters
+        @products = PriceTravel::Api.new.cars(@searcher.properties)
+      when 'packages'
+        validate_params_for_packages
+        validate_params_for_filters
+        @products = PriceTravel::Api.new.packages(@searcher.properties)
+      else
+        @products = @searcher.retrieve_products
+        @taxonomies = Spree::Taxonomy.includes(root: :children)
+    end
+
+    respond_to do |format|
+      format.json {render json: @products}
+    end
+  end
 
   def get_ajax_aeromexico
     @searcher = build_searcher(params.merge(include_images: true))

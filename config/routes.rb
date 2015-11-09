@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/data', as: 'rails_admin'
   mount Spree::Core::Engine, :at => '/'
+  
+  
   Spree::Core::Engine.routes.draw do
+    get 'question_groups',  to: "question_groups#index"
+
     post 'products/get_ajax_best_day'
+    post 'products/get_ajax_spree_travel'
     post 'products/get_ajax_price_travel'
     post 'products/get_ajax_aeromexico'
     get 'nomads/new'
     post 'nomads/create'
-    
+
+    resources :question_groups, only: :index do
+      resources :answer_groups, only: [:new, :create]
+    end
+
     resources :hotels, only: [:index, :show] do
       collection do
         get :detail
@@ -64,6 +73,26 @@ Rails.application.routes.draw do
         get :index
       end
     end
+    resources :payment_policies, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :terms_and_conditions, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :privacy_policies, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
+    resources :contact_us, only: [:index, :show] do
+      collection do
+        get :index
+      end
+    end
     resources :destinations, only: [:index, :show] do
       collection do
         get :list
@@ -80,7 +109,7 @@ Rails.application.routes.draw do
         get :index2
       end
     end
-    
+
     namespace :admin do
       resources :static_images
       resources :static_events
@@ -104,6 +133,6 @@ Rails.application.routes.draw do
         end
       end
     end
-    
+
   end
 end

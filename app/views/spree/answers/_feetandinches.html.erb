@@ -1,0 +1,15 @@
+<div class="pull-left confirm-input">
+  <% tag_name = "#{f.object.question.id}_left_part" %>
+  <% min = f.object.question.greater_than_or_equal_to || (3*12) %>
+  <% max = f.object.question.less_than_or_equal_to || (7*12) %>
+  <% range = ((min/12)..(max/12)).to_a %>
+  <%= select_tag tag_name, options_for_select(range, f.object.answer_text.present? ? f.object.answer_text.to_i/12 : nil), include_blank: true %>
+
+  <span class="confirm-units">feet</span>
+
+   <% tag_name = "#{f.object.question.id}_right_part" %>
+   <% range = (0..11).to_a %>
+   &nbsp;&nbsp;<%= select_tag tag_name, options_for_select(range, f.object.answer_text.present? ? f.object.answer_text.to_i%12 : nil), include_blank: true %>
+  <%= f.hidden_field :answer_text %>
+  <span class="confirm-units">inches</span>
+</div>

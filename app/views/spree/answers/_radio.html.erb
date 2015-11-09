@@ -1,0 +1,12 @@
+<div class="pull-left confirm-input">
+  <h4>
+    <%- answer.question.options.each do |option| %>
+        <%= f.label "answer_text_#{option}".delete('\'"').parameterize('_') do %>
+          <%= f.radio_button :answer_text, option %>
+          <%= option %>
+        <% end %>
+      <br/>
+      <br/>
+    <% end %>  
+  </h4>
+</div>

@@ -1,0 +1,67 @@
+<div class="panel panel-default" id='pax_info' data-hook>
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= Spree.t(:paxs_information) %></h3>
+  </div>
+  
+  <% qg = Spree::QuestionGroup.find_by(name: Spree::Pax::QUESTION_GROUP_FLIGHT_PAX_INFO) %>
+  
+  <div class="panel-body" <div class="panel-body" data-hook="pax_info_inner">
+  <% @order.line_items.each_with_index do |line_item, index1| %>
+      <fieldset id="billing" data-hook="">
+
+        <legend align="center"><%= line_item.product.name %></legend>
+        <h2><%= line_item.variant.options_text %></h2>
+
+        <% line_item.paxes.each_with_index do |pax, index| %>
+          <div class='clearfix'>
+            <h3>Pax #<%= index + 1 %></h3>
+            <div class="col-sm-6" id="bfirstname">
+              <h4><%= label_tag :first_name, "#{t(:first_name)}" %></h4>
+              <div class="col-sm-12 confirm-input">
+                <h4><%= text_field_tag "order[line_items_attributes][#{index1}][paxes_attributes][][first_name]", nil, class: 'form-control' %></h4>
+              </div>
+            </div>
+            <div class="col-sm-6" id="blastname">
+              <h4><%= label_tag :last_name, "#{t(:last_name)} *" %></h4>
+              <div class="col-sm-12 confirm-input">
+                <h4><%= text_field_tag "order[line_items_attributes][#{index1}][paxes_attributes][][last_name]", nil, class: 'form-control' %></h4>
+              </div>
+            </div>
+              <%#= hidden_field_tag "order[line_items_attributes][#{index}][paxes_attributes][][id]", pax.id %>
+              
+              <% @question_group = qg %>
+              <% params = {} %>
+              <% answer_params = { params: {} } %>
+              <% answer_params =  {user: spree_current_user, question_group: @question_group} %>
+                
+              <% @answer_group_builder = Spree::AnswerGroupBuilder.new(answer_params) %>
+              
+              <%= form_for([@question_group, @answer_group_builder]) do |f| %>
+                <%- @answer_group_builder.answers.each do |answer| %>
+                  <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+
+                  <div class="col-sm-6">
+                    <h4>
+                      <%= answer_form.label :answer_text, answer_form.object.question.question_text + (answer_form.object.question.required? ? ' *' : '') %> 
+                    </h4>
+                    <%= render_answer_form_helper(answer_form) %>
+                    <br/><br/>
+                  </div>
+
+                  <% end %>
+                <% end %>
+              <% end %>
+          </div>
+          
+        <% end %>
+      </fieldset>
+  <% end %>
+  </div>
+</div>
+  
+<br />
+
+<div class="well text-right form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-lg btn-success' %>
+</div>
+

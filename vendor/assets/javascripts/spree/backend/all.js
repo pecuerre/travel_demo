@@ -15,3 +15,4 @@
 //= require spree/backend/spree_property_type
 //= require spree/backend/spree_i18n
 //= require spree/backend/spree_multi_currency
+//= require admin/spree_travel_flight

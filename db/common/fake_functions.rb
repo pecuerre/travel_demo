@@ -10,20 +10,8 @@ module FakeFunctions
 		place_taxons
 	end
 
-	def get_shipping_category
-		Spree::ShippingCategory.first
-	end
-
 	def get_properties_array
 		Spree::Property.all.to_a
-	end
-
-	def get_hotel_product_type
-		Spree::ProductType.where(:name => 'hotel').first
-	end
-
-	def get_hotel_calculator
-		Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
 	end
 
 	def get_piece_of_array(array)
@@ -44,7 +32,8 @@ module FakeFunctions
 		number
 	end
 
-	def get_fake_sku
-		Faker.bothify('???-######').upcase
+	def get_fake_sku(prefix = nil)
+		prefix = '???' unless prefix
+		Faker.bothify("#{prefix}-######").upcase
 	end
 end

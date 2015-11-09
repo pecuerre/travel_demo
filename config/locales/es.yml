@@ -1,4 +1,5 @@
 es:
+  flag: 'spa.png'
   enter_destination: "entre un destino"
   departure: "Hora de Partida"
   returning: "Hora de Regreso"

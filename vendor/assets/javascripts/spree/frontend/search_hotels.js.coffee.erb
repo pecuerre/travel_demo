@@ -1,8 +1,27 @@
 window.Products = {}
-################TODO#############
-#####Refactor common methods#####
-#####ver booking url parent div##
-################TODO#############
+# TODO: Refactor common methods ver booking url parent div
+
+############################################################################
+### Global methods
+############################################################################
+
+get_first_word =  (data) ->
+  first_word = data.split(' ')[0]
+  #Add the second word for a subset of room types
+  not_alone = ["one", "two", "three", "de", "un", "dos", "tres"]
+  is_int = /^\d+$/
+  lower_fw = first_word.toLowerCase()
+  filters_for_two_words = [
+    (w) -> _.contains(not_alone, w),
+    (w) -> is_int.test(w)
+  ]
+  if _.any(filters_for_two_words, (f) -> f(lower_fw))
+    first_word += " #{data.split(' ')[1]}"
+  first_word
+
+############################################################################
+### Base classes
+############################################################################
 class Products.Base
   constructor: (@item) ->
     prices = @item.prices ? {}
@@ -29,8 +48,12 @@ class Products.Base
   to_dom: ->
     if @dom? then @dom else @dom = $(@template())
 
+############################################################################
+### Flight classes and methods
+############################################################################
+
+#klass can be 'outward' or 'return'
 class Products.FlightDetail
-  #klass can be 'outward' or 'return'
   constructor: (@flight) ->
 
   time: (type) ->
@@ -142,6 +165,20 @@ class Products.BestDayFlight extends Products.Flight
   get_booking_uri: ->
     @item.booking_uri[@item.api.name]
 
+class Products.SpreeTravelFlight extends Products.Flight
+  bu_value: ->
+    """
+      <a href=\" #{ @get_booking_uri() }\" class='offer-book-btn pull-right' target='_blank'>
+      #{ '<%= "#{I18n.t(:book_now)}" %>' }
+      <i class='icon icon-green-folder hidden-xs'></i></a>
+    """
+
+  same_bu_value: ->
+    "<li><a href=\" #{ @get_booking_uri() }\" target='_blank'><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>"
+
+  get_booking_uri: ->
+    @item.booking_uri[@item.api.name]
+
 class Products.PriceTravelFlight extends Products.Flight
   bu_value: ->
     "#{ @item.booking_uri } <span class='hidden pt_sbu'>#{ @item.same_booking_uri }</span>"
@@ -154,6 +191,10 @@ class Products.PriceTravelFlight extends Products.Flight
 
 class Products.AeroMexicoFlight extends Products.BestDayFlight
   #Dont know what to do with same_booking_uri
+
+############################################################################
+### Packages classes
+############################################################################
 
 class Products.BestDayPackage extends Products.Base
   constructor: (@item) ->
@@ -255,20 +296,9 @@ class Products.BestDayPackage extends Products.Base
       </article>
     """
 
-get_first_word =  (data) ->
-  first_word = data.split(' ')[0]
-  #Add the second word for a subset of room types
-  not_alone = ["one", "two", "three", "de", "un", "dos", "tres"]
-  is_int = /^\d+$/
-  lower_fw = first_word.toLowerCase()
-  filters_for_two_words = [
-    (w) -> _.contains(not_alone, w),
-    (w) -> is_int.test(w)
-  ]
-  if _.any(filters_for_two_words, (f) -> f(lower_fw))
-    first_word += " #{data.split(' ')[1]}"
-  first_word
-
+############################################################################
+### Hotel classes
+############################################################################
 
 class Products.Hotel extends Products.Base
   constructor: (@item) ->
@@ -336,7 +366,6 @@ class Products.BestDayHotel extends Products.Hotel
     if @item.api.name == "best_day"
       "<li><a href=\" #{ @item.booking_uri.best_day } \" target='_blank' ><span class='site-name'>#{ @item.api.string }</span><span class='offer-price'>$ #{ @offer_price }</span></a></li>";
 
-
 class Products.PriceTravelHotel extends Products.Hotel
   bu_value: () ->
     @item.booking_uri
@@ -344,6 +373,18 @@ class Products.PriceTravelHotel extends Products.Hotel
   same_bu_value: () ->
     if @item.api.name == "price_travel"
       "<li>#{ @item.same_booking_uri }</li>"
+
+class Products.SpreeTravelHotel extends Products.Hotel
+  bu_value: () ->
+    @item.booking_uri
+
+  same_bu_value: () ->
+    if @item.api.name == "spree_travel"
+      "<li>#{ @item.same_booking_uri }</li>"
+
+############################################################################
+### Car classes
+############################################################################
 
 class Products.BestDayCar extends Products.Base
   constructor: (@item) ->
@@ -409,6 +450,10 @@ class Products.BestDayCar extends Products.Base
       </article>
     """
 
+############################################################################
+### Controller classes
+############################################################################
+
 class Products.Backend
   get_products_page: (api_name) ->
     request = $.ajax(
@@ -424,6 +469,7 @@ class Products.Backend
 class Products.Filter
   update_info: (new_products) ->
     #Nothing to update
+    request = undefined
 
 class Products.TextFilter extends Products.Filter
   constructor: (@dom_options, @trigger_filters) ->
@@ -487,8 +533,6 @@ class Products.SliderFilter extends Products.Filter
       return products
     else
       return _.filter(products, @filter_by)
-
-
 
 class Products.CheckboxFilter extends Products.Filter
   constructor: (@dom_options, @trigger_filters, @live_update = false) ->
@@ -583,10 +627,15 @@ class Products.Gui
     for $el in results
       @itemsBox.append($el)
 
+############################################################################
+### App classes
+############################################################################
+
 class Products.BaseApp
   constructor: ->
     @backend = new Products.Backend()
     @gui = new Products.Gui()
+    @st_api_name = "spree_travel"
     @bd_api_name = "best_day"
     @pt_api_name = "price_travel"
     @am_api_name = "aeromexico"
@@ -642,15 +691,6 @@ class Products.BaseApp
     ordered = _.sortBy(@rendered_products, prop)
     @render(ordered)
 
-####################TODO####################
-# Refactors the apps... Try the following
-# Split the classes name as objects, so they can
-# be indexed , for instance Products.BestDayCar
-# would be Products.BestDay.Car so it's easier
-# to select the correct classes acording to the
-# given app.
-####################TODO####################
-
 class Products.FlightsApp extends Products.BaseApp
   constructor: ->
     @product_type = "flights"
@@ -664,17 +704,17 @@ class Products.FlightsApp extends Products.BaseApp
   start: ->
     @gui.start_ajax_search()
 
-    @backend.get_products_page(@bd_api_name)
-        .done(@on_request_success.bind(@, Products.BestDayFlight))
-        .fail(@gui.on_request_error)
+    @backend.get_products_page(@am_api_name)
+    .done(@on_request_success.bind(@, Products.SpreeTravelFlight))
+    .fail(@gui.on_request_error)
 
-#    @backend.get_products_page(@am_api_name)
-#        .done(@on_request_success.bind(@, Products.AeroMexicoFlight))
-#        .fail(@gui.on_request_error)
+    #@backend.get_products_page(@bd_api_name)
+    #    .done(@on_request_success.bind(@, Products.BestDayFlight))
+    #    .fail(@gui.on_request_error)
 
-    @backend.get_products_page(@pt_api_name)
-        .done(@on_request_success.bind(@, Products.PriceTravelFlight))
-        .fail(@gui.on_request_error)
+    #@backend.get_products_page(@pt_api_name)
+    #    .done(@on_request_success.bind(@, Products.PriceTravelFlight))
+    #    .fail(@gui.on_request_error)
 
   preprocess_new_products: (new_products) ->
     results = []
@@ -698,13 +738,21 @@ class Products.HotelsApp extends Products.BaseApp
   start: ->
     @gui.start_ajax_search()
 
-    @backend.get_products_page(@bd_api_name)
-        .done(@on_request_success.bind(@, Products.BestDayHotel))
-        .fail(@gui.on_request_error)
+    @backend.get_products_page(@st_api_name)
+    .done(@on_request_success.bind(@, Products.SpreeTravelHotel))
+    .fail(@gui.on_request_error)
 
-    @backend.get_products_page(@pt_api_name)
-        .done(@on_request_success.bind(@, Products.PriceTravelHotel))
-        .fail(@gui.on_request_error)
+    #@backend.get_products_page(@bd_api_name)
+    #    .done(@on_request_success.bind(@, Products.BestDayHotel))
+    #    .fail(@gui.on_request_error)
+
+    #@backend.get_products_page(@pt_api_name)
+    #    .done(@on_request_success.bind(@, Products.PriceTravelHotel))
+    #    .fail(@gui.on_request_error)
+
+  last: ->
+    # just for indenting
+    return 0
 
 class Products.PackagesApp extends Products.BaseApp
   constructor: ->

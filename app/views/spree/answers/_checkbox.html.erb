@@ -1,0 +1,12 @@
+<div class="pull-left confirm-input">
+  <h4>
+    <%= f.fields_for :answer_text do |af| %>
+      <%- answer.question.options.each do |option| %>
+        <%= af.label option do %>
+          <%= af.check_box nil, { id: nil, checked: checkbox_checked?(answer, option) }, option %>
+          <%= option %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </h4>
+</div>

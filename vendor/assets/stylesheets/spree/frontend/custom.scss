@@ -56,6 +56,11 @@ $green2-color: #147993;
   font-url('yanonekaffeesatz-bold-webfont.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'bebas';
+  src: font-url('bebasneuebold.ttf') format('truetype')
+}
+
 /***********************************************************************************************/
 /*
  *                                            Styles
@@ -75,7 +80,7 @@ $green2-color: #147993;
 }
 
 section#content {
-  background: white !important;
+  background: #f5f5f5 !important;
 }
 
 body {
@@ -309,7 +314,7 @@ span.custom-select {
 }
 
 button {
-  background: none repeat scroll 0% 0% $orange_color !important;
+  background: none repeat scroll 0% 0% $orange_color;
 }
 
 form label {
@@ -467,16 +472,22 @@ div.container:nth-child(5) > div:nth-child(2) {
 .image-section {
   padding-top: 30px;
   background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner-busqueda-hoteles-fondo.jpg');
-  background-size: 100% auto;
-  background-position: bottom;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 30px;
+  padding-left: 10px !important;
 }
+
 .image-section-food {
-  padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
-  background-size: 100% auto;
-  background-position: bottom;
-  padding-bottom: 30px;
+
+  background: image_url('https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-buskeda-food.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 // Cheap Flights box
@@ -525,39 +536,71 @@ li#help {
 /****  DESTINATION PAGES ****************************************
 
 */
+@mixin destiny_box($url) {
 
-#destiny1 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+  background-image: url($url);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center center;
   height: 353px;
 
+
   &:hover {
-    background-size: 105%;
+
+
   }
 }
 
+#destiny1 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
 #destiny2 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
 }
 
 #destiny3 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/santiago.jpg');
 }
 
 #destiny4 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
 }
+#destiny5 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/baracoa.jpg');
+}
+
+#destiny6 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-coco.jpg');
+}
+
+#destiny7 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-guillermo.jpg');
+}
+
+#destiny8 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-largo.jpg');
+}
+
+#destiny9 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/camaguey.jpg');
+}
+#destiny10 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/cienfuegos.jpg');
+}
+#destiny11 {
+  // Update image for Pinar del Rio
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+#destiny12 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
+}
+#destiny13 {
+  // Update image for Jardines del Rey
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+
 
 .image-box .box {
   div {
@@ -670,6 +713,7 @@ li#help {
 
   float: right;
   margin-top: 60px;
+  margin-right: 40px;
 
   .row {
     margin-bottom: 10px;
@@ -688,4 +732,32 @@ li#help {
   form {
     float: right
   }
+}
+
+.title_food {
+  padding-left: 50px;
+  p {
+    font-family: bebas;
+    font-size: 65px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.05;
+
+    &.subtitle {
+      font-family: yanonekaffeesatz-light;
+      font-size: 45px;
+      text-transform: uppercase;
+    }
+  }
+
+  button {
+    color: white;
+    background-color: $ligth-blue-color;
+    font-size: 20px;
+
+    &:hover {
+      background-color: $orange_color;
+    }
+  }
+
 }

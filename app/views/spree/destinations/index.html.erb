@@ -1,37 +1,20 @@
-<section id="content">
-  <div class="search-box-wrapper">
-    <div class="search-box container">
-      <ul class="search-tabs clearfix">
-        <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
-        <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-        <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
-        <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
-        <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
-        <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
+<div id="slideshow" xmlns="http://www.w3.org/1999/html">
+  <div class="fullwidthbanner-container">
+    <div class="revolution-slider" style="height: 0; overflow: hidden;">
+      <ul>
+        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-destinos.jpg" alt="">
+        </li>
+        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-destinos-trinidad.jpg" alt="">
+        </li>
       </ul>
-      <div class="visible-mobile">
-        <ul id="mobile-search-tabs" class="search-tabs clearfix">
-          <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
-          <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-          <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
-          <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
-          <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
-          <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
-        </ul>
-      </div>
-
-      <section id="search-form-container" data-hook="search-form-container">
-        <div class="search-tab-content">
-          <%= render :partial => 'spree/flights/inputs', :locals => {id: 'flights', active: true} %>
-          <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels', active: false} %>
-          <%= render :partial => 'spree/properties/inputs', :locals => {id: 'properties', active: false} %>
-          <%= render :partial => 'spree/cars/inputs', :locals => {id: 'cars', active: false} %>
-          <%= render :partial => 'spree/cruises/inputs', :locals => {id: 'cruises', active: false} %>
-          <%= render :partial => 'spree/tours/inputs', :locals => {id: 'tours', active: false} %>
-        </div>
-      </section>
     </div>
   </div>
+</div>
+
+<section id="content">
+  <%= render partial: 'spree/shared/temporal_search_box' %>
   <div class="section container">
 
     <div class="row image-box style3">
@@ -148,3 +131,23 @@
     </div>
   </div>
 </section>
+
+<script>
+    tjq(document).ready(function () {
+        tjq('.revolution-slider').revolution(
+                {
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    startwidth: 1170,
+                    startheight: 646,
+                    onHoverStop: "on",
+                    hideThumbs: 10,
+                    fullWidth: "on",
+                    forceFullWidth: "on",
+                    navigationType: "none",
+                    shadow: 0,
+                    spinner: "spinner4",
+                    hideTimerBar: "on",
+                });
+    });
+</script>

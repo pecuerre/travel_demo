@@ -11,7 +11,6 @@ flight_calculator = get_flight_calculator
 
 index = 0
 hash = {}
-
 CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   index += 1
   next if index == 1

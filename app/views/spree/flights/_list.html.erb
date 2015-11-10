@@ -30,19 +30,19 @@
                     <div class="take-off col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">Take off</span><br/><%= f.departure_flights.first.departure_date_time %>
+                        <span class="skin-color">Take off</span><br/><%= take_off_time(f) %>
                       </div>
                     </div>
                     <div class="landing col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">landing</span><br/>WED NOV 13, 2015 9:20 AM
+                        <span class="skin-color">landing</span><br/> <%= landing_time(f)%>
                       </div>
                     </div>
                     <div class="total-time col-sm-4">
                       <div class="icon"><i class="soap-icon-clock yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">total time</span><br/>2 HOUR, 30 MINUTES
+                        <span class="skin-color">total time</span><br/><%= flight_duration(f) %>
                       </div>
                     </div>
                   </div>

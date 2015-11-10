@@ -631,6 +631,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   world_airports
   xml-simple
-
-BUNDLED WITH
-   1.10.6

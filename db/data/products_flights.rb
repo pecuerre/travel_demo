@@ -18,7 +18,8 @@ CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   flight_data = get_flight_parts(row)
   next unless flight_data
   #next if flight_data[:flight_number].to_s == ''
-  flight_name   = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
+  # flight_name = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
+  flight_name = flight_data[:flight_number]
   flight_price = flight_data[:adult_price]
 
   product_attrs = {

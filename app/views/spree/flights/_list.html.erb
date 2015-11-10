@@ -9,7 +9,8 @@
               <div class="details-wrapper">
                 <div class="first-row">
                   <div>
-                    <h4 class="box-title"><%= f.name.gsub('(CHOICE AIRE)', ' ') %> - <%= f.take_off %> / <%= f.landing %>
+                    <h4 class="box-title">
+                      <%= f.name %> - <%= f.take_off %> / <%= f.landing %>
                     </h4>
                     <div class='clearfix'><h5><%= f.flight_type || 'ONEWAY FLIGHT' %></h5></div>
                     <a><strong><%= f.stops %></strong></a>

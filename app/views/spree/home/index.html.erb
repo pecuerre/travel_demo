@@ -1,13 +1,7 @@
-<div id="slideshow">
+<div id="slideshow" xmlns="http://www.w3.org/1999/html">
   <div class="fullwidthbanner-container">
     <div class="revolution-slider" style="height: 0; overflow: hidden;">
       <ul>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/destinos_slide_es.jpg" alt="">
-        </li>
-        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/havana_slide_en.jpg" alt="">
-        </li>
         <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
           <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/vuelos_slide_en.jpg" alt="">
         </li>
@@ -15,6 +9,7 @@
     </div>
   </div>
 </div>
+
 <section id="content">
   <% render partial: 'spree/shared/general_search_box' %>
   <%= render partial: 'spree/shared/temporal_search_box' %>
@@ -90,68 +85,19 @@
       </div>
     </div>
   </div>
+  <div class="image-section-food container">
     <div class="container">
+      <div class="row">
+        <div class="text-left title_food">
+          <p>Find the best place to eat,<br>drink and dance in Cuba</p>
 
-      <div class="text-center description">
-        <h1>We Provide You An Ultimate Travel Experience</h1>
+          <p class="subtitle">More than 600 restaurants & bars</p>
 
-        <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque.</p>
-
-        <p>Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-      </div>
-      <br/>
-
-      <div class="row image-box style8">
-        <div class="col-md-4">
-          <article class="box animated" data-animation-type="fadeInUp">
-            <figure class="middle-block">
-              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/travel.jpg', size: "100x172", alt: "Travel") %>
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h2 class="box-title">Travel</h2>
-
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-                mi id faucibus iaculis vitae pulvinar.
-              </p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="box animated" data-animation-type="fadeInUp">
-            <figure class="middle-block">
-              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/discover.jpg', size: "100x172", alt: "Discover") %>
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h2 class="box-title">Discover</h2>
-
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-                mi id faucibus iaculis vitae pulvinar.
-              </p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="box animated" data-animation-type="fadeInUp">
-            <figure class="middle-block">
-              <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/enjoy.jpg', size: "100x172", alt: "Enjoy") %>
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h2 class="box-title">Enjoy</h2>
-
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque
-                mi id faucibus iaculis vitae pulvinar.
-              </p>
-            </div>
-          </article>
+          <div class="col-md-2">
+            <button class="full-width">Search</button>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
   <div class="section container">
@@ -273,7 +219,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline1.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -287,7 +233,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline4.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -301,7 +247,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline3.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline3.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -315,7 +261,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline4.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -329,7 +275,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline1.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -343,7 +289,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline4.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -357,7 +303,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline3.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline3.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -371,7 +317,7 @@
           <li style="width: 270px; float: left; display: block;">
             <article class="box">
               <figure>
-                <span><%= image_tag('airline4.png', size: "270x160", draggable: false) %></span>
+                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/airline4.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <a title="View all" href="flight-detailed.html" class="pull-right button btn-small uppercase">select</a>
@@ -394,11 +340,11 @@
       </ul>
     </div>
   </div>
-  </div>
-  <div class="image-section">
+
+  <div class="image-section container">
     <div class="container">
       <div class="image-container col-sm-4">
-        <%= image_tag('h-nacional.jpg', size: '342x258', class: "animated") %>
+        <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/h-nacional.jpg', size: '342x258', class: "animated") %>
 
       </div>
       <div class="col-xs-6">

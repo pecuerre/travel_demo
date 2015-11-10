@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_flight.git
-  revision: 35092d309e1e19277b9dfb867d3ec262d5cbaac7
+  revision: d30309f0f189be4e6bd21a9162b7921f08823b6a
   branch: combination_less
   specs:
     spree_travel_flight (3.0.0)

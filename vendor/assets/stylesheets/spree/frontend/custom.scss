@@ -536,39 +536,71 @@ li#help {
 /****  DESTINATION PAGES ****************************************
 
 */
+@mixin destiny_box($url) {
 
-#destiny1 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+  background-image: url($url);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center center;
   height: 353px;
 
+
   &:hover {
-    background-size: 105%;
+
+
   }
 }
 
+#destiny1 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
 #destiny2 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
 }
 
 #destiny3 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/santiago.jpg');
 }
 
 #destiny4 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
 }
+#destiny5 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/baracoa.jpg');
+}
+
+#destiny6 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-coco.jpg');
+}
+
+#destiny7 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-guillermo.jpg');
+}
+
+#destiny8 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-largo.jpg');
+}
+
+#destiny9 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/camaguey.jpg');
+}
+#destiny10 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/cienfuegos.jpg');
+}
+#destiny11 {
+  // Update image for Pinar del Rio
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+#destiny12 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
+}
+#destiny13 {
+  // Update image for Jardines del Rey
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+
 
 .image-box .box {
   div {

@@ -80,7 +80,7 @@ $green2-color: #147993;
 }
 
 section#content {
-  background: white !important;
+  background: #f5f5f5 !important;
 }
 
 body {
@@ -476,6 +476,7 @@ div.container:nth-child(5) > div:nth-child(2) {
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 30px;
+  padding-left: 10px !important;
 }
 
 .image-section-food {
@@ -680,6 +681,7 @@ li#help {
 
   float: right;
   margin-top: 60px;
+  margin-right: 40px;
 
   .row {
     margin-bottom: 10px;

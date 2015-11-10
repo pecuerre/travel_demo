@@ -217,7 +217,7 @@ es:
   tour_havana_arts_title: 'LA HABANA ARTE & CULTURA'
   tour_havana_arts_short_description: 'Este itinerario especialmente diseñado sumerge diez a veinte viajeros en artística rica, musical de Cuba, y gira heritage.Walking cultural de las principales calles y plazas del centro histórico de La Habana Vieja históricos, como la Plaza de Armas, el Convento de San Francisco de Asís, viejo colonial español iglesias.'
 
-  tour_professional_title: 'INVESTIGACIÓN PROFESIONAL y académica'
+  tour_professional_title: 'INVESTIGACIÓN PROFESIONAL'
   tour_professional_short_description: 'Arquitectos estadounidenses, profesionales de la medicina, el arte y los aficionados del cigarro, US cámaras de comercio, empresarios, profesores universitarios, investigadores y otros educadores se unen los viajeros interesados ​​en el avance de ciertas disciplinas y compartir las mejores prácticas.'
 
 
@@ -297,3 +297,17 @@ es:
 
   privacy_policy: 'Políticas de Privacidad'
   contac_us: 'Contáctenos'
+
+ # Destinos ================================================
+
+  destinohabana: 'La Habana'
+  description_destino_habana_html: '<p class = "description"> Centro Habana es la transición entre antigua y moderna Habana y pertenece al centro tradicional de la capital cubana. <br/> Esta parte de la ciudad apareció después de la expansión urbana más allá de las murallas de la ciudad, donde los edificios majestuosos comenzó a ser construido. Esta parte de la ciudad se caracteriza por El Prado, el Capitolio. </p>'
+
+  destinovaradero: 'Varadero'
+  description_destino_varadero_html: '<p class="description"> Es uno de los destinos más apreciados del Caribe. Usted encontrará las tradiciones artesanales locales y la hospitalidad en una veintena de kilómetros de playa y sol. <br/> Sus playas se complementan con atractivos culturales, históricos y ambientales relacionados con las ciudades de Matanzas y Cárdenas. </p>'
+
+  destinotrinidad: 'Trinidad'
+  description_destino_trinidad_html: '<p class = "description"> Trinidad de Cuba es la ciudad colonial más conservado, por lo que su apodo es El Museo de la Ciudad. <br/> Está situado en un gran valle rodeado por las montañas del Escambray y es uno de los más importantes destinos turísticos cubanos si quieren conocer de primera mano las tradiciones, la cultura y la originalidad del pueblo cubano. </p>'
+
+  destinovaradero: 'Pinar del Rio'
+  description_destino_pinardelrio_html: '<p class = "description"> Es único en belleza natural y paisajística. El Valle de Viñales se coloca en la provincia de Pinar del Río y es uno de los lugares más atractivos de Cuba. <br> La llegada al Valle es increíble debido a su agradable temperatura y la presencia de la antigüedad y la prehistoria en su paisaje. </p>'

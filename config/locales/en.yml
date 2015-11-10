@@ -225,7 +225,7 @@ en:
   tour_havana_arts_title: 'HAVANA ARTS & CULTURE'
   tour_havana_arts_short_description: 'This specially designed itinerary immerses ten to twenty travelers in Cuba’s rich artistic, musical, and cultural heritage.Walking tour of the main historic streets and squares of Old Havana’s historic center, including Plaza de Armas, Convento de San Francisco de Asis, old Spanish colonial churches.'
 
-  tour_professional_title: 'PROFESSIONAL RESEARCH & ACADEMIC ENGAGEMENT'
+  tour_professional_title: 'PROFESSIONAL RESEARCH'
   tour_professional_short_description: 'U.S. architects, medical professionals, art and cigar aficionados, US chambers of commerce, entrepreneurs, university professors, researchers and other educators join travelers interested in advancing certain disciplines and sharing best practices.'
 
   see_all: 'See all'
@@ -310,3 +310,19 @@ en:
   what_is_personal_text_html: '<p>Personal information could be used to identify a specific individual. It may include but not be limited to information such as your name, home address, phone numbers, e-mail addresses, web site URL, matches, absentee instructions and emergency contacts.</p>'
 
   how_do_we_use_text_html: '<p>We require your personal information in order to establish your record (i.e. guest, owner or partner record) and we collect the information from you.</p><p> We use your personal information for the purposes reasonably required in order for us to carry on business, including the following:</p><ul></ul>'
+
+  # Destinos ================================================
+
+  destinohabana: 'La Habana'
+  description_destino_habana_html: '<p class="description">Centro Habana is the transition betweeen old and modern Havana and belongs to the traditional center of the Cuban capital.<br/> This part of the city appeared after the urban expansion beyond the city walls where majestic buildings started to be built. This part of the city is characterized by El Prado, the Capitol.</p>'
+
+  destinovaradero: 'Varadero'
+  description_destino_varadero_html: '<p class="description"> It is one of the most appreciated destinations from the Caribbean. You will find the local artisan traditions  and the city´s hospitality in around twenty kilometers of beach and sun.<br/>Its beaches are complemented by cultural, historical and environmental attractions related to the cities of Matanzas and Cárdenas.</p>'
+
+  destinotrinidad: 'Trinidad'
+  description_destino_trinidad_html: '<p class="description">Trinidad is Cuba´s most preserved colonial city, so its nickname is The Museum City.<br/>It is located in a large valley bordered by the Escambray mountains  and it is one of the most important Cuban tourist destinations if you want to know first-hand the traditions, culture and originality of the Cuban people.</p>'
+
+  destinopinardelrio: 'Pinar del Rio'
+  description_destino_pinardelrio_html: '<p class="description">It is unique in natural beauty and landscape. The Viñales Valley is placed in the province of Pinar del Río and it is one of the most attractive places in Cuba.<br>The arrival to the Valley is amazing due to its nice temperature and the presence of antiquity and prehistory in its landscape.</p>'
+
+   # Hoteles ================================================

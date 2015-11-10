@@ -81,8 +81,8 @@ module SpreeTravel
         flight.departure_flights = []
         departure = Departure.new
         # departure.airline = resource.airline
-        departure.departure_date_time = rate.get_persisted_option_value(:take_off_time)
-        departure.arrival_date_time = tate.get_persisted_option_value(:landing_time)
+        departure.departure_date_time = rate.get_persisted_option_value(:take_off_time).to_time
+        departure.arrival_date_time = rate.get_persisted_option_value(:landing_time).to_time
         departure.duration_in_minutes = departure.arrival_date_time - departure.departure_date_time
         # departure.terminal = resource.terminal
         departure.departure_airport = rate.get_persisted_option_value(:origin)

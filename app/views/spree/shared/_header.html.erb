@@ -1,13 +1,13 @@
 <div id="temp-spree-header">
   <header id="header" class="navbar-static-top">
-    <h1 class="logo navbar-brand">
-      <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
-          <%= image_tag 'logo/logo.png' %>
-      <% end %>
-    </h1>
+
     <div class="topnav hidden-xs">
         <div class="container">
-
+          <h1 class="logo navbar-brand">
+            <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
+                <%= image_tag 'logo/logo.png' %>
+            <% end %>
+          </h1>
             <ul class="quick-menu pull-right">
                 <% if spree_current_user %>
                   <li><%= link_to Spree.t(:my_account), spree.account_path %></li>

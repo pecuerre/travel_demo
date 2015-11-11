@@ -75,7 +75,6 @@
     </div>
   </form>
 </div>
-<!--TODO: Ver si se puede cambiar 'Destination' por 'Local city' para reutilizarla en autos casas y demas -->
 <%= render :partial => 'spree/shared/destinations_autocomplete',
-           :locals => {selector: '.hotels-search-going-to', taxonomies: ['Destination', 'Hotels']}
+           :locals => {selector: '.hotels-search-going-to', taxonomies: ['Destination city', 'Hotels']}
 %>

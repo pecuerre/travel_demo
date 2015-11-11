@@ -102,8 +102,8 @@
 </div>
 <!--TODO: Ver si se puede cambiar 'Destination' por 'Local city' para reutilizarla en autos casas y demas -->
 <%= render :partial => 'spree/shared/destinations_autocomplete',
-           :locals => {selector: '.cars-picking-up', taxonomies: ['Destination', 'Local airport']}
+           :locals => {selector: '.cars-picking-up', taxonomies: ['Destination city', 'Arrival airport']}
 %>
 <%= render :partial => 'spree/shared/destinations_autocomplete',
-           :locals => {selector: '.cars-dropping-off', taxonomies: ['Destination', 'Local airport']}
+           :locals => {selector: '.cars-dropping-off', taxonomies: ['Destination city', 'Arrival airport']}
 %>

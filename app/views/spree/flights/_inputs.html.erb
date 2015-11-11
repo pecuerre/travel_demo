@@ -97,11 +97,9 @@
         </div>
     </form>
 </div>
-<!--TODO: Crear las taxonomies y los taxons para leaving-from (EJ: Foreign city )-->
-<!--TODO: Ver si se puede cambiar 'Destination' por 'Local city' para reutilizarla en autos casas y demas -->
 <%= render :partial => 'spree/shared/destinations_autocomplete',
-           :locals => {selector: '.flight-leaving-from', taxonomies: ['Foreign city', 'Foreign airport']}
+           :locals => {selector: '.flight-leaving-from', taxonomies: ['Departure airport']}
 %>
 <%= render :partial => 'spree/shared/destinations_autocomplete',
-           :locals => {selector: '.flight-going-to', taxonomies: ['Destination', 'Local airport']}
+           :locals => {selector: '.flight-going-to', taxonomies: ['Arrival airport']}
 %>

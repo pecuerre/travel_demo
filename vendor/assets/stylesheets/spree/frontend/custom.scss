@@ -16,6 +16,7 @@ $ligth-gray-color: #f5f5f5;
 $yellow-color: #ffcc00;
 $brown-color: #a25821;
 $green-color: #2c938f;
+$green2-color: #147993;
 
 /***********************************************************************************************/
 /*
@@ -55,6 +56,11 @@ $green-color: #2c938f;
   font-url('yanonekaffeesatz-bold-webfont.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'bebas';
+  src: font-url('bebasneuebold.ttf') format('truetype')
+}
+
 /***********************************************************************************************/
 /*
  *                                            Styles
@@ -63,6 +69,7 @@ $green-color: #2c938f;
 /* Generals */
 
 .section {
+  padding-bottom: 0 !important;
   padding-top: 30px !important;
   > h2 {
     font-family: yanonekaffeesatz-bold;
@@ -73,7 +80,7 @@ $green-color: #2c938f;
 }
 
 section#content {
-  background: white !important;
+  background: #f5f5f5 !important;
 }
 
 body {
@@ -129,7 +136,7 @@ body {
 #header {
   background: $yellow-color;
   .logo {
-    margin: 0 25px !important;
+    margin: 0 45px !important;
     img {
       opacity: 1 !important;
     }
@@ -307,7 +314,7 @@ span.custom-select {
 }
 
 button {
-  background: none repeat scroll 0% 0% $orange_color !important;
+  background: none repeat scroll 0% 0% $orange_color;
 }
 
 form label {
@@ -462,28 +469,54 @@ div.container:nth-child(5) > div:nth-child(2) {
   }
 }
 
-// Cheap Flights box
-
 .image-section {
   padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/back_section.jpg');
-  background-position: center top;
-  background-size: 100% auto;
-  background-position: bottom;
+  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner-busqueda-hoteles-fondo.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30px;
+  padding-left: 10px !important;
 }
 
-#cheapflight {
+.image-section-food {
 
-  .box-title {
-    padding-top: 6px;
+  background: image_url('https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-buskeda-food.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+// Cheap Flights box
+
+.listing-style2.flight figure {
+  background: #f5f5f5;
+  display: table;
+  height: 140px;
+
+}
+
+.image-box .box {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.image-carousel.style2 {
+  .slides > li {
+    margin-right: 15px !important;
   }
-  .price {
-    float: left;
+  .flex-direction-nav li a {
+    background-color: $ligth-blue-color !important;
   }
 }
 
-.mytrp_icon {
-  margin-left: 10px;
+.CheapFlightTitle {
+  font-size: 25px;
+  font-family: yanonekaffeesatz-bold;
+  color: $orange_color;
 }
 
 /***/
@@ -503,39 +536,71 @@ li#help {
 /****  DESTINATION PAGES ****************************************
 
 */
+@mixin destiny_box($url) {
 
-#destiny1 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+  background-image: url($url);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center center;
   height: 353px;
 
+
   &:hover {
-    background-size: 105%;
+
+
   }
 }
 
+#destiny1 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
 #destiny2 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
 }
 
 #destiny3 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/santiago.jpg');
 }
 
 #destiny4 {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 353px;
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
 }
+#destiny5 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/baracoa.jpg');
+}
+
+#destiny6 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-coco.jpg');
+}
+
+#destiny7 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-guillermo.jpg');
+}
+
+#destiny8 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-largo.jpg');
+}
+
+#destiny9 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/camaguey.jpg');
+}
+#destiny10 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/cienfuegos.jpg');
+}
+#destiny11 {
+  // Update image for Pinar del Rio
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+#destiny12 {
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
+}
+#destiny13 {
+  // Update image for Jardines del Rey
+  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
+}
+
+
 
 .image-box .box {
   div {
@@ -587,8 +652,8 @@ li#help {
 }
 
 .small_icon {
-  width: 23px !important;
-
+  width: 32px !important;
+  margin: 3px;
 }
 
 .col1 {
@@ -634,4 +699,65 @@ li#help {
   color: #17a9af !important;
   font-weight: bold;
   font-size: 22px;
+}
+
+/****  SearchHotel Banner ***************************************/
+
+.searchoteltitle {
+  font-size: 35px;
+  color: $green2-color;
+  font-family: yanonekaffeesatz-regular;
+}
+
+.searchotelform {
+
+  float: right;
+  margin-top: 60px;
+  margin-right: 40px;
+
+  .row {
+    margin-bottom: 10px;
+    ::-webkit-input-placeholder {
+      color: $dark-blue-color;
+    }
+    input.input-text.input-large {
+      font-size: 20px;
+      font-family: yanonekaffeesatz-regular;
+      width: 283px !important;
+    }
+    button.btn-large, a.button.btn-large {
+      font-size: 18px;
+    }
+  }
+  form {
+    float: right
+  }
+}
+
+.title_food {
+  padding-left: 50px;
+  p {
+    font-family: bebas;
+    font-size: 65px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.05;
+
+    &.subtitle {
+      font-family: yanonekaffeesatz-light;
+      font-size: 45px;
+      text-transform: uppercase;
+    }
+  }
+
+  button {
+    color: white;
+    background-color: $ligth-blue-color;
+    font-size: 20px;
+
+    &:hover {
+      background-color: $orange_color;
+    }
+  }
+
 }

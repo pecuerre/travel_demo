@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_core.git
-  revision: 2c873981c8221171d285f48efeea57fc84b7c853
+  revision: 03522e07833bef3552fb5f214db49d02484b7cca
   branch: combinations_less
   specs:
     spree_travel_core (3.0.0)

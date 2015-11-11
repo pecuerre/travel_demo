@@ -1,39 +1,21 @@
-<section id="content">
-  <div class="search-box-wrapper">
-    <div class="search-box container">
-      <ul class="search-tabs clearfix">
-        <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
-        <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-        <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
-        <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
-        <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
-        <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
+<div id="slideshow" xmlns="http://www.w3.org/1999/html">
+  <div class="fullwidthbanner-container">
+    <div class="revolution-slider" style="height: 0; overflow: hidden;">
+      <ul>
+        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-destinos.jpg" alt="">
+        </li>
+        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-destinos-trinidad.jpg" alt="">
+        </li>
       </ul>
-      <div class="visible-mobile">
-        <ul id="mobile-search-tabs" class="search-tabs clearfix">
-          <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><%= t(:flights) %></a></li>
-          <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><%= t(:hotels) %></b></a></li>
-          <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><%= t(:home_rentals) %></b></a></li>
-          <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><%= t(:cars) %></b></a></li>
-          <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
-          <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
-        </ul>
-      </div>
-
-      <section id="search-form-container" data-hook="search-form-container">
-        <div class="search-tab-content">
-          <%= render :partial => 'spree/flights/inputs', :locals => {id: 'flights', active: true} %>
-          <%= render :partial => 'spree/hotels/inputs', :locals => {id: 'hotels', active: false} %>
-          <%= render :partial => 'spree/properties/inputs', :locals => {id: 'properties', active: false} %>
-          <%= render :partial => 'spree/cars/inputs', :locals => {id: 'cars', active: false} %>
-          <%= render :partial => 'spree/cruises/inputs', :locals => {id: 'cruises', active: false} %>
-          <%= render :partial => 'spree/tours/inputs', :locals => {id: 'tours', active: false} %>
-        </div>
-      </section>
     </div>
   </div>
-  <div class="section container">
+</div>
 
+<section id="content">
+  <%= render partial: 'spree/shared/temporal_search_box' %>
+  <div class="section container">
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
         <a href="">
@@ -49,9 +31,11 @@
               </div>
             </div>
             <div class="iconbox text-center">
-              <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-              <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-              <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
             </div>
             <div class="selectbox">
 
@@ -75,9 +59,11 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -100,9 +86,11 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -117,7 +105,7 @@
           <div class="transparentbox">
           </div>
           <div class="textbox text-center">
-            <h4 class="image-title">Cayo Coco</h4>
+            <h4 class="image-title">Valle de Viñales</h4>
             <h5 class="image-reviews">270 reviews</h5>
 
             <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
@@ -125,9 +113,11 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -140,82 +130,36 @@
     </div>
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny1">
-          <div class="transparentbox">
-          </div>
-          <div class="textbox text-center">
-            <h4 class="image-title">La Habana</h4>
-            <h5 class="image-reviews">270 reviews</h5>
-
-            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
+        <a href="">
+          <article class="box" id="destiny5">
+            <div class="transparentbox">
             </div>
-          </div>
-          <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
-          </div>
-          <div class="selectbox">
+            <div class="textbox text-center">
+              <h4 class="image-title">Baracoa</h4>
+              <h5 class="image-reviews">270 reviews</h5>
 
-            <div class="col1">100 Hotels available</div>
-            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+              <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                <span style="width: 80%;" class="five-stars"></span>
+              </div>
+            </div>
+            <div class="iconbox text-center">
+              <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
+            </div>
+            <div class="selectbox">
 
-          </div>
-        </article>
+              <div class="col1">100 Hotels available</div>
+              <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+
+            </div>
+          </article>
+        </a>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny2">
-          <div class="transparentbox">
-          </div>
-          <div class="textbox text-center">
-            <h4 class="image-title">Varadero</h4>
-            <h5 class="image-reviews">270 reviews</h5>
-
-            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
-            </div>
-          </div>
-          <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
-          </div>
-          <div class="selectbox">
-
-            <div class="col1">100 Hotels available</div>
-            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
-
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny3">
-          <div class="transparentbox">
-          </div>
-          <div class="textbox text-center">
-            <h4 class="image-title">Santiago de Cuba</h4>
-            <h5 class="image-reviews">270 reviews</h5>
-
-            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
-            </div>
-          </div>
-          <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
-          </div>
-          <div class="selectbox">
-
-            <div class="col1">100 Hotels available</div>
-            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
-
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny4">
+        <article class="box" id="destiny6">
           <div class="transparentbox">
           </div>
           <div class="textbox text-center">
@@ -227,9 +171,65 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
+          </div>
+          <div class="selectbox">
+
+            <div class="col1">100 Hotels available</div>
+            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+
+          </div>
+        </article>
+      </div>
+      <div class="col-sms-6 col-sm-6 col-md-3">
+        <article class="box" id="destiny7">
+          <div class="transparentbox">
+          </div>
+          <div class="textbox text-center">
+            <h4 class="image-title">Cayo Guillermo</h4>
+            <h5 class="image-reviews">270 reviews</h5>
+
+            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+              <span style="width: 80%;" class="five-stars"></span>
+            </div>
+          </div>
+          <div class="iconbox text-center">
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
+          </div>
+          <div class="selectbox">
+
+            <div class="col1">100 Hotels available</div>
+            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+
+          </div>
+        </article>
+      </div>
+      <div class="col-sms-6 col-sm-6 col-md-3">
+        <article class="box" id="destiny8">
+          <div class="transparentbox">
+          </div>
+          <div class="textbox text-center">
+            <h4 class="image-title">Cayo Largo</h4>
+            <h5 class="image-reviews">270 reviews</h5>
+
+            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+              <span style="width: 80%;" class="five-stars"></span>
+            </div>
+          </div>
+          <div class="iconbox text-center">
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -242,11 +242,40 @@
     </div>
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny1">
+        <a href="">
+          <article class="box" id="destiny9">
+            <div class="transparentbox">
+            </div>
+            <div class="textbox text-center">
+              <h4 class="image-title">Camaguey</h4>
+              <h5 class="image-reviews">270 reviews</h5>
+
+              <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                <span style="width: 80%;" class="five-stars"></span>
+              </div>
+            </div>
+            <div class="iconbox text-center">
+              <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
+            </div>
+            <div class="selectbox">
+
+              <div class="col1">100 Hotels available</div>
+              <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="col-sms-6 col-sm-6 col-md-3">
+        <article class="box" id="destiny10">
           <div class="transparentbox">
           </div>
           <div class="textbox text-center">
-            <h4 class="image-title">La Habana</h4>
+            <h4 class="image-title">Cienfuegos</h4>
             <h5 class="image-reviews">270 reviews</h5>
 
             <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
@@ -254,9 +283,11 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -267,36 +298,40 @@
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny2">
-          <div class="transparentbox">
-          </div>
-          <div class="textbox text-center">
-            <h4 class="image-title">Varadero</h4>
-            <h5 class="image-reviews">270 reviews</h5>
-
-            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
+        <a href="">
+          <article class="box" id="destiny11">
+            <div class="transparentbox">
             </div>
-          </div>
-          <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
-          </div>
-          <div class="selectbox">
+            <div class="textbox text-center">
+              <h4 class="image-title">Pinar del Rio</h4>
+              <h5 class="image-reviews">270 reviews</h5>
 
-            <div class="col1">100 Hotels available</div>
-            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+              <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                <span style="width: 80%;" class="five-stars"></span>
+              </div>
+            </div>
+            <div class="iconbox text-center">
+              <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+              <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
+            </div>
+            <div class="selectbox">
 
-          </div>
-        </article>
+              <div class="col1">100 Hotels available</div>
+              <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
+
+            </div>
+          </article>
+        </a>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny3">
+        <article class="box" id="destiny12">
           <div class="transparentbox">
           </div>
           <div class="textbox text-center">
-            <h4 class="image-title">Santiago de Cuba</h4>
+            <h4 class="image-title">Trinidad</h4>
             <h5 class="image-reviews">270 reviews</h5>
 
             <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
@@ -304,34 +339,11 @@
             </div>
           </div>
           <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
-          </div>
-          <div class="selectbox">
-
-            <div class="col1">100 Hotels available</div>
-            <div class="col2"><a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a></div>
-
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box" id="destiny4">
-          <div class="transparentbox">
-          </div>
-          <div class="textbox text-center">
-            <h4 class="image-title">Cayo Coco</h4>
-            <h5 class="image-reviews">270 reviews</h5>
-
-            <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
-            </div>
-          </div>
-          <div class="iconbox text-center">
-            <a href="##"><%= image_tag('icon/fligth.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/hotel.png', class: 'small_icon') %></a>
-            <a href="##"><%= image_tag('icon/tours.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
+            <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
           </div>
           <div class="selectbox">
 
@@ -344,3 +356,23 @@
     </div>
   </div>
 </section>
+
+<script>
+    tjq(document).ready(function () {
+        tjq('.revolution-slider').revolution(
+                {
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    startwidth: 1170,
+                    startheight: 646,
+                    onHoverStop: "on",
+                    hideThumbs: 10,
+                    fullWidth: "on",
+                    forceFullWidth: "on",
+                    navigationType: "none",
+                    shadow: 0,
+                    spinner: "spinner4",
+                    hideTimerBar: "on",
+                });
+    });
+</script>

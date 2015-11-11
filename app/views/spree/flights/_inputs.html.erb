@@ -3,12 +3,16 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label><%= t(:leaving_from) %></label>
-                    <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+                  <label><%= t(:leaving_from) %></label>
+                  <input type="text" name="leaving_from" class="input-text full-width flight-leaving-from"
+                         placeholder="<%= t(:city_distirct_or_specific_airpot) %>"/>
+                  <input type="hidden" class="flight-leaving-from" name="leaving_from_id"/>
                 </div>
                 <div class="form-group">
-                    <label><%= t(:going_to) %></label>
-                    <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+                  <label><%= t(:going_to) %></label>
+                  <input type="text" class="input-text full-width flight-going-to"
+                         placeholder="<%= t(:city_distirct_or_specific_airpot) %>"/>
+                  <input type="hidden" class="flight-going-to" name="going_to_id"/>
                 </div>
             </div>
             
@@ -93,3 +97,11 @@
         </div>
     </form>
 </div>
+<!--TODO: Crear las taxonomies y los taxons para leaving-from (EJ: Foreign city )-->
+<!--TODO: Ver si se puede cambiar 'Destination' por 'Local city' para reutilizarla en autos casas y demas -->
+<%= render :partial => 'spree/shared/destinations_autocomplete',
+           :locals => {selector: '.flight-leaving-from', taxonomies: ['Foreign city', 'Foreign airport']}
+%>
+<%= render :partial => 'spree/shared/destinations_autocomplete',
+           :locals => {selector: '.flight-going-to', taxonomies: ['Destination', 'Local airport']}
+%>

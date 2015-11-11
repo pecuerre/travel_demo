@@ -4,11 +4,15 @@
           <div class="col-md-4">
               <div class="form-group">
                   <label><%= t(:picking_up) %></label>
-                  <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+                  <input type="text" name="picking_up" class="input-text full-width cars-picking-up"
+                         placeholder="<%= t(:city_distirct_or_specific_airpot) %>"/>
+                  <input type="hidden" name="picking_up_id" class="cars-picking-up" />
               </div>
               <div class="form-group">
                   <label><%= t(:dropping_off) %></label>
-                  <input type="text" class="input-text full-width" placeholder="<%= t(:city_distirct_or_specific_airpot) %>" />
+                  <input type="text" name="dropping_off" class="input-text full-width cars-dropping-off"
+                         placeholder="<%= t(:city_distirct_or_specific_airpot) %>"/>
+                  <input type="hidden" name="dropping_off_id" class="cars-dropping-off" />
               </div>
           </div>
           
@@ -96,3 +100,10 @@
       </div>
   </form>
 </div>
+<!--TODO: Ver si se puede cambiar 'Destination' por 'Local city' para reutilizarla en autos casas y demas -->
+<%= render :partial => 'spree/shared/destinations_autocomplete',
+           :locals => {selector: '.cars-picking-up', taxonomies: ['Destination', 'Local airport']}
+%>
+<%= render :partial => 'spree/shared/destinations_autocomplete',
+           :locals => {selector: '.cars-dropping-off', taxonomies: ['Destination', 'Local airport']}
+%>

@@ -152,6 +152,9 @@ body {
       opacity: 1 !important;
     }
   }
+  .main-header {
+    z-index: -1;
+  }
   select {
     background: white;
     color: black;

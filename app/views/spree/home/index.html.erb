@@ -1,16 +1,16 @@
-<div class="container">
+
 <div id="slideshow" xmlns="http://www.w3.org/1999/html">
   <div class="fullwidthbanner-container" style="left: 0;">
     <div class="revolution-slider" style="height: 0; overflow: hidden;">
       <ul>
         <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/vuelos_slide_en.jpg" alt="">
+          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/vuelos_slide_en.jpg" alt="" height="auto">
         </li>
       </ul>
     </div>
   </div>
 </div>
-</div>
+
 <section id="content">
   <% render partial: 'spree/shared/general_search_box' %>
   <%= render partial: 'spree/shared/temporal_search_box' %>
@@ -86,8 +86,8 @@
       </div>
     </div>
   </div>
-  <div class="image-section-food container">
-    <div class="container">
+  <div class="image-section-food">
+<div class="container">
       <div class="row">
         <div class="text-left title_food">
           <p>Find the best place to eat,<br>drink and dance in Cuba</p>
@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </div>
   <div class="section container">
     <h2><%= t(:popular_hotels) %>  <%= image_tag('icon/hotel_orange_32x32.png', class: 'mytrp_icon') %></h2>
@@ -342,7 +342,7 @@
     </div>
   </div>
 
-  <div class="image-section container">
+  <div class="image-section">
     <div class="container">
       <div class="image-container col-sm-4">
         <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/h-nacional.jpg', size: '342x258', class: "animated") %>

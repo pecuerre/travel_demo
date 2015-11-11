@@ -7069,7 +7069,7 @@ ul.search-tabs {
 }
 
 .search-tab-content {
-  padding: 30px 0;
+  padding: 30px;
   .tab-pane {
     display: none;
   }
@@ -7228,7 +7228,7 @@ ul.search-tabs {
 }
 
 /* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.search-box-wrapper.style2 {
+.search-box-wrapper.style3 {
   background: none;
   .search-box {
     margin: 0 auto;
@@ -7246,7 +7246,7 @@ ul.search-tabs {
         padding-right: 0;
       }
       > a {
-        /*margin-bottom: 5px;*/
+        margin-bottom: 5px;
         height: 35px;
         line-height: 35px;
         background: $blue-theme-color;

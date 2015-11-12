@@ -123,7 +123,6 @@ body {
       color: $brown-color;
       font-size: 15px;
       margin-top: 8px;
-      float: right;
       letter-spacing: 0.05em;
       font-family: yanonekaffeesatz-regular;
       > span {
@@ -136,6 +135,14 @@ body {
     }
     .pull-right {
       margin-right: 30px;
+    }
+    .shop_car {
+
+      span {
+        color: black;
+        font-size: 15px;
+        padding: 10px;
+      }
     }
   }
 }
@@ -154,6 +161,7 @@ body {
   }
   .main-header {
     z-index: -1;
+    height: 48px !important;
   }
   select {
     background: white;
@@ -404,6 +412,9 @@ section#search-form-container {
 
 .icon-tours:before {
   content: image_url('icon/tours_blue_24x24.png');
+}
+.icon-restaurants:before {
+  content: image_url('icon/restaurants_blue_24x24.png');
 }
 
 .search-tab-content {

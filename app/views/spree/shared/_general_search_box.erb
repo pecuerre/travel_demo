@@ -1,14 +1,18 @@
-<div class="container">
 <div class="search-box-wrapper  style2">
   <div class="search-box container">
     <ul class="search-tabs clearfix">
-      <li class="active"><a id="flights" href="#flights-tab" data-toggle="tab"><i class="icon-flight"></i><%= t(:flights) %></a></li>
-      <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><i class="icon-hotel"></i><%= t(:hotels) %></b></a></li>
-      <li><a id="properties" href="#properties-tab" data-toggle="tab"><b><i class="icon-home"></i><%= t(:home_rentals) %></b></a></li>
+      <li class="active">
+        <a id="flights" href="#flights-tab" data-toggle="tab"><i class="icon-flight"></i><%= t(:flights) %></a></li>
+      <li><a id="hotels" href="#hotels-tab" data-toggle="tab"><b><i class="icon-hotel"></i><%= t(:hotels) %></b></a>
+      </li>
+      <li>
+        <a id="properties" href="#properties-tab" data-toggle="tab"><b><i class="icon-home"></i><%= t(:home_rentals) %>
+        </b></a></li>
       <li><a id="cars" href="#cars-tab" data-toggle="tab"><b><i class="icon-car"></i><%= t(:cars) %></b></a></li>
       <li><a href="#cruises-tab" data-toggle="tab"><b><i class="icon-cruise"></i><%= t(:cruises) %></b></a></li>
       <li><a href="#tours-tab" data-toggle="tab"><i class="icon-tours"></i><b><%= t(:tours) %></b> </a></li>
-      <li><a href="#resturants-tab" data-toggle="tab"><b><i class="icon-restaurants"></i><%= t(:restaurants) %></b> </a></li>
+      <li><a href="#resturants-tab" data-toggle="tab"><b><i class="icon-restaurants"></i><%= t(:restaurants) %></b> </a>
+      </li>
     </ul>
     <div class="visible-mobile">
       <ul id="mobile-search-tabs" class="search-tabs clearfix">
@@ -19,7 +23,7 @@
         <li><a href="#cruises-tab" data-toggle="tab"><b><%= t(:cruises) %></b></a></li>
         <li><a href="#tours-tab" data-toggle="tab"><b><%= t(:tours) %></b> </a></li>
         <li><a href="#resturants-tab" data-toggle="tab"><b><%= t(:restaurants) %></b> </a></li>
-        </ul>
+      </ul>
     </div>
 
     <section id="search-form-container" data-hook="search-form-container">
@@ -34,5 +38,4 @@
       </div>
     </section>
   </div>
-</div>
 </div>

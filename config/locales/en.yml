@@ -103,6 +103,7 @@ en:
   source: "source"
   count: "count"
   destinations: "Destinations"
+  restaurants: "Restaurants"
   listing_destinations: "Listing Destinations"
   new_destiny: "New Destination"
   editing_destination: "Editing Destination"

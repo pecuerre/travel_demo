@@ -454,6 +454,21 @@ section#search-form-container {
   }
 }
 
+/* 3.3. Page Title ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.page-title-container {
+  .page-title {
+    .entry-title {
+      margin-left: 30px !important;
+      font-family: yanonekaffeesatz-bold;
+    }
+  }
+  .breadcrumbs {
+    font-size: 18px;
+    margin-right: 30px;
+
+    }
+  }
+
 /******************** Forms elements ******************/
 
 ::-webkit-input-placeholder {

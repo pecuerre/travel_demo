@@ -1,9 +1,25 @@
-<%= render partial: 'spree/shared/slide_show' %>
+<% render partial: 'spree/shared/slide_show' %>
+
+<% render partial: 'spree/shared/temporal_search_box' %>
+
+<section id="content" class="slideshow-bg">
+  <div id="slideshow">
+    <div class="flexslider">
+      <ul class="slides">
+        <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 1;">
+          <div class="slidebg" style="background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-background.jpg');"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div id="main">
+      <%= render partial: 'spree/shared/general_search_box' %>
+    </div>
+  </div>
+</section>
 
 <section id="content">
-  <%= render partial: 'spree/shared/general_search_box' %>
-  <% render partial: 'spree/shared/temporal_search_box' %>
-
   <div class="section container">
     <h2><%= t(:popular_destinations) %> <%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %></h2>
 

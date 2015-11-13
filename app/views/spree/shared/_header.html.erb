@@ -40,9 +40,7 @@
                   <% end %>
                 </li>
 
-              <li id="help">Need help? Contact us  US Office <span>+1-844-836-2822</span></li>
-              <li class="shop_car"><a href=""><%= image_tag('icon/shop_car_yellow_24x24.png')%><span>35</span></a></li>
-
+              <li id="help">Need help? Call us<span>+1-844-836-2822</span></li>
 
             </ul>
 
@@ -79,6 +77,9 @@
             </li>
             <li class="menu-item-has-children ">
               <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
+            </li>
+            <li class="menu-item-has-children ">
+              <%= link_to t(:restaurants), restaurants_path, class: "#{'active' if params[:controller] == 'spree/restaurants'}" %>
             </li>
           </ul>
         </nav>

@@ -74,6 +74,24 @@ $dark_gray_color: #7d7d7d;
 /***********************************************************************************************/
 /* Generals */
 
+@media (min-width: 768px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 1300px;
+  }
+}
 .section {
   padding-bottom: 0 !important;
   padding-top: 30px !important;
@@ -453,6 +471,21 @@ section#search-form-container {
     }
   }
 }
+
+/* 3.3. Page Title ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.page-title-container {
+  .page-title {
+    .entry-title {
+      margin-left: 30px !important;
+      font-family: yanonekaffeesatz-bold;
+    }
+  }
+  .breadcrumbs {
+    font-size: 18px;
+    margin-right: 30px;
+
+    }
+  }
 
 /******************** Forms elements ******************/
 

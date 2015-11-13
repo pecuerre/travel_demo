@@ -23,6 +23,7 @@ es:
   slogan_2: 'lugar y encuentra tus vacaciones ideales más rápido'
   destiny: 'Destino'
   destinations: 'Destinos'
+  restaurants: "Restaurantes"
   destiny_msg: Disfrute su viaje como nunca antes!!!
   contact: "Contacto"
   name: "Nombre"
@@ -112,7 +113,7 @@ es:
   about_us: "Acerca de"
   privacy_policy: "Aviso de Privacidad"
   faq: Preguntas Frecuentes
-  terms_and_conditions: "Términos &amp; Condiciones"
+  terms_and_conditions: "Términos y Condiciones"
   terms_and_conditions_message: "<p>More Mexico For Less LLC no es un agente de reservas o operador de viajes, y no cobra honorarios por sus servicios a los usuarios de nuestro sitio. Nuestros socios (compañías aéreas y agentes de reserva) que ofrecen pasajes aéreos y paquetes turísticos en MoreMexicoForLess.com están obligados por ley a incluir todas las tasas y recargos en sus precios de lista. Los ejemplos incluyen el Cargo Federal de Seguridad de 11 de septiembre, los impuestos y honorarios de de salida y de llegada internacional, impuesto federal y otros servicios, el manejo, las tasas y recargos diversos. Cuando usted reserva con uno de nuestros socios, por favor asegúrese de revisar la publicación completa de todos los cargos aplicables requeridos por el Departamento de Transporte de Estados Unidos que aparecen en su sitio. Las Tarifas son generalmente cotizadas por persona en USD a menos que se indique lo contrario.</p>
   <p>Para los paquetes de viaje u ofertas cotizadas, More Mexico For Less LLC no garantiza ninguna tasa o precios específicos. Además, los precios medios de hoteles se actualizan cada noche y se muestran en su moneda preferida utilizando las tasas de conversión vigentes. Dado que estos precios convertidos son estimaciones, por favor consulte con el sitio de reservas por la cantidad exacta y la moneda.</p>
   <p>Por otra parte, More Mexico For Less LLC no garantiza la disponibilidad de los precios anunciados en nuestro sitio. Los precios indicados pueden requerir una estancia de una longitud determinada o tienen fechas sin informacion, calificaciones o restricciones.</p>
@@ -301,13 +302,13 @@ es:
  # Destinos ================================================
 
   destinohabana: 'La Habana'
-  description_destino_habana_html: '<p class = "description"> Centro Habana es la transición entre antigua y moderna Habana y pertenece al centro tradicional de la capital cubana. <br/> Esta parte de la ciudad apareció después de la expansión urbana más allá de las murallas de la ciudad, donde los edificios majestuosos comenzó a ser construido. Esta parte de la ciudad se caracteriza por El Prado, el Capitolio. </p>'
+  description_destino_habana_html: '<p class = "description"> Centro Habana es la transición entre antigua y moderna Habana y pertenece al centro tradicional de la capital cubana.</p>'
 
   destinovaradero: 'Varadero'
-  description_destino_varadero_html: '<p class="description"> Es uno de los destinos más apreciados del Caribe. Usted encontrará las tradiciones artesanales locales y la hospitalidad en una veintena de kilómetros de playa y sol. <br/> Sus playas se complementan con atractivos culturales, históricos y ambientales relacionados con las ciudades de Matanzas y Cárdenas. </p>'
+  description_destino_varadero_html: '<p class="description"> Es uno de los destinos más apreciados del Caribe. Usted encontrará las tradiciones artesanales locales y la hospitalidad en una veintena de kilómetros de playa y sol.</p>'
 
   destinotrinidad: 'Trinidad'
-  description_destino_trinidad_html: '<p class = "description"> Trinidad de Cuba es la ciudad colonial más conservado, por lo que su apodo es El Museo de la Ciudad. <br/> Está situado en un gran valle rodeado por las montañas del Escambray y es uno de los más importantes destinos turísticos cubanos si quieren conocer de primera mano las tradiciones, la cultura y la originalidad del pueblo cubano. </p>'
+  description_destino_trinidad_html: '<p class = "description"> Trinidad de Cuba es la ciudad colonial más conservado, por lo que su apodo es El Museo de la Ciudad. </p>'
 
   destinovaradero: 'Pinar del Rio'
-  description_destino_pinardelrio_html: '<p class = "description"> Es único en belleza natural y paisajística. El Valle de Viñales se coloca en la provincia de Pinar del Río y es uno de los lugares más atractivos de Cuba. <br> La llegada al Valle es increíble debido a su agradable temperatura y la presencia de la antigüedad y la prehistoria en su paisaje. </p>'
+  description_destino_pinardelrio_html: '<p class = "description"> Es único en belleza natural y paisajística. El Valle de Viñales se coloca en la provincia de Pinar del Río y es uno de los lugares más atractivos de Cuba. </p>'

@@ -103,6 +103,14 @@ Rails.application.routes.draw do
         get :thanks_you
       end
     end
+    resources :restaurants, only: :index do
+      collection do
+        get :list
+        get :grid
+        get :block
+        get :detail
+      end
+    end
 
     resources :home, only: :index do
       collection do

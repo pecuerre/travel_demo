@@ -1,36 +1,16 @@
-<div id="slideshow">
-  <div class="fullwidthbanner-container">
-    <div class="revolution-slider" style="height: 0; overflow: hidden;">
-      <ul>
-        <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner1.jpg" alt="">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner2.jpg" alt="">
-        </li>
-        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/banner3.jpg" alt="">
+<section id="content" class="slideshow-bg">
+  <div id="slideshow">
+    <div class="flexslider">
+      <ul class="slides">
+        <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 1;">
+          <div class="slidebg" style="background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-background.jpg');"></div>
         </li>
       </ul>
     </div>
   </div>
-</div>
-<script>
-    tjq(document).ready(function () {
-        tjq('.revolution-slider').revolution(
-                {
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    startwidth: 1170,
-                    startheight: 646,
-                    onHoverStop: "on",
-                    hideThumbs: 10,
-                    fullWidth: "on",
-                    forceFullWidth: "on",
-                    navigationType: "none",
-                    shadow: 0,
-                    spinner: "spinner4",
-                    hideTimerBar: "on",
-                });
-    });
-</script>
+  <div class="container">
+    <div id="main">
+      <%= render partial: 'spree/shared/general_search_box' %>
+    </div>
+  </div>
+</section>

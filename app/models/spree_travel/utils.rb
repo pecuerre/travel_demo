@@ -100,5 +100,25 @@ module SpreeTravel
       flights
     end
 
+    def self.prepare_for_houses(params)
+      p = {}
+      p['language'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
+      p['currency'] = Spree::Config.currency
+      p['ExcludeContentInfo'] = false
+      p['OnlyAvailableHotels'] = true
+      p['destinationId'] = destination_id
+      p['destinationType'] = 3
+      p['arrivalDate'] = Date.strptime(params['search-check-in-date'], '%m/%d/%Y').to_s
+      p['departureDate'] = Date.strptime(params['search-check-out-date'], '%m/%d/%Y').to_s
+      rooms = params['search-rooms'].to_i
+      adults = params['search-adults'].to_i
+      kids = params['search-kids'].to_i
+      dist = Master::Utils.distribute_adults_and_kids(rooms, adults, kids)
+      rooms.times do |i|
+        p["rooms[#{i}].adults"] = dist[:adults][i]
+        p["rooms[#{i}].childAges"] = dist[:kids][i]
+      end
+      p
+    end
   end
 end

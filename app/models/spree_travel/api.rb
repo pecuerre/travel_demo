@@ -48,5 +48,27 @@ module SpreeTravel
       SpreeTravel::Response.new(flights)
     end
 
+    def houses(params)
+      destination = Spree::Taxon.where('name LIKE ?', params['search-going-to']).first
+
+      p = SpreeTravel::Utils.prepare_for_houses(params)
+
+      if response.is_a?(Expedia::Errors::APIError)
+        if response.is_a?(Expedia::Errors::MultipleDestinationsFound)
+          destination_id = response.destinations.select{|d|d['countryCode']=='MX'}.first['destinationId']
+          p.delete('destinationString')
+          p['destinationId'] = destination_id
+          response = get_list(p)
+        else
+          return Master::Response.new([], [response.presentation_message])
+        end
+      end
+      resources = []
+      if response.body['HotelListResponse']
+        resources = response.body['HotelListResponse']['HotelList']['HotelSummary']
+      end
+      hotels = Expedia::Utils.parse_hotels(resources)
+      Master::Response.new(hotels)
+    end
   end
 end

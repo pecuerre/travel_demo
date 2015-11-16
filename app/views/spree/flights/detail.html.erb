@@ -13,7 +13,7 @@
             <div class="tab-content">
               <div id="photo-tab" class="tab-pane fade in active">
                 <div class="featured-image image-container">
-                  <img src="http://placehold.it/870x530" alt="">
+                  <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/f'+rand(1...5).to_s+'.png') %>
                 </div>
               </div>
               <div id="calendar-tab" class="tab-pane fade">

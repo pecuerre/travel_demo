@@ -2,13 +2,26 @@
   <header id="header" class="navbar-static-top">
 
     <div class="topnav hidden-xs">
-        <div class="container">
+
           <h1 class="logo navbar-brand">
             <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
                 <%= image_tag 'logo/logo.png' %>
             <% end %>
           </h1>
             <ul class="quick-menu pull-right">
+              <% if SpreeI18n::Config.supported_locales.size > 1 %>
+                  <li id="locale-select" data-hook>
+
+                    <%= form_tag spree.set_locale_path do %>
+                        <div class="menu mini">
+                          <%= image_tag(t(:flag),class: 'flag')%>
+                          <label for="locale" class="sr-only"><%= Spree.t(:'i18n.language') %></label>
+                          <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale), data: { href: spree.set_locale_path }) %>
+                          <noscript><%= submit_tag %></noscript>
+                        </div>
+                    <% end %>
+                  </li>
+              <% end %>
                 <% if spree_current_user %>
                   <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
                   <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
@@ -26,24 +39,11 @@
                     </div>
                   <% end %>
                 </li>
-              <li id="help">Need help? Contact us  US Office <span>+1-844-836-2822</span></li>
-            </ul>
-          <ul class="quick-menu pull-right">
-            <% if SpreeI18n::Config.supported_locales.size > 1 %>
-                <li id="locale-select" data-hook>
 
-                  <%= form_tag spree.set_locale_path do %>
-                      <div class="menu mini">
-                        <%= image_tag(t(:flag),class: 'flag')%>
-                        <label for="locale" class="sr-only"><%= Spree.t(:'i18n.language') %></label>
-                        <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale), data: { href: spree.set_locale_path }) %>
-                        <noscript><%= submit_tag %></noscript>
-                      </div>
-                  <% end %>
-                </li>
-            <% end %>
-          </ul>
-        </div>
+              <li id="help">Need help? Call us<span>+1-844-836-2822</span></li>
+
+            </ul>
+
     </div>
     <div class="main-header">
 
@@ -51,7 +51,7 @@
         Mobile Menu Toggle
       </a>
 
-      <div class="container">
+
         <div class="clearfix"></div>
 
 
@@ -78,9 +78,12 @@
             <li class="menu-item-has-children ">
               <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
             </li>
+            <li class="menu-item-has-children ">
+              <%= link_to t(:restaurants), restaurants_path, class: "#{'active' if params[:controller] == 'spree/restaurants'}" %>
+            </li>
           </ul>
         </nav>
-      </div>
+
 
       <nav id="mobile-menu-01" class="mobile-menu collapse">
         <ul id="mobile-primary-menu" class="menu">

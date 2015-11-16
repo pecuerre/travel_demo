@@ -157,7 +157,7 @@ body {
       height: 20px;
     }
     .pull-right {
-      margin-right: 30px;
+
     }
     .shop_car {
 
@@ -177,7 +177,7 @@ body {
 #header {
   background: $yellow-color;
   .logo {
-    margin: 0 45px !important;
+    margin: 0 20px !important;
     img {
       opacity: 1 !important;
     }
@@ -222,9 +222,7 @@ body {
 ******************* Main Menu **************/
 
 #main-menu ul.menu {
-  //  margin-top: 100px !important;
   float: right;
-  margin-right: 30px !important;
 }
 
 /*
@@ -288,6 +286,7 @@ section#search-form-container {
   .search-box {
     margin: 0 auto;
     background: $dark_gray_color;
+    width: 80%;
     // padding: 5px;
   }
   .search-box > ul.search-tabs {

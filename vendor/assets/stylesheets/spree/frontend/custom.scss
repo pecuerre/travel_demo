@@ -80,18 +80,21 @@ $dark_gray_color: #7d7d7d;
     width: 750px;
   }
 }
+
 @media (min-width: 992px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
     width: 970px;
   }
 }
+
 @media (min-width: 1200px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
     width: 1300px;
   }
 }
+
 .section {
   padding-bottom: 0 !important;
   padding-top: 30px !important;
@@ -119,7 +122,9 @@ body {
 
   background-color: $ligth-gray-color;
 }
-
+.slider{
+  min-height: 646px;
+}
 /******************** Header ******************/
 
 /* Top Bar */
@@ -279,6 +284,7 @@ section#search-form-container {
 
 .search-box-wrapper.style2 {
   background: none;
+  margin-top: 180px;
   .search-box {
     margin: 0 auto;
     background: $dark_gray_color;
@@ -431,6 +437,7 @@ section#search-form-container {
 .icon-tours:before {
   content: image_url('icon/tours_blue_24x24.png');
 }
+
 .icon-restaurants:before {
   content: image_url('icon/restaurants_blue_24x24.png');
 }
@@ -484,8 +491,8 @@ section#search-form-container {
     font-size: 18px;
     margin-right: 30px;
 
-    }
   }
+}
 
 /******************** Forms elements ******************/
 
@@ -605,6 +612,11 @@ button.full-width, a.button.full-width {
   color: $ligth-blue-color !important;
   font-weight: bold;
   font-size: 22px;
+  small {
+
+    color: $dark_gray_color !important;
+
+  }
 }
 
 .image-box.style3 .details .description {
@@ -641,6 +653,10 @@ a.button {
 
 .price {
   color: $orange_color !important;
+  small {
+
+    color: $dark_gray_color !important;
+  }
 }
 
 // Popular Hotels h2

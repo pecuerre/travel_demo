@@ -336,7 +336,7 @@ section#search-form-container {
         // margin-bottom: 5px;
         height: 44px;
         line-height: 44px;
-        background: rgba(0,123,136,0.7);
+        background: rgba(0,123,136,$trans);
         @include opacity(1);
         color: white;
         padding: 0;
@@ -381,7 +381,7 @@ section#search-form-container {
 }
 
 .search-tab-content {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,$trans);
   padding: 20px;
   .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
     padding-left: 5px;

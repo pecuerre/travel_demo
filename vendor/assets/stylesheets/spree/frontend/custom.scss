@@ -290,6 +290,7 @@ body {
 
 $border_width: 5px;
 $border_color: rgba(125,125,125,0);
+$trans: 0.5;
 
 section#search-form-container {
   border-style: solid;
@@ -367,10 +368,10 @@ section#search-form-container {
         background: $yellow-theme-color;
       }
       &.active {
-        border-bottom-color: rgba(0,0,0,0.7);
+        border-bottom-color: rgba(0,0,0,$trans);
         > a {
           margin-bottom: 0;
-          background:  rgba(0,0,0,0.7);
+          background:  rgba(0,0,0,$trans);
           color: white;
 
         }
@@ -380,7 +381,7 @@ section#search-form-container {
 }
 
 .search-tab-content {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.4);
   padding: 20px;
   .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
     padding-left: 5px;

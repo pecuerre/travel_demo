@@ -87,11 +87,29 @@ $dark_gray_color: #7d7d7d;
     width: 970px;
   }
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 1300px;
+    width: 95%;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 95%;
+  }
+}
+@media (min-width: 1366px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 95%;
+  }
+}
+@media (min-width: 1920px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 95%;
   }
 }
 
@@ -282,11 +300,11 @@ section#search-form-container {
 
 .search-box-wrapper.style2 {
   background: none;
-  margin-top: 180px;
+  margin-top: 15%;
   .search-box {
     margin: 0 auto;
     background: $dark_gray_color;
-    width: 80%;
+    width: 90%;
     // padding: 5px;
   }
   .search-box > ul.search-tabs {

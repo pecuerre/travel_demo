@@ -49,26 +49,19 @@ module SpreeTravel
     end
 
     def houses(params)
-      destination = Spree::Taxon.where('name LIKE ?', params['search-going-to']).first
-
       p = SpreeTravel::Utils.prepare_for_houses(params)
-
-      if response.is_a?(Expedia::Errors::APIError)
-        if response.is_a?(Expedia::Errors::MultipleDestinationsFound)
-          destination_id = response.destinations.select{|d|d['countryCode']=='MX'}.first['destinationId']
-          p.delete('destinationString')
-          p['destinationId'] = destination_id
-          response = get_list(p)
+      begin
+        response = SpreeTravel::HTTPService.make_request('/houses.json', p)
+        rescue StandardError => e
+          return SpreeTravel::Response.new([], [e.to_s])
         else
-          return Master::Response.new([], [response.presentation_message])
+          houses = JSON.parse(response.body)
         end
+
+        houses = SpreeTravel::Utils.parse_houses(houses, params, p)
+        # flights = Kaminari.paginate_array(flights).page(params[:page])
+        PriceTravel::Response.new(flights)
+
       end
-      resources = []
-      if response.body['HotelListResponse']
-        resources = response.body['HotelListResponse']['HotelList']['HotelSummary']
-      end
-      hotels = Expedia::Utils.parse_hotels(resources)
-      Master::Response.new(hotels)
-    end
-  end
+   end
 end

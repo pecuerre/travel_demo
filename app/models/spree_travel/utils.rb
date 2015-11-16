@@ -100,24 +100,31 @@ module SpreeTravel
       flights
     end
 
+    def self.parse_houses(products, params, p)
+      houses = []
+      products.each do |resource|
+        # rate = resource.rates.first
+        house = House.new
+        house.id = resource['id']
+        house.destination = resource['destination']['name']
+        house.image_uri = resource['image_cover']['path']
+        house.house_type = resource['house_type']
+        house.name = resource['name']
+        house.details_uri = resource['links']['self']
+        # NOTE: there are some info about relationships that is not here
+        # house.prices = {:spree_travel => resource.price}
+        house.api = {name: :spree_travel, string: 'SpreeTravel'}
+        # flight.same_booking_uri = flight_booking_uri(resource, params)
+        # flight.booking_uri = flight.same_booking_uri
+        houses << house
+      end
+      house
+    end
+
     def self.prepare_for_houses(params)
       p = {}
-      p['language'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
-      p['currency'] = Spree::Config.currency
-      p['ExcludeContentInfo'] = false
-      p['OnlyAvailableHotels'] = true
-      p['destinationId'] = destination_id
-      p['destinationType'] = 3
-      p['arrivalDate'] = Date.strptime(params['search-check-in-date'], '%m/%d/%Y').to_s
-      p['departureDate'] = Date.strptime(params['search-check-out-date'], '%m/%d/%Y').to_s
-      rooms = params['search-rooms'].to_i
-      adults = params['search-adults'].to_i
-      kids = params['search-kids'].to_i
-      dist = Master::Utils.distribute_adults_and_kids(rooms, adults, kids)
-      rooms.times do |i|
-        p["rooms[#{i}].adults"] = dist[:adults][i]
-        p["rooms[#{i}].childAges"] = dist[:kids][i]
-      end
+      p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
+      p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
       p
     end
   end

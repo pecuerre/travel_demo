@@ -289,7 +289,7 @@ body {
 /* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 $border_width: 5px;
-$border_color: $dark_gray_color;
+$border_color: rgba(125,125,125,0);
 
 section#search-form-container {
   border-style: solid;
@@ -303,7 +303,7 @@ section#search-form-container {
   margin-top: 15%;
   .search-box {
     margin: 0 auto;
-    background: $dark_gray_color;
+    background: $border_color;
     width: 90%;
     // padding: 5px;
   }
@@ -321,7 +321,7 @@ section#search-form-container {
       display: table-cell;
       float: none;
       font-family: yanonekaffeesatz-light;
-      font-size: 25px;
+      font-size: 20px;
       border-right-style: solid;
       border-right-width: $border_width;
       border-right-color: $border_color;
@@ -335,9 +335,9 @@ section#search-form-container {
         // margin-bottom: 5px;
         height: 44px;
         line-height: 44px;
-        background: $yellow-color;
+        background: rgba(0,123,136,0.7);
         @include opacity(1);
-        color: $green-color;
+        color: white;
         padding: 0;
         text-align: center;
         overflow: hidden;
@@ -351,7 +351,7 @@ section#search-form-container {
           vertical-align: middle;
         }
         &:hover {
-          color: black;
+          color: white;
           i:before {
             @include animation(toTopFromBottom, 0.35s, forwards);
           }
@@ -367,11 +367,11 @@ section#search-form-container {
         background: $yellow-theme-color;
       }
       &.active {
-        border-bottom-color: white;
+        border-bottom-color: rgba(0,0,0,0.7);
         > a {
           margin-bottom: 0;
-          background: #fff;
-          color: black;
+          background:  rgba(0,0,0,0.7);
+          color: white;
 
         }
       }
@@ -380,7 +380,7 @@ section#search-form-container {
 }
 
 .search-tab-content {
-  background: #fff;
+  background: rgba(0,0,0,0.7);
   padding: 20px;
   .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
     padding-left: 5px;
@@ -393,7 +393,7 @@ section#search-form-container {
 
   input.input-text, select, textarea {
     background: #fff;
-    border: 1px inset rgba(23, 169, 175, 0.31);
+   // border: 1px inset rgba(23, 169, 175, 0.31);
   }
   span.custom-select {
     &:before {
@@ -419,7 +419,7 @@ section#search-form-container {
     overflow: hidden;
     white-space: nowrap;
     background-color: white;
-    border: 1px inset rgba(23, 169, 175, 0.31);
+  //  border: 1px inset rgba(23, 169, 175, 0.31);
   }
 
   button {
@@ -432,31 +432,31 @@ section#search-form-container {
 }
 
 .icon-flight:before {
-  content: image_url('icon/flight_blue_24x24.png');
+  content: image_url('icon/flight_white_24x24.png');
 }
 
 .icon-hotel:before {
-  content: image_url('icon/hotel_blue_24x24.png');
+  content: image_url('icon/hotel_white_24x24.png');
 }
 
 .icon-home:before {
-  content: image_url('icon/home_blue_24x24.png');
+  content: image_url('icon/home_white_24x24.png');
 }
 
 .icon-car:before {
-  content: image_url('icon/cars_blue_24x24.png');
+  content: image_url('icon/cars_white_24x24.png');
 }
 
 .icon-cruise:before {
-  content: image_url('icon/cruise_blue_24x24.png');
+  content: image_url('icon/cruise_white_24x24.png');
 }
 
 .icon-tours:before {
-  content: image_url('icon/tours_blue_24x24.png');
+  content: image_url('icon/tours_white_24x24.png');
 }
 
 .icon-restaurants:before {
-  content: image_url('icon/restaurants_blue_24x24.png');
+  content: image_url('icon/restaurants_white_24x24.png');
 }
 
 .search-tab-content {
@@ -467,7 +467,7 @@ section#search-form-container {
       margin-bottom: 5px;
       font-weight: normal;
       font-size: 20px;
-      color: $green-color;
+      color: $yellow-color;
       font-family: yanonekaffeesatz-regular;
       text-transform: none;
     }

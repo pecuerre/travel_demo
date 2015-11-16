@@ -9,7 +9,7 @@
 */
 /***********************************************************************************************/
 
-$orange_color: #ffa600;
+$orange_color: #ffcc00;
 $dark-blue-color: #1b6975;
 $ligth-blue-color: #17a9af;
 $ligth-gray-color: #f5f5f5;
@@ -90,26 +90,26 @@ $dark_gray_color: #7d7d7d;
 @media (min-width: 1024px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 95%;
+    width: 85%;
   }
 }
 
 @media (min-width: 1280px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 95%;
+    width: 85%;
   }
 }
 @media (min-width: 1366px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 95%;
+    width: 85%;
   }
 }
 @media (min-width: 1920px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 95%;
+    width: 85%;
   }
 }
 
@@ -117,7 +117,7 @@ $dark_gray_color: #7d7d7d;
   padding-bottom: 0 !important;
   padding-top: 30px !important;
   > h2 {
-    font-family: yanonekaffeesatz-bold;
+    font-family: yanonekaffeesatz-light;
     color: $ligth-blue-color;
     text-transform: uppercase;
     font-size: 25px;
@@ -548,12 +548,22 @@ a.button.btn-small {
   font-family: yanonekaffeesatz-regular;
   color: white !important;
   font-size: 1.6667em !important;
-  font-variant: titling-caps;
+  text-transform: uppercase;
+}
+a.button.yellow-button{
+  height: 28px;
+  padding: 0px 24px;
+  line-height: 28px;
+  background: $yellow-color;
+  font-family: yanonekaffeesatz-regular;
+  color: white !important;
+  font-size: 1.6667em !important;
+  text-transform: uppercase;
 }
 
 a.button {
   display: inline-block;
-  background: $ligth-blue-color none repeat scroll 0% 0% !important;
+  background: $ligth-blue-color none repeat scroll 0% 0% ;
   font-family: yanonekaffeesatz-regular;
   color: white !important;
   font-size: 0.8333em;
@@ -638,7 +648,7 @@ button.full-width, a.button.full-width {
 
 .image-box.style3 .details .description {
   font-size: 15px;
-  color: $dark-blue-color;
+  color: $dark_gray_color;
 }
 
 /************  Buttons ************************/
@@ -650,11 +660,15 @@ a.button {
   padding: 5px !important;
 
   &:hover {
-    background-color: $orange_color !important;
+    background-color: #fdb714 !important;
   }
 }
 
 /******************* Testing  Not organized yet****************/
+img.mytrp_icon {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 
 .fligthicon {
   width: 49px !important;
@@ -730,6 +744,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 .image-box .box {
   margin-top: 15px;
   margin-left: 15px;
+  width:270px;
 }
 
 .image-carousel.style2 {
@@ -743,8 +758,9 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .CheapFlightTitle {
   font-size: 25px;
-  font-family: yanonekaffeesatz-bold;
-  color: $orange_color;
+  font-family: yanonekaffeesatz-light;
+  color: $ligth-blue-color;
+  text-transform: uppercase;
 }
 
 /***/
@@ -903,10 +919,10 @@ li#help {
 
 .details {
   p {
-    color: $dark-blue-color;
-    font-size: 18px;
-    font-family: yanonekaffeesatz-regular;
-    text-align: justify;
+    color: #555;
+    font-size: 15px;
+    font-family: yanonekaffeesatz-light;
+    text-align: left;
   }
   h3 {
     font-family: yanonekaffeesatz-bold;

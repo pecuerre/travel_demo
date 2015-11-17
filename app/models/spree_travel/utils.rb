@@ -100,28 +100,46 @@ module SpreeTravel
       flights
     end
 
+    def self.parse_house(resource, params, p)
+      house = House.new
+      house.id = resource['id']
+      house.destination = resource['destination']['name']
+      house.destination_id = resource['destination']['id']
+      house.main_image_uri = resource['image_cover']['path']
+      house.images_uris = resource['images'].map {|image| image['path']}
+      house.house_type = resource['house_type']
+      house.name = resource['name']
+      house.details_uri = resource['links']['self']
+      house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
+      house.services = resource['services'].map {|service| service}
+      house.checkin_time = resource['checkin']
+      house.checkout_time = resource['checkout']
+      house.owner = resource['owner']
+      house.rooms = resource['number_of_rooms'].to_i
+      # NOTE: there are some info about relationships that is not here
+      # house.prices = {:spree_travel => resource.price}
+      house.api = {name: :spree_travel, string: 'SpreeTravel'}
+      # flight.same_booking_uri = flight_booking_uri(resource, params)
+      # flight.booking_uri = flight.same_booking_uri
+    end
+
     def self.parse_houses(products, params, p)
       houses = []
       products.each do |resource|
-        # rate = resource.rates.first
-        house = House.new
-        house.id = resource['id']
-        house.destination = resource['destination']['name']
-        house.image_uri = resource['image_cover']['path']
-        house.house_type = resource['house_type']
-        house.name = resource['name']
-        house.details_uri = resource['links']['self']
-        # NOTE: there are some info about relationships that is not here
-        # house.prices = {:spree_travel => resource.price}
-        house.api = {name: :spree_travel, string: 'SpreeTravel'}
-        # flight.same_booking_uri = flight_booking_uri(resource, params)
-        # flight.booking_uri = flight.same_booking_uri
+        house = self.parse_house(resource, params, p)
         houses << house
       end
       house
     end
 
     def self.prepare_for_houses(params)
+      p = {}
+      p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
+      p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
+      p
+    end
+
+    def self.prepare_for_house(params)
       p = {}
       p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
       p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]

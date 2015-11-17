@@ -9,7 +9,7 @@
 */
 /***********************************************************************************************/
 
-$orange_color: #ffa600;
+$orange_color: #ffcc00;
 $dark-blue-color: #1b6975;
 $ligth-blue-color: #17a9af;
 $ligth-gray-color: #f5f5f5;
@@ -80,23 +80,44 @@ $dark_gray_color: #7d7d7d;
     width: 750px;
   }
 }
+
 @media (min-width: 992px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
     width: 970px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
-    width: 1300px;
+    width: 85%;
   }
 }
+
+@media (min-width: 1280px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 85%;
+  }
+}
+@media (min-width: 1366px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 85%;
+  }
+}
+@media (min-width: 1920px) {
+  /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 85%;
+  }
+}
+
 .section {
   padding-bottom: 0 !important;
   padding-top: 30px !important;
   > h2 {
-    font-family: yanonekaffeesatz-bold;
+    font-family: yanonekaffeesatz-light;
     color: $ligth-blue-color;
     text-transform: uppercase;
     font-size: 25px;
@@ -119,7 +140,9 @@ body {
 
   background-color: $ligth-gray-color;
 }
-
+.slider{
+  min-height: 646px;
+}
 /******************** Header ******************/
 
 /* Top Bar */
@@ -152,7 +175,7 @@ body {
       height: 20px;
     }
     .pull-right {
-      margin-right: 30px;
+
     }
     .shop_car {
 
@@ -172,7 +195,7 @@ body {
 #header {
   background: $yellow-color;
   .logo {
-    margin: 0 45px !important;
+    margin: 0 20px !important;
     img {
       opacity: 1 !important;
     }
@@ -217,9 +240,7 @@ body {
 ******************* Main Menu **************/
 
 #main-menu ul.menu {
-  //  margin-top: 100px !important;
   float: right;
-  margin-right: 30px !important;
 }
 
 /*
@@ -268,7 +289,8 @@ body {
 /* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 $border_width: 5px;
-$border_color: $dark_gray_color;
+$border_color: rgba(125,125,125,0);
+$trans: 0.5;
 
 section#search-form-container {
   border-style: solid;
@@ -279,9 +301,11 @@ section#search-form-container {
 
 .search-box-wrapper.style2 {
   background: none;
+  margin-top: 15%;
   .search-box {
     margin: 0 auto;
-    background: $dark_gray_color;
+    background: $border_color;
+    width: 90%;
     // padding: 5px;
   }
   .search-box > ul.search-tabs {
@@ -298,7 +322,7 @@ section#search-form-container {
       display: table-cell;
       float: none;
       font-family: yanonekaffeesatz-light;
-      font-size: 25px;
+      font-size: 20px;
       border-right-style: solid;
       border-right-width: $border_width;
       border-right-color: $border_color;
@@ -312,9 +336,9 @@ section#search-form-container {
         // margin-bottom: 5px;
         height: 44px;
         line-height: 44px;
-        background: $yellow-color;
+        background: rgba(0,123,136,$trans);
         @include opacity(1);
-        color: $green-color;
+        color: white;
         padding: 0;
         text-align: center;
         overflow: hidden;
@@ -328,7 +352,7 @@ section#search-form-container {
           vertical-align: middle;
         }
         &:hover {
-          color: black;
+          color: white;
           i:before {
             @include animation(toTopFromBottom, 0.35s, forwards);
           }
@@ -344,11 +368,11 @@ section#search-form-container {
         background: $yellow-theme-color;
       }
       &.active {
-        border-bottom-color: white;
+        border-bottom-color: rgba(0,0,0,$trans);
         > a {
           margin-bottom: 0;
-          background: #fff;
-          color: black;
+          background:  rgba(0,0,0,$trans);
+          color: white;
 
         }
       }
@@ -357,7 +381,7 @@ section#search-form-container {
 }
 
 .search-tab-content {
-  background: #fff;
+  background: rgba(0,0,0,$trans);
   padding: 20px;
   .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
     padding-left: 5px;
@@ -370,7 +394,7 @@ section#search-form-container {
 
   input.input-text, select, textarea {
     background: #fff;
-    border: 1px inset rgba(23, 169, 175, 0.31);
+   // border: 1px inset rgba(23, 169, 175, 0.31);
   }
   span.custom-select {
     &:before {
@@ -396,7 +420,7 @@ section#search-form-container {
     overflow: hidden;
     white-space: nowrap;
     background-color: white;
-    border: 1px inset rgba(23, 169, 175, 0.31);
+  //  border: 1px inset rgba(23, 169, 175, 0.31);
   }
 
   button {
@@ -409,30 +433,31 @@ section#search-form-container {
 }
 
 .icon-flight:before {
-  content: image_url('icon/flight_blue_24x24.png');
+  content: image_url('icon/flight_white_24x24.png');
 }
 
 .icon-hotel:before {
-  content: image_url('icon/hotel_blue_24x24.png');
+  content: image_url('icon/hotel_white_24x24.png');
 }
 
 .icon-home:before {
-  content: image_url('icon/home_blue_24x24.png');
+  content: image_url('icon/home_white_24x24.png');
 }
 
 .icon-car:before {
-  content: image_url('icon/cars_blue_24x24.png');
+  content: image_url('icon/cars_white_24x24.png');
 }
 
 .icon-cruise:before {
-  content: image_url('icon/cruise_blue_24x24.png');
+  content: image_url('icon/cruise_white_24x24.png');
 }
 
 .icon-tours:before {
-  content: image_url('icon/tours_blue_24x24.png');
+  content: image_url('icon/tours_white_24x24.png');
 }
+
 .icon-restaurants:before {
-  content: image_url('icon/restaurants_blue_24x24.png');
+  content: image_url('icon/restaurants_white_24x24.png');
 }
 
 .search-tab-content {
@@ -443,7 +468,7 @@ section#search-form-container {
       margin-bottom: 5px;
       font-weight: normal;
       font-size: 20px;
-      color: $green-color;
+      color: $yellow-color;
       font-family: yanonekaffeesatz-regular;
       text-transform: none;
     }
@@ -484,8 +509,8 @@ section#search-form-container {
     font-size: 18px;
     margin-right: 30px;
 
-    }
   }
+}
 
 /******************** Forms elements ******************/
 
@@ -524,12 +549,22 @@ a.button.btn-small {
   font-family: yanonekaffeesatz-regular;
   color: white !important;
   font-size: 1.6667em !important;
-  font-variant: titling-caps;
+  text-transform: uppercase;
+}
+a.button.yellow-button{
+  height: 28px;
+  padding: 0px 24px;
+  line-height: 28px;
+  background: $yellow-color;
+  font-family: yanonekaffeesatz-regular;
+  color: white !important;
+  font-size: 1.6667em !important;
+  text-transform: uppercase;
 }
 
 a.button {
   display: inline-block;
-  background: $ligth-blue-color none repeat scroll 0% 0% !important;
+  background: $ligth-blue-color none repeat scroll 0% 0% ;
   font-family: yanonekaffeesatz-regular;
   color: white !important;
   font-size: 0.8333em;
@@ -605,11 +640,16 @@ button.full-width, a.button.full-width {
   color: $ligth-blue-color !important;
   font-weight: bold;
   font-size: 22px;
+  small {
+
+    color: $dark_gray_color !important;
+
+  }
 }
 
 .image-box.style3 .details .description {
   font-size: 15px;
-  color: $dark-blue-color;
+  color: $dark_gray_color;
 }
 
 /************  Buttons ************************/
@@ -621,11 +661,15 @@ a.button {
   padding: 5px !important;
 
   &:hover {
-    background-color: $orange_color !important;
+    background-color: #fdb714 !important;
   }
 }
 
 /******************* Testing  Not organized yet****************/
+img.mytrp_icon {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 
 .fligthicon {
   width: 49px !important;
@@ -641,6 +685,10 @@ a.button {
 
 .price {
   color: $orange_color !important;
+  small {
+
+    color: $dark_gray_color !important;
+  }
 }
 
 // Popular Hotels h2
@@ -697,6 +745,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 .image-box .box {
   margin-top: 15px;
   margin-left: 15px;
+  width:270px;
 }
 
 .image-carousel.style2 {
@@ -710,8 +759,9 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .CheapFlightTitle {
   font-size: 25px;
-  font-family: yanonekaffeesatz-bold;
-  color: $orange_color;
+  font-family: yanonekaffeesatz-light;
+  color: $ligth-blue-color;
+  text-transform: uppercase;
 }
 
 /***/
@@ -870,10 +920,10 @@ li#help {
 
 .details {
   p {
-    color: $dark-blue-color;
-    font-size: 18px;
-    font-family: yanonekaffeesatz-regular;
-    text-align: justify;
+    color: #555;
+    font-size: 15px;
+    font-family: yanonekaffeesatz-light;
+    text-align: left;
   }
   h3 {
     font-family: yanonekaffeesatz-bold;

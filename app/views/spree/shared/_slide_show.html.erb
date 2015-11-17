@@ -1,147 +1,16 @@
-<div id="slideshow">
-  <div class="fullwidthbanner-container">
-    <div class="revolution-slider" style="height: 0; overflow: hidden;">
-      <ul> <!-- SLIDE  -->
-        <!-- Slide1 -->
-
-        <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500">
-          <!-- MAIN IMAGE -->
-          <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-background.jpg') %>
-          <!-- LAYERS -->
-          <!-- LAYER NR. 1   CUBA-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-451"
-               data-y="center" data-voffset="-53"
-               data-speed="300" data-endspeed="0"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 3;">
-            <a href="dfsfs" ><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-text1.png') %></a>
-          </div>
-          <!-- LAYER NR. 2   PLAIN-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="440"
-               data-y="center" data-voffset="-100"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight.png') %></a>
-          </div>
-          <!-- LAYER NR. 3   Texto 1-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-156"
-               data-y="center" data-voffset="104"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-text-2-en.png') %></a>
-          </div>
-          <!-- LAYER NR. 4   BOOK BUTTON-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-428"
-               data-y="center" data-voffset="215"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <div class="row">
-              <div class="col-lg-6">
-                <button class="full-width btn-large flight_reserve_button">Search</button>
-              </div>
-            </div>
-            <a href="dfsfs" ><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/book_flight_en.jpg') %></a>
-          </div>
-
+<section class="slideshow-bg slider">
+  <div id="slideshow">
+    <div class="flexslider">
+      <ul class="slides">
+        <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 1;">
+          <div class="slidebg" style="background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/slider-flight-background.jpg');"></div>
         </li>
-
-        <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500">
-          <!-- MAIN IMAGE -->
-          <%= image_tag('slider_fotos/slide-fotos-back.jpg') %>
-          <!-- LAYERS -->
-          <!-- LAYER NR. 1   POPULAR DESTINATION-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-799"
-               data-y="center" data-voffset="232"
-               data-speed="300" data-endspeed="0"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 3;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-text1-en.png') %></a>
-          </div>
-          <!-- LAYER NR. 2   FLECHITAS-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="56"
-               data-y="center" data-voffset="16"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-text-2-en.png') %></a>
-          </div>
-          <!-- LAYER NR. 3   PINAR-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-532"
-               data-y="center" data-voffset="0"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-pinar-del-rio.png') %></a>
-          </div>
-          <!-- LAYER NR. 4   La Habana-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="-155"
-               data-y="center" data-voffset="0"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-la-habana.png') %></a>
-          </div>
-          <!-- LAYER NR. 5   Varadero-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="229"
-               data-y="center" data-voffset="0"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-varadero.png') %></a>
-          </div>
-          <!-- LAYER NR. 6   Trinidad-->
-          <div class="tp-caption tp-fade fadeout"
-               data-x="center" data-hoffset="621"
-               data-y="center" data-voffset="0"
-               data-speed="300" data-endspeed="300"
-               data-start="800"
-               data-easing="Expo.easeInOut"
-               style="z-index: 2;">
-            <a href="dfsfs" ><%= image_tag('slider_fotos/slider-fotos-trinidad.png') %></a>
-          </div>
-        </li>
-
       </ul>
     </div>
   </div>
-</div>
-<script>
-    tjq(document).ready(function () {
-        tjq('.revolution-slider').revolution(
-                {
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    startwidth: 1170,
-                    startheight: 646,
-                    onHoverStop: "on",
-                    hideThumbs: 10,
-                    fullWidth: "on",
-                    forceFullWidth: "on",
-                    navigationType: "none",
-                    shadow: 0,
-                    spinner: "spinner4",
-                    hideTimerBar: "on",
-                });
-    });
-</script>
+  <div class="container">
+    <div id="main">
+      <%= render partial: 'spree/shared/general_search_box' %>
+    </div>
+  </div>
+</section>

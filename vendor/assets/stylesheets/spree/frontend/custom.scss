@@ -201,8 +201,8 @@ body {
     }
   }
   .main-header {
-    z-index: -1;
-    height: 48px !important;
+    z-index: 1;
+   // height: 48px !important;
   }
   select {
     background: white;

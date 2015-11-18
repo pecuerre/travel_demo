@@ -772,7 +772,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-section {
   padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_hotels.jpg');
+  background-image: image_url('banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1019,9 +1019,14 @@ li#help {
 /****  SearchHotel Banner ***************************************/
 
 .searchoteltitle {
-  font-size: 35px;
-  color: $green2-color;
+  text-shadow: 1px 1px 3px black;
+  font-size: 60px;
+  color:  #f10014;
   font-family: yanonekaffeesatz-regular;
+  span{
+    font-family: yanonekaffeesatz-bold;
+    text-transform: uppercase;
+  }
 }
 
 .searchotelform {

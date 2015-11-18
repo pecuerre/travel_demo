@@ -22,6 +22,16 @@ namespace :trip do
     task :destinations => :environment do
       taxonomy = Spree::Taxonomy.where(:name => 'Destination').first
       Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+      taxonomy = Spree::Taxonomy.where(:name => 'Destination city').first
+      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+    end
+
+    desc 'Delete trip airports'
+    task :airports => :environment do
+      taxonomy = Spree::Taxonomy.where(:name => 'Departure airport').first
+      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+      taxonomy = Spree::Taxonomy.where(:name => 'Arrival airport').first
+      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
     end
 
     desc 'Delete all taxons'
@@ -74,6 +84,13 @@ namespace :trip do
     desc 'Loads trip destinations'
     task :destinations => :environment do
       require Rails.root + "db/data/destinations"
+      require Rails.root + "db/data/destination_cities"
+    end
+
+    desc 'Loads trip airports'
+    task :airports => :environment do
+      require Rails.root + "db/data/arrival_airports"
+      require Rails.root + "db/data/departure_airports"
     end
 
     namespace :property_types do

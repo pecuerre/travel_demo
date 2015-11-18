@@ -1,48 +1,14 @@
 <section id="content">
   <div class="section container">
-    <h2>Popular Tours <%= image_tag('icon/tours_blue_32x32.png', class: 'mytrp_icon') %></h2>
+    <h2><%= image_tag('icon/tours_blue_32x32.png', class: 'mytrp_icon') %>Popular Tours </h2>
 
     <div class="row image-box style3">
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
-          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/cuba_private.jpg', size: "270x160", alt: "Tour1") %></a>
-          </figure>
-          <div class="details text-center">
-            <h4 class="box-title"><%= t(:tour_cuba_private_title) %></h4>
-
-
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
-            </div>
-            <p class="description"><%= t(:tour_cuba_private_short_description) %></p>
-            <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
-          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/discover_cuba.jpg', size: "270x160", alt: "Tour2") %></a>
-          </figure>
-          <div class="details text-center">
-            <h4 class="box-title"><%= t(:tour_discover_cuba_title) %></h4>
-
-
-            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-              <span style="width: 80%;" class="five-stars"></span>
-            </div>
-            <p class="description"><%= t(:tour_discover_cuba_short_description) %></p>
-            <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
-          </div>
-        </article>
-      </div>
-      <div class="col-sms-6 col-sm-6 col-md-3">
-        <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/b2.png', size: "270x160", alt: "Tour3") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tour_havana_s.jpg', size: "270x160", alt: "Tour3") %></a>
           </figure>
-          <div class="details text-center">
+          <div class="details">
             <h4 class="box-title"><%= t(:tour_havana_arts_title) %></h4>
 
 
@@ -50,16 +16,33 @@
               <span style="width: 80%;" class="five-stars"></span>
             </div>
             <p class="description"><%= t(:tour_havana_arts_short_description) %></p>
-            <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+            <a class="button btn-small" href="cruise-detailed.html"><%= t(:book_now) %></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sms-6 col-sm-6 col-md-3">
+        <article class="box">
+          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tour_private_s.jpg', size: "270x160", alt: "Tour1") %></a>
+          </figure>
+          <div class="details">
+            <h4 class="box-title"><%= t(:tour_cuba_private_title) %></h4>
+
+
+            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+              <span style="width: 80%;" class="five-stars"></span>
+            </div>
+            <p class="description"><%= t(:tour_cuba_private_short_description) %></p>
+            <a class="button btn-small" href="cruise-detailed.html"><%= t(:book_now) %></a>
           </div>
         </article>
       </div>
       <div class="col-sms-6 col-sm-6 col-md-3">
         <article class="box">
           <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/profesional.jpg', size: "270x160", alt: "Tour3") %></a>
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tour_profesional_s.jpg', size: "270x160", alt: "Tour3") %></a>
           </figure>
-          <div class="details text-center">
+          <div class="details">
             <h4 class="box-title"><%= t(:tour_professional_title) %></h4>
 
 
@@ -67,7 +50,24 @@
               <span style="width: 80%;" class="five-stars"></span>
             </div>
             <p class="description"><%= t(:tour_professional_short_description) %></p>
-            <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+            <a class="button btn-small" href="cruise-detailed.html"><%= t(:book_now) %></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sms-6 col-sm-6 col-md-3">
+        <article class="box">
+          <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
+            <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/tour_discover_s.jpg', size: "270x160", alt: "Tour2") %></a>
+          </figure>
+          <div class="details">
+            <h4 class="box-title"><%= t(:tour_discover_cuba_title) %></h4>
+
+
+            <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+              <span style="width: 80%;" class="five-stars"></span>
+            </div>
+            <p class="description"><%= t(:tour_discover_cuba_short_description) %></p>
+            <a class="button btn-small" href="cruise-detailed.html"><%= t(:book_now) %></a>
           </div>
         </article>
       </div>

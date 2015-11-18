@@ -81,7 +81,7 @@ en:
   flights_of: "flights of"
   by_airline: "by Airline"
   Airline: Airline
-  book_now: "BOOK"
+  book_now: "BOOK NOW"
   going_to: "Going to"
   check_in: "Check in"
   check_out: "Check out"
@@ -188,6 +188,7 @@ en:
   age: Age *
   email: Email *
   country: 'Country/Citizenship *'
+  destinations_page: 'Destinations'
   destination: 'Choose your destination *'
   reason: 'What are your main reasons for volunteering with Nomad Republic? *'
   skills: 'What are your skills? *'

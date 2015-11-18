@@ -4,6 +4,12 @@ include TripFunctions
 taxonomies = [
   { :name => "Destination", :position => 1 },
   { :name => "Category", :position => 2 },
+
+  # Taxonomies to be used as parameters in search sessions.
+  { :name => "Departure airport", :position => 3 },
+  { :name => "Arrival airport", :position => 4 },
+  { :name => "Destination city", :position => 5 },
+  { :name => "Hotels", :position => 6 },
 ]
 
 taxonomies.each do |taxonomy_attrs|

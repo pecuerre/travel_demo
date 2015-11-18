@@ -632,6 +632,11 @@ button.full-width, a.button.full-width {
 
 /******************* Sections **************/
 
+p.description {
+  height: 70px;
+  overflow: hidden;
+}
+
 /******************** Footer ******************/
 #footer {
   background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.jpg');
@@ -937,6 +942,7 @@ li#help {
 /****  FOOTER RELATED PAGES ***************************************/
 
 .details {
+
   p {
     color: #555;
     font-size: 15px;

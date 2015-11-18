@@ -67,7 +67,7 @@ module SpreeTravel
     def houses(params)
       p = SpreeTravel::Utils.prepare_for_houses(params)
       begin
-        response = SpreeTravel::HTTPService.make_request('/houses.json', p)
+        response = SpreeTravel::HTTPService.make_request('/request.json', p)
         rescue StandardError => e
           return SpreeTravel::Response.new([], [e.to_s])
         else

@@ -106,26 +106,42 @@ module SpreeTravel
       house.destination = resource['destination']['name']
       house.destination_id = resource['destination']['id']
       house.main_image_uri = resource['image_cover']['path']
-      house.images_uris = resource['images'].map {|image| image['path']}
+      house.images_uris = resource['images'].map do |image|
+        image['path']
+      end
       house.house_type = resource['house_type']
       house.name = resource['name']
       house.details_uri = resource['links']['self']
       house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
-      house.services = resource['services'].map {|service| service}
+      house.services = resource['services'].map do |service|
+        service end
+      end
       house.checkin_time = resource['checkin']
       house.checkout_time = resource['checkout']
       house.owner = resource['owner']
       house.rooms = resource['number_of_rooms'].to_i
-      # NOTE: there are some info about relationships that is not here
-      # house.prices = {:spree_travel => resource.price}
       house.api = {name: :spree_travel, string: 'SpreeTravel'}
-      # flight.same_booking_uri = flight_booking_uri(resource, params)
-      # flight.booking_uri = flight.same_booking_uri
+      house.availabilities = resource['availability'].each do |availability|
+        house_availability = HouseAvailability.new
+        house_availability.adults = availability['pax']['adults']
+        house_availability.children = availability['pax']['children']
+        house_availability.infants = availability['pax']['infants']
+        house_availability.room_id = availability['room']['id']
+        house_availability.room_name = availability['room']['name']
+        house_availability.plan_id = availability['plan']['id']
+        house_availability.plan_name = availability['plan']['name']
+        house_availability.price = availability['price']
+        house_availability.message = availability['message']
+        house_availability
+      end
+      # house.prices = {:spree_travel => resource.price}
+      # house.same_booking_uri = flight_booking_uri(resource, params)
+      # house.booking_uri = flight.same_booking_uri
     end
 
-    def self.parse_houses(products, params, p)
+    def self.parse_houses(resources, params, p)
       houses = []
-      products.each do |resource|
+      resources['data'].each do |resource|
         house = self.parse_house(resource, params, p)
         houses << house
       end
@@ -133,9 +149,15 @@ module SpreeTravel
     end
 
     def self.prepare_for_houses(params)
+      # destination = Some Query to get holiplus destinations
+      destination = 81
       p = {}
       p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
       p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
+      p['destination_id'] = destination
+      p['checking'] = params[:checkin].to_date.strftime("%Y-%m-%d")
+      p['checkout'] = params[:checkout].to_date.strftime("%Y-%m-%d")
+      p['rooms'] = (params['adults'] || '0') + "." + (params['children'] || '0') + "." + (params["infants"] || '0')
       p
     end
 

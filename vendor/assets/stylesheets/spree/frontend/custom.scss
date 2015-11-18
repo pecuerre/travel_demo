@@ -632,6 +632,11 @@ button.full-width, a.button.full-width {
 
 /******************* Sections **************/
 
+p.description {
+  height: 70px;
+  overflow: hidden;
+}
+
 /******************** Footer ******************/
 #footer {
   background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.jpg');
@@ -767,7 +772,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-section {
   padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner-busqueda-hoteles-fondo.jpg');
+  background-image: image_url('banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -777,7 +782,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-section-food {
 
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/baner-buskeda-food.jpg');
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drinks.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -815,6 +820,52 @@ div.container:nth-child(5) > div:nth-child(2) {
   text-transform: uppercase;
 }
 
+.row.border-top {
+  border-top-style: solid;
+  margin-left: 0;
+  margin-right: 0;
+  border-top-width: 1px;
+  border-top-color: rgba(128, 128, 128, 0.19);
+  margin-top: 7px;
+}
+
+.flightdest {
+  color: #18a8b0 !important;
+  font-size: 25px;
+  font-family: yanonekaffeesatz-regular;
+  margin-top: 15px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.flighttitle {
+  color: gray !important;
+  font-size: 18px;
+  /* font-weight: bolder; */
+}
+
+.flightprice {
+  color:$ligth-blue-color !important;
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+}
+.flightdesticon{
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+a.full-width.button.flightbutton {
+  background-color: $yellow-color;
+  color: gray !important;
+  text-transform: capitalize;
+
+  &:hover{
+    background-color: $ligth-blue-color !important;
+    color: white !important;
+  }
+}
 /***/
 
 li#help {
@@ -832,70 +883,23 @@ li#help {
 /****  DESTINATION PAGES ****************************************
 
 */
-@mixin destiny_box($url) {
 
-  background-image: url($url);
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 353px;
+.inside_image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-  &:hover {
+.destiny {
+  position: relative;
+  overflow: hidden;
 
+  .button {
+    background-color: $ligth-blue-color;
   }
-}
-
-#destiny1 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
-}
-
-#destiny2 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg');
-}
-
-#destiny3 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/santiago.jpg');
-}
-
-#destiny4 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg');
-}
-
-#destiny5 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/baracoa.jpg');
-}
-
-#destiny6 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-coco.jpg');
-}
-
-#destiny7 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-guillermo.jpg');
-}
-
-#destiny8 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/callo-largo.jpg');
-}
-
-#destiny9 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/camaguey.jpg');
-}
-
-#destiny10 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/cienfuegos.jpg');
-}
-
-#destiny11 {
-  // Update image for Pinar del Rio
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
-}
-
-#destiny12 {
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg');
-}
-
-#destiny13 {
-  // Update image for Jardines del Rey
-  @include destiny_box('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg');
 }
 
 .image-box .box {
@@ -906,12 +910,17 @@ li#help {
 
 .transparentbox {
   height: 50%;
+  position: absolute;
+  width: 100%;
 }
 
 .textbox {
   height: 25%;
   background-color: rgba(24, 158, 165, 0.6);
-
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  z-index: 2;
   .text-center {
 
   }
@@ -934,11 +943,20 @@ li#help {
 .iconbox {
   height: 12.5%;
   background-color: rgba(224, 164, 0, 0.6) !important;
+  position: absolute;
+  width: 100%;
+  top: 75%;
+  z-index: 2;
 }
 
 .selectbox {
   height: 12.5%;
   background-color: rgba(224, 164, 0, 0.6) !important;
+  position: absolute;
+  width: 100%;
+  top: 87.5%;
+  z-index: 2;
+
 }
 
 .five-stars-container .five-stars, .five-stars-container.editable-rating .ui-slider-range {
@@ -970,6 +988,7 @@ li#help {
 /****  FOOTER RELATED PAGES ***************************************/
 
 .details {
+
   p {
     color: #555;
     font-size: 15px;
@@ -1000,9 +1019,14 @@ li#help {
 /****  SearchHotel Banner ***************************************/
 
 .searchoteltitle {
-  font-size: 35px;
-  color: $green2-color;
+  text-shadow: 1px 1px 3px black;
+  font-size: 60px;
+  color:  #f10014;
   font-family: yanonekaffeesatz-regular;
+  span{
+    font-family: yanonekaffeesatz-bold;
+    text-transform: uppercase;
+  }
 }
 
 .searchotelform {

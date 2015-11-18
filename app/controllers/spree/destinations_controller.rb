@@ -33,7 +33,7 @@ module Spree
                    'Cayo Largo'=>'dest_clargo_m.jpg',};
       @destinos912={'Camaguey'=>'dest_camaguey_m.jpg',
                    'Cienfuegos'=>'dest_cienfuegos_m.jpg',
-                   'Pinar del Río'=>'dest_vinales_m.jpg',
+                   'Pinar del Río'=>'dest_pinar_m.jpg',
                    'Trinidad'=>'dest_trinidad_m.jpg',};
     end
 

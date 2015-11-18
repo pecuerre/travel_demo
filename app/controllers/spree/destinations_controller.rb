@@ -16,6 +16,7 @@ module Spree
     end
     
     def detail
+      @destiny=params[:destiny]
     end
 
   end

@@ -179,6 +179,7 @@ es:
   age: Edad
   email: Email
   country: 'País/Ciudadanía'
+  destinations_page: 'Destinos'
   destination: 'Seleccione su destino'
   reason: "¿Cuál es su principal razon para convertirce en voluntario con Nomad Republic?"
   skills: '¿Cuáles son tu habilidades?'

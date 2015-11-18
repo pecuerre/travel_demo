@@ -87,6 +87,7 @@ $dark_gray_color: #7d7d7d;
     width: 970px;
   }
 }
+
 @media (min-width: 1024px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
@@ -100,12 +101,14 @@ $dark_gray_color: #7d7d7d;
     width: 85%;
   }
 }
+
 @media (min-width: 1366px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
     width: 85%;
   }
 }
+
 @media (min-width: 1920px) {
   /* line 10, /usr/local/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
   .container {
@@ -140,9 +143,11 @@ body {
 
   background-color: $ligth-gray-color;
 }
-.slider{
+
+.slider {
   min-height: 646px;
 }
+
 /******************** Header ******************/
 
 /* Top Bar */
@@ -201,8 +206,8 @@ body {
     }
   }
   .main-header {
-    z-index: -1;
-    height: 48px !important;
+    z-index: 1;
+    // height: 48px !important;
   }
   select {
     background: white;
@@ -289,7 +294,7 @@ body {
 /* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 $border_width: 5px;
-$border_color: rgba(125,125,125,0);
+$border_color: rgba(125, 125, 125, 0);
 $trans: 0.5;
 
 section#search-form-container {
@@ -336,7 +341,7 @@ section#search-form-container {
         // margin-bottom: 5px;
         height: 44px;
         line-height: 44px;
-        background: rgba(0,123,136,$trans);
+        background: rgba(0, 123, 136, $trans);
         @include opacity(1);
         color: white;
         padding: 0;
@@ -368,10 +373,10 @@ section#search-form-container {
         background: $yellow-theme-color;
       }
       &.active {
-        border-bottom-color: rgba(0,0,0,$trans);
+        border-bottom-color: rgba(0, 0, 0, $trans);
         > a {
           margin-bottom: 0;
-          background:  rgba(0,0,0,$trans);
+          background: rgba(0, 0, 0, $trans);
           color: white;
 
         }
@@ -381,7 +386,7 @@ section#search-form-container {
 }
 
 .search-tab-content {
-  background: rgba(0,0,0,$trans);
+  background: rgba(0, 0, 0, $trans);
   padding: 20px;
   .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
     padding-left: 5px;
@@ -394,7 +399,7 @@ section#search-form-container {
 
   input.input-text, select, textarea {
     background: #fff;
-   // border: 1px inset rgba(23, 169, 175, 0.31);
+    // border: 1px inset rgba(23, 169, 175, 0.31);
   }
   span.custom-select {
     &:before {
@@ -420,7 +425,7 @@ section#search-form-container {
     overflow: hidden;
     white-space: nowrap;
     background-color: white;
-  //  border: 1px inset rgba(23, 169, 175, 0.31);
+    //  border: 1px inset rgba(23, 169, 175, 0.31);
   }
 
   button {
@@ -497,8 +502,11 @@ section#search-form-container {
   }
 }
 
-/* 3.3. Page Title ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*
+*******************  Bread Cumb **************/
 .page-title-container {
+  height: 35px !important;
+  background: #2d3e52;
   .page-title {
     .entry-title {
       margin-left: 30px !important;
@@ -507,8 +515,52 @@ section#search-form-container {
   }
   .breadcrumbs {
     font-size: 18px;
-    margin-right: 30px;
+    margin-right: 0;
+    li {
+      float: left;
+      line-height: 35px !important;
+      display: inline;
+      margin-left: 5px;
+      font-size: 0.8333em;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      &:after {
+        content: "/";
+        color: white !important;
+      }
+    }
 
+  }
+}
+
+.title_page {
+  h1 {
+    color: $ligth-blue-color;
+    font-size: 35px;
+    text-transform: uppercase;
+    padding-left: 10px;
+  }
+}
+
+.sub_title_page {
+  h1 {
+    color: $dark_gray_color;
+    font-size: 25px;
+    font-family: yanonekaffeesatz-bold;
+    padding-left: 10px;
+  }
+}
+
+/******************** imagen carrucel ******************/
+
+.image-carousel.style1 {
+
+  background: $ligth-gray-color !important;
+
+  .flex-direction-nav li a.flex-disabled {
+    background: #18a8b0 !important;
+    color: #f5f5f5 !important;
   }
 }
 
@@ -551,7 +603,8 @@ a.button.btn-small {
   font-size: 1.6667em !important;
   text-transform: uppercase;
 }
-a.button.yellow-button{
+
+a.button.yellow-button {
   height: 28px;
   padding: 0px 24px;
   line-height: 28px;
@@ -564,7 +617,7 @@ a.button.yellow-button{
 
 a.button {
   display: inline-block;
-  background: $ligth-blue-color none repeat scroll 0% 0% ;
+  background: $ligth-blue-color none repeat scroll 0% 0%;
   font-family: yanonekaffeesatz-regular;
   color: white !important;
   font-size: 0.8333em;
@@ -744,8 +797,6 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-box .box {
   margin-top: 15px;
-  margin-left: 15px;
-  width:270px;
 }
 
 .image-carousel.style2 {
@@ -1005,4 +1056,17 @@ li#help {
     }
   }
 
+}
+
+.long-description {
+  background-color: white;
+  padding: 15px;
+  color: #5D5B5B;
+  font-size: 15px;
+  h2 {
+    color: $dark_gray_color;
+    font-size: 25px;
+    font-family: yanonekaffeesatz-bold;
+
+  }
 }

@@ -188,6 +188,7 @@ en:
   age: Age *
   email: Email *
   country: 'Country/Citizenship *'
+  destinations_page: 'Destinations'
   destination: 'Choose your destination *'
   reason: 'What are your main reasons for volunteering with Nomad Republic? *'
   skills: 'What are your skills? *'

@@ -820,6 +820,52 @@ div.container:nth-child(5) > div:nth-child(2) {
   text-transform: uppercase;
 }
 
+.row.border-top {
+  border-top-style: solid;
+  margin-left: 0;
+  margin-right: 0;
+  border-top-width: 1px;
+  border-top-color: rgba(128, 128, 128, 0.19);
+  margin-top: 7px;
+}
+
+.flightdest {
+  color: #18a8b0 !important;
+  font-size: 25px;
+  font-family: yanonekaffeesatz-regular;
+  margin-top: 15px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.flighttitle {
+  color: gray !important;
+  font-size: 18px;
+  /* font-weight: bolder; */
+}
+
+.flightprice {
+  color:$ligth-blue-color !important;
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+}
+.flightdesticon{
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+a.full-width.button.flightbutton {
+  background-color: $yellow-color;
+  color: gray !important;
+  text-transform: capitalize;
+
+  &:hover{
+    background-color: $ligth-blue-color !important;
+    color: white !important;
+  }
+}
 /***/
 
 li#help {
@@ -851,7 +897,7 @@ li#help {
   position: relative;
   overflow: hidden;
 
-  .button{
+  .button {
     background-color: $ligth-blue-color;
   }
 }

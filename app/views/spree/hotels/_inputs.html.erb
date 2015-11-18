@@ -7,8 +7,10 @@
 
       <div class="form-group col-sm-6 col-md-3">
         <label><%= t(:your_destination) %></label>
-        <input type="text" name="search-going-to" id="<%= id %>-search-going-to"  class="input-text full-width" placeholder="<%= t(:enter_destination) %>"  value="<%= params['search-going-to'] %>"/>
-        <input type="hidden" name="search-going-to-id" id="<%= id %>-search-going-to-id" value="<%= params['search-going-to-id'] %>"/>
+        <input type="text" name="search-going-to" class="input-text full-width hotels-search-going-to"
+               placeholder="<%= t(:enter_destination) %>" value="<%= params['search-going-to'] %>"/>
+        <input type="hidden" name="search-going-to-id" class="hotels-search-going-to"
+               value="<%= params['search-going-to-id'] %>"/>
       </div>
 
       <div class="form-group col-sm-5 col-md-3">
@@ -75,36 +77,6 @@
     </div>
   </form>
 </div>
-
-<script type="text/javascript">
-    tjq(document).ready(function () {
-        var goingTo = tjq('#hotels-search-going-to');
-
-        goingTo.autocomplete({
-            source: function (request, response) {
-                tjq.ajax({
-                    url: '/api/taxons',
-                    type: 'GET',
-                    data: {per_page: 10, q: {parent_id_eq: 3, name_cont: request.term}},
-                    contentType: 'application/json; charset=utf-8',
-                    success: function (data) {
-                        response(data.taxons.map(function (t) {
-                            return { label: t.name, id: t.id }
-                        }));
-                    }
-                });
-            },
-
-            select:function( event, ui ) {
-                tjq('#hotels-search-going-to-id').val(ui.item.id);
-            },
-
-            open: function () {
-                goingTo.autocomplete("widget")
-                        .width(goingTo.width() - 2)
-                        .css('padding-left', goingTo.css('padding-left'))
-                        .css('padding-right', goingTo.css('padding-right'));
-            }
-        });
-    });
-</script>
+<%= render :partial => 'spree/shared/destinations_autocomplete',
+           :locals => {selector: '.hotels-search-going-to', taxonomies: ['Destination city', 'Hotels']}
+%>

@@ -79,12 +79,16 @@ module TripFunctions
   def normalize_date(date_string)
     return nil unless date_string
     date, time = date_string.split(" ")
+    hour,minute = time.split(":")
+    hour = "0" + hour if hour.length == 1
     month, day, year = date.split("/")
     month = "0" + month if month.length == 1
     day = "0" + day if day.length == 1
     year = "20" + year if year.length == 2
-    string = "#{year}-#{month}-#{day}"
-    string.to_date
+    date_str = "#{year}-#{month}-#{day}"
+    time_str = "#{hour}:#{minute}"
+    final_time = "#{date_str} #{time_str}".to_time
+    [final_time, final_time]
   end
 
   # TODO: implementar esto
@@ -97,10 +101,12 @@ module TripFunctions
   #############################################################################
 
   def get_flight_parts(row)
+    date, time = normalize_date(row[2])
     hash = {
       :flight_number   => row[0],
       :charter         => row[1],
-      :date            => normalize_date(row[2]),
+      :date            => date,
+      :time            => time,
       :origin          => row[3],
       :destination     => row[4],
       :adult_price     => normalize_price(row[5]),

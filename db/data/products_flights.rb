@@ -11,14 +11,14 @@ flight_calculator = get_flight_calculator
 
 index = 0
 hash = {}
-
 CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   index += 1
   next if index == 1
   flight_data = get_flight_parts(row)
   next unless flight_data
   #next if flight_data[:flight_number].to_s == ''
-  flight_name   = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
+  # flight_name = "#{flight_data[:flight_number]} (#{flight_data[:charter]})"
+  flight_name = flight_data[:flight_number]
   flight_price = flight_data[:adult_price]
 
   product_attrs = {
@@ -39,6 +39,8 @@ CSV.foreach(Rails.root + "db/external/flights.csv") do |row|
   rate.save
   rate.set_persisted_option_value(:start_date, flight_data[:date])
   rate.set_persisted_option_value(:end_date, flight_data[:date])
+  rate.set_persisted_option_value(:take_off_time, flight_data[:time])
+  rate.set_persisted_option_value(:landing_time, flight_data[:date] + 150.minutes)
   rate.set_persisted_option_value(:origin, flight_data[:origin])
   rate.set_persisted_option_value(:destination, flight_data[:destination])
   rate.set_persisted_option_value(:one_adult, flight_data[:adult_price])

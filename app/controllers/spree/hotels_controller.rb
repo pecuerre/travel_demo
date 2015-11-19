@@ -6,12 +6,9 @@ module Spree
 
     def index
       @property_types = Spree::PropertyType.all
-
       @searcher = build_searcher(params.merge(include_images: true))
       @destinations = Spree::Taxon.find_by(:name => "Destinations")
-      
       @products = @searcher.retrieve_products.hotels
-      
       @category = params[:category]
       @destination = params[:destination]
       taxons = []
@@ -22,6 +19,11 @@ module Spree
       @view = params[:view]
       @products = @products.with_property_ids(property_ids)
       @products = @products.order(params[:sort]) if params[:sort]
+
+      # api = SpreeTravel::Api.new
+      # hotels = api.hotels(params).resources
+      # @products = hotels
+
     end
 
     def detail

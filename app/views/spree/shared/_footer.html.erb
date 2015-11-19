@@ -1,10 +1,34 @@
 <footer id="footer">
   <div class="footer-wrapper">
     <div class="container">
+      <div class="row"><%= image_tag('logo/logo_footer.png') %>
+      </div>
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-md-2">
+          <h2>Destinations</h2>
+          <ul>
+            <li><a href="#">Pinar del Rio</a></li>
+            <li><a href="#">Valle de Vinales</a></li>
+            <li><a href="#">La Habana</a></li>
+            <li><a href="#">Varadero</a></li>
+            <li><a href="#">Cienfuegos</a></li>
+            <li><a href="#">Trinidad</a></li>
+
+          </ul>
+        </div>
+        <div class="col-md-2" style="padding-top: 30px;">
+          <h2></h2>
+          <ul>
+            <li><a href="#">Cayo Coco</a></li>
+            <li><a href="#">Cayo Guillermo</a></li>
+            <li><a href="#">Jardines del Rey</a></li>
+            <li><a href="#">Santiago de Cuba</a></li>
+            <li><a href="#">Baracoa</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
           <h2><%= t(:about_us) %></h2>
-          <ul class="leftfootercolum">
+          <ul>
             <li><%= link_to t(:who_we_are), aboutus_path(@aboutus, anchor: "who_we_are") %></li>
             <li><%= link_to t(:what_do_we_do), aboutus_path(@aboutus, anchor: "what_do_we_do") %></li>
             <li><%= link_to t(:what_do_we_offer), aboutus_path(@aboutus, anchor: "what_do_we_offer") %></li>
@@ -14,40 +38,9 @@
             <li><%= link_to t(:contac_us), contact_us_path %></li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h2>Our Products</h2>
-          <ul class="leftfootercolum">
-            <li><a href="#">Flights</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Homes & Apartments</a></li>
-            <li><a href="#">Cruises</a></li>
-            <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Tours</a></li>
-            <li><a href="#">Package Deals</a></li>
-            <li><a href="#">Rent a Car</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-2">
-          <h2>Destinations</h2>
-          <ul class="leftfootercolum">
-            <li><a href="#">Pinar del Rio</a></li>
-            <li><a href="#">Valle de Vinales</a></li>
-            <li><a href="#">La Habana</a></li>
-            <li><a href="#">Varadero</a></li>
-            <li><a href="#">Cienfuegos</a></li>
-            <li><a href="#">Trinidad</a></li>
-            <li><a href="#">Cayo Coco</a></li>
-            <li><a href="#">Cayo Guillermo</a></li>
-            <li><a href="#">Cayo Largo</a></li>
-            <li><a href="#">Camaguey</a></li>
-            <li><a href="#">Jardines del Rey</a></li>
-            <li><a href="#">Santiago de Cuba</a></li>
-            <li><a href="#">Baracoa</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-2">
+        <div class="col-md-2">
           <h2>Company</h2>
-          <ul class="leftfootercolum">
+          <ul>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Costumer Service</a></li>
@@ -59,18 +52,63 @@
             <li><a href="#">Team</a></li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h2>Find Us Online</h2>
-          <ul>
-            <li><a href="#">Like us on Facebook</a></li>
-            <li><a href="#">Follow us on Instagram</a></li>
-            <li><a href="#">Follow us on Twitter</a></li>
-            <li><a href="#">TripAdvisor</a></li>
-            <li><a href="#">Flickr</a></li>
-            <li><a href="#">Youtube</a></li>
-          </ul>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="row">
+                <h2>More</h2>
+              </div>
+              <div class="row">
+                <ul class="listmore">
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Sign in</a></li>
+                  <li><a href="#">Log in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row"><h2>Find us online</h2></div>
+              <div class="row">
+                <div class="col-md-3">
+                  <a href="">
+                    <div class="row"> <%= image_tag('icon/footer icons/facebook48.png') %></div>
+                    <div class="row">
+                      <div class="iconname"><span class="footericon">Facebook</span></div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="">
+                    <div class="row"> <%= image_tag('icon/footer icons/twitter48.png') %></div>
+                    <div class="row">
+                      <div class="iconname"><span class="footericon">Twitter</span></div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3"><a href="">
+                  <div class="row"> <%= image_tag('icon/footer icons/tripadvisor48.png') %></div>
+                  <div class="row">
+                    <div class="iconname"><span class="footericon">TripAdvisor</span></div>
+                  </div>
+                </a>
+                </div>
+                <div class="col-md-3"><a href="">
+                  <div class="row"> <%= image_tag('icon/footer icons/youtube48.png') %></div>
+                  <div class="row">
+                    <div class="iconname"><span class="footericon">YouTube</span></div>
+                  </div>
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        </ul>
       </div>
     </div>
+  </div>
   </div>
 </footer>

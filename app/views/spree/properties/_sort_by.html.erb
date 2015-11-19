@@ -25,7 +25,7 @@
             <i class="soap-icon-grid"></i>
           <% end %>
       </li>
-      <li class="swap-block <%= 'active' if params[:controller] == 'spree/properties' && params[:view] == block %>">
+      <li class="swap-block <%= 'active' if params[:controller] == 'spree/properties' && params[:view] == :block %>">
           <%= link_to properties_path(view: 'block') do %>
             <i class="soap-icon-block"></i>
           <% end %>

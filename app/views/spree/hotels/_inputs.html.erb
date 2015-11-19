@@ -1,5 +1,5 @@
-<div class="tab-pane fade <%= 'active in' if active %>" id="hotels-tab">
-  <form id="<%= id %>" action="/products" class="search-form" data-hook="hotels">
+<div class="tab-pane fade <%= 'active in' if defined?(active) && active %>" id="hotels-tab">
+  <form id="<%= id %>" action="/products" class="search-form container" data-hook="hotels">
     <div class="row">
       <input type="hidden" name="search-type" value="hotels">
       <input type="hidden" name="locale" value="<%= params[:locale] %>">

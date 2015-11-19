@@ -2,7 +2,7 @@ module ApplicationHelper
 
 
 	####################################################################
-	# Propertys
+	# Properties
 	####################################################################
 
 	def name_to_link(entity)
@@ -41,10 +41,6 @@ module ApplicationHelper
 		params.merge(pt => str, :lastpt => pt)
 	end
 
-	####################################################################
-	# Propertys
-	####################################################################
-
 	def is_sort_in_url?(p)
 		params[:sort] == p
 	end
@@ -52,10 +48,37 @@ module ApplicationHelper
 	def add_sort_to_url(p)
 		params.merge(:sort => p)
 	end
-  
-  def render_answer_form_helper(form)
+
+	####################################################################
+	# Answers and Questions
+	####################################################################
+
+	def render_answer_form_helper(form)
     answer = form.object
     partial = answer.question.type.to_s.split("::").last.downcase
     render partial: "spree/answers/#{partial}", locals: { f: form, answer: answer }
   end
+
+	####################################################################
+	# Flights
+	####################################################################
+
+	def take_off_time(flight)
+		datetime_formatted(flight.departure_flights.first.departure_date_time)
+	end
+
+	def landing_time(flight)
+		datetime_formatted(flight.departure_flights.first.arrival_date_time)
+	end
+
+	def datetime_formatted(moment)
+		moment.strftime("%^a %^b %d, %Y %H:%M %p")
+	end
+
+	def flight_duration(flight)
+		seconds = flight.departure_flights.first.duration_in_minutes
+		hours = seconds / 1.hour
+		minutes = seconds % 1.hour / 1.minute
+		"%02d HOURS, %02d MINUTES" % [hours, minutes]
+	end
 end

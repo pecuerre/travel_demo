@@ -37,8 +37,8 @@
       # else
          ccss = 'collapsed'
       # end
-      count = @products.with_property_type(property_type).count
-      next if count == 0
+      # count = @products.with_property_type(property_type).count
+      # next if count == 0
   %>
     <div class="panel style1 arrow-right">
       <h4 class="panel-title">
@@ -56,9 +56,10 @@
                   url = add_property_to_url(pp)
                   css = ''
                 end
-                number = @products.with_property(pp).count
-                text = "#{pp.name} <small>(#{number})</small>".html_safe
-                next if number == 0
+                # number = @products.with_property(pp).count
+                # text = "#{pp.name} <small>(#{number})</small>".html_safe
+                text = "#{pp.name}".html_safe
+                # next if number == 0
             %>
               <li class="<%= css %>"><%= link_to text, url %></li>
             <% end %>

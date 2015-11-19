@@ -48,5 +48,36 @@ module SpreeTravel
       SpreeTravel::Response.new(flights)
     end
 
-  end
+    def house(params)
+      p = SpreeTravel::Utils.prepare_for_house(params)
+      uri = "/house/#{params[:id]}/show.json"
+      begin
+        response = SpreeTravel::HTTPService.make_request(uri, p)
+      rescue StandardError => e
+        return SpreeTravel::Response.new([], [e.to_s])
+      else
+        house = JSON.parse(response.body)
+      end
+
+      house = SpreeTravel::Utils.parse_house(house, params, p)
+      SpreeTravel::Response.new(house)
+
+    end
+
+    def houses(params)
+      p = SpreeTravel::Utils.prepare_for_houses(params)
+      begin
+        #response = SpreeTravel::HTTPService.make_request('request.json', p)
+        response = SpreeTravel::HTTPService.make_request('houses.json', p)
+        rescue StandardError => e
+          return SpreeTravel::Response.new([], [e.to_s])
+        else
+          houses = JSON.parse(response.body)
+        end
+
+        houses = SpreeTravel::Utils.parse_houses(houses, params, p)
+        # flights = Kaminari.paginate_array(flights).page(params[:page])
+        SpreeTravel::Response.new(houses)
+      end
+   end
 end

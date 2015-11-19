@@ -788,3 +788,23 @@ class Products.CarsApp extends Products.BaseApp
     @backend.get_products_page(@bd_api_name)
         .done(@on_request_success.bind(@, Products.BestDayCar))
         .fail(@gui.on_request_error)
+
+
+
+#$.ajax({
+#  data_type: "JSON",
+#  data: {
+#    'search-type': 'hotels',
+#    'http-referer': 'root_path',
+#    'search-going-to': 'cancun',
+#    'search-check-in-date': '11/14/2015',
+#    'search-check-out-date': '11/15/2015',
+#    'search-rooms': 1,
+#    'search-adults': 1,
+#    'search-kids': 0
+#  },
+#  url: "/products/get_ajax_spree_travel",
+#  method: "POST",
+#  success: function(data) {console.debug(data);}
+#});
+

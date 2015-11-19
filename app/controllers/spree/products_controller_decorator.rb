@@ -8,19 +8,23 @@ Spree::ProductsController.class_eval do
       when 'hotels'
         validate_params_for_hotels
         validate_params_for_filters
-        # @products = Master::Api.hotels(@searcher.properties)
+        @products = Master::Api.hotels(@searcher.properties)
       when 'flights'
         validate_params_for_flights
         validate_params_for_filters
-        #~ @products = Master::Api.flights(@searcher.properties)
+        @products = Master::Api.flights(@searcher.properties)
       when 'cars'
         validate_params_for_cars
         validate_params_for_filters
-        #~ @products = Master::Api.cars(@searcher.properties)
+        @products = Master::Api.cars(@searcher.properties)
       when 'packages'
         validate_params_for_packages
         validate_params_for_filters
-        # @products = Master::Api.packages(@searcher.properties)
+        @products = Master::Api.packages(@searcher.properties)
+      when 'houses'
+        validate_params_for_packages
+        validate_params_for_filters
+        @products = Master::Api.houses(@searcher.properties)
       else
         @products = @searcher.retrieve_products
         @taxonomies = Spree::Taxonomy.includes(root: :children)
@@ -91,22 +95,27 @@ Spree::ProductsController.class_eval do
     @searcher = build_searcher(params.merge(include_images: true))
 
     case @searcher.properties['search-type']
+      when 'houses'
+        # validate_params_for_houses
+        # validate_params_for_filters
+        @products = SpreeTravel::Api.new.houses(params)
       when 'hotels'
         validate_params_for_hotels
         validate_params_for_filters
         @products = SpreeTravel::Api.new.hotels(@searcher.properties)
+
       when 'flights'
         validate_params_for_flights
         validate_params_for_filters
-        @products = PriceTravel::Api.new.flights(@searcher.properties)
+        @products = SpreeTravel::Api.new.flights(@searcher.properties)
       when 'cars'
         validate_params_for_cars
         validate_params_for_filters
-        @products = PriceTravel::Api.new.cars(@searcher.properties)
+        @products = SpreeTravel::Api.new.cars(@searcher.properties)
       when 'packages'
         validate_params_for_packages
         validate_params_for_filters
-        @products = PriceTravel::Api.new.packages(@searcher.properties)
+        @products = SpreeTravel::Api.new.packages(@searcher.properties)
       else
         @products = @searcher.retrieve_products
         @taxonomies = Spree::Taxonomy.includes(root: :children)
@@ -139,6 +148,10 @@ Spree::ProductsController.class_eval do
 
 
   private
+
+  def validate_params_for_houses
+
+  end
 
   def validate_params_for_hotels
     begin

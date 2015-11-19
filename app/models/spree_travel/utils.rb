@@ -114,7 +114,7 @@ module SpreeTravel
       house.details_uri = resource['links']['self']
       house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
       house.services = resource['services'].map do |service|
-        service end
+        service
       end
       house.checkin_time = resource['checkin']
       house.checkout_time = resource['checkout']

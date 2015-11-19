@@ -108,14 +108,14 @@ module SpreeTravel
       house.main_image_uri = resource['image_cover']['path']
       house.images_uris = resource['images'].map do |image|
         image['path']
-      end
+      end rescue []
       house.house_type = resource['house_type']
       house.name = resource['name']
       house.details_uri = resource['links']['self']
       house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
       house.services = resource['services'].map do |service|
         service
-      end
+      end rescue []
       house.checkin_time = resource['checkin']
       house.checkout_time = resource['checkout']
       house.owner = resource['owner']
@@ -133,10 +133,11 @@ module SpreeTravel
         house_availability.price = availability['price']
         house_availability.message = availability['message']
         house_availability
-      end
+      end rescue []
       # house.prices = {:spree_travel => resource.price}
       # house.same_booking_uri = flight_booking_uri(resource, params)
       # house.booking_uri = flight.same_booking_uri
+      house
     end
 
     def self.parse_houses(resources, params, p)
@@ -145,18 +146,18 @@ module SpreeTravel
         house = self.parse_house(resource, params, p)
         houses << house
       end
-      house
+      houses
     end
 
     def self.prepare_for_houses(params)
       # destination = Some Query to get holiplus destinations
-      destination = 81
+      # destination_id = 81
       p = {}
       p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
       p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
-      p['destination_id'] = destination
-      p['checking'] = params[:checkin].to_date.strftime("%Y-%m-%d")
-      p['checkout'] = params[:checkout].to_date.strftime("%Y-%m-%d")
+      p['destination_id'] = params[:destination_id]
+      p['checking'] = params[:checkin].to_date.strftime("%Y-%m-%d") if params[:checkin]
+      p['checkout'] = params[:checkout].to_date.strftime("%Y-%m-%d") if params[:checkout]
       p['rooms'] = (params['adults'] || '0') + "." + (params['children'] || '0') + "." + (params["infants"] || '0')
       p
     end

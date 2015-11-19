@@ -6,22 +6,24 @@ module Spree
 
     def index
       @property_types = Spree::PropertyType.all
+      # @searcher = build_searcher(params.merge(include_images: true))
+      # @destinations = Spree::Taxon.find_by(:name => "Destinations")
+      # @products = @searcher.retrieve_products.hotels
+      # @category = params[:category]
+      # @destination = params[:destination]
+      # taxons = []
+      # taxons << Spree::Taxon.where(name: @category).first if @category.present?
+      # taxons << Spree::Taxon.where(name: @destination).first if @destination.present?
+      # @products = @products.in_taxons(taxons) if taxons.present?
+      # property_ids = get_properties_ids_from_params
+      # @view = params[:view]
+      # @products = @products.with_property_ids(property_ids)
+      # @products = @products.order(params[:sort]) if params[:sort]
 
-      @searcher = build_searcher(params.merge(include_images: true))
-      @destinations = Spree::Taxon.find_by(:name => "Destinations")
-      
-      @products = @searcher.retrieve_products.hotels
-      
-      @category = params[:category]
-      @destination = params[:destination]
-      taxons = []
-      taxons << Spree::Taxon.where(name: @category).first if @category.present?
-      taxons << Spree::Taxon.where(name: @destination).first if @destination.present?
-      @products = @products.in_taxons(taxons) if taxons.present?
-      property_ids = get_properties_ids_from_params
-      @view = params[:view]
-      @products = @products.with_property_ids(property_ids)
-      @products = @products.order(params[:sort]) if params[:sort]
+      api = SpreeTravel::Api.new
+      houses = api.houses(params).resources
+      @products = houses
+
     end
     
     def list

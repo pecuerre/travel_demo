@@ -1019,9 +1019,10 @@ li#help {
 /****  SearchHotel Banner ***************************************/
 
 .searchoteltitle {
-  text-shadow: 1px 1px 3px black;
-  font-size: 60px;
+  text-shadow: 1px 1px 3px  #777777;
+  font-size: 55px;
   color:  #f10014;
+  padding-top: 15px;
   font-family: yanonekaffeesatz-regular;
   span{
     font-family: yanonekaffeesatz-bold;
@@ -1032,13 +1033,12 @@ li#help {
 .searchotelform {
 
   float: right;
-  margin-top: 60px;
-  margin-right: 40px;
+  margin-top: 105px;
 
   .row {
     margin-bottom: 10px;
     ::-webkit-input-placeholder {
-      color: $dark-blue-color;
+      color: #2f8043;
     }
     input.input-text.input-large {
       font-size: 20px;

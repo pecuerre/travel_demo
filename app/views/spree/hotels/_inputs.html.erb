@@ -1,5 +1,5 @@
 <div class="tab-pane fade <%= 'active in' if active %>" id="hotels-tab">
-  <form id="<%= id %>" action="/products" class="search-form container" data-hook="hotels">
+  <form id="<%= id %>" action="/products" class="search-form" data-hook="hotels">
     <div class="row">
       <input type="hidden" name="search-type" value="hotels">
       <input type="hidden" name="locale" value="<%= params[:locale] %>">
@@ -67,11 +67,13 @@
               </div>
           </div>
       </div>
-
+<div class="row">
+  <div class="col-lg-7"></div>
       <div class="form-group col-sm-6 col-md-2 ">
           <label class="hidden-xs">&nbsp;</label>
           <button type="submit" class="full-width animated" id="search-submit" name="search-submit" data-animation-type="bounce" data-animation-duration="1"><%= t(:search_now) %></button>
       </div>
+</div>
     </div>
   </form>
 </div>

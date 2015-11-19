@@ -1,69 +1,48 @@
 <div class="section container">
-   <h2><%= t(:popular_destinations) %> <%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %></h2>
+   <h2><%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %><%= t(:popular_destinations) %> </h2>
 
    <div class="row image-box style3">
      <div class="col-sms-6 col-sm-6 col-md-3">
        <article class="box">
-         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-           <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"> <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/habana.jpg', size: "270x160", alt: "La Habana") %></a>
+         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_habana_s.jpg', size: "270x160", alt: "Varadero") %></a>
          </figure>
-         <div class="details text-center">
-           <h4 class="box-title"><%= t(:destinohabana) %></h4>
-
-           <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-             <span style="width: 80%;" class="five-stars"></span>
-           </div>
-           <%= t(:description_destino_habana_html) %>
-           <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+         <div class="details">
+           <span class="price"><small>FROM</small>$490</span>
+           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinohabana) %><small><%= t(:destinohabana) %></small></a></h4>
          </div>
        </article>
      </div>
      <div class="col-sms-6 col-sm-6 col-md-3">
        <article class="box">
-         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-           <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/varadero.jpg', size: "270x160", alt: "Varadero") %></a>
+         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_varadero_s.jpg', size: "270x160", alt: "Varadero") %></a>
          </figure>
-         <div class="details text-center">
-           <h4 class="box-title"><%= t(:varadero) %></h4>
-
-           <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
-             <span style="width: 80%;" class="five-stars"></span>
-           </div>
-           <%= t(:description_destino_varadero_html) %>
-           <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+         <div class="details">
+           <span class="price"><small>FROM</small>$490</span>
+           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:varadero) %><small><%= t(:varadero) %></small></a></h4>
          </div>
        </article>
      </div>
      <div class="col-sms-6 col-sm-6 col-md-3">
        <article class="box">
-         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-           <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/trinidad.jpg', size: "270x160", alt: "Trinidad") %></a>
+         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_trinidad_s.jpg', size: "270x160", alt: "Varadero") %></a>
          </figure>
-         <div class="details text-center">
-           <h4 class="box-title"><%= t(:destinotrinidad) %></h4>
-
-
-           <div data-placement="bottom" data-toggle="tooltip" title="5 stars" class="five-stars-container">
-             <span style="width: 80%;" class="five-stars"></span>
-           </div>
-           <%= t(:description_destino_trinidad_html) %>
-           <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+         <div class="details">
+           <span class="price"><small>FROM</small>$490</span>
+           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinotrinidad) %><small><%= t(:destinotrinidad) %></small></a></h4>
          </div>
        </article>
      </div>
      <div class="col-sms-6 col-sm-6 col-md-3">
        <article class="box">
-         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-           <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/pinar.jpg', size: "270x160", alt: "Pinar") %></a>
+         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_pinar_s.jpg', size: "270x160", alt: "Varadero") %></a>
          </figure>
-         <div class="details text-center">
-           <h4 class="box-title"><%= t(:destinopinardelrio) %></h4>
-
-           <div data-placement="bottom" data-toggle="tooltip" title="5 stars" class="five-stars-container">
-             <span style="width: 80%;" class="five-stars"></span>
-           </div>
-           <%= t(:description_destino_pinardelrio_html) %>
-           <a class="button" href="cruise-detailed.html"><%= t(:see_all) %></a>
+         <div class="details">
+           <span class="price"><small>FROM</small>$490</span>
+           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinopinardelrio) %><small><%= t(:destinopinardelrio) %></small></a></h4>
          </div>
        </article>
      </div>

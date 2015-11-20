@@ -67,6 +67,16 @@ $dark_gray_color: #7d7d7d;
   src: font-url('bebasneuebold.ttf') format('truetype')
 }
 
+@font-face {
+  font-family: 'MyriadProCond';
+  src: font-url('MyriadPro-Cond.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'MyriadProCondBold';
+  src: font-url('MyriadPro-BoldCond.otf') format('opentype')
+}
+
 /***********************************************************************************************/
 /*
  *                                            Styles
@@ -153,27 +163,47 @@ body {
 
 /* Top Bar */
 
+.pull-right {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 #header {
   .topnav {
 
     background: #FFFFFF !important;
+    height: 41px !important;
     //height: 35px; hange on styles.css line 5040
 
-    ul.quick-menu > li > a {
-      color: $green-color !important;
-      line-height: 35px !important;
-      font-size: 1.2em !important;
-      letter-spacing: 0.07em;
+    ul.quick-menu {
+      > li {
+        margin-left: 6px !important;
+        padding-right: 6px;
+
+        > a {
+          color: $green-color !important;
+          line-height: 35px !important;
+          font-size: 1.5em !important;
+          letter-spacing: 0.07em;
+          font-family: yanonekaffeesatz-bold;
+        }
+      }
+    }
+    .separator{
+      margin-top: 5px;
     }
 
     #help {
-      color: $brown-color;
-      font-size: 15px;
+      color: $dark-gray_color;
+      font-size: 17px;
       margin-top: 8px;
       letter-spacing: 0.05em;
-      font-family: yanonekaffeesatz-regular;
+      font-family: MyriadProCond;
       > span {
-        font-family: yanonekaffeesatz-bold;
+        color: black;
+        font-size: 20px;
+        font-family: MyriadProCondBold;
+        margin-left: 10px;
       }
     }
     .flag {
@@ -190,6 +220,9 @@ body {
         font-size: 15px;
         padding: 10px;
       }
+    }
+    select {
+     padding:0 !important;
     }
   }
 }
@@ -208,6 +241,7 @@ body {
   }
   .main-header {
     z-index: 1;
+    margin-top: 15px;
     // height: 48px !important;
   }
   select {

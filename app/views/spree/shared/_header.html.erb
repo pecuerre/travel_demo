@@ -22,12 +22,17 @@
                 <% end %>
               </li>
           <% end %>
+          <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% if spree_current_user %>
               <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
               <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% else %>
               <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
               <li id="link-to-login"><%= link_to Spree.t(:signup), spree.signup_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% end %>
 
           <li id="currency-select" class="ribbon currency" data-hook>
@@ -39,7 +44,7 @@
                 </div>
             <% end %>
           </li>
-
+          <li><%=image_tag('bar.png', class: 'separator')%></li>
           <li id="help">Need help? Call us<span>+1-844-836-2822</span></li>
 
         </ul>

@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  logo_header: 'my_trip_logo_en.png'
+  logo_hz: 'my_trip_logo_hz_en.png'
   flag: 'usa.png'
   enter_destination: "enter a destination or hotel name"
   departure: "Departure Time"

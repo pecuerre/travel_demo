@@ -3,7 +3,8 @@
     <article class="box">
         <figure class="col-sm-5 col-md-4">
           <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-            <%= product_image(product, :itemprop => "image") %>
+            <%#= product_image(product, :itemprop => "image") %>
+            <%= image_tag product.main_image_uri %>
           </a>
         </figure>
         <div class="details col-sm-7 col-md-8">

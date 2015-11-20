@@ -1,57 +1,50 @@
 module PriceTravel
   class Api
-    
-    def initialize
-      @countries = {}
-    end
 
-    def hotels(params)
-
-      if SpreeTravelDemo4::Application.config.mode_offline
-        body = File.open('project/price_travel/hotels.txt').readline()
-        hotels = PriceTravel::Utils.parse_hotels(JSON.parse(body) )#, params, data)
-        # hotels = Kaminari.paginate_array(hotels).page(params[:page])
-        return PriceTravel::Response.new(hotels)
+    def self.hotels(params)
+      # Prepare service url and parameters structure.
+      if (params[:id])
+        service = "/services/hotels/#{params[:id]}"
+        params = nil
       else
-
-        destination = Destination.like_name(params['search-going-to']).first
-        return PriceTravel::Response.new([], ['Destination not found.']) unless destination
-
-        if not params['search-going-to'] or params['search-going-to'] == '' or not params['search-check-in-date'] or params['search-check-in-date'] == '' or not params['search-check-out-date'] or params['search-check-out-date'] == ''
-          return PriceTravel::Response.new([], ['There is not enough information to verify availability of hotels.'])
+        # Validated filter parameters.
+        if params['search-going-to'].to_i == 0
+          raise ArgumentError, 'Destination not found.'
+        elsif params['search-check-in-date'].to_s == '' or params['search-check-out-date'].to_s == ''
+          raise ArgumentError, 'There is not enough information to verify availability of hotels.'
         end
 
-        p = PriceTravel::Utils.prepare_for_hotels(destination.price_travel_id, params)
-
-        begin
-          response = PriceTravel::HTTPService.make_request('/services/hotels/availability', p)
-        rescue StandardError => e
-          return BestDay::Response.new([], [e.to_s])
-        else
-          body = JSON.parse(response.body)
-          hotels = PriceTravel::Utils.parse_hotels(body, params, p)
-        end
-
-        PriceTravel::Response.new(hotels)
-
+        service = "/services/hotels/availability"
+        params = PriceTravel::Utils.prepare_for_hotels(params)
       end
 
+      puts '--------------------------------------'
+      puts params.inspect
+      puts '--------------------------------------'
+
+      # Send request to api.pricetravel.com
+      PriceTravel::HTTPService.make_request(service, params)
+
+    rescue ArgumentError => e
+      respondError(e.to_s, 404)
+    rescue StandardError => e
+      respondError(e.to_s, 500)
     end
 
     def flights(params)
 
-        departure_airport = Airport.like_location_and_iata(params['search-flying-from']).first
-        return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-from']}."]) unless departure_airport
+      departure_airport = Airport.like_location_and_iata(params['search-flying-from']).first
+      return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-from']}."]) unless departure_airport
 
-        arrival_airport = Airport.like_location_and_iata(params['search-flying-to']).first
-        return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-to']}."]) unless arrival_airport
+      arrival_airport = Airport.like_location_and_iata(params['search-flying-to']).first
+      return BestDay::Response.new([], ["Airport name or destination not found for #{params['search-flying-to']}."]) unless arrival_airport
 
-        if not params['search-flight-type'] or params['search-flight-type'] == '' or not params['search-flying-from'] or params['search-flying-from'] == '' or not params['search-flying-to'] or params['search-flying-to'] == '' or not params['search-departing-date'] or params['search-departing-date'] == '' or (params['search-flight-type'] == 'Roundtrip' and (not params['search-returning-date'] or params['search-returning-date'] == ''))
-          return PriceTravel::Response.new([], ['There is not enough information to verify availability of flights.'])
-        end
+      if not params['search-flight-type'] or params['search-flight-type'] == '' or not params['search-flying-from'] or params['search-flying-from'] == '' or not params['search-flying-to'] or params['search-flying-to'] == '' or not params['search-departing-date'] or params['search-departing-date'] == '' or (params['search-flight-type'] == 'Roundtrip' and (not params['search-returning-date'] or params['search-returning-date'] == ''))
+        return PriceTravel::Response.new([], ['There is not enough information to verify availability of flights.'])
+      end
 
-        p = PriceTravel::Utils.prepare_for_flights(departure_airport, arrival_airport, params)
-        
+      p = PriceTravel::Utils.prepare_for_flights(departure_airport, arrival_airport, params)
+
       if SpreeTravelDemo4::Application.config.mode_offline
 
         body = File.open('project/price_travel/flights.txt').readline()
@@ -63,7 +56,7 @@ module PriceTravel
 
         begin
           response = PriceTravel::HTTPService.make_request('/services/flights/itineraries', p)
-          # puts response.inspect
+            # puts response.inspect
         rescue StandardError => e
           return BestDay::Response.new([], [e.to_s])
         else
@@ -77,6 +70,20 @@ module PriceTravel
       end
     end
 
+    # Returns all destinations or one destination details.
+    def self.destinations(countryId, id=false)
+      service = "/services/catalogs/countries/#{countryId}" + (id ? "/destinations/#{id}" : "")
+      PriceTravel::HTTPService.make_request(service)
+    rescue StandardError => e
+      respondError(e.to_s, 500)
+    end
+
+    # Returns object similar to 'api.pricetravel.com' response,
+    # with {body: {error: '...'}, code: ### } structure.
+    def self.respondError(msg, code)
+      h = {:body => {error: msg}.to_json, :code => code}
+      Struct.new(*h.keys).new(*h.values)
+    end
 
   end
 end

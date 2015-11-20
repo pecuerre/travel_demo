@@ -790,7 +790,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-section {
   padding-top: 30px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
+  background-image: image_url('banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1114,3 +1114,35 @@ li#help {
 
   }
 }
+
+// BEGIN AUTO-COMPLETE: Ajustando el componente auto-complete a los estilos definidos para los campos de selección
+.select2-container {
+  display: inline;
+}
+
+.select2-container .select2-choice {
+  display: inline-block;
+  line-height: 32px;
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.select2-container .select2-choice .select2-arrow b {
+  background-color: $yellow-color !important;
+  background-position: 4px 4px !important;
+  width: 24px;
+}
+
+.select2-container .select2-choice {
+  font-family: yanonekaffeesatz-regular;
+  font-size: 18px;  border-radius: 0px;
+  color: gray;
+  display: inline-table !important;
+  height: 34px;
+  border: 0px;
+}
+// END AUTO-COMPLETE

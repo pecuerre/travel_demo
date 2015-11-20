@@ -33,6 +33,7 @@ gem 'ruby-debug-ide'
 
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 gem 'wannabe_bool'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'ffaker'

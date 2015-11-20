@@ -1,34 +1,22 @@
 <div class="sort-by-section clearfix box">
   <h4 class="sort-by-title block-sm">Sort results by:</h4>
   <ul class="sort-bar clearfix block-sm">
-    <% order_params = ['name'] #['name', 'price', 'rating', 'popularity'] %>
+    <% order_params = ['name'] #['name', 'price', 'rating', 'popularity']     %>
     <% order_params.each do |p| %>
-      <%
-        text = "<span>#{p}</span>".html_safe
-        css = "sort-by-#{p}"
-        css += ' active' if is_sort_in_url?(p)
-      %>
-      <li class="<%= css %>">
-        <%= link_to text, add_sort_to_url(p), :class => 'sort-by-container' %>
-      </li>
+        <%
+           text = "<span>#{p}</span>".html_safe
+           css = "sort-by-#{p}"
+           css += ' active' if is_sort_in_url?(p)
+        %>
+        <li class="<%= css %>">
+          <%= link_to text, add_sort_to_url(p), :class => 'sort-by-container' %>
+        </li>
     <% end %>
   </ul>
-  
-  <ul class="swap-tiles clearfix block-sm">
-    <li class="swap-list <%= 'active' if params[:controller] == 'spree/hotels' && params[:view].nil? %>">
-        <%= link_to hotels_path do %>
-          <i class="soap-icon-list"></i>
-        <% end %>
-    </li>
-    <li class="swap-grid <%= 'active' if params[:controller] == 'spree/hotels' && params[:view] == :grid %>">
-        <%= link_to hotels_path(view: 'grid')  do %>
-          <i class="soap-icon-grid"></i>
-        <% end %>
-    </li>
-    <li class="swap-block <%= 'active' if params[:controller] == 'spree/hotels' && params[:view] == :block %>">
-        <%= link_to hotels_path(view: 'block') do %>
-          <i class="soap-icon-block"></i>
-        <% end %>
-    </li>
+
+  <ul class="products-view-type swap-tiles clearfix block-sm">
+    <li class="swap-list"><a href="#list"><i class="soap-icon-list"></i></a></li>
+    <li class="swap-grid"><a href="#grid"><i class="soap-icon-grid"></i></a></li>
+    <li class="swap-block"><a href="#block"><i class="soap-icon-block"></i></a></li>
   </ul>
 </div>

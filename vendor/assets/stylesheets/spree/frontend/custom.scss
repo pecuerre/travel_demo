@@ -67,6 +67,21 @@ $dark_gray_color: #7d7d7d;
   src: font-url('bebasneuebold.ttf') format('truetype')
 }
 
+@font-face {
+  font-family: 'MyriadProCond';
+  src: font-url('MyriadPro-Cond.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'MyriadProCondBold';
+  src: font-url('MyriadPro-BoldCond.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'KaushanScript-Regular';
+  src: font-url('KaushanScript-Regular.otf') format('opentype')
+}
+
 /***********************************************************************************************/
 /*
  *                                            Styles
@@ -129,6 +144,7 @@ $dark_gray_color: #7d7d7d;
 
 section#content {
   background: $ligth-gray-color !important;
+  padding-top: 0px !important;
 }
 
 body {
@@ -152,27 +168,47 @@ body {
 
 /* Top Bar */
 
+.pull-right {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 #header {
   .topnav {
 
     background: #FFFFFF !important;
+    height: 41px !important;
     //height: 35px; hange on styles.css line 5040
 
-    ul.quick-menu > li > a {
-      color: $green-color !important;
-      line-height: 35px !important;
-      font-size: 1.2em !important;
-      letter-spacing: 0.07em;
+    ul.quick-menu {
+      > li {
+        margin-left: 6px !important;
+        padding-right: 6px;
+
+        > a {
+          color: $green-color !important;
+          line-height: 35px !important;
+          font-size: 1.5em !important;
+          letter-spacing: 0.07em;
+          font-family: yanonekaffeesatz-bold;
+        }
+      }
+    }
+    .separator {
+      margin-top: 5px;
     }
 
     #help {
-      color: $brown-color;
-      font-size: 15px;
+      color: $dark-gray_color;
+      font-size: 17px;
       margin-top: 8px;
       letter-spacing: 0.05em;
-      font-family: yanonekaffeesatz-regular;
+      font-family: MyriadProCond;
       > span {
-        font-family: yanonekaffeesatz-bold;
+        color: black;
+        font-size: 20px;
+        font-family: MyriadProCondBold;
+        margin-left: 10px;
       }
     }
     .flag {
@@ -189,6 +225,9 @@ body {
         font-size: 15px;
         padding: 10px;
       }
+    }
+    select {
+      padding: 0 !important;
     }
   }
 }
@@ -207,6 +246,7 @@ body {
   }
   .main-header {
     z-index: 1;
+    margin-top: 15px;
     // height: 48px !important;
   }
   select {
@@ -257,6 +297,7 @@ body {
 // Change on style 5674
 .menu {
   > li {
+    padding-right: 10px !important;
     > a {
       font-weight: bold !important;
       font-size: 20px;
@@ -637,6 +678,11 @@ p.description {
   overflow: hidden;
 }
 
+p.description_tour {
+  height: 190px;
+  overflow: hidden;
+}
+
 /******************** Footer ******************/
 #footer {
 
@@ -761,6 +807,8 @@ img.mytrp_icon {
 
 .price {
   color: $orange_color !important;
+  font-size: 23px !important;
+  font-family: yanonekaffeesatz-bold;
   small {
 
     color: $dark_gray_color !important;
@@ -789,23 +837,33 @@ div.container:nth-child(5) > div:nth-child(2) {
 }
 
 .image-section {
-  padding-top: 30px;
+ // background-image: image_url('banner_home.jpg');
   background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding-bottom: 30px;
-  padding-left: 10px !important;
+  background-size: auto;
+  height:400px;
 }
 
 .image-section-food {
-
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drinks.jpg');
+ // background-image: image_url('banner_food_drink.jpg');
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drink.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-size: auto;
+  height: 400px;
+
+}
+
+.image-section-cruises {
+
+  //background-image: image_url('banner_cruises.jpg');
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_cruises.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto;
+ // background-size: 100% 100%;
+  height: 400px;
 
 }
 
@@ -1044,6 +1102,7 @@ li#help {
   color: #f10014;
   padding-top: 15px;
   font-family: yanonekaffeesatz-regular;
+  margin-top: 70px;
   span {
     font-family: yanonekaffeesatz-bold;
     text-transform: uppercase;
@@ -1053,7 +1112,7 @@ li#help {
 .searchotelform {
 
   float: right;
-  margin-top: 105px;
+  margin-top: 250px;
 
   .row {
     margin-bottom: 10px;
@@ -1074,8 +1133,37 @@ li#help {
   }
 }
 
+.title_cruises {
+  padding-left: 50px;
+  margin-top: 100px;
+  p {
+    font-family: KaushanScript-Regular;
+    font-size: 90px;
+    color: #2576bb;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.05;
+
+    &.subtitle {
+      font-family: yanonekaffeesatz-regular;
+      font-size: 50px;
+      color: #ffb100;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.cruisebutton {
+  background-color: #fe802c;
+  font-size: 25px;
+  color: white;
+  padding: 20px;
+  line-height: 5px;
+}
+
 .title_food {
   padding-left: 50px;
+  margin-top: 90px;
   p {
     font-family: bebas;
     font-size: 65px;

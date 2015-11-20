@@ -81,9 +81,9 @@ module SpreeTravel
         flight.departure_flights = []
         departure = Departure.new
         # departure.airline = resource.airline
-        # departure.duration_in_minutes = resource.duration
-        # departure.departure_date_time = resource.get_persistent_option_value(:departure_date)
-        # departure.arrival_date_time = departure.departure_date_time + resource.duration
+        departure.departure_date_time = rate.get_persisted_option_value(:take_off_time).to_time
+        departure.arrival_date_time = rate.get_persisted_option_value(:landing_time).to_time
+        departure.duration_in_minutes = departure.arrival_date_time - departure.departure_date_time
         # departure.terminal = resource.terminal
         departure.departure_airport = rate.get_persisted_option_value(:origin)
         # departure.departure_airport_code = resourse.departure_airport_code
@@ -100,5 +100,73 @@ module SpreeTravel
       flights
     end
 
+    def self.parse_house(resource, params, p)
+      house = House.new
+      house.id = resource['id']
+      house.destination = resource['destination']['name']
+      house.destination_id = resource['destination']['id']
+      house.main_image_uri = resource['image_cover']['path']
+      house.images_uris = resource['images'].map do |image|
+        image['path']
+      end rescue []
+      house.house_type = resource['house_type']
+      house.name = resource['name']
+      house.details_uri = resource['links']['self']
+      house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
+      house.services = resource['services'].map do |service|
+        service
+      end rescue []
+      house.checkin_time = resource['checkin']
+      house.checkout_time = resource['checkout']
+      house.owner = resource['owner']
+      house.rooms = resource['number_of_rooms'].to_i
+      house.api = {name: :spree_travel, string: 'SpreeTravel'}
+      house.availabilities = resource['availability'].each do |availability|
+        house_availability = HouseAvailability.new
+        house_availability.adults = availability['pax']['adults']
+        house_availability.children = availability['pax']['children']
+        house_availability.infants = availability['pax']['infants']
+        house_availability.room_id = availability['room']['id']
+        house_availability.room_name = availability['room']['name']
+        house_availability.plan_id = availability['plan']['id']
+        house_availability.plan_name = availability['plan']['name']
+        house_availability.price = availability['price']
+        house_availability.message = availability['message']
+        house_availability
+      end rescue []
+      # house.prices = {:spree_travel => resource.price}
+      # house.same_booking_uri = flight_booking_uri(resource, params)
+      # house.booking_uri = flight.same_booking_uri
+      house
+    end
+
+    def self.parse_houses(resources, params, p)
+      houses = []
+      resources['data'].each do |resource|
+        house = self.parse_house(resource, params, p)
+        houses << house
+      end
+      houses
+    end
+
+    def self.prepare_for_houses(params)
+      # destination = Some Query to get holiplus destinations
+      # destination_id = 81
+      p = {}
+      p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
+      p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
+      p['destination_id'] = params[:destination_id]
+      p['checking'] = params[:checkin].to_date.strftime("%Y-%m-%d") if params[:checkin]
+      p['checkout'] = params[:checkout].to_date.strftime("%Y-%m-%d") if params[:checkout]
+      p['rooms'] = (params['adults'] || '0') + "." + (params['children'] || '0') + "." + (params["infants"] || '0')
+      p
+    end
+
+    def self.prepare_for_house(params)
+      p = {}
+      p['apikey'] = Figaro.env.HOLIPLUS_API_KEY
+      p['locale'] = LANGUAGES[(params['locale'] || I18n.locale).to_sym]
+      p
+    end
   end
 end

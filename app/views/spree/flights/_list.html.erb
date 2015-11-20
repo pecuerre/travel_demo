@@ -3,13 +3,14 @@
       <% @flights.each do |f| %>
           <article class="box">
             <figure class="col-xs-3 col-sm-2">
-              <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/f'+rand(1...5).to_s+'.png') %></span>
+              <span><%= image_tag('airlines/choice_aire.jpg') %></span>
             </figure>
             <div class="details col-xs-9 col-sm-10">
               <div class="details-wrapper">
                 <div class="first-row">
                   <div>
-                    <h4 class="box-title"><%= f.name.gsub('(CHOICE AIRE)', ' ') %> - <%= f.take_off %> / <%= f.landing %>
+                    <h4 class="box-title">
+                      <%= f.name %> - <%= f.take_off %> / <%= f.landing %>
                     </h4>
                     <div class='clearfix'><h5><%= f.flight_type || 'ONEWAY FLIGHT' %></h5></div>
                     <a><strong><%= f.stops %></strong></a>
@@ -29,19 +30,19 @@
                     <div class="take-off col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">Take off</span><br/>WED NOV 13, 2015 7:50 AM
+                        <span class="skin-color">Take off</span><br/><%= take_off_time(f) %>
                       </div>
                     </div>
                     <div class="landing col-sm-4">
                       <div class="icon"><i class="soap-icon-plane-right yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">landing</span><br/>WED NOV 13, 2015 9:20 AM
+                        <span class="skin-color">landing</span><br/> <%= landing_time(f)%>
                       </div>
                     </div>
                     <div class="total-time col-sm-4">
                       <div class="icon"><i class="soap-icon-clock yellow-color"></i></div>
                       <div>
-                        <span class="skin-color">total time</span><br/>2 HOUR, 30 MINUTES
+                        <span class="skin-color">total time</span><br/><%= flight_duration(f) %>
                       </div>
                     </div>
                   </div>

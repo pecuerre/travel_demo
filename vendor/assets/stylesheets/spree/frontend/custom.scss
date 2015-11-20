@@ -639,27 +639,30 @@ p.description {
 
 /******************** Footer ******************/
 #footer {
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.jpg');
+
+  height: 700px;
+  width: 100%;
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  background-color: #107579;
+  background-color: $ligth-gray-color;
 
   > .footer-wrapper {
-    padding-top: 80px !important;
-    padding-bottom: 250px !important;
-
+    padding-top: 310px !important;
+    padding-bottom: 0 !important;
     > .container {
-      background-color: rgba(53, 86, 93, 0.6);
+
       padding: 20px;
 
       h2 {
         margin-bottom: 20px;
         color: white;
-        font-family: yanonekaffeesatz-bold;
+        text-transform: uppercase;
+        font-family: yanonekaffeesatz-regular;
+        font-size: 25px;
       }
       > .row > div {
-        width: 20%;
         a {
           font-size: 18px;
           color: $yellow-color;
@@ -677,6 +680,21 @@ p.description {
     border-right-style: solid;
     border-right-width: 3px;
     border-color: $yellow-color;
+  }
+
+  .footericon {
+    color: white;
+    font-size: 20px;
+  }
+  .iconname {
+    margin-top: 10px;
+  }
+  .listmore {
+    margin-bottom: 18px;
+    li {
+      display: inline;
+      margin-right: 25px;
+    }
   }
 }
 
@@ -772,7 +790,7 @@ div.container:nth-child(5) > div:nth-child(2) {
 
 .image-section {
   padding-top: 30px;
-  background-image: image_url('banner_home.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -845,12 +863,13 @@ div.container:nth-child(5) > div:nth-child(2) {
 }
 
 .flightprice {
-  color:$ligth-blue-color !important;
+  color: $ligth-blue-color !important;
   font-size: 18px;
   font-weight: bold;
   float: right;
 }
-.flightdesticon{
+
+.flightdesticon {
   float: left;
   margin-top: 10px;
   margin-left: 10px;
@@ -861,11 +880,12 @@ a.full-width.button.flightbutton {
   color: gray !important;
   text-transform: capitalize;
 
-  &:hover{
+  &:hover {
     background-color: $ligth-blue-color !important;
     color: white !important;
   }
 }
+
 /***/
 
 li#help {
@@ -1019,11 +1039,12 @@ li#help {
 /****  SearchHotel Banner ***************************************/
 
 .searchoteltitle {
-  text-shadow: 1px 1px 3px black;
-  font-size: 60px;
-  color:  #f10014;
+  text-shadow: 1px 1px 3px #777777;
+  font-size: 55px;
+  color: #f10014;
+  padding-top: 15px;
   font-family: yanonekaffeesatz-regular;
-  span{
+  span {
     font-family: yanonekaffeesatz-bold;
     text-transform: uppercase;
   }
@@ -1032,13 +1053,12 @@ li#help {
 .searchotelform {
 
   float: right;
-  margin-top: 60px;
-  margin-right: 40px;
+  margin-top: 105px;
 
   .row {
     margin-bottom: 10px;
     ::-webkit-input-placeholder {
-      color: $dark-blue-color;
+      color: #2f8043;
     }
     input.input-text.input-large {
       font-size: 20px;

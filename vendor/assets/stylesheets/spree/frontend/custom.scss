@@ -129,6 +129,7 @@ $dark_gray_color: #7d7d7d;
 
 section#content {
   background: $ligth-gray-color !important;
+  padding-top: 0px !important;
 }
 
 body {
@@ -257,6 +258,7 @@ body {
 // Change on style 5674
 .menu {
   > li {
+    padding-right: 10px !important;
     > a {
       font-weight: bold !important;
       font-size: 20px;
@@ -634,6 +636,11 @@ button.full-width, a.button.full-width {
 
 p.description {
   height: 70px;
+  overflow: hidden;
+}
+
+p.description_tour {
+  height: 190px;
   overflow: hidden;
 }
 

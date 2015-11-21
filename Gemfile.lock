@@ -608,6 +608,7 @@ DEPENDENCIES
   ruby-debug-ide
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  select2-rails
   spree!
   spree_auth_devise!
   spree_i18n!

@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ransack'
 gem 'haml-rails'
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
@@ -33,6 +33,7 @@ gem 'ruby-debug-ide'
 
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 gem 'wannabe_bool'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'ffaker'

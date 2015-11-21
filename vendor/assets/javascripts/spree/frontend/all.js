@@ -24,6 +24,7 @@
 //= require spree/frontend/validations
 //= require spree/frontend/jquery.quick.pagination
 //= require spree/frontend/jquery.quick.pagination
+//= require spree/backend/spree-select2
 
 //= require jquery_ujs
 

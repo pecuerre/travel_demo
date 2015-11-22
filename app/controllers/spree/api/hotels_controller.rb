@@ -9,9 +9,6 @@ module Spree
         items = []
         errors = []
 
-        puts '---------------------------------------'
-        puts @destinations_ids.inspect
-
         @destinations_ids.each do |destination|
           service = destination.service_name.to_sym
           params['search-going-to'] = destination.service_item_id

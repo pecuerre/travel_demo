@@ -1,85 +1,440 @@
-# Taxons to be used as parameters in search sessions.
-
-require Rails.root + "db/common/trip_functions"
-include TripFunctions
+# Taxons to be used as destination cities with their remote service id.
 
 items = [
-  {:name => "HAVANA",},
-  {:name => "MATANZAS",},
-  {:name => "VARADERO", :parent => "MATANZAS",},
-  {:name => "CIEGO DE AVILA",},
-  {:name => "CAYO GUILLERMO", :parent => "CIEGO DE AVILA",},
-  {:name => "OLD HAVANA", :parent => "HAVANA",},
-  {:name => "VILLA CLARA",},
-  {:name => "SANTA CLARA CITY", :parent => "VILLA CLARA",},
-  {:name => "EASTERN BEACHES", :parent => "HAVANA",},
-  {:name => "GRANMA",},
-  {:name => "SANTIAGO DE CUBA",},
-  {:name => "REMEDIOS", :parent => "VILLA CLARA",},
-  {:name => "CIENAGA DE ZAPATA", :parent => "MATANZAS",},
-  {:name => "HOLGUIN",},
-  {:name => "PLAYA PESQUERO", :parent => "HOLGUIN",},
-  {:name => "CAYO COCO", :parent => "CIEGO DE AVILA",},
-  {:name => "MAYABEQUE",},
-  {:name => "JIBACOA", :parent => "MAYABEQUE",},
-  {:name => "LAS TUNAS",},
-  {:name => "COVARRUBIAS", :parent => "LAS TUNAS",},
-  {:name => "GUARDALAVACA", :parent => "HOLGUIN",},
-  {:name => "CAMAGUEY",},
-  {:name => "SANTA LUCIA", :parent => "CAMAGUEY",},
-  {:name => "PLAYA CHIVIRICO", :parent => "SANTIAGO DE CUBA",},
-  {:name => "SANCTI SPIRITUS",},
-  {:name => "TRINIDAD", :parent => "SANCTI SPIRITUS",},
-  {:name => "LAS TUNAS CITY", :parent => "LAS TUNAS",},
-  {:name => "GUANTANAMO",},
-  {:name => "CAIMANERA", :parent => "GUANTANAMO",},
-  {:name => "CAMAGUEY CITY", :parent => "CAMAGUEY",},
-  {:name => "MATANZAS CITY", :parent => "MATANZAS",},
-  {:name => "VEDADO", :parent => "HAVANA",},
-  {:name => "SANTIAGO DE CUBA CITY", :parent => "SANTIAGO DE CUBA",},
-  {:name => "CIENFUEGOS",},
-  {:name => "PINAR DEL RIO",},
-  {:name => "CAYO LEVISA", :parent => "PINAR DEL RIO",},
-  {:name => "MIRAMAR", :parent => "HAVANA",},
-  {:name => "ISLA DE LA JUVENTUD",},
-  {:name => "CIEGO DE AVILA CITY", :parent => "CIEGO DE AVILA",},
-  {:name => "PARQUE BACONAO", :parent => "SANTIAGO DE CUBA",},
-  {:name => "MAREA DEL PORTILLO", :parent => "GRANMA",},
-  {:name => "HOLGUIN CITY", :parent => "HOLGUIN",},
-  {:name => "BARACOA", :parent => "GUANTANAMO",},
-  {:name => "CORRALILLO", :parent => "VILLA CLARA",},
-  {:name => "CAYO SANTA MARIA", :parent => "VILLA CLARA",},
-  {:name => "FLORIDA TOWN", :parent => "CAMAGUEY",},
-  {:name => "MANZANILLO", :parent => "GRANMA",},
-  {:name => "GUANTANAMO CITY", :parent => "GUANTANAMO",},
-  {:name => "HANABANILLA", :parent => "VILLA CLARA",},
-  {:name => "SANCTI SPIRITUS CITY", :parent => "SANCTI SPIRITUS",},
-  {:name => "CAYO ENSENACHOS", :parent => "VILLA CLARA",},
-  {:name => "CAYO LARGO", :parent => "ISLA DE LA JUVENTUD",},
-  {:name => "TOPES DE COLLANTES", :parent => "SANCTI SPIRITUS",},
-  {:name => "VINALES", :parent => "PINAR DEL RIO",},
-  {:name => "JARDINES DE LA REINA", :parent => "CIEGO DE AVILA",},
-  {:name => "GUANAHACABIBES", :parent => "PINAR DEL RIO",},
-  {:name => "SAN DIEGO", :parent => "PINAR DEL RIO",},
-  {:name => "ARTEMISA",},
-  {:name => "LAS TERRAZAS", :parent => "ARTEMISA",},
-  {:name => "CITY OF MORON", :parent => "CIEGO DE AVILA",},
-  {:name => "GIBARA", :parent => "HOLGUIN",},
-  {:name => "PINAR DEL RIO CITY", :parent => "PINAR DEL RIO",},
-  {:name => "BAYAMO CITY", :parent => "GRANMA",},
-  {:name => "CAYO SAETIA", :parent => "HOLGUIN",},
-  {:name => "SIERRA MAESTRA", :parent => "SANTIAGO DE CUBA",},
-  {:name => "CAYO LAS BRUJAS", :parent => "VILLA CLARA",},
-  {:name => "PINARES DE MAYARI", :parent => "HOLGUIN",},
-  {:name => "YAGUAJAY", :parent => "SANCTI SPIRITUS",},
-  {:name => "SOROA", :parent => "ARTEMISA",},
-  {:name => "PLAYA LARGA", :parent => "MATANZAS",},
-  {:name => "PLAYA GIRON", :parent => "MATANZAS"}
+    {
+        name: "PINAR DEL RIO",
+        children_attributes: [
+            {
+                name: 'VIÑALES',
+                destination_service_ids_attributes: [
+                    {service_name: 'holiplus', service_destination_id: 2},
+                ]
+            },
+            {
+                name: "GUANAHACABIBES",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "SAN DIEGO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "PINAR DEL RIO CITY",
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1118},
+                    {service_name: 'holiplus', service_destination_id: 8},
+                ]
+            },
+            {
+                name: 'CAYO LEVISA',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 806},
+                ]
+            },
+        ]
+    },
+    {
+        name: "ARTEMISA",
+        destination_service_ids_attributes: [
+            {service_name: 'holiplus', service_destination_id: 10},
+        ],
+        children_attributes: [
+            {
+                name: "LAS TERRAZAS",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "SOROA",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "HABANA",
+        destination_service_ids_attributes: [
+            {service_name: 'price_travel', service_destination_id: 143},
+            {service_name: 'holiplus', service_destination_id: 1},
+        ],
+        children_attributes: [
+            {
+                name: 'HABANA VIEJA',
+                destination_service_ids_attributes: [
+                    {service_name: 'holiplus', service_destination_id: 4},
+                ]
+            },
+            {
+                :name => 'VEDADO',
+                :destination_service_ids_attributes => [
+                    {service_name: 'holiplus', service_destination_id: 2},
+                ]
+            },
+            {
+                name: 'MIRAMAR',
+                destination_service_ids_attributes: [
+                    {service_name: 'holiplus', service_destination_id: 3},
+                ]
+            },
+            {
+                name: "EASTERN BEACHES",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "MAYABEQUE",
+        destination_service_ids_attributes: [
+            {service_name: 'holiplus', service_destination_id: 11},
+        ],
+        children_attributes: [
+            {
+                name: "JIBACOA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'SANTA CRUZ',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1221},
+                ]
+            },
+        ]
+    },
+    {
+        name: "MATANZAS",
+        destination_service_ids_attributes: [
+            {service_name: 'price_travel', service_destination_id: 1219},
+        ],
+        children_attributes: [
+            {
+                name: "MATANZAS CITY",
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1219},
+                ]
+            },
+            {
+                name: 'VARADERO',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 144},
+                    {service_name: 'holiplus', service_destination_id: 5},
+                ]
+            },
+            {
+                name: "CIENAGA DE ZAPATA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "PLAYA LARGA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "PLAYA GIRON",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "CIENFUEGOS",
+        children_attributes: [
+            {
+                name: "CIENFUEGOS CITY",
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1218},
+                ],
+            },
+        ]
+    },
+    {
+        name: "VILLA CLARA",
+        destination_service_ids_attributes: [
+            {service_name: 'price_travel', service_destination_id: 1220},
+        ],
+        children_attributes: [
+            {
+                name: "SANTA CLARA CITY",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "REMEDIOS",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "CORRALILLO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "HANABANILLA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'CAIBARIÉN',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1228},
+                ]
+            },
+            {
+                name: "CAYO ENSENACHOS",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'CAYO SANTA MARÍA',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1227},
+                ]
+            },
+            {
+                name: 'CAYO LAS BRUJAS',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1226},
+                ]
+            },
+        ]
+    },
+    {
+        name: "SANCTI SPIRITUS",
+        children_attributes: [
+            {
+                name: 'SANCTI SPÍRITUS CITY',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 12032},
+                ]
+            },
+            {
+                name: 'TRINIDAD',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1222},
+                ]
+            },
+            {
+                name: "TOPES DE COLLANTES",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "YAGUAJAY",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "CIEGO DE AVILA",
+        children_attributes: [
+            {
+                name: "CIEGO DE AVILA CITY",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'MORÓN',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1230},
+                ]
+            },
+            {
+                name: "JARDINES DE LA REINA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "CITY OF MORON",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'CAYO COCO',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1223},
+                ]
+            },
+            {
+                name: 'CAYO GUILLERMO',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1224},
+                ]
+            },
+        ]
+    },
+    {
+        name: "CAMAGUEY",
+        children_attributes: [
+            {
+                name: "CAMAGUEY CITY",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'SANTA LUCÍA',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1194},
+                ]
+            },
+            {
+                name: "FLORIDA TOWN",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'CAYO ROMANO',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 12061},
+                ]
+            },
+        ]
+    },
+    {
+        name: "LAS TUNAS",
+        children_attributes: [
+            {
+                name: "LAS TUNAS CITY",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "COVARRUBIAS",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "HOLGUIN",
+        children_attributes: [
+            {
+                name: "PLAYA PESQUERO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "GUARDALAVACA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'HOLGUÍN CITY',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1117},
+                ]
+            },
+            {
+                name: "GIBARA",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "PINARES DE MAYARI",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: 'CAYO SAETÍA',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 12033},
+                ]
+            },
+            {
+                name: 'CAYO LARGO',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 1225},
+                ]
+            },
+        ]
+    },
+    {
+        name: "GRANMA",
+        children_attributes: [
+            {
+                name: "MAREA DEL PORTILLO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "MANZANILLO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "BAYAMO CITY",
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 12051},
+                ]
+            },
+        ]
+    },
+    {
+        name: "SANTIAGO DE CUBA",
+        children_attributes: [
+            {
+                name: 'SANTIAGO DE CUBA CITY',
+                destination_service_ids_attributes: [
+                    {service_name: 'price_travel', service_destination_id: 744},
+                ]
+            },
+            {
+                name: "PLAYA CHIVIRICO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "PARQUE BACONAO",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                name: "SIERRA MAESTRA",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "GUANTANAMO",
+        children_attributes: [
+            {
+                name: "GUANTANAMO CITY",
+                destination_service_ids_attributes: [
+                ]
+            },
+            {
+                :name => 'BARACOA',
+                :destination_service_ids_attributes => [
+                    {service_name: 'price_travel', service_destination_id: 1176},
+                ]
+            },
+            {
+                name: "CAIMANERA",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    },
+    {
+        name: "ISLA DE LA JUVENTUD",
+        destination_service_ids_attributes: [
+            {service_name: 'price_travel', service_destination_id: 1229},
+        ],
+        children_attributes: [
+            {
+                name: "CAYO LARGO",
+                destination_service_ids_attributes: [
+                ]
+            },
+        ]
+    }
 ]
 
-taxonomy = Spree::Taxonomy.where(:name => 'Destination city').first
-items.each do |item|
-	create_taxon(taxonomy, item)
-end
+taxonomy = Spree::Taxonomy.where(name: 'Destination city').first.update(:taxons_attributes => items)
 
 

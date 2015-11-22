@@ -44,9 +44,21 @@ module Spree
         # Get id, name and service
         case service
           when :price_travel
-            items.map { |i| {id: i['Id'], name: i['Name'].gsub(/ Area$/, ''), service: 'PRICE_TRAVEL'} }
+            items.map do |i|
+              {
+                  id: i['Id'],
+                  name: i['Name'].gsub(/ Area$/, '').upcase,
+                  service: 'price_travel'
+              }
+            end
           when :holiplus
-            items.map { |i| {id: i['id'], name: i['name'], service: 'HOLIPLUS'} }
+            items.map do |i|
+              {
+                  id: i['id'],
+                  name: i['name'].upcase,
+                  service: 'holiplus'
+              }
+            end
           when :spree
             items.map do |i|
               {

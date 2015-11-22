@@ -20,8 +20,7 @@ namespace :trip do
 
     desc 'Delete trip destinations'
     task :destinations => :environment do
-      taxonomy = Spree::Taxonomy.where(:name => 'Destination city').first
-      Spree::Taxon.where(:taxonomy => taxonomy).destroy_all
+      Spree::Taxons.where(:name => 'Destination city').first.children.destroy_all
     end
 
     desc 'Delete trip airports'

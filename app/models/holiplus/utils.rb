@@ -3,8 +3,6 @@ module Holiplus
     class << self
 
       def parse_house(item, availabilityItem = {})
-        puts item.inspect
-        puts '-----------------------'
         {
             :api => :holiplu,
             :id => item['id'],

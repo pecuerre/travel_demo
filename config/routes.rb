@@ -27,6 +27,11 @@ Rails.application.routes.draw do
         get 'hotels/:id' => :show
       end
 
+      controller :houses do
+        post 'houses' => :index
+        get 'houses/:id' => :show
+      end
+
     end
 
     resources :question_groups, only: :index do

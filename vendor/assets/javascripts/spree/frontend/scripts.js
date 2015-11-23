@@ -102,6 +102,7 @@ tjq(document).ready(function () {
         tjq(this).html('');
         tjq(this).mustache(templateId, data);
 
+        // Create image gallery for each product.
         data.items.forEach(function (item) {
             var id = '#product-gallery-' + item.id;
             tjq(id).magnificPopup({

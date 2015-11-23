@@ -9,6 +9,9 @@ module Spree
         items = []
         errors = []
 
+        puts '------------------------'
+        puts @destinations_ids.inspect
+        puts '------------------------'
         @destinations_ids.each do |destination|
           service = destination.service_name.to_sym
           params['search-going-to'] = destination.service_item_id
@@ -28,7 +31,7 @@ module Spree
 
           if status == 200
             items +=normalizeItems(data, service)
-          else
+          elsif data
             errors << data
           end
         end

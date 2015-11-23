@@ -3,9 +3,9 @@
     {{#items}}
     <article class="box">
       <figure class="col-sm-5 col-md-4">
-        <a title="{{title}}" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-          <img src="{{image}}"/>
-        </a>
+        <div title="{{title}}" class="hover-effect">
+          <img id="product-gallery-{{id}}" src="{{image}}"/>
+        </div>
       </figure>
       <div class="details col-sm-7 col-md-8">
         <div>

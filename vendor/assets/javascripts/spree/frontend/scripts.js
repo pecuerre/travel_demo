@@ -101,6 +101,24 @@ tjq(document).ready(function () {
         // Render response items.
         tjq(this).html('');
         tjq(this).mustache(templateId, data);
+
+        data.items.forEach(function (item) {
+            var id = '#product-gallery-' + item.id;
+            tjq(id).magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-img-mobile',
+                //showCloseBtn: false,
+                closeBtnInside: false,
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                items: item.images.map(function (img) {
+                    return {src: img}
+                })
+            });
+        });
     }
 
     /**

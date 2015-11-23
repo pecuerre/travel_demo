@@ -20,9 +20,9 @@ module Spree
       # @products = @products.with_property_ids(property_ids)
       # @products = @products.order(params[:sort]) if params[:sort]
 
-      api = SpreeTravel::Api.new
-      houses = api.houses(params).resources
-      @products = houses
+      # api = SpreeTravel::Api.new
+      # houses = api.houses(params).resources
+      # @products = houses
 
     end
     

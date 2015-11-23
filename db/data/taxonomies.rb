@@ -9,7 +9,6 @@ taxonomies = [
   { :name => "Departure airport", :position => 3 },
   { :name => "Arrival airport", :position => 4 },
   { :name => "Destination city", :position => 5 },
-  { :name => "Hotels", :position => 6 },
 ]
 
 taxonomies.each do |taxonomy_attrs|

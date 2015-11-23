@@ -51,13 +51,34 @@ tjq(document).ready(function () {
             url: service,
             type: 'POST',
             data: data,
+
             success: function (response) {
                 // Save data in local storage.
                 localStorage.setItem(type, JSON.stringify({items: response}));
                 done(true);
             },
+
             error: function (response) {
-                done(false, response.responseJSON);
+                var errors = JSON.parse(response.responseText);
+
+                if (errors instanceof Array) {
+                    errors = errors.map(function (i) {
+                        return i.error
+                    })
+                } else {
+                    console.error(errors);
+                    errors = ['The failed request.', 'Please try again later.'];
+                }
+
+                tjq.msgBox({
+                    title: "Error",
+                    content: errors.join('<br/>'),
+                    type: "error",
+                    showButtons: true,
+                    opacity: 0.9
+                });
+
+                done(false, errors);
             }
         });
     }
@@ -69,7 +90,7 @@ tjq(document).ready(function () {
      */
     tjq.fn.renderProducts = function (type) {
         var data = JSON.parse(localStorage.getItem(type) || '{"items":[]}'),
-            templateId = type + '-' + localStorage.getItem('product-view-type') || 'list';
+            templateId = type + '-' + (localStorage.getItem('product-view-type') || 'list');
 
         for (var i in mustacheHelpers) {
             data[i] = mustacheHelpers[i];
@@ -80,14 +101,38 @@ tjq(document).ready(function () {
         // Render response items.
         tjq(this).html('');
         tjq(this).mustache(templateId, data);
+
+        data.items.forEach(function (item) {
+            var id = '#product-gallery-' + item.id;
+            tjq(id).magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-img-mobile',
+                //showCloseBtn: false,
+                closeBtnInside: false,
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                items: item.images.map(function (img) {
+                    return {src: img}
+                })
+            });
+        });
     }
 
-    // Method to add option to select element from remote service response.
-    tjq.fn.loadSelectOptions = function (service, type, data) {
+    /**
+     * Method to add option to select element from remote service response.
+     *
+     * @param service {String} Remote service url. Ej: '/api/hotels'
+     * @param data {Object} Parameters to send in request.
+     * @param method {String} Http request method (GET, POST, PUT, DELETE, ...)
+     */
+    tjq.fn.loadSelectOptions = function (service, data, method) {
         var element = this;
         tjq.ajax({
             url: service,
-            type: type || 'GET',
+            type: method || 'GET',
             data: data || {},
             contentType: 'application/json; charset=utf-8',
             success: function (response) {

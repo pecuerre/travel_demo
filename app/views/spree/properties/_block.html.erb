@@ -1,27 +1,24 @@
-<div class="hotel-list">
+<script id="houses-block" type="text/html">
   <div class="row image-box hotel listing-style2">
-  <% @products.each do |product| %>
-    <div class="col-sms-6 col-sm-6 col-md-4">
-      <article class="box">
-          <figure>
-            <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-              <%= product_image(product, :itemprop => "image") %>
-            </a>
-          </figure>
-          <div class="details">
-            <a title="View all" href="hotel-detailed.html" class="pull-right button uppercase">select</a>
-            <h4 class="box-title">
-              <%= link_to(product_path(product), :itemprop => "name", :title => product.name) do  %> 
-                <%= truncate(product.name, length: 15)  %>
-              <% end %>
-            </h4>
-            <label class="price-wrapper">
-              <span class="price-per-unit"><%= Spree::Money.new(product.price).to_html %></span>avg/night
-            </label>
-          </div>  
-      </article>
-    </div>
-  <% end %>
+    {{#items}}
+        <div class="col-sms-6 col-sm-6 col-md-4">
+          <article class="box">
+            <figure>
+              <div title="{{title}}" class="hover-effect">
+                <img id="product-gallery-{{id}}" src="{{image}}"/>
+              </div>
+            </figure>
+            <div class="details">
+              <a title="View all" href="hotel-detailed.html" class="pull-right button uppercase">select</a>
+              <h4 class="box-title">
+                <a href="#" title="{{title}}">{{name}}</a>
+              </h4>
+              <label class="price-wrapper">
+                <span class="price-per-unit">{{price}}</span>avg/night
+              </label>
+            </div>
+          </article>
+        </div>
+    {{/items}}
   </div>
-</div>  
-
+</script>

@@ -10,33 +10,30 @@ namespace :trip do
 
     desc 'Delete shipping categories'
     task :shipping_categories => :environment do
-      Spree::ShippingCategory.delete_all
+      Spree::ShippingCategory.destroy_all
     end
 
     desc 'Delete taxonomies'
     task :taxonomies => :environment do
-      Spree::Taxonomy.delete_all
+      Spree::Taxonomy.destroy_all
     end
 
     desc 'Delete trip destinations'
     task :destinations => :environment do
-      taxonomy = Spree::Taxonomy.where(:name => 'Destination').first
-      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
-      taxonomy = Spree::Taxonomy.where(:name => 'Destination city').first
-      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+      Spree::Taxons.where(:name => 'Destination city').first.children.destroy_all
     end
 
     desc 'Delete trip airports'
     task :airports => :environment do
       taxonomy = Spree::Taxonomy.where(:name => 'Departure airport').first
-      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+      Spree::Taxon.where(:taxonomy => taxonomy).destroy_all
       taxonomy = Spree::Taxonomy.where(:name => 'Arrival airport').first
-      Spree::Taxon.where(:taxonomy => taxonomy).delete_all
+      Spree::Taxon.where(:taxonomy => taxonomy).destroy_all
     end
 
     desc 'Delete all taxons'
     task :taxons => :environment do
-      Spree::Taxon.delete_all
+      Spree::Taxon.destroy_all
     end
 
     desc 'Delete all hotels'
@@ -83,7 +80,6 @@ namespace :trip do
 
     desc 'Loads trip destinations'
     task :destinations => :environment do
-      require Rails.root + "db/data/destinations"
       require Rails.root + "db/data/destination_cities"
     end
 

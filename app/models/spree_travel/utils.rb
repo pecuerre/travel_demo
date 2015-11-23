@@ -113,9 +113,7 @@ module SpreeTravel
       house.name = resource['name']
       house.details_uri = resource['links']['self']
       house.rooms_uri = resource['links']['relationships']['rooms']['links']['related']
-      house.services = resource['services'].map do |service|
-        service
-      end rescue []
+      house.services = resource['services']
       house.checkin_time = resource['checkin']
       house.checkout_time = resource['checkout']
       house.owner = resource['owner']

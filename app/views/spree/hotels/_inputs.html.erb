@@ -87,7 +87,6 @@
         tjq.Mustache.addFromDom();
 
         tjq('.products-view-type li a').on('click', function () {
-            console.log(this.href.split("#").pop());
             localStorage.setItem('product-view-type', this.href.split("#").pop());
             tjq('#hotels-search-result').renderProducts('hotels');
         });

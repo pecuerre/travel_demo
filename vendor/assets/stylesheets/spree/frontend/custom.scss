@@ -686,16 +686,16 @@ p.description_tour {
 /******************** Footer ******************/
 #footer {
 
-  height: 700px;
+  height: 650px;
   width: 100%;
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer.png');
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer-grad-back.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
   background-color: $ligth-gray-color;
 
   > .footer-wrapper {
-    padding-top: 310px !important;
+    padding-top: 250px !important;
     padding-bottom: 0 !important;
     > .container {
 
@@ -742,6 +742,25 @@ p.description_tour {
       margin-right: 25px;
     }
   }
+}
+
+.logofooter {
+  width: 170px;
+}
+
+.rightborder {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #209F9D;
+  height: 240px;
+}
+
+.top_border {
+  border-top-style: solid;
+  margin-left: 3px;
+  margin-bottom: 20px;
+  border-top-width: 1px;
+  border-top-color: #209F9D;
 }
 
 /******************** Misc. ******************/

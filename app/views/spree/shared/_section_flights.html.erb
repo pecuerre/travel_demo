@@ -6,23 +6,25 @@
     <div class="image-carousel style2 block" data-animation="slide" data-item-width="270" data-item-margin="30">
 
       <div class="flex-viewport" style="overflow: hidden; position: relative;">
-        <ul class="slides image-box listing-style2 flight" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(0px, 0px, 0px);">
-          <li style="width: 270px; float: left; display: block;">
+        <ul class="slides image-box listing-style2 flight">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -32,47 +34,24 @@
               </div>
             </article>
           </li>
-          <li style="width: 270px; float: left; display: block;">
-            <article class="box">
-              <figure>
-                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f2.png', size: "270x160", draggable: false) %></span>
-              </figure>
-              <div class="details">
-                <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
-                    <span class="flightprice">$620</span>
-                  </div>
-                </div>
-                <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Habana</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-12">
-                    <a title="View all" href="flight-detailed.html" class="full-width button flightbutton">select</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li style="width: 270px; float: left; display: block;">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -82,22 +61,24 @@
               </div>
             </article>
           </li>
-          <li style="width: 270px; float: left; display: block;">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -107,22 +88,24 @@
               </div>
             </article>
           </li>
-          <li style="width: 270px; float: left; display: block;">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -132,47 +115,24 @@
               </div>
             </article>
           </li>
-          <li style="width: 270px; float: left; display: block;">
-            <article class="box">
-              <figure>
-                <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f2.png', size: "270x160", draggable: false) %></span>
-              </figure>
-              <div class="details">
-                <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
-                    <span class="flightprice">$620</span>
-                  </div>
-                </div>
-                <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Habana</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-12">
-                    <a title="View all" href="flight-detailed.html" class="full-width button flightbutton">select</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li style="width: 270px; float: left; display: block;">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -182,22 +142,24 @@
               </div>
             </article>
           </li>
-          <li style="width: 270px; float: left; display: block;">
+          <li class="flightbox">
             <article class="box">
               <figure>
                 <span><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_f1.png', size: "270x160", draggable: false) %></span>
               </figure>
               <div class="details">
                 <div class="row">
-                  <div class="col-sm-6"><h4 class="box-title flighttitle">La Habana</h4></div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-8"><h4 class="box-title flighttitle">La Habana</h4></div>
+                  <div class="col-sm-4">
                     <span class="flightprice">$620</span>
                   </div>
                 </div>
                 <div class="row border-top">
-                  <div class="col-sm-5 flightdest ">Varadero</div>
-                  <div ><%= image_tag('icon/flight_hz_gray_24x24.png', class: 'flightdesticon') %></div>
-                  <div class="col-sm-5 flightdest ">Paris</div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">From</div>
+                    <div class="row destiny">La Habana</div></div>
+                  <div><div class="center"><%= image_tag('icon/flight_hz_gray_24x24.png') %></div></div>
+                  <div class="col-sm-5 flightdest ">  <div class="row from">To</div>
+                    <div class="row destiny">Varadero</div></div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">

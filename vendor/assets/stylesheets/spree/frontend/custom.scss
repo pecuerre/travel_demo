@@ -837,16 +837,16 @@ div.container:nth-child(5) > div:nth-child(2) {
 }
 
 .image-section {
- // background-image: image_url('banner_home.jpg');
+  // background-image: image_url('banner_home.jpg');
   background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto;
-  height:400px;
+  height: 400px;
 }
 
 .image-section-food {
- // background-image: image_url('banner_food_drink.jpg');
+  // background-image: image_url('banner_food_drink.jpg');
   background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drink.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -862,7 +862,7 @@ div.container:nth-child(5) > div:nth-child(2) {
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto;
- // background-size: 100% 100%;
+  // background-size: 100% 100%;
   height: 400px;
 
 }
@@ -906,31 +906,29 @@ div.container:nth-child(5) > div:nth-child(2) {
 }
 
 .flightdest {
-  color: #18a8b0 !important;
-  font-size: 25px;
-  font-family: yanonekaffeesatz-regular;
   margin-top: 15px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+
 }
 
 .flighttitle {
-  color: gray !important;
-  font-size: 18px;
-  /* font-weight: bolder; */
+  color: #17a9af !important;
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 .flightprice {
-  color: $ligth-blue-color !important;
-  font-size: 18px;
-  font-weight: bold;
+  color: #17a9af !important;
+  font-size: 26px;
   float: right;
+  font-family: yanonekaffeesatz-bold;
 }
 
 .flightdesticon {
   float: left;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 30px;
+  /* margin-left: 5px; */
+  margin-right: 12px;
 }
 
 a.full-width.button.flightbutton {
@@ -942,6 +940,30 @@ a.full-width.button.flightbutton {
     background-color: $ligth-blue-color !important;
     color: white !important;
   }
+}
+
+.from {
+  color: #9e9e9e !important;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.row.destiny {
+  color: gray !important;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.flightbox {
+  width: 240px !important;
+}
+
+.center {
+  width: 28px;
+  float: left;
+  margin-right: 5px;
+  padding-top: 25px;
 }
 
 /***/
@@ -1227,10 +1249,20 @@ li#help {
 
 .select2-container .select2-choice {
   font-family: yanonekaffeesatz-regular;
-  font-size: 18px;  border-radius: 0px;
+  font-size: 18px;
+  border-radius: 0px;
   color: gray;
   display: inline-table !important;
   height: 34px;
   border: 0px;
 }
+
 // END AUTO-COMPLETE
+
+// BEGIN GALLERY
+.mfp-gallery button {
+  background-color: transparent !important;
+}
+
+// END GALLERY
+

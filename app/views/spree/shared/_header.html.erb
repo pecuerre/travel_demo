@@ -82,11 +82,12 @@
             <%= link_to t(:tours), tours_path, class: "#{'active' if params[:controller] == 'spree/tours'}" %>
           </li>
           <li class="menu-item-has-children ">
-            <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
-          </li>
-          <li class="menu-item-has-children ">
             <%= link_to t(:restaurants), restaurants_path, class: "#{'active' if params[:controller] == 'spree/restaurants'}" %>
           </li>
+          <li class="menu-item-has-children ">
+            <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
+          </li>
+
         </ul>
       </nav>
 

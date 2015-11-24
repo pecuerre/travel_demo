@@ -1,32 +1,36 @@
 <footer id="footer">
   <div class="footer-wrapper">
     <div class="container">
-      <div class="row"><%= image_tag('logo/logo_footer.png') %>
+      <div class="row">
+        <div class="col-md-3"><%= image_tag('logo/logo_footer.png', class: 'logofooter') %></div>
       </div>
       <div class="row">
-        <div class="col-md-2">
-          <h2>Destinations</h2>
-          <ul>
-            <li><a href="#">Pinar del Rio</a></li>
-            <li><a href="#">Valle de Vinales</a></li>
-            <li><a href="#">La Habana</a></li>
-            <li><a href="#">Varadero</a></li>
-            <li><a href="#">Cienfuegos</a></li>
-            <li><a href="#">Trinidad</a></li>
+        <div class="col-md-3 rightborder">
+          <div class="col-md-6">
+            <h2>Destinations</h2>
+            <ul>
+              <li><a href="#">Pinar del Rio</a></li>
+              <li><a href="#">Valle de Vinales</a></li>
+              <li><a href="#">La Habana</a></li>
+              <li><a href="#">Varadero</a></li>
+              <li><a href="#">Cienfuegos</a></li>
+              <li><a href="#">Trinidad</a></li>
 
-          </ul>
+            </ul>
+          </div>
+
+          <div class="col-md-6" style="padding-top: 30px;">
+            <h2></h2>
+            <ul>
+              <li><a href="#">Cayo Coco</a></li>
+              <li><a href="#">Cayo Guillermo</a></li>
+              <li><a href="#">Jardines del Rey</a></li>
+              <li><a href="#">Santiago de Cuba</a></li>
+              <li><a href="#">Baracoa</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-md-2" style="padding-top: 30px;">
-          <h2></h2>
-          <ul>
-            <li><a href="#">Cayo Coco</a></li>
-            <li><a href="#">Cayo Guillermo</a></li>
-            <li><a href="#">Jardines del Rey</a></li>
-            <li><a href="#">Santiago de Cuba</a></li>
-            <li><a href="#">Baracoa</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2">
+        <div class="col-md-2 rightborder">
           <h2><%= t(:about_us) %></h2>
           <ul>
             <li><%= link_to t(:who_we_are), aboutus_path(@aboutus, anchor: "who_we_are") %></li>
@@ -38,7 +42,7 @@
             <li><%= link_to t(:contac_us), contact_us_path %></li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 rightborder">
           <h2>Company</h2>
           <ul>
             <li><a href="#">Blog</a></li>
@@ -52,63 +56,81 @@
             <li><a href="#">Team</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="row">
-                <h2>More</h2>
-              </div>
-              <div class="row">
-                <ul class="listmore">
-                  <li><a href="#">Press</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Sign in</a></li>
-                  <li><a href="#">Log in</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-5">
           <div class="row">
             <div class="col-md-12">
-              <div class="row"><h2>Find us online</h2></div>
               <div class="row">
-                <div class="col-md-3">
-                  <a href="">
-                    <div class="row"> <%= image_tag('icon/footer icons/facebook48.png') %></div>
-                    <div class="row">
-                      <div class="iconname"><span class="footericon">Facebook</span></div>
-                    </div>
-                  </a>
+                <div class="col-md-12">
+                  <h2>More</h2>
                 </div>
-                <div class="col-md-3">
-                  <a href="">
-                    <div class="row"> <%= image_tag('icon/footer icons/twitter48.png') %></div>
-                    <div class="row">
-                      <div class="iconname"><span class="footericon">Twitter</span></div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-3"><a href="">
-                  <div class="row"> <%= image_tag('icon/footer icons/tripadvisor48.png') %></div>
-                  <div class="row">
-                    <div class="iconname"><span class="footericon">TripAdvisor</span></div>
-                  </div>
-                </a>
-                </div>
-                <div class="col-md-3"><a href="">
-                  <div class="row"> <%= image_tag('icon/footer icons/youtube48.png') %></div>
-                  <div class="row">
-                    <div class="iconname"><span class="footericon">YouTube</span></div>
-                  </div>
-                </a>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="listmore">
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Log in</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
+          <div class="row top_border"></div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12"><h2>Find us online</h2></div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-2 social_icon">
+                    <a href="">
+                      <div class="row"> <%= image_tag('icon/footer icons/facebook48.png') %></div>
+                      <div class="row">
+                        <div class="iconname"><span class="footericon">Facebook</span></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-2 social_icon">
+                    <a href="">
+                      <div class="row"> <%= image_tag('icon/footer icons/twitter48.png') %></div>
+                      <div class="row">
+                        <div class="iconname"><span class="footericon">Twitter</span></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-2 social_icon">
+                    <a href="">
+                      <div class="row"> <%= image_tag('icon/footer icons/instagram48.png') %></div>
+                      <div class="row">
+                        <div class="iconname"><span class="footericon">Instagram</span></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-2 social_icon">
+                    <a href="">
+                      <div class="row"> <%= image_tag('icon/footer icons/flickr.png') %></div>
+                      <div class="row">
+                        <div class="iconname"><span class="footericon" style="padding-left:10px;">Flickr</span></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-2 social_icon">
+                    <a href="">
+                      <div class="row"> <%= image_tag('icon/footer icons/youtube48.png') %></div>
+                      <div class="row">
+                        <div class="iconname"><span class="footericon">YouTube</span></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </ul>
         </div>
-        </ul>
       </div>
     </div>
-  </div>
   </div>
 </footer>

@@ -18,12 +18,12 @@ namespace :trip do
       Spree::Taxonomy.destroy_all
     end
 
-    desc 'Delete trip destinations'
+    desc 'Delete destinations'
     task :destinations => :environment do
       Spree::Taxons.where(:name => 'Destination city').first.children.destroy_all
     end
 
-    desc 'Delete trip airports'
+    desc 'Delete airports'
     task :airports => :environment do
       taxonomy = Spree::Taxonomy.where(:name => 'Departure airport').first
       Spree::Taxon.where(:taxonomy => taxonomy).destroy_all
@@ -46,9 +46,14 @@ namespace :trip do
       Spree::Rate.destroy_all
     end
 
-    desc 'Delete all fligths'
+    desc 'Delete all flights'
     task :flights => :environment do
       Spree::Product.where(:product_type => Spree::ProductType.find_by_name('flight')).destroy_all
+    end
+
+    desc 'Delete all home rentals'
+    task :home_rentals => :environment do
+      Spree::Product.where(:product_type => Spree::ProductType.find_by_name('home_rental')).destroy_all
     end
 
     desc 'Delete all data (clean de project)'
@@ -59,6 +64,7 @@ namespace :trip do
       Rake.application['trip:delete:taxonomies'].invoke
       Rake.application['trip:delete:hotels'].invoke
       Rake.application['trip:delete:flights'].invoke
+      Rake.application['trip:delete:home_rentals'].invoke
       Rake.application['trip:delete:rates'].invoke
     end
   end
@@ -109,6 +115,12 @@ namespace :trip do
         Rake.application['trip:delete:flights'].invoke
         require Rails.root + "db/data/products_flights"
       end
+
+      desc 'Product for home rentals'
+      task :home_rentals do
+        Rake.application['trip:delete:home_rentals'].invoke
+        require Rails.root + "db/data/products_home_rentals"
+      end
     end
 
     namespace :rates do
@@ -126,6 +138,7 @@ namespace :trip do
       Rake.application['trip:load:property_types:flights'].invoke
       Rake.application['trip:load:properties:flights'].invoke
       Rake.application['trip:load:products:flights'].invoke
+      Rake.application['trip:load:products:home_rentals'].invoke
     end
   end
 

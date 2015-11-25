@@ -1,34 +1,15 @@
 /*
  * Title:   Custom Style File
- * Author:  Travel_Demo
+ * Author:  My Trip to Cuba Developer Team
 */
-/*
-/***********************************************************************************************/
-/*
- *                                            Variables
-*/
-/***********************************************************************************************/
-
-$orange_color: #ffcc00;
-$dark-blue-color: #1b6975;
-$ligth-blue-color: #17a9af;
-$ligth-gray-color: #f5f5f5;
-$yellow-color: #ffcc00;
-$brown-color: #a25821;
-$green-color: #007b88;
-$green2-color: #147993;
-$dark_gray_color: #7d7d7d;
-
 @import 'variables';
 @import 'mixin';
 @import 'base';
 @import 'soap-icon';
 
-/***********************************************************************************************/
-/*
- *                                            Fonts
-*/
-/***********************************************************************************************/
+/**********************************************************************************************
+ FONTS
+***********************************************************************************************/
 
 @font-face {
   font-family: 'yanonekaffeesatz-regular';
@@ -82,89 +63,49 @@ $dark_gray_color: #7d7d7d;
   src: font-url('KaushanScript-Regular.otf') format('opentype')
 }
 
-/***********************************************************************************************/
-/*
- *                                            Styles
-*/
-/***********************************************************************************************/
-/* Generals */
+/**********************************************************************************************
+ STYLES
+**********************************************************************************************/
+/********************** BASICS ****************/
 
-.section {
-  padding-bottom: 0 !important;
-  padding-top: 30px !important;
-  > h2 {
-    font-family: yanonekaffeesatz-light;
-    color: $ligth-blue-color;
-    text-transform: uppercase;
-    font-size: 25px;
-  }
-}
-
-section#content {
-  background: $ligth-gray-color !important;
-  padding-top: 0px !important;
-}
-
-body {
-  color: $dark-blue-color !important;
-}
-
-.title {
-  color: $dark-blue-color;
-}
-
-#page-wrapper {
-
-  background-color: $ligth-gray-color;
+h1, h2 {
+  text-transform: uppercase
 }
 
 .slider {
   min-height: 646px;
 }
 
-/******************** Header ******************/
-
-/* Top Bar */
-
-.pull-right {
-  margin-top: 3px;
-  margin-bottom: 3px;
+.fullwidthbanner-container {
+  left: 0 !important;
 }
 
+.hover-effect:after {
+  background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
+
+}
+
+/******************** HEADER ******************/
+
 #header {
+  background: $yellow-color;
   .topnav {
-
-    background: #FFFFFF !important;
-    height: 41px !important;
-    //height: 35px; hange on styles.css line 5040
-
-    ul.quick-menu {
-      > li {
-        margin-left: 6px !important;
-        padding-right: 6px;
-
-        > a {
-          color: $green-color !important;
-          line-height: 35px !important;
-          font-size: 1.5em !important;
-          letter-spacing: 0.07em;
-          font-family: yanonekaffeesatz-bold;
-        }
-      }
-    }
     .separator {
       margin-top: 5px;
     }
-
+    .pull-right {
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
     #help {
       color: $dark-gray_color;
-      font-size: 17px;
+      font-size: 1.4em;
       margin-top: 8px;
       letter-spacing: 0.05em;
       font-family: MyriadProCond;
       > span {
         color: black;
-        font-size: 20px;
+        font-size: 1.2em;
         font-family: MyriadProCondBold;
         margin-left: 10px;
       }
@@ -173,300 +114,203 @@ body {
       width: 26px;
       height: 20px;
     }
-    .pull-right {
-
-    }
-    .shop_car {
-
-      span {
-        color: black;
-        font-size: 15px;
-        padding: 10px;
-      }
-    }
     select {
+      background: white;
+      color: black;
+      font-size: 1.2em;
+      letter-spacing: 0.07em;
       padding: 0 !important;
-    }
-  }
-}
 
-.logo {
-  //height: auto; Change on styles.css line 5105
-}
-
-#header {
-  background: $yellow-color;
-  .logo {
-    margin: 0 20px !important;
-    img {
-      opacity: 1 !important;
+      &#currency {
+        font-weight: bold;
+      }
     }
   }
   .main-header {
     z-index: 1;
     margin-top: 15px;
-    // height: 48px !important;
-  }
-  select {
-    background: white;
-    color: black;
-    font-size: 14px;
-    letter-spacing: 0.07em;
+    .menu {
+      float: right;
+      > li {
 
-    &#currency {
-      font-weight: bold;
+        > a {
+          &:hover, :active {
+            border-bottom: 10px solid $green-color;
+          }
+        }
+        > ul {
+          > li {
+            > a {
+              font-family: yanonekaffeesatz-regular;
+              &:hover, :active {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
-/*
-******************* Floating Menu **************/
+/***** Floating Menu */
 
 .chaser {
+  ul.menu {
+    margin-top: 30px !important;
+  }
   .logo {
     margin-top: 12px;
 
     img {
       height: 52px !important;
       margin-bottom: 12px;
-      opacity: 1 !important;
-    }
-  }
-  ul {
-    &.menu {
-      margin-top: 30px !important;
     }
   }
 }
 
-/*
-******************* Main Menu **************/
-
-#main-menu ul.menu {
-  float: right;
-}
-
-/*
-
- This groups of styles will be applied to main menu and floating menu
-
-*/
-
-// Change on style 5674
-.menu {
-  > li {
-    padding-right: 10px !important;
-    > a {
-      font-weight: bold !important;
-      font-size: 20px;
-      color: $green-color !important;
-
-      &:hover, :active {
-        border-bottom-style: solid;
-        border-bottom-width: 10px;
-        border-bottom-color: $green-color;
-      }
-    }
-    > ul {
-      > li {
-        > a {
-          border-top: 1px solid #FFFFFF !important;
-          color: #fff;
-          font-size: 17px !important;
-          font-family: yanonekaffeesatz-regular;
-
-          &:hover, :active {
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-}
-
-.fullwidthbanner-container {
-  left: 0 !important;
-}
-
-/*
-/******************** Search Box ****************
-/* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/******************** Search Box ****************/
+/* Variables */
 $border_width: 5px;
 $border_color: rgba(125, 125, 125, 0);
 $trans: 0.5;
 
-section#search-form-container {
-  border-style: solid;
-  border-width: $border_width;
-  border-color: $border_color;
-  border-top-style: none;
-}
-
 .search-box-wrapper.style2 {
   background: none;
   margin-top: 15%;
+
   .search-box {
+
     margin: 0 auto;
     background: $border_color;
     width: 90%;
-    // padding: 5px;
-  }
-  .search-box > ul.search-tabs {
-    display: table;
-    width: 100%;
-    border-left-style: solid;
-    border-left-width: $border_width;
-    border-left-color: $border_color;
-    border-top-style: solid;
-    border-top-color: $border_color;
-    border-top-width: $border_width;
-    li {
-      padding-right: 0;
-      display: table-cell;
-      float: none;
-      font-family: yanonekaffeesatz-light;
-      font-size: 20px;
-      border-right-style: solid;
-      border-right-width: $border_width;
-      border-right-color: $border_color;
-      border-bottom-style: solid;
-      border-bottom-width: $border_width;
-      border-bottom-color: $border_color;
-      &:last-child {
+    padding: 5px;
+
+    > ul.search-tabs {
+      display: table;
+      width: 100%;
+      li {
         padding-right: 0;
-      }
-      > a {
-        // margin-bottom: 5px;
-        height: 44px;
-        line-height: 44px;
-        background: rgba(0, 123, 136, $trans);
-        @include opacity(1);
-        color: white;
-        padding: 0;
-        text-align: center;
-        overflow: hidden;
-        text-transform: capitalize;
-        i {
-          vertical-align: middle;
-          margin-right: 10px;
-          line-height: 0;
+        display: table-cell;
+        float: none;
+        font-family: yanonekaffeesatz-light;
+        font-size: 1.8em;
+        border-right: $border_width solid $border_color;
+        &:last-child {
+          padding-right: 0;
+          border-right: 0;
         }
-        span {
-          vertical-align: middle;
-        }
-        &:hover {
-          color: white;
-          i:before {
-            @include animation(toTopFromBottom, 0.35s, forwards);
-          }
-        }
-        &:active {
-          i:before {
-            @include animation(toTopFromBottom, 0.35s, forwards);
-          }
-        }
-
-      }
-      &.advanced-search > a {
-        background: $yellow-theme-color;
-      }
-      &.active {
-        border-bottom-color: rgba(0, 0, 0, $trans);
         > a {
-          margin-bottom: 0;
-          background: rgba(0, 0, 0, $trans);
+          //margin-bottom: 5px;
+          line-height: 2.1em;
+          background: rgba(0, 123, 136, $trans);
+          @include opacity(1);
           color: white;
+          padding: 0;
+          text-align: center;
+          overflow: hidden;
+          text-transform: capitalize;
+          i {
+            vertical-align: middle;
+            margin-right: 10px;
+            line-height: 0;
+          }
+          span {
+            vertical-align: middle;
+          }
+          &:hover {
+            color: white;
+            i:before {
+              @include animation(toTopFromBottom, 0.35s, forwards);
+            }
+          }
+          &:active {
+            i:before {
+              @include animation(toTopFromBottom, 0.35s, forwards);
+            }
+          }
 
+        }
+        &.advanced-search > a {
+          background: $yellow-theme-color;
+        }
+        &.active {
+          border-bottom-color: rgba(0, 0, 0, $trans);
+          > a {
+            margin-bottom: 0;
+            background: rgba(0, 0, 0, $trans);
+            color: white;
+
+          }
+        }
+      }
+      .icon-flight:before {
+        content: image_url('icon/flight_white_24x24.png');
+      }
+
+      .icon-hotel:before {
+        content: image_url('icon/hotel_white_24x24.png');
+      }
+
+      .icon-home:before {
+        content: image_url('icon/home_white_24x24.png');
+      }
+
+      .icon-car:before {
+        content: image_url('icon/cars_white_24x24.png');
+      }
+
+      .icon-cruise:before {
+        content: image_url('icon/cruise_white_24x24.png');
+      }
+
+      .icon-tours:before {
+        content: image_url('icon/tours_white_24x24.png');
+      }
+
+      .icon-restaurants:before {
+        content: image_url('icon/restaurants_white_24x24.png');
+      }
+    }
+  }
+  #section.search-form-container {
+    border: $border_width solid $border_color;
+    border-top-style: none;
+  }
+  .search-tab-content {
+    background: rgba(0, 0, 0, $trans);
+
+    input.input-text, select, textarea, .selector span.custom-select {
+      background: #fff;
+      color: gray;
+      font-size: 18px;
+      font-family: yanonekaffeesatz-regular;
+    }
+    .selector {
+      span.custom-select {
+        display: inline-block;
+        line-height: 32px;
+        padding: 0 10px;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: white;
+        //  border: 1px inset rgba(23, 169, 175, 0.31);
+        &:before {
+          background: $yellow-color !important;
+          background: #d1d1d1;
         }
       }
     }
-  }
-}
 
-.search-tab-content {
-  background: rgba(0, 0, 0, $trans);
-  padding: 20px;
-  .tab-pane [class^="col-"], .tab-pane [class*=" col-"] {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  .tab-pane .row {
-    margin-left: -5px;
-    margin-right: -5px;
-  }
+    button {
 
-  input.input-text, select, textarea {
-    background: #fff;
-    // border: 1px inset rgba(23, 169, 175, 0.31);
-  }
-  span.custom-select {
-    &:before {
-      background: $yellow-color !important;
+      font-weight: bold;
+      font-size: 18px;
+      background: $ligth-blue-color;
+      text-transform: uppercase;
     }
-  }
-  .selector span.custom-select:before {
-    background: #d1d1d1;
-  }
-  .datepicker-wrap {
-    .ui-datepicker-trigger {
-      &:after {
-        background: $yellow-color !important;
-      }
-    }
-  }
-  .selector span.custom-select {
-    display: inline-block;
-    line-height: 32px;
-    padding: 0 10px;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: white;
-    //  border: 1px inset rgba(23, 169, 175, 0.31);
-  }
-
-  button {
-
-    font-weight: bold;
-    font-size: 18px;
-    background: $ligth-blue-color;
-    text-transform: uppercase;
-  }
-}
-
-.icon-flight:before {
-  content: image_url('icon/flight_white_24x24.png');
-}
-
-.icon-hotel:before {
-  content: image_url('icon/hotel_white_24x24.png');
-}
-
-.icon-home:before {
-  content: image_url('icon/home_white_24x24.png');
-}
-
-.icon-car:before {
-  content: image_url('icon/cars_white_24x24.png');
-}
-
-.icon-cruise:before {
-  content: image_url('icon/cruise_white_24x24.png');
-}
-
-.icon-tours:before {
-  content: image_url('icon/tours_white_24x24.png');
-}
-
-.icon-restaurants:before {
-  content: image_url('icon/restaurants_white_24x24.png');
-}
-
-.search-tab-content {
-
-  form {
     label {
       display: block;
       margin-bottom: 5px;
@@ -476,35 +320,12 @@ section#search-form-container {
       font-family: yanonekaffeesatz-regular;
       text-transform: none;
     }
-    input.input-text, select, textarea, .selector span.custom-select {
-      // background: #17a9af !important;
-      color: gray;
-      font-size: 18px;
-      font-family: yanonekaffeesatz-regular;
-    }
-    span.custom-select {
-
-      &:before {
-        background: $yellow-color !important;
-      }
-    }
-
-    .datepicker-wrap {
-      position: relative;
-
-      .ui-datepicker-trigger {
-      }
-      &:after {
-        background: $yellow-color !important;
-      }
-    }
   }
 }
 
-/*
-*******************  Bread Cumb **************/
+/*******************  Bread Cumb **************/
+
 .page-title-container {
-  height: 35px !important;
   background: #2d3e52;
   .page-title {
     .entry-title {
@@ -513,23 +334,9 @@ section#search-form-container {
     }
   }
   .breadcrumbs {
-    font-size: 18px;
-    margin-right: 0;
     li {
-      float: left;
-      line-height: 35px !important;
-      display: inline;
-      margin-left: 5px;
-      font-size: 0.8333em;
-      font-weight: bold;
       color: white;
-      text-transform: uppercase;
-      &:after {
-        content: "/";
-        color: white !important;
-      }
     }
-
   }
 }
 
@@ -565,83 +372,30 @@ section#search-form-container {
 
 /******************** Forms elements ******************/
 
-::-webkit-input-placeholder {
-  color: gray;
-}
+form {
 
-:-moz-placeholder {
-  /* Firefox 18-*/
-  color: gray;
-}
+  label {
+    color: $green-color;
+  }
+  ::-webkit-input-placeholder {
+    color: $dark_gray_color;
+  }
+  :-moz-placeholder {
+    /* Firefox 18-*/
+    color: $dark_gray_color;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+*/
+    color: $dark_gray_color;
+  }
+  :-ms-input-placeholder {
+    color: $dark_gray_color;
+  }
 
-::-moz-placeholder {
-  /* Firefox 19+*/
-  color: gray;
-}
-
-:-ms-input-placeholder {
-  color: gray;
-}
-
-button {
-  background: none repeat scroll 0% 0% $orange_color;
-}
-
-form label {
-  color: $dark-blue-color;
-
-}
-
-a.button.btn-small {
-  height: 28px;
-  padding: 0px 24px;
-  line-height: 28px;
-  background: $ligth-blue-color;
-  font-family: yanonekaffeesatz-regular;
-  color: white !important;
-  font-size: 1.6667em !important;
-  text-transform: uppercase;
-}
-
-a.button.yellow-button {
-  height: 28px;
-  padding: 0px 24px;
-  line-height: 28px;
-  background: $yellow-color;
-  font-family: yanonekaffeesatz-regular;
-  color: white !important;
-  font-size: 1.6667em !important;
-  text-transform: uppercase;
-}
-
-a.button {
-  display: inline-block;
-  background: $ligth-blue-color none repeat scroll 0% 0%;
-  font-family: yanonekaffeesatz-regular;
-  color: white !important;
-  font-size: 0.8333em;
-  line-height: 1.8333em;
-  white-space: nowrap;
-  text-align: center;
-}
-
-button.full-width, a.button.full-width {
-  font-size: 18px;
-}
-
-/******************* Sections **************/
-
-p.description {
-  height: 70px;
-  overflow: hidden;
-}
-
-p.description_tour {
-  height: 190px;
-  overflow: hidden;
 }
 
 /******************** Footer ******************/
+
 #footer {
 
   height: 700px;
@@ -700,70 +454,60 @@ p.description_tour {
       margin-right: 25px;
     }
   }
+  .logofooter {
+    width: 170px;
+  }
+
+  .rightborder {
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #209F9D;
+    height: 240px;
+  }
+
+  .top_border {
+    border-top-style: solid;
+    margin-left: 3px;
+    margin-bottom: 20px;
+    border-top-width: 1px;
+    border-top-color: #209F9D;
+  }
+
+  .col-md-2.social_icon {
+    margin-right: 12px;
+  }
 }
 
-.logofooter {
-  width: 170px;
-}
-
-.rightborder {
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: #209F9D;
-  height: 240px;
-}
-
-.top_border {
-  border-top-style: solid;
-  margin-left: 3px;
-  margin-bottom: 20px;
-  border-top-width: 1px;
-  border-top-color: #209F9D;
-}
-
-.col-md-2.social_icon {
-  margin-right: 12px;
-}
-
-/******************** Misc. ******************/
-
-.hover-effect:after {
-  background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
-
-}
+/******************** Seccions ******************/
+/** Generales **/
 
 .box-title {
   margin-bottom: 0px;
   color: $ligth-blue-color !important;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.7em;
   small {
-    font-size: 14px !important;
+    font-size: 0.8em !important;
     color: $dark_gray_color !important;
     margin-bottom: 10px;
 
   }
 }
 
-.image-box.style3 .details .description {
+.description {
+  height: 70px;
+  overflow: hidden;
   font-size: 15px;
   color: $dark_gray_color;
 }
 
-/************  Buttons ************************/
-
-a.button {
-  -webkit-border-radius: 0px !important;
-  font-size: 20px !important;
-  line-height: normal !important;
-  padding: 5px !important;
-
-  &:hover {
-    background-color: #fdb714 !important;
-  }
+.description_tour {
+  height: 190px;
+  overflow: hidden;
 }
 
-/******************* Testing  Not organized yet****************/
+/*******************  ICONS ****************/
+
 img.mytrp_icon {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -781,71 +525,134 @@ img.mytrp_icon {
   margin-left: 180px;
 }
 
-.price {
-  color: $orange_color !important;
-  font-size: 23px !important;
-  font-family: yanonekaffeesatz-bold;
-  small {
+/******************* BANNERS ****************/
 
-    color: $dark_gray_color !important;
+/** Hotel Banner */
+
+.image-section {
+  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 400px;
+
+  .searchoteltitle {
+    text-shadow: 1px 1px 3px #777777;
+    font-size: 55px;
+    color: #f10014;
+    padding-top: 15px;
+    font-family: yanonekaffeesatz-regular;
+    margin-top: 70px;
+    span {
+      font-family: yanonekaffeesatz-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .searchotelform {
+
+    float: right;
+    margin-top: 250px;
+
+    .row {
+      margin-bottom: 10px;
+      ::-webkit-input-placeholder {
+        color: #2f8043;
+      }
+      input.input-text.input-large {
+        font-size: 20px;
+        font-family: yanonekaffeesatz-regular;
+        width: 283px !important;
+      }
+      button.btn-large, a.button.btn-large {
+        font-size: 18px;
+      }
+    }
+    form {
+      float: right
+    }
   }
 }
 
-// Popular Hotels h2
-div.section:nth-child(4) > h2:nth-child(1) {
-  color: $orange_color
-}
-
-// Cheap Flights title
-div.container:nth-child(5) > h3:nth-child(1) {
-  color: $ligth-blue-color
-}
-
-// Cheap Flights title row
-div.container:nth-child(5) > div:nth-child(2) {
-  background-color: $ligth-gray-color;
-  margin-bottom: 30px;
-
-  > div > article {
-    margin-top: 30px;
-    padding: 15px;
-  }
-}
-
-@media (min-width: 481px) {
-  .image-section {
-    // background-image: image_url('banner_home.jpg');
-    background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    height: 400px;
-  }
-}
+/** Restaurants Banner */
 
 .image-section-food {
-  // background-image: image_url('banner_food_drink.jpg');
   background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drink.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto;
   height: 400px;
 
+  .title_food {
+    padding-left: 50px;
+    margin-top: 90px;
+    p {
+      font-family: bebas;
+      font-size: 65px;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      line-height: 1.05;
+
+      &.subtitle {
+        font-family: yanonekaffeesatz-light;
+        font-size: 45px;
+        text-transform: uppercase;
+      }
+    }
+
+    button {
+      color: white;
+      background-color: $ligth-blue-color;
+      font-size: 20px;
+
+      &:hover {
+        background-color: $orange_color;
+      }
+    }
+
+  }
+
 }
 
-.image-section-cruises {
+/** Cruises Banner */
 
-  //background-image: image_url('banner_cruises.jpg');
+.image-section-cruises {
   background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_cruises.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto;
-  // background-size: 100% 100%;
   height: 400px;
 
+  .title_cruises {
+    padding-left: 50px;
+    margin-top: 100px;
+    p {
+      font-family: KaushanScript-Regular;
+      font-size: 90px;
+      color: #2576bb;
+      text-shadow: 1px 1px 3px black;
+      line-height: 1.05;
+
+      &.subtitle {
+        font-family: yanonekaffeesatz-regular;
+        font-size: 50px;
+        color: #ffb100;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .cruisebutton {
+    background-color: #fe802c;
+    font-size: 25px;
+    color: white;
+    padding: 20px;
+    line-height: 5px;
+  }
 }
 
-// Cheap Flights box
+/******************* Cheap Flight Section ****************/
 
 .listing-style2.flight figure {
   background: #f5f5f5;
@@ -853,7 +660,6 @@ div.container:nth-child(5) > div:nth-child(2) {
   height: 140px;
 
 }
-
 .image-box .box {
   margin-top: 15px;
 }
@@ -867,26 +673,16 @@ div.container:nth-child(5) > div:nth-child(2) {
   }
 }
 
-.CheapFlightTitle {
-  font-size: 25px;
-  font-family: yanonekaffeesatz-light;
-  color: $ligth-blue-color;
-  text-transform: uppercase;
-}
-
 .row.border-top {
-  border-top-style: solid;
   margin-left: 0;
   margin-right: 0;
-  border-top-width: 1px;
-  border-top-color: rgba(128, 128, 128, 0.19);
+  border-top: 1px solid rgba(128, 128, 128, 0.19);
   margin-top: 7px;
 }
 
 .flightdest {
   margin-top: 15px;
   text-transform: uppercase;
-
 }
 
 .flighttitle {
@@ -909,7 +705,7 @@ div.container:nth-child(5) > div:nth-child(2) {
   margin-right: 12px;
 }
 
-a.full-width.button.flightbutton {
+.flightbutton {
   background-color: $yellow-color;
   color: gray !important;
   text-transform: capitalize;
@@ -942,125 +738,6 @@ a.full-width.button.flightbutton {
   float: left;
   margin-right: 5px;
   padding-top: 25px;
-}
-
-/***/
-
-li#help {
-  color: $brown-color;
-  font-size: 15px;
-  margin-top: 8px;
-  float: right;
-  letter-spacing: 0.05em;
-  font-family: yanonekaffeesatz-regular;
-  > span {
-    font-family: yanonekaffeesatz-bold;
-  }
-}
-
-/****  DESTINATION PAGES ****************************************
-
-*/
-
-.inside_image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.destiny {
-  position: relative;
-  overflow: hidden;
-
-  .button {
-    background-color: $ligth-blue-color;
-  }
-}
-
-.image-box .box {
-  div {
-    color: white;
-  }
-}
-
-.transparentbox {
-  height: 50%;
-  position: absolute;
-  width: 100%;
-}
-
-.textbox {
-  height: 25%;
-  background-color: rgba(24, 158, 165, 0.6);
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  z-index: 2;
-  .text-center {
-
-  }
-}
-
-.image-title {
-  color: white;
-  font-size: 30px;
-  font-family: yanonekaffeesatz-regular;
-  margin-bottom: 0px;
-}
-
-.image-reviews {
-  color: white;
-  font-size: 20px;
-  font-family: yanonekaffeesatz-regular;
-  margin-bottom: 0px;
-}
-
-.iconbox {
-  height: 12.5%;
-  background-color: rgba(224, 164, 0, 0.6) !important;
-  position: absolute;
-  width: 100%;
-  top: 75%;
-  z-index: 2;
-}
-
-.selectbox {
-  height: 12.5%;
-  background-color: rgba(224, 164, 0, 0.6) !important;
-  position: absolute;
-  width: 100%;
-  top: 87.5%;
-  z-index: 2;
-
-}
-
-.five-stars-container .five-stars, .five-stars-container.editable-rating .ui-slider-range {
-
-  background: none !important;
-
-}
-
-.small_icon {
-  width: 32px !important;
-  margin: 3px;
-}
-
-.col1 {
-  float: left;
-  width: 50%;
-  padding-left: 15px;
-  padding-top: 5px;
-  font-size: 18px;
-  font-family: yanonekaffeesatz-regular;
-}
-
-.col2 {
-  text-align: right;
-  padding-right: 10px;
-  padding-top: 5px;
 }
 
 /****  FOOTER RELATED PAGES ***************************************/
@@ -1096,99 +773,11 @@ li#help {
 
 /****  SearchHotel Banner ***************************************/
 
-.searchoteltitle {
-  text-shadow: 1px 1px 3px #777777;
-  font-size: 55px;
-  color: #f10014;
-  padding-top: 15px;
-  font-family: yanonekaffeesatz-regular;
-  margin-top: 70px;
-  span {
-    font-family: yanonekaffeesatz-bold;
-    text-transform: uppercase;
-  }
-}
 
-.searchotelform {
 
-  float: right;
-  margin-top: 250px;
 
-  .row {
-    margin-bottom: 10px;
-    ::-webkit-input-placeholder {
-      color: #2f8043;
-    }
-    input.input-text.input-large {
-      font-size: 20px;
-      font-family: yanonekaffeesatz-regular;
-      width: 283px !important;
-    }
-    button.btn-large, a.button.btn-large {
-      font-size: 18px;
-    }
-  }
-  form {
-    float: right
-  }
-}
 
-.title_cruises {
-  padding-left: 50px;
-  margin-top: 100px;
-  p {
-    font-family: KaushanScript-Regular;
-    font-size: 90px;
-    color: #2576bb;
-    text-shadow: 1px 1px 3px black;
-    line-height: 1.05;
 
-    &.subtitle {
-      font-family: yanonekaffeesatz-regular;
-      font-size: 50px;
-      color: #ffb100;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
-      text-transform: uppercase;
-    }
-  }
-}
-
-.cruisebutton {
-  background-color: #fe802c;
-  font-size: 25px;
-  color: white;
-  padding: 20px;
-  line-height: 5px;
-}
-
-.title_food {
-  padding-left: 50px;
-  margin-top: 90px;
-  p {
-    font-family: bebas;
-    font-size: 65px;
-    color: white;
-    text-shadow: 1px 1px 3px black;
-    line-height: 1.05;
-
-    &.subtitle {
-      font-family: yanonekaffeesatz-light;
-      font-size: 45px;
-      text-transform: uppercase;
-    }
-  }
-
-  button {
-    color: white;
-    background-color: $ligth-blue-color;
-    font-size: 20px;
-
-    &:hover {
-      background-color: $orange_color;
-    }
-  }
-
-}
 
 .long-description {
   background-color: white;

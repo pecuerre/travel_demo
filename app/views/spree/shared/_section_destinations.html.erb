@@ -1,50 +1,49 @@
+<% @destinos16={'Habana' => 'dest_habana_m.jpg',
+                'Varadero' => 'dest_varadero_m.jpg',
+                'Santiago de Cuba' => 'dest_santiago_m.jpg',
+                'Valle de Viñales' => 'dest_vinales_m.jpg',
+                'Baracoa' => 'dest_baracoa_m.jpg',
+                'Cayo Coco' => 'dest_ccoco_m.jpg'};
+%>
 <div class="section container">
-   <h2><%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %><%= t(:popular_destinations) %> </h2>
+  <h1><%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %><%= t(:popular_destinations) %> </h1>
 
-   <div class="row image-box style3">
-     <div class="col-sms-6 col-sm-6 col-md-3">
-       <article class="box">
-         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
-           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_habana_s.jpg', size: "270x160", alt: "Varadero") %></a>
-         </figure>
-         <div class="details">
-           <span class="price"><small>FROM</small>$490</span>
-           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinohabana) %><small><%= t(:destinohabana) %></small></a></h4>
-         </div>
-       </article>
-     </div>
-     <div class="col-sms-6 col-sm-6 col-md-3">
-       <article class="box">
-         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
-           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_varadero_s.jpg', size: "270x160", alt: "Varadero") %></a>
-         </figure>
-         <div class="details">
-           <span class="price"><small>FROM</small>$490</span>
-           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:varadero) %><small><%= t(:varadero) %></small></a></h4>
-         </div>
-       </article>
-     </div>
-     <div class="col-sms-6 col-sm-6 col-md-3">
-       <article class="box">
-         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
-           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_trinidad_s.jpg', size: "270x160", alt: "Varadero") %></a>
-         </figure>
-         <div class="details">
-           <span class="price"><small>FROM</small>$490</span>
-           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinotrinidad) %><small><%= t(:destinotrinidad) %></small></a></h4>
-         </div>
-       </article>
-     </div>
-     <div class="col-sms-6 col-sm-6 col-md-3">
-       <article class="box">
-         <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
-           <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/dest_pinar_s.jpg', size: "270x160", alt: "Varadero") %></a>
-         </figure>
-         <div class="details">
-           <span class="price"><small>FROM</small>$490</span>
-           <h4 class="box-title"><a href="hotel-detailed.html"><%= t(:destinopinardelrio) %><small><%= t(:destinopinardelrio) %></small></a></h4>
-         </div>
-       </article>
-     </div>
-   </div>
+  <div class="row image-box style3">
+    <% @destinos16.each do |name, image| %>
+        <div class="col-sms-6 col-sm-6 col-md-2">
+          <article class="box">
+            <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+              <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title="" class="hover-effect"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
+            </figure>
+            <div class="details">
+              <h4 class="box-title"><a href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= name %>
+                <small><%= rand(100...300).to_s %> reviews</small>
+              </a></h4>
+              <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                <span style="width: 80%;" class="five-stars"></span>
+              </div>
+              <div class="row separator"></div>
+              <div class="row">
+                <a href="">
+                  <div class="col-md-12 descrip_line"><%= image_tag('icon/hotel_blue_24x24.png', class: 'smallicon') %>
+                    <span class="destination_resource"><%= rand(10...50).to_s %> hotels</span></div>
+                </a>
+              </div>
+              <div class="row">
+                <a href="">
+                  <div class="col-md-12 descrip_line"><%= image_tag('icon/home_blue_24x24.png', class: 'smallicon') %>
+                    <span class="destination_resource"><%= rand(10...70).to_s %> houses</span></div>
+                </a>
+              </div>
+              <div class="row">
+                <a href="">
+                  <div class="col-md-12 descrip_line"><%= image_tag('icon/restaurants_blue_24x24.png', class: 'smallicon') %>
+                    <span class="destination_resource"><%= rand(10...100).to_s %> restaurants</span></div>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+    <% end %>
+  </div>
 </div>

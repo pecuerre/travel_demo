@@ -13,10 +13,10 @@
         <div class="col-sms-6 col-sm-6 col-md-2">
           <article class="box">
             <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
-              <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
+              <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title="" class="hover-effect"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
             </figure>
             <div class="details">
-              <h4 class="box-title"><a href="hotel-detailed.html"><%= name %>
+              <h4 class="box-title"><a href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= name %>
                 <small><%= rand(100...300).to_s %> reviews</small>
               </a></h4>
               <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">

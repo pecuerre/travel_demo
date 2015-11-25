@@ -21,14 +21,14 @@ module PriceTravel
               :images => [item['HotelInformation']['HotelImageUri'].gsub(/_th.jpg$/, '_gp.jpg')],
               :amenities => item['HotelInformation']['Services'].map { |s| {:id => s['Id'], :name => s['Service']} },
               :rating => item['HotelInformation']['Category'].to_i,
-              :properties => {
-                  :rating => item['HotelInformation']['Category'].to_i,
-                  :country => item['HotelInformation']['Country'],
-                  :state => item['HotelInformation']['State'],
-                  :city => item['HotelInformation']['City'],
-                  :address => item['HotelInformation']['Address'],
-                  :rooms => item['HotelInformation']['TotalRooms'],
-              }
+              :properties => [
+                  {:name => 'rating', :pretty_name => 'rating', :value => item['HotelInformation']['Category'].to_i},
+                  {:name => 'country', :pretty_name => 'country', :value => item['HotelInformation']['Country']},
+                  {:name => 'state', :pretty_name => 'State', :value => item['HotelInformation']['State']},
+                  {:name => 'city', :pretty_name => 'City', :value => item['HotelInformation']['City']},
+                  {:name => 'address', :pretty_name => 'Address', :value => item['HotelInformation']['Address']},
+                  {:name => 'total_rooms', :pretty_name => 'Total of rooms', :value => item['HotelInformation']['TotalRooms']},
+              ]
           }
         end
       end

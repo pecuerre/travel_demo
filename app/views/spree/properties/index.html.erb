@@ -1,28 +1,26 @@
 <% content_for :pagetitle do %>
-  <%= render partial: 'spree/properties/pagetitle' %>
+    <%= render partial: 'spree/properties/pagetitle' %>
 <% end %>
 
 <% content_for :travel_search_box do %>
-  <%= render :partial => 'spree/properties/search_box', :locals => {id: 'properties', active: true} %> 
+    <%= render :partial => 'spree/properties/search_box', :locals => {id: 'properties', active: true} %>
 <% end %>
 
 <% content_for :sidebar do %>
-  <%= render partial: 'spree/properties/filter' %>
+    <%= render partial: 'spree/properties/filter' %>
 <% end %>
 
 <%= render partial: 'spree/properties/sort_by' %>
 
-<% if @products.any? %>
-  <% if @view == 'grid' %>
-    <%= render partial: 'spree/properties/grid' %>
-  <% elsif @view == 'block' %>
-    <%= render partial: 'spree/properties/block' %>
-  <% else %>
-   <%= render partial: 'spree/properties/list' %>
-  <% end %>
-<% end %>
+<div id="houses-search-result">
+  <%= render partial: 'spree/properties/list' %>
+  <%= render partial: 'spree/properties/grid' %>
+  <%= render partial: 'spree/properties/block' %>
+</div>
 
-<% if @products.respond_to?(:num_pages) %>
-  <%= paginate @products, theme: 'twitter-bootstrap-3' %>
-<% end %>
+<script type="text/javascript">
+    tjq(document).ready(function () {
+        tjq('#houses-search-result').renderProducts('houses');
+    })
+</script>
 

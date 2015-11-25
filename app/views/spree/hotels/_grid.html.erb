@@ -1,39 +1,36 @@
-<div class="hotel-list">
+<script id="hotels-grid" type="text/html">
   <div class="row image-box hotel listing-style1">
-    <% @products.each do |product| %>
-        <div class="col-sm-6 col-md-4">
-          <article class="box">
-            <figure>
-              <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-                <% product_image(product, :itemprop => "image") %>
-                <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_h'+rand(1...6).to_s+'.jpg') %>
-              </a>
-            </figure>
-            <div class="details">
-              <span class="price"><small>AVG/NIGHT</small><%= Spree::Money.new(product.price).to_html %></span>
-              <h4 class="box-title">
-                <%= link_to(product_path(product), :itemprop => "name", :title => product.name) do %>
-                    <%= product.name %>
-                <% end %>
-                <small>
-                  <i class="soap-icon-departure yellow-color"></i>
-                  <%= link_to ' ' + product.destination, product.destination_taxon %>
-                </small>
-              </h4>
-              <div class="feedback">
-                <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="4 stars">
-                  <span style="width: 80%;" class="five-stars"></span></div>
-                <span class="review">270 reviews</span>
-              </div>
-              <p class="description"><%= truncate(product.description, :length => 300) %></p>
+    {{#items}}
+    <div class="col-sm-6 col-md-4">
+      <article class="box">
+        <figure>
+          <div title="{{title}}" class="hover-effect">
+            <img id="product-gallery-{{id}}" src="{{image}}"/>
+          </div>
+        </figure>
+        <div class="details">
+          <span class="price"><small>AVG/NIGHT</small>{{price}}</span>
+          <h4 class="box-title">
+            <a href="#" title="{{title}}">{{name}}</a>
+            <small>
+              <i class="soap-icon-departure yellow-color"></i>
+              <a href="#" title="{{destination}}">{{destination}}</a>
+            </small>
+          </h4>
+          <div class="feedback">
+            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="4 stars">
+              <span style="width: {{_stars_}}%;" class="five-stars"></span></div>
+            <span class="review">270 reviews</span>
+          </div>
+          <p class="description">{{description}}</p>
 
-              <div class="action">
-                <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
-                <a class="button btn-small yellow popup-map" href="#" data-box="48.856614, 2.352222">VIEW ON MAP</a>
-              </div>
-            </div>
-          </article>
+          <div class="action">
+            <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
+            <a class="button btn-small yellow popup-map" href="#" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+          </div>
         </div>
-    <% end %>
+      </article>
+    </div>
+    {{/items}}
   </div>
-</div>
+</script>

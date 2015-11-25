@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :travel_search_box do %>
-  <%= render :partial => 'spree/hotels/search_box', :locals => {id: 'hotels', active: true} %> 
+  <%= render :partial => 'spree/hotels/search_box', :locals => {id: 'hotels', active: true} %>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -12,17 +12,15 @@
 
 <%= render partial: 'spree/hotels/sort_by' %>
 
-<% if @products.any? %>
-  <% if @view == 'grid' %>
-    <%= render partial: 'spree/hotels/grid' %>
-  <% elsif @view == 'block' %>
-    <%= render partial: 'spree/hotels/block' %>
-  <% else %>
-   <%= render partial: 'spree/hotels/list' %>
-  <% end %>
-<% end %>
+<div id="hotels-search-result">
+  <%= render partial: 'spree/hotels/list' %>
+  <%= render partial: 'spree/hotels/grid' %>
+  <%= render partial: 'spree/hotels/block' %>
+</div>
 
-<% if @products.respond_to?(:num_pages) %>
-  <%= paginate @products, theme: 'twitter-bootstrap-3' %>
-<% end %>
+<script type="text/javascript">
+    tjq(document).ready(function () {
+        tjq('#hotels-search-result').renderProducts('hotels');
+    })
+</script>
 

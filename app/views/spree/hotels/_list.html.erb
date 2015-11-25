@@ -1,51 +1,45 @@
-<div class="hotel-list listing-style3 hotel">
-  <% @products.each do |product| %>
+<script id="hotels-list" type="text/html">
+  <div class="hotel-list listing-style3 hotel">
+    {{#items}}
     <article class="box">
-        <figure class="col-sm-5 col-md-4">
-          <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-            <% product_image(product, :itemprop => "image") %>
-            <%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/ex_h'+rand(1...6).to_s+'.jpg') %>
-          </a>
-        </figure>
-        <div class="details col-sm-7 col-md-8">
-            <div>
-                <div>
-                    <h4 class="box-title">
-                      <%= link_to(product_path(product), :itemprop => "name", :title => product.name) do  %> 
-                        <%= product.name %>
-                      <% end %>
-                      <small>
-                        <i class="soap-icon-departure yellow-color"></i> 
-                        <%= link_to ' ' + product.destination, product.destination_taxon %>
-                      </small>
-                    </h4>
-                    <div class="amenities">
-                        <i class="soap-icon-wifi circle"></i>
-                        <i class="soap-icon-fitnessfacility circle"></i>
-                        <i class="soap-icon-fork circle"></i>
-                        <i class="soap-icon-television circle"></i>
-                    </div>
-                </div>
-                <div>
-                    <div class="five-stars-container">
-                        <span class="five-stars" style="width: 80%;"></span>
-                    </div>
-                    <span class="review">270 reviews</span>
-                </div>
-            </div>
-            <div>
-                <p><%= truncate(product.description, :length => 300) %></p>
-                <div>
-                    <% price =  product.price %>
-                    <span class="price"><small>AVG/NIGHT</small><%= Spree::Money.new(price).to_html %></span>
-                    <a class="button btn-small full-width text-center" title="" href="hotel-detailed.html">SELECT</a>
-                </div>
-            </div>
+      <figure class="col-sm-5 col-md-4">
+        <div title="{{title}}" class="hover-effect">
+          <img id="product-gallery-{{id}}" src="{{image}}"/>
         </div>
-        <!-- <div class="col-sm-offset-5 col-md-offset-4 col-sm-7 col-md-8"> -->
-          <% render partial: 'spree/hotels/depth_level_info' %>
-        <!-- </div> -->
+      </figure>
+      <div class="details col-sm-7 col-md-8">
+        <div>
+          <div>
+            <h4 class="box-title">
+              <a href="#" title="{{title}}">{{name}}</a>
+              <small>
+                <i class="soap-icon-departure yellow-color"></i>
+                <a href="#" title="{{destination}}">{{destination}}</a>
+              </small>
+            </h4>
+            <div class="amenities">
+              <i class="soap-icon-wifi circle"></i>
+              <i class="soap-icon-fitnessfacility circle"></i>
+              <i class="soap-icon-fork circle"></i>
+              <i class="soap-icon-television circle"></i>
+            </div>
+          </div>
+          <div>
+            <div class="five-stars-container">
+              <span class="five-stars" style="width: {{_stars_}}%"></span>
+            </div>
+            <span class="review">270 reviews</span>
+          </div>
+        </div>
+        <div>
+          <p>{{description}}</p>
+          <div>
+            <span class="price"><small>AVG/NIGHT</small>{{price}}</span>
+            <a class="button btn-small full-width text-center" title="" href="hotel-detailed.html">SELECT</a>
+          </div>
+        </div>
+      </div>
     </article>
-
-  <% end %>
-</div>
+    {{/items}}
+  </div>
+</script>

@@ -5,7 +5,7 @@
       <div class="container">
         <h1 class="logo navbar-brand">
           <%= link_to home_index_path, title: 'Mytriptocuba - Home' do %>
-              <%= image_tag 'logo/logo.png' %>
+              <%= image_tag 'https://s3-us-west-2.amazonaws.com/webtriptocuba/'+t(:logo_header) %>
           <% end %>
         </h1>
         <ul class="quick-menu pull-right">
@@ -22,12 +22,17 @@
                 <% end %>
               </li>
           <% end %>
+          <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% if spree_current_user %>
               <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
               <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% else %>
               <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
               <li id="link-to-login"><%= link_to Spree.t(:signup), spree.signup_path %></li>
+              <li><%=image_tag('bar.png', class: 'separator')%></li>
           <% end %>
 
           <li id="currency-select" class="ribbon currency" data-hook>
@@ -39,7 +44,7 @@
                 </div>
             <% end %>
           </li>
-
+          <li><%=image_tag('bar.png', class: 'separator')%></li>
           <li id="help">Need help? Call us<span>+1-844-836-2822</span></li>
 
         </ul>
@@ -77,11 +82,12 @@
             <%= link_to t(:tours), tours_path, class: "#{'active' if params[:controller] == 'spree/tours'}" %>
           </li>
           <li class="menu-item-has-children ">
-            <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
-          </li>
-          <li class="menu-item-has-children ">
             <%= link_to t(:restaurants), restaurants_path, class: "#{'active' if params[:controller] == 'spree/restaurants'}" %>
           </li>
+          <li class="menu-item-has-children ">
+            <%= link_to t(:destinations), destinations_path, class: "#{'active' if params[:controller] == 'spree/destinations'}" %>
+          </li>
+
         </ul>
       </nav>
 

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/data', as: 'rails_admin'
   mount Spree::Core::Engine, :at => '/'
-  
-  
+
+
   Spree::Core::Engine.routes.draw do
-    get 'question_groups',  to: "question_groups#index"
+    get 'question_groups', to: "question_groups#index"
 
     post 'products/get_ajax_best_day'
     post 'products/get_ajax_spree_travel'
@@ -12,6 +12,27 @@ Rails.application.routes.draw do
     post 'products/get_ajax_aeromexico'
     get 'nomads/new'
     post 'nomads/create'
+
+    namespace :api do
+      match '*path' => 'cors#preflight_check', via: [:options]
+      post 'users/token' => 'users#token'
+
+      controller :destinations do
+        get 'destinations' => :index
+        get 'destinations/:id' => :show
+      end
+
+      controller :hotels do
+        post 'hotels' => :index
+        get 'hotels/:id' => :show
+      end
+
+      controller :houses do
+        post 'houses' => :index
+        get 'houses/:id' => :show
+      end
+
+    end
 
     resources :question_groups, only: :index do
       resources :answer_groups, only: [:new, :create]

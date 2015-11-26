@@ -63,25 +63,17 @@
   src: font-url('KaushanScript-Regular.otf') format('opentype')
 }
 
-/**********************************************************************************************
- STYLES
-**********************************************************************************************/
+
 /********************** BASICS ****************/
 
 h1, h2 {
   text-transform: uppercase
 }
-
-.slider {
-  min-height: 646px;
-}
-
 .fullwidthbanner-container {
   left: 0 !important;
 }
-
 .hover-effect:after {
-  background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
+ background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
 
 }
 
@@ -283,7 +275,7 @@ $trans: 0.5;
     input.input-text, select, textarea, .selector span.custom-select {
       background: #fff;
       color: gray;
-      font-size: 18px;
+      font-size: 1.5em;
       font-family: yanonekaffeesatz-regular;
     }
     .selector {
@@ -303,19 +295,11 @@ $trans: 0.5;
         }
       }
     }
-
-    button {
-
-      font-weight: bold;
-      font-size: 18px;
-      background: $ligth-blue-color;
-      text-transform: uppercase;
-    }
     label {
       display: block;
       margin-bottom: 5px;
       font-weight: normal;
-      font-size: 20px;
+      font-size: 1.8em;
       color: $yellow-color;
       font-family: yanonekaffeesatz-regular;
       text-transform: none;
@@ -343,7 +327,7 @@ $trans: 0.5;
 .title_page {
   h1 {
     color: $ligth-blue-color;
-    font-size: 35px;
+    font-size: 2em;
     text-transform: uppercase;
     padding-left: 10px;
   }
@@ -352,7 +336,7 @@ $trans: 0.5;
 .sub_title_page {
   h1 {
     color: $dark_gray_color;
-    font-size: 25px;
+    font-size: 2.1em;
     font-family: yanonekaffeesatz-bold;
     padding-left: 10px;
   }
@@ -400,11 +384,11 @@ form {
 
   height: 700px;
   width: 100%;
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/footer-grad-back.png');
+  background: url("https://s3-us-west-2.amazonaws.com/webtriptocuba/footer-grad-back.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  background-color: $ligth-gray-color;
+  background-color: #f5f5f5;
 
   > .footer-wrapper {
     padding-top: 300px !important;
@@ -418,11 +402,11 @@ form {
         color: white;
         text-transform: uppercase;
         font-family: yanonekaffeesatz-regular;
-        font-size: 25px;
+        font-size: 1.5rem;
       }
       > .row > div {
         a {
-          font-size: 18px;
+          font-size: 1.2rem;
           color: $yellow-color;
           font-family: yanonekaffeesatz-regular;
 
@@ -435,14 +419,13 @@ form {
   }
 
   .leftfootercolum {
-    border-right-style: solid;
-    border-right-width: 3px;
     border-color: $yellow-color;
+    border-right: 3px solid;
   }
 
   .footericon {
     color: white;
-    font-size: 20px;
+    font-size: 1.1em;
   }
   .iconname {
     margin-top: 10px;
@@ -459,18 +442,14 @@ form {
   }
 
   .rightborder {
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: #209F9D;
+    border-right: 1px solid #209F9D;
     height: 240px;
   }
 
   .top_border {
-    border-top-style: solid;
     margin-left: 3px;
     margin-bottom: 20px;
-    border-top-width: 1px;
-    border-top-color: #209F9D;
+    border-top: 1px solid #209F9D;
   }
 
   .col-md-2.social_icon {
@@ -481,23 +460,10 @@ form {
 /******************** Seccions ******************/
 /** Generales **/
 
-.box-title {
-  margin-bottom: 0px;
-  color: $ligth-blue-color !important;
-  font-weight: bold;
-  font-size: 1.7em;
-  small {
-    font-size: 0.8em !important;
-    color: $dark_gray_color !important;
-    margin-bottom: 10px;
-
-  }
-}
-
 .description {
   height: 70px;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 1rem;
   color: $dark_gray_color;
 }
 
@@ -509,13 +475,6 @@ img.mytrp_icon {
   margin-bottom: 10px;
   margin-right: 10px;
 }
-
-.fligthicon {
-  width: 49px !important;
-  height: 22px !important;
-  margin: 5px !important;
-}
-
 #icon-box {
   width: 49px;
   heigt: 22px;
@@ -556,11 +515,7 @@ img.mytrp_icon {
       input.input-text.input-large {
         font-size: 1.5em;
         font-family: yanonekaffeesatz-regular;
-        width: 283px !important;
       }
-    }
-    form {
-      float: right
     }
   }
 }
@@ -675,54 +630,24 @@ img.mytrp_icon {
   margin-bottom: 10px;
 }
 
-/****  FOOTER RELATED PAGES ***************************************/
 
-
-.panel-content {
-  p {
-    color: $dark-blue-color;
-    font-size: 18px;
-    font-family: yanonekaffeesatz-regular;
-    text-align: justify;
-  }
-}
-
-.panel-title {
-  color: #17a9af !important;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-/****  Destination Slider ***************************************/
+/****  Home and Destination Slider ***************************************/
 
 .label_slider{
   width: 40%;
   float: right;
 }
-
-/****  SearchHotel Banner ***************************************/
-
-.long-description {
-  background-color: white;
-  padding: 15px;
-  color: #5D5B5B;
-  font-size: 15px;
-  h2 {
-    color: $dark_gray_color;
-    font-size: 25px;
-    font-family: yanonekaffeesatz-bold;
-
-  }
+.slider {
+  min-height: 646px;
 }
 
 .smallicon {
-  width: 24px !important;
-  margin-right: 5px;
+  width: 24px !important;  margin-right: 5px;
 }
 
 .destination_resource {
   color: #808184;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-family: yanonekaffeesatz-light;
   vertical-align: bottom;
 }
@@ -734,10 +659,10 @@ img.mytrp_icon {
 .row.separator {
   margin: auto;
   margin-bottom: 15px;
-  /* margin-top: 5px; */
 }
 
 // BEGIN AUTO-COMPLETE: Ajustando el componente auto-complete a los estilos definidos para los campos de selección
+
 .select2-container {
   display: inline;
 }
@@ -761,7 +686,7 @@ img.mytrp_icon {
 
 .select2-container .select2-choice {
   font-family: yanonekaffeesatz-regular;
-  font-size: 18px;
+  font-size: 1.1rem;
   border-radius: 0px;
   color: gray;
   display: inline-table !important;

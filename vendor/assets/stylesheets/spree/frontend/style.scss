@@ -280,9 +280,13 @@ article {
 .box-title {
   margin-bottom: 0;
   line-height: 1em;
+  margin-bottom: 0px;
+  color: $ligth-blue-color;
+  font-weight: bold;
+  font-size: 1.7em;
   small {
-    font-size: 10px;
-    color: $primary-color;
+    font-size: 0.8em;
+    color: $dark_gray_color;
     text-transform: uppercase;
     display: block;
     margin-top: 4px; /*letter-spacing: normal;*/
@@ -1949,8 +1953,9 @@ ol {
     }
     .panel-title {
       padding: 0;
-      color: $dark-blue-theme-color;
-      font-size: 1.1667em;
+      color:#17a9af;
+      font-weight: bold;
+      font-size: 1.4rem;
       position: relative;
       a {
         white-space: normal;
@@ -9397,8 +9402,8 @@ ul.search-tabs {
     background: none;
   }
   #footer .footer-wrapper {
-    padding-top: 40px;
-    padding-bottom: 50px;
+    padding-top: 300px;
+    padding-bottom: 0;
     .copyright {
       margin: 0;
     }

@@ -47,16 +47,6 @@ ActiveRecord::Schema.define(version: 20151121013928) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
-  create_table "destinations", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price_travel_id"
-    t.integer  "best_day_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "destinations", ["name"], name: "index_destinations_on_name"
-
   create_table "foreign_service_ids", force: :cascade do |t|
     t.integer  "taxon_id"
     t.string   "service_name"
@@ -139,7 +129,6 @@ ActiveRecord::Schema.define(version: 20151121013928) do
     t.integer  "pax_id"
   end
 
-  add_index "spree_answer_groups", ["pax_id"], name: "index_spree_answer_groups_on_pax_id"
   add_index "spree_answer_groups", ["question_group_id"], name: "index_spree_answer_groups_on_question_group_id"
   add_index "spree_answer_groups", ["user_id"], name: "index_spree_answer_groups_on_user_id"
 

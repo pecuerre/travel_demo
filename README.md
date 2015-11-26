@@ -12,6 +12,7 @@ In order to install the application please follow the next steps:
   $ rake spree_travel_core:load
   $ rake spree_travel_hotel:load
   $ rake spree_travel_flight:load
+  $ rake spree_travel_home_rental:load
   $ rake trip:load:all
   $ rake trip:sample:all
 ~~~

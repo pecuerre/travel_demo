@@ -36,6 +36,14 @@ GIT
       spree_core (~> 3.0.0)
 
 GIT
+  remote: git://github.com/openjaf/spree_travel_home_rental.git
+  revision: b9f6adf940f89bc90bb531bb05a3b1a4f642e164
+  branch: master
+  specs:
+    spree_travel_home_rental (3.0.0)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/openjaf/spree_travel_hotel.git
   revision: 7f88152c47fe12db95a7b51999a9232f5b8a1873
   branch: combinations_less
@@ -620,6 +628,7 @@ DEPENDENCIES
   spree_static_content!
   spree_travel_core!
   spree_travel_flight!
+  spree_travel_home_rental!
   spree_travel_hotel!
   spree_travel_package!
   spree_travel_sample!

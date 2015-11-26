@@ -6,21 +6,19 @@
     <%= render :partial => 'spree/properties/search_box', :locals => {id: 'properties', active: true} %>
 <% end %>
 
-<% content_for :sidebar do %>
-    <%= render partial: 'spree/properties/filter' %>
-<% end %>
-
-<%= render partial: 'spree/properties/sort_by' %>
-
-<div id="houses-search-result">
-  <%= render partial: 'spree/properties/list' %>
-  <%= render partial: 'spree/properties/grid' %>
-  <%= render partial: 'spree/properties/block' %>
-</div>
+<%= render partial: 'spree/properties/search_result' %>
+<%= render partial: 'spree/properties/list' %>
+<%= render partial: 'spree/properties/grid' %>
+<%= render partial: 'spree/properties/block' %>
+<%= render partial: 'spree/properties/details' %>
 
 <script type="text/javascript">
     tjq(document).ready(function () {
-        tjq('#houses-search-result').renderProducts('houses');
+        if (tjq('#search-result-items').length == 0) {
+            tjq('section#content div#main div.row').html('');
+            tjq('section#content div#main div.row').mustache('search-result-section');
+        }
+        tjq('#search-result-items').renderProducts('houses');
     })
 </script>
 

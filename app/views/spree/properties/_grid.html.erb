@@ -1,4 +1,4 @@
-<script id="houses-grid" type="text/html">
+<script id="products-view-as-grid" type="text/html">
   <div class="row image-box hotel listing-style1">
     {{#items}}
     <div class="col-sm-6 col-md-4">
@@ -11,7 +11,7 @@
         <div class="details">
           <span class="price"><small>AVG/NIGHT</small>{{price}}</span>
           <h4 class="box-title">
-            <a href="#" title="{{title}}">{{name}}</a>
+            <a href="#details" class="product-details" title="View all details" data-item="{{id}}">{{name}}</a>
             <small>
               <i class="soap-icon-departure yellow-color"></i>
               <span>{{destination.name}}</span>
@@ -22,15 +22,14 @@
               <span style="width: {{_stars_}}%;" class="five-stars"></span></div>
             <span class="review">270 reviews</span>
           </div>
-          {{#properties}}
           <ul>
-            <li><label>House type:</label>&nbsp;<span>{{house_type}}</span></li>
-            <li><label>Owner:</label>&nbsp;<span>{{owner}}</span></li>
-            <li><label>Rooms:</label>&nbsp;<span>{{rooms}}</span></li>
+            {{#properties}}
+            <li><label>{{pretty_name}}:</label>&nbsp;<span>{{value}}</span></li>
+            {{/properties}}
           </ul>
-          {{/properties}}
           <div class="action">
-            <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
+            <a class="product-details button btn-small" href="#details"
+               title="View all details" data-item="{{id}}">SELECT</a>
             <a class="button btn-small yellow popup-map" href="#" data-box="48.856614, 2.352222">VIEW ON MAP</a>
           </div>
         </div>

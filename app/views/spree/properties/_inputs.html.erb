@@ -1,11 +1,11 @@
-<div class="tab-pane fade <%= 'active in' if active %>" id="houses-tab">
-  <form id="houses-search-form" class="search-form" data-hook="houses">
+<div class="tab-pane fade <%= 'active in' if active %>" id="search-houses-tab">
+  <form class="search-form">
     <div class="row">
       <input type="hidden" name="locale" value="<%= params[:locale] %>">
 
       <div class="form-group col-sm-6 col-md-3">
         <label for="search-going-to"><%= t(:your_destination) %></label>
-        <select id="houses-search-going-to" name="search-going-to" required="true" class="select2" placeholder="<%= t(:enter_destination) %>"></select>
+        <select name="search-going-to" required="true" class="select2" placeholder="<%= t(:enter_destination) %>"></select>
       </div>
 
       <div class="form-group col-sm-5 col-md-3">
@@ -81,24 +81,19 @@
 <script type="text/javascript">
     tjq(document).ready(function () {
         // Set options into destination auto-complete component with /api/destinations?service=holiplus service response.
-        tjq('#houses-search-going-to').loadSelectOptions('/api/destinations', {service: 'holiplus'});
+        tjq('#search-houses-tab [name=search-going-to]').loadSelectOptions('/api/destinations', {service: 'holiplus'});
 
         // Add all templates found in the DOM (it will search for <script> blocks which are of type 'text/html'.
         tjq.Mustache.addFromDom();
 
-        tjq('.products-view-type li a').on('click', function () {
-            localStorage.setItem('product-view-type', this.href.split("#").pop());
-            tjq('#houses-search-result').renderProducts('houses');
-        });
-
         // Listen to submit event search form.
-        tjq('#houses-search-form').on('submit', function (e) {
+        tjq('#search-houses-tab form').on('submit', function (e) {
 
             // Search and render houses products.
             tjq(this).searchProducts('houses', '/api/houses', function (sucefful, error) {
                 if (sucefful) {
                     // Render response items.
-                    tjq('#houses-search-result').renderProducts('houses');
+                    tjq('#search-result-items').renderProducts('houses');
                 }
             });
 

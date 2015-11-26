@@ -1,4 +1,4 @@
-<script id="houses-block" type="text/html">
+<script id="products-view-as-block" type="text/html">
   <div class="row image-box hotel listing-style2">
     {{#items}}
         <div class="col-sms-6 col-sm-6 col-md-4">
@@ -9,9 +9,11 @@
               </div>
             </figure>
             <div class="details">
-              <a title="View all" href="hotel-detailed.html" class="pull-right button uppercase">select</a>
+              <a href="#details" class="product-details pull-right button uppercase"
+                 title="View all details" data-item="{{id}}">select</a>
               <h4 class="box-title">
-                <a href="#" title="{{title}}">{{name}}</a>
+                <a class="product-details" href="#details"
+                   title="View all details" data-item="{{id}}">{{name}}</a>
               </h4>
               <label class="price-wrapper">
                 <span class="price-per-unit">{{price}}</span>avg/night

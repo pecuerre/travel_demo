@@ -12,17 +12,7 @@
                  'Pinar del Río' => 'dest_pinar_m.jpg',
                  'Trinidad' => 'dest_trinidad_m.jpg', };
 %>
-<div id="slideshow" xmlns="http://www.w3.org/1999/html">
-  <div class="fullwidthbanner-container">
-    <div class="revolution-slider" style="height: 0; overflow: hidden;">
-      <ul>
-        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/slider_home_varadero.jpg" alt="">
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render partial: 'spree/shared/destination_slide_show' %>
 <section id="content">
   <div class="section container">
     <div class="row image-box style3">

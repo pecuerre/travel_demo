@@ -1,0 +1,44 @@
+<section class="slideshow-bg slider">
+  <div id="slideshow">
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <div class="slidebg" style="background-image: url(<%= image_url('sliders-destinos-santiago-ima.jpg')%>);">
+            <div class="container">
+            <%= image_tag('etiquetas-destinos-santiago.png')%>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="slidebg" style="background-image: url(<%= image_url('sliders-destinos-santiago-ima.jpg')%>);">
+            <div class="container">
+              <%= image_tag('etiquetas-destinos-santiago.png')%>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="slidebg" style="background-image: url(<%= image_url('sliders-destinos-santiago-ima.jpg')%>);">
+            <div class="container">
+              <%= image_tag('etiquetas-destinos-santiago.png')%>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div id="main">
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+    tjq(".flexslider").flexslider({
+        animation: "fade",
+        controlNav: true,
+        animationLoop: true,
+        directionNav: true,
+        slideshow: true,
+        slideshowSpeed: 5000
+    });
+</script>
+

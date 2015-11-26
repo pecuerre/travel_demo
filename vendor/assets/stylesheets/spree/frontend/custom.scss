@@ -501,10 +501,7 @@ form {
   color: $dark_gray_color;
 }
 
-.description_tour {
-  height: 190px;
-  overflow: hidden;
-}
+
 
 /*******************  ICONS ****************/
 
@@ -530,15 +527,13 @@ img.mytrp_icon {
 /** Hotel Banner */
 
 .image-section {
-  background-image: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg');
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_home.jpg') no-repeat bottom center;
   background-size: auto;
   height: 400px;
 
   .searchoteltitle {
     text-shadow: 1px 1px 3px #777777;
-    font-size: 55px;
+    font-size: 5em;
     color: #f10014;
     padding-top: 15px;
     font-family: yanonekaffeesatz-regular;
@@ -551,7 +546,6 @@ img.mytrp_icon {
 
   .searchotelform {
 
-    float: right;
     margin-top: 250px;
 
     .row {
@@ -560,12 +554,9 @@ img.mytrp_icon {
         color: #2f8043;
       }
       input.input-text.input-large {
-        font-size: 20px;
+        font-size: 1.5em;
         font-family: yanonekaffeesatz-regular;
         width: 283px !important;
-      }
-      button.btn-large, a.button.btn-large {
-        font-size: 18px;
       }
     }
     form {
@@ -577,49 +568,37 @@ img.mytrp_icon {
 /** Restaurants Banner */
 
 .image-section-food {
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drink.jpg');
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_food_drink.jpg') no-repeat bottom center;
   background-size: auto;
   height: 400px;
+  .food-content {
 
-  .title_food {
-    padding-left: 50px;
-    margin-top: 90px;
-    p {
+    margin: 70px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+
+    .title_food {
+
       font-family: bebas;
-      font-size: 65px;
+      font-size: 6em;
+      line-height: 1.05em;
       color: white;
-      text-shadow: 1px 1px 3px black;
-      line-height: 1.05;
-
-      &.subtitle {
-        font-family: yanonekaffeesatz-light;
-        font-size: 45px;
-        text-transform: uppercase;
-      }
     }
-
-    button {
+    .subtitle {
+      font-family: yanonekaffeesatz-light;
+      font-size: 4em;
       color: white;
-      background-color: $ligth-blue-color;
-      font-size: 20px;
-
-      &:hover {
-        background-color: $orange_color;
-      }
     }
-
   }
-
+  .reaturants_banner_button {
+    margin-top: 20px;
+  }
 }
 
 /** Cruises Banner */
 
 .image-section-cruises {
-  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_cruises.jpg');
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  background: url('https://s3-us-west-2.amazonaws.com/webtriptocuba/banner_cruises.jpg') no-repeat bottom center;
   background-size: auto;
   height: 400px;
 
@@ -628,133 +607,76 @@ img.mytrp_icon {
     margin-top: 100px;
     p {
       font-family: KaushanScript-Regular;
-      font-size: 90px;
+      font-size: 8em;
       color: #2576bb;
       text-shadow: 1px 1px 3px black;
       line-height: 1.05;
 
       &.subtitle {
         font-family: yanonekaffeesatz-regular;
-        font-size: 50px;
+        font-size: 4.5em;
         color: #ffb100;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
-        text-transform: uppercase;
       }
     }
   }
-
   .cruisebutton {
     background-color: #fe802c;
-    font-size: 25px;
-    color: white;
-    padding: 20px;
-    line-height: 5px;
   }
 }
 
 /******************* Cheap Flight Section ****************/
 
-.listing-style2.flight figure {
-  background: #f5f5f5;
-  display: table;
-  height: 140px;
+.flight {
 
-}
-.image-box .box {
-  margin-top: 15px;
-}
+  .flightbox {
+    width: 240px !important;
 
-.image-carousel.style2 {
-  .slides > li {
-    margin-right: 15px !important;
-  }
-  .flex-direction-nav li a {
-    background-color: $ligth-blue-color !important;
-  }
-}
+    figure {
+      background: $ligth-gray-color;
+      display: table;
+      height: 140px;
+    }
+    .image-box .box {
+      margin-top: 15px;
+    }
 
-.row.border-top {
-  margin-left: 0;
-  margin-right: 0;
-  border-top: 1px solid rgba(128, 128, 128, 0.19);
-  margin-top: 7px;
-}
+    .flight_details {
+      margin: 8px 0;
+      border-top: 1px solid $ligth-gray-color;
+      color: $dark_gray_color;
+      .from {
+        margin-bottom: 5px;
+        margin-top: 15px;
+        font-size: 1.5em;
+      }
 
-.flightdest {
-  margin-top: 15px;
-  text-transform: uppercase;
-}
+      .flightdesticon {
+        width: 28px;
+        float: left;
+        margin-right: 5px;
+        padding-top: 25px;
+      }
 
-.flighttitle {
-  color: #17a9af !important;
-  font-size: 25px;
-  font-weight: bolder;
-}
+      .destiny {
+        font-size: 1.8em;
+      }
+    }
 
-.flightprice {
-  color: #17a9af !important;
-  font-size: 26px;
-  float: right;
-  font-family: yanonekaffeesatz-bold;
-}
-
-.flightdesticon {
-  float: left;
-  margin-top: 30px;
-  /* margin-left: 5px; */
-  margin-right: 12px;
-}
-
-.flightbutton {
-  background-color: $yellow-color;
-  color: gray !important;
-  text-transform: capitalize;
-
-  &:hover {
-    background-color: $ligth-blue-color !important;
-    color: white !important;
   }
 }
 
-.from {
-  color: #9e9e9e !important;
-  text-transform: capitalize;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
+/******************* Tour Section ****************/
 
-.row.destiny {
-  color: gray !important;
-  font-size: 22px;
-  text-transform: capitalize;
-}
-
-.flightbox {
-  width: 240px !important;
-}
-
-.center {
-  width: 28px;
-  float: left;
-  margin-right: 5px;
-  padding-top: 25px;
+.description_tour {
+  height: 200px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /****  FOOTER RELATED PAGES ***************************************/
 
-.details {
-
-  p {
-    color: #555;
-    font-size: 15px;
-    font-family: yanonekaffeesatz-light;
-    text-align: left;
-  }
-  h3 {
-    font-family: yanonekaffeesatz-bold;
-    color: $orange_color;
-  }
-}
 
 .panel-content {
   p {
@@ -772,12 +694,6 @@ img.mytrp_icon {
 }
 
 /****  SearchHotel Banner ***************************************/
-
-
-
-
-
-
 
 .long-description {
   background-color: white;
@@ -809,9 +725,6 @@ img.mytrp_icon {
 }
 
 .row.separator {
-  border-top-style: solid;
-  border-top-color: rgba(123, 123, 123, 0.29);
-  border-top-width: 1px;
   margin: auto;
   margin-bottom: 15px;
   /* margin-top: 5px; */

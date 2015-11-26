@@ -60,12 +60,20 @@ module TripFunctions
     Spree::ProductType.where(:name => 'flight').first
   end
 
+  def get_home_rental_product_type
+    Spree::ProductType.where(:name => 'home_rental').first
+  end
+
   def get_hotel_calculator
     Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
   end
 
   def get_flight_calculator
     Spree::TravelCalculator.find_by_name('Spree::CalculatorFlight')
+  end
+
+  def get_home_rental_calculator
+    Spree::TravelCalculator.find_by_name('Spree::CalculatorHomeRental')
   end
 
   def get_shipping_category
@@ -120,4 +128,43 @@ module TripFunctions
     hash
   end
 
+  def get_houses_parts(row)
+    hash = {
+      :destination    => row[0], # rate.destination
+      :name           => row[1], # product.name
+      :description    => row[2], # product.description
+      :room_count     => row[3].to_i,
+      :bathrooms      => row[4].to_i,
+      :type           => row[5],
+      :comfort_level  => row[6], # rate.home_room
+      :plan           => row[7], # rate.plan
+      :service_level  => row[8],
+      :location_type  => row[9],
+      :house_view     => row[10],
+      :total_price    => row[11].to_i,
+      :simple_price   => row[12].to_i,
+      :double_price   => row[13].to_i,
+      :triple_price   => row[14].to_i,
+      #empty column   => row[15],
+      :max_adults     => row[16].to_i,
+      #empty column   => row[17],
+      :provider       => row[18],
+      :movility       => row[19],
+      :address        => row[20],
+      :municipality   => row[21],
+      :email          => row[22],
+      :fax            => row[23],
+      :phone          => row[24],
+      :web            => row[25],
+      :latitude       => row[26],
+      :longitude      => row[27],
+      :segment        => row[28],
+      #empty column   => row[29],
+      :home_amenities => row[30..44],
+      :room_amenities => row[45..55],
+      #empty columns  => row[56..57],
+      :start_date     => "2015/01/01".to_date,
+      :end_date       => "2020/12/31".to_date,
+    }
+  end
 end

@@ -93,15 +93,8 @@
 
         // Listen to submit event search form.
         tjq('#hotels-search-form').on('submit', function (e) {
-
-            // Search and render hotels products.
-            tjq(this).searchProducts('hotels', '/api/hotels', function (sucefful, error) {
-                if (sucefful) {
-                    // Render response items.
-                    tjq('#hotels-search-result').renderProducts('hotels');
-                }
-            });
-
+            // Search and render products.
+            tjq(this).searchProducts('hotels', '/api/hotels');
             // Cancel default submit action.
             e.preventDefault();
         });

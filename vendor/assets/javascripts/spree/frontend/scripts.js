@@ -43,18 +43,13 @@ tjq(document).ready(function () {
      *
      * @param type {String} Type of product (hotels, cars, flights, ...)
      * @param service {String} Remote service url. Ej: '/api/hotels'
+     * @param done {Function?} Callback function as: function (successful, error) { ... }
      */
     tjq.fn.searchProducts = function (type, service, done) {
         var data = tjq(this).serializeObject(),
             date = tjq.datepicker.formatDate('yy-mm-dd', new Date()),
             params = tjq(this).serialize(),
             cache = JSON.parse(localStorage.getItem(type) || "false");
-
-        // If not is in search-result-section go to it.
-        if (tjq('#search-result-items').length == 0) {
-            tjq('section#content div#main div.row').html('');
-            tjq('section#content div#main div.row').mustache('search-result-section');
-        }
 
         if (!cache || cache.date != date || cache.service != service || cache.params != params) {
             tjq.ajax({
@@ -70,7 +65,8 @@ tjq(document).ready(function () {
                         params: params,
                         date: date
                     }));
-                    done(true);
+                    tjq(this).renderProductsSearchResultItems(type);
+                    done && done(true);
                 },
 
                 error: function (response) {
@@ -93,12 +89,13 @@ tjq(document).ready(function () {
                         opacity: 0.9
                     });
 
-                    done(false, errors);
+                    done && done(false, errors);
                 }
             });
         } else {
             tjq(this).unserializeForm(cache.params);
-            done(true);
+            tjq(this).renderProductsSearchResultItems(type);
+            done && done(true);
         }
     }
 
@@ -164,6 +161,22 @@ tjq(document).ready(function () {
                 })
             });
         });
+    }
+
+    /**
+     * Method to go to search-result-section and render products saved in local store.
+     *
+     * @param type {String} Type of product (hotels, cars, flights, ...)
+     */
+    tjq.fn.renderProductsSearchResultItems = function (type) {
+        // If not is in search-result-section go to it.
+        if (tjq('#search-result-items').length == 0) {
+            tjq('section#content div#main div.row').html(
+                tjq.Mustache.render('search-result-section')
+            );
+        }
+        // Render products saved in local store.
+        tjq('#search-result-items').renderProducts(type);
     }
 
     /**

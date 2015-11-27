@@ -88,15 +88,8 @@
 
         // Listen to submit event search form.
         tjq('#search-houses-tab form').on('submit', function (e) {
-
-            // Search and render houses products.
-            tjq(this).searchProducts('houses', '/api/houses', function (sucefful, error) {
-                if (sucefful) {
-                    // Render response items.
-                    tjq('#search-result-items').renderProducts('houses');
-                }
-            });
-
+            // Search and render products.
+            tjq(this).searchProducts('houses', '/api/houses');
             // Cancel default submit action.
             e.preventDefault();
         });

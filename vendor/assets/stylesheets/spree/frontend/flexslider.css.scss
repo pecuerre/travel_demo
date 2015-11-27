@@ -135,7 +135,7 @@ html[xmlns] .slides {
   display: block;
   width: 100px;
   font-size: 1.8em;
-  height: 40px;
+  height: 200px;
   margin: -20px 0 0;
   position: absolute;
   top: 50%;
@@ -183,11 +183,11 @@ html[xmlns] .slides {
   font-family: "flexslider-icon";
   font-size: 40px;
   display: inline-block;
-  content: '';
+  content: image_url('left_arrow.png');
 }
 
 .flex-direction-nav a.flex-next:before {
-  content: '';
+  content: image_url('right_arrow.png');
 }
 
 /* Pause/Play */
@@ -223,9 +223,10 @@ html[xmlns] .slides {
 /* Control Nav */
 .flex-control-nav {
   width: 100%;
-  position: absolute;
-  bottom: -40px;
+  position: relative;
+  bottom: 50px;
   text-align: center;
+
 }
 
 .flex-control-nav li {

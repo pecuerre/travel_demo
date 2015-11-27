@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: git://github.com/openjaf/spree_travel_home_rental.git
-  revision: 0e7c642cfe14b40f26169ecc4bacc81f3a805507
+  revision: 9dfed12e090c4cc1af4ad5b7c783594f10dc14e3
   branch: master
   specs:
     spree_travel_home_rental (3.0.0)

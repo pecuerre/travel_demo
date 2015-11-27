@@ -1,6 +1,7 @@
 require 'faraday'
 require 'expedia/http_service/response'
 require 'expedia/errors'
+# include Expedia
 
 module Expedia
   module HTTPService
@@ -67,7 +68,7 @@ module Expedia
         request = Net::HTTP::Get.new uri.request_uri
         request.content_type = 'text/json'
         response = http.request(request)
-        response = Expedia::HTTPService::Response.new(response.code, response.body, response)
+        response = HTTPService::Response.new(response.code, response.body, response)
 
         # Log URL and params information
         Expedia::Utils.debug "\nExpedia [#{verb.upcase}] - #{server(options) + path} params: #{args.inspect} : #{response.status}\n"

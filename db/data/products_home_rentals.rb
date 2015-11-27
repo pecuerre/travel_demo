@@ -11,7 +11,7 @@ home_rental_calculator = get_home_rental_calculator
 
 index = 0
 hash = {}
-CSV.foreach(Rails.root + "db/external/houses.csv") do |row|
+CSV.foreach(Rails.root + "db/external/houses.csv", :col_sep => '|') do |row|
   index += 1
   next if index == 1
   houses_data = get_houses_parts(row)
@@ -19,7 +19,7 @@ CSV.foreach(Rails.root + "db/external/houses.csv") do |row|
 
   product_attrs = {
       :name => houses_data[:name],
-      :price => houses_data[:price],
+      :price => houses_data[:total_price],
       :description => houses_data[:description],
       :sku => get_fake_sku('HOME'),
       :shipping_category_id => shipping_category.id,
@@ -36,7 +36,7 @@ CSV.foreach(Rails.root + "db/external/houses.csv") do |row|
   rate.set_persisted_option_value(:start_date, houses_data[:date])
   rate.set_persisted_option_value(:end_date, houses_data[:date])
   rate.set_persisted_option_value(:home_room, houses_data[:comfort_level])
-  rate.set_persisted_option_value(:home_plan, houses_data[:plan])
+  #rate.set_persisted_option_value(:home_plan, houses_data[:plan])
   rate.set_persisted_option_value(:simple, houses_data[:simple])
   rate.set_persisted_option_value(:double, houses_data[:double])
   rate.set_persisted_option_value(:triple, houses_data[:triple])

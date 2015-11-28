@@ -1,17 +1,17 @@
-<script id="houses-list" type="text/html">
-  <div class="hotel-list listing-style3 hotel">
+<script id="products-view-as-list" type="text/html">
+  <div class="products-list listing-style3 hotel">
     {{#items}}
     <article class="box">
       <figure class="col-sm-5 col-md-4">
-        <div title="{{title}}" class="hover-effect">
-          <img id="product-gallery-{{id}}" src="{{image}}"/>
+        <div id="product-gallery-{{id}}" title="{{title}}" class="hover-effect">
+          <img src="{{image}}"/>
         </div>
       </figure>
       <div class="details col-sm-7 col-md-8">
         <div>
           <div>
             <h4 class="box-title">
-              <a href="#" title="{{title}}">{{name}}</a>
+              <a href="#details" class="product-details" title="View all details" data-item="{{id}}">{{name}}</a>
               <small>
                 <i class="soap-icon-departure yellow-color"></i>
                 <span>{{destination.name}}</span>
@@ -32,16 +32,15 @@
           </div>
         </div>
         <div>
-          {{#properties}}
           <ul>
-            <li><label>House type:</label>&nbsp;<span>{{house_type}}</span></li>
-            <li><label>Owner:</label>&nbsp;<span>{{owner}}</span></li>
-            <li><label>Rooms:</label>&nbsp;<span>{{rooms}}</span></li>
+            {{#properties}}
+            <li><label>{{pretty_name}}:</label>&nbsp;<span>{{value}}</span></li>
+            {{/properties}}
           </ul>
-          {{/properties}}
           <div>
             <span class="price"><small>AVG/NIGHT</small>{{price}}</span>
-            <a class="button btn-small full-width text-center" title="" href="hotel-detailed.html">SELECT</a>
+            <a href="#details" class="product-details button btn-small full-width text-center"
+               title="View all details" data-item="{{id}}">SELECT</a>
           </div>
         </div>
       </div>

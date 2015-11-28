@@ -145,6 +145,7 @@
 #page-wrapper {
   position: relative;
   overflow: visible;
+  background-color: $ligth-gray-color;
 }
 
 .gray-area {
@@ -165,9 +166,9 @@
 
 section#content {
   min-height: 400px;
-  padding-top: 40px;
+  padding-top: 0;
   text-align: left;
-  background: #f5f5f5;
+  background: $ligth-gray-color;
   &:after {
     display: table;
     content: "";
@@ -186,8 +187,8 @@ section#content {
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 70px;
+  padding-top: 30px;
+  padding-bottom: 0;
 }
 
 .small-box {
@@ -279,9 +280,13 @@ article {
 .box-title {
   margin-bottom: 0;
   line-height: 1em;
+  margin-bottom: 0px;
+  color: $ligth-blue-color;
+  font-weight: bold;
+  font-size: 1.7em;
   small {
-    font-size: 10px;
-    color: $primary-color;
+    font-size: 0.8em;
+    color: $dark_gray_color;
     text-transform: uppercase;
     display: block;
     margin-top: 4px; /*letter-spacing: normal;*/
@@ -607,7 +612,7 @@ button, a.button {
     height: 28px;
     padding: 0 24px;
     line-height: 28px;
-    font-size: 0.9167em;
+    font-size: 1em;
   }
   &.btn-mini {
     height: 19px;
@@ -622,25 +627,30 @@ button, a.button {
 }
 
 button {
-  font-size: 0.9167em;
+  font-size: 1.8em;
   font-weight: bold;
   background: $button-color;
-  height: 34px;
-  line-height: 34px;
+  height: 1.6em;
+  line-height: 1.8em;
+  text-transform: uppercase;
   &:hover {
-    background: #7fb231;
+    background: $ligth-blue-color;
   }
 }
 
 a.button {
   display: inline-block;
-  background: #d9d9d9;
-  font-size: 0.8333em;
-  line-height: 1.8333em;
+  background: $ligth-blue-color;
+  font-size: 1.8em;
+  line-height: 1.6em !important;
   white-space: nowrap;
+  font-family: yanonekaffeesatz-light;
+  text-transform: uppercase;
   text-align: center;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
   &:hover {
-    background: $green-theme-color;
+    background: $yellow-color;
   }
   &.btn-mini {
     padding-left: 10px;
@@ -648,6 +658,7 @@ a.button {
   }
   &.btn-large, &.btn-medium, &.btn-small, &.full-width {
     font-weight: bold;
+
   }
 }
 
@@ -666,9 +677,9 @@ button, a.button {
     }
   }
   &.yellow {
-    background: $yellow-theme-color;
+    background: $yellow-color;
     &:hover {
-      background: #e9b02b;
+      background: $ligth-blue-color;
     }
   }
   &.dark-blue1 {
@@ -1351,16 +1362,17 @@ blockquote {
 
 /* 2.2.11. Price section */
 .price {
-  color: #7db921;
-  font-size: 1.6667em;
+  color: $orange_color;
+  font-size: 2em;
   text-transform: uppercase;
   float: right;
   text-align: right;
   line-height: 1;
   display: block;
+  font-family: yanonekaffeesatz-bold;
   small {
     display: block;
-    color: $primary-color;
+    color: $dark_gray_color;
     font-size: 0.5em;
   }
 }
@@ -1941,8 +1953,9 @@ ol {
     }
     .panel-title {
       padding: 0;
-      color: $dark-blue-theme-color;
-      font-size: 1.1667em;
+      color:#17a9af;
+      font-weight: bold;
+      font-size: 1.4rem;
       position: relative;
       a {
         white-space: normal;
@@ -2448,7 +2461,7 @@ ol {
     li a {
       width: 30px;
       height: 22px;
-      background: $skin-active-color;
+      background: $ligth-blue-color;
       color: #fff;
       text-indent: -9999px;
       text-align: left;
@@ -2656,7 +2669,7 @@ ol {
 
   &.style2 {
     .slides > li {
-      margin-right: 30px;
+      margin-right: 15px;
       &:last-child {
         margin-right: 0;
       }
@@ -3542,6 +3555,20 @@ ol {
 }
 
 /* 2.15. Listing Styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.feedback {
+  margin: 5px 0;
+  border-top: 1px solid $ligth-gray-color;
+  padding-top: 5px;
+  border-bottom: 1px solid $ligth-gray-color;
+  .review {
+    display: block;
+    float: right;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: $dark_gray_color;
+  }
+}
 .listing-style1 {
   &.hotel, &.cruise {
     .box-title:after {
@@ -3549,19 +3576,7 @@ ol {
       content: "";
       clear: both;
     }
-    .feedback {
-      margin: 5px 0;
-      border-top: 1px solid #f5f5f5;
-      padding-top: 5px;
-      border-bottom: 1px solid #f5f5f5;
-      .review {
-        display: block;
-        float: right;
-        text-transform: uppercase;
-        font-size: 0.8333em;
-        color: #9e9e9e;
-      }
-    }
+
     .five-stars-container {
       color: #dbdbdb;
     }
@@ -5037,21 +5052,24 @@ body.pace-running {
   position: relative;
   z-index: 999;
   .topnav {
-    height: 35px;
+    height: 41px;
     background: $skin-bg-color;
     width: 100%;
     ul.quick-menu > li {
       float: left;
-      margin-left: 20px;
+      margin-left: 6px;
+      padding-right: 6px;
       &:first-child {
         margin-left: 0;
       }
       > a {
-        color: #fff;
-        line-height: 30px;
+        color: $green-color;
+        line-height: 35px;
         display: block;
-        font-size: 0.8333em;
+        font-size: 1.5em;
+        letter-spacing: 0.07em;
         text-transform: uppercase;
+        font-family: yanonekaffeesatz-bold;
       }
     }
   }
@@ -5611,12 +5629,13 @@ body.pace-running {
 
 #header, #footer, .chaser {
   .logo {
+    margin: 0 20px;
     a {
       background: url($skin-logo) no-repeat 0 0;
       display: block;
     }
     img {
-      @include opacity(0);
+      @include opacity(1);
     }
   }
 }
@@ -5653,7 +5672,7 @@ body.pace-running {
   > li {
     float: left;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 10px;
     &:first-child {
       padding-left: 0;
     }
@@ -5668,7 +5687,8 @@ body.pace-running {
       z-index: 1000;
     }
     > a {
-      font-weight: normal;
+      font-weight: bold;
+      font-size: 1.8em;
       display: block;
       padding: 0;
       height: 33px;
@@ -6574,7 +6594,7 @@ ul.menu.mini {
 
 /* 3.3. Page Title ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .page-title-container {
-  height: 56px;
+  height: 35px;
   background: $dark-blue-theme-color;
   .page-title {
     .entry-title {
@@ -6587,12 +6607,13 @@ ul.menu.mini {
     height: 100%;
     li {
       float: left;
-      line-height: 56px;
+      line-height: 2em;
       display: inline;
       margin-left: 5px;
-      font-size: 0.8333em;
+      font-size: 1.2em;
       font-weight: bold;
       text-transform: uppercase;
+
       a {
         padding-right: 5px;
         color: #fff;
@@ -6602,7 +6623,7 @@ ul.menu.mini {
       }
       &:after {
         content: "/";
-        color: #5a7ca3;
+        color: white;
       }
       &:last-child:after {
         content: "";
@@ -7488,7 +7509,7 @@ ul.search-tabs {
   }
 }
 
-.hotel-list {
+.products-list {
   margin-top: 30px;
 }
 
@@ -9381,8 +9402,8 @@ ul.search-tabs {
     background: none;
   }
   #footer .footer-wrapper {
-    padding-top: 40px;
-    padding-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 0;
     .copyright {
       margin: 0;
     }
@@ -9589,7 +9610,7 @@ button.ui-button::-moz-focus-inner {
     right: 0;
     top: 0;
     cursor: pointer;
-    background-color: transparent;
+    background-color: $yellow-color;
     z-index: 1;
     @include opacity(0);
   }
@@ -9814,7 +9835,7 @@ button.ui-button::-moz-focus-inner {
 /* 8. Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #footer {
   .footer-wrapper {
-    padding: 80px 0;
+    padding: 0;
     > .container > .row > div {
       margin-top: 20px;
     }

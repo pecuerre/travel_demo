@@ -1,149 +1,96 @@
-<div id="slideshow" xmlns="http://www.w3.org/1999/html">
-  <div class="fullwidthbanner-container">
-    <div class="revolution-slider" style="height: 0; overflow: hidden;">
-      <ul>
-        <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
-          <img src="https://s3-us-west-2.amazonaws.com/webtriptocuba/slider_home_varadero.jpg" alt="">
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<% @destinos16={'Habana' => 'dest_habana_m.jpg',
+                'Varadero' => 'dest_varadero_m.jpg',
+                'Santiago de Cuba' => 'dest_santiago_m.jpg',
+                'Valle de Viñales' => 'dest_vinales_m.jpg',
+                'Baracoa' => 'dest_baracoa_m.jpg',
+                'Cayo Coco' => 'dest_ccoco_m.jpg'};
+
+   @destinos712={'Cayo Largo' => 'dest_clargo_m.jpg',
+                 'Cayo Guillermo' => 'dest_cguillermo_m.jpg',
+                 'Camaguey' => 'dest_camaguey_m.jpg',
+                 'Cienfuegos' => 'dest_cienfuegos_m.jpg',
+                 'Pinar del Río' => 'dest_pinar_m.jpg',
+                 'Trinidad' => 'dest_trinidad_m.jpg', };
+%>
+<%= render partial: 'spree/shared/destination_slide_show' %>
 <section id="content">
   <div class="section container">
     <div class="row image-box style3">
-      <% @destinos14.each do  |name, image| %>
-          <div class="col-sms-6 col-sm-6 col-md-3">
-            <article class="box destiny">
-              <div class="transparentbox">
-              </div>
-              <div class="textbox text-center">
-                <h4 class="image-title"><%= name %></h4>
-                <h5 class="image-reviews">270 reviews</h5>
-
-                <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+      <% @destinos16.each do |name, image| %>
+          <div class="col-sms-6 col-sm-6 col-md-2">
+            <article class="box">
+              <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+                <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title="" class="hover-effect"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
+              </figure>
+              <div class="details">
+                <h4 class="box-title"><a href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= name %>
+                  <small><%= rand(100...300).to_s %> reviews</small>
+                </a></h4>
+                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
                   <span style="width: 80%;" class="five-stars"></span>
                 </div>
-              </div>
-              <div class="iconbox text-center">
-                <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
-              </div>
-              <div class="selectbox">
-
-                <div class="col1">100 Hotels available</div>
-                <div class="col2">
-                  <a class="button" href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= t(:see_all) %></a>
+                <div class="row separator"></div>
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/hotel_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...50).to_s %> hotels</span></div>
+                  </a>
                 </div>
-
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/home_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...70).to_s %> houses</span></div>
+                  </a>
+                </div>
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/restaurants_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...100).to_s %> restaurants</span></div>
+                  </a>
+                </div>
               </div>
-              <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                <a class="hover-effect" href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title=""><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, class: 'inside_image') %></a>
-              </figure>
-
             </article>
           </div>
       <% end %>
-
     </div>
     <div class="row image-box style3">
-      <% @destinos58.each do  |name, image| %>
-          <div class="col-sms-6 col-sm-6 col-md-3">
-            <article class="box destiny">
-              <div class="transparentbox">
-              </div>
-              <div class="textbox text-center">
-                <h4 class="image-title"><%= name %></h4>
-                <h5 class="image-reviews">270 reviews</h5>
-
-                <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+      <% @destinos712.each do |name, image| %>
+          <div class="col-sms-6 col-sm-6 col-md-2">
+            <article class="box">
+              <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+                <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title="" class="hover-effect"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
+              </figure>
+              <div class="details">
+                <h4 class="box-title"><a href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= name %>
+                  <small><%= rand(100...300).to_s %> reviews</small>
+                </a></h4>
+                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
                   <span style="width: 80%;" class="five-stars"></span>
                 </div>
-              </div>
-              <div class="iconbox text-center">
-                <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
-              </div>
-              <div class="selectbox">
-
-                <div class="col1">100 Hotels available</div>
-                <div class="col2">
-                  <a class="button" href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= t(:see_all) %></a>
+                <div class="row separator"></div>
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/hotel_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...50).to_s %> hotels</span></div>
+                  </a>
                 </div>
-
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/home_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...70).to_s %> houses</span></div>
+                  </a>
+                </div>
+                <div class="row">
+                  <a href="">
+                    <div class="col-md-12 descrip_line"><%= image_tag('icon/restaurants_blue_24x24.png', class: 'smallicon') %>
+                      <span class="destination_resource"><%= rand(10...100).to_s %> restaurants</span></div>
+                  </a>
+                </div>
               </div>
-              <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                <a class="hover-effect" href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title=""><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, class: 'inside_image') %></a>
-              </figure>
-
             </article>
           </div>
       <% end %>
-
-    </div>
-    <div class="row image-box style3">
-      <% @destinos912.each do  |name, image| %>
-          <div class="col-sms-6 col-sm-6 col-md-3">
-            <article class="box destiny">
-              <div class="transparentbox">
-              </div>
-              <div class="textbox text-center">
-                <h4 class="image-title"><%= name %></h4>
-                <h5 class="image-reviews">270 reviews</h5>
-
-                <div data-placement="left" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                  <span style="width: 80%;" class="five-stars"></span>
-                </div>
-              </div>
-              <div class="iconbox text-center">
-                <a href="##"><%= image_tag('icon/flight_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/hotel_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/house_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/car_white_32x32.png', class: 'small_icon') %></a>
-                <a href="##"><%= image_tag('icon/tours_white_32x32.png', class: 'small_icon') %></a>
-              </div>
-              <div class="selectbox">
-
-                <div class="col1">100 Hotels available</div>
-                <div class="col2">
-                  <a class="button" href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= t(:see_all) %></a>
-                </div>
-
-              </div>
-              <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                <a class="hover-effect" href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title=""><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, class: 'inside_image') %></a>
-              </figure>
-
-            </article>
-          </div>
-      <% end %>
-
     </div>
   </div>
 </section>
-
-<script>
-    tjq(document).ready(function () {
-        tjq('.revolution-slider').revolution(
-                {
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    startwidth: 1170,
-                    startheight: 646,
-                    onHoverStop: "on",
-                    hideThumbs: 10,
-                    fullWidth: "on",
-                    forceFullWidth: "on",
-                    navigationType: "none",
-                    shadow: 0,
-                    spinner: "spinner4",
-                    hideTimerBar: "on",
-                });
-    });
-</script>
+<%= render partial: 'spree/shared/section_poplar_destinations' %>

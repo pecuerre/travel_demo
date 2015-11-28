@@ -3,8 +3,6 @@ module Holiplus
     class << self
 
       def parse_house(item, availabilityItem = {})
-        puts item.inspect
-        puts '-----------------------'
         {
             :api => :holiplu,
             :id => item['id'],
@@ -18,11 +16,11 @@ module Holiplus
             :images => (item['images'] || []).map { |i| i['path'] },
             :amenities => (item['services'] || []).map { |s| {:id => nil, :name => s} },
             :rating => 0,
-            :properties => {
-                :house_type => item['house_type'],
-                :rooms => item['number_of_rooms'].to_i,
-                :owner => item['owner'],
-            }
+            :properties => [
+                {:name => 'house_type', :pretty_name => 'House type', :value => item['house_type']},
+                {:name => 'total_rooms', :pretty_name => 'Total of rooms', :value => item['number_of_rooms']},
+                {:name => 'owner', :pretty_name => 'Owner', :value => item['owner']}
+            ]
         }
       end
 

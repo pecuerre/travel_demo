@@ -6,21 +6,17 @@
     <%= render :partial => 'spree/properties/search_box', :locals => {id: 'properties', active: true} %>
 <% end %>
 
-<% content_for :sidebar do %>
-    <%= render partial: 'spree/properties/filter' %>
-<% end %>
-
-<%= render partial: 'spree/properties/sort_by' %>
-
-<div id="houses-search-result">
-  <%= render partial: 'spree/properties/list' %>
-  <%= render partial: 'spree/properties/grid' %>
-  <%= render partial: 'spree/properties/block' %>
-</div>
+<!--Load templates in mustache format-->
+<%= render partial: 'spree/properties/search_result' %>
+<%= render partial: 'spree/properties/list' %>
+<%= render partial: 'spree/properties/grid' %>
+<%= render partial: 'spree/properties/block' %>
+<%= render partial: 'spree/properties/details' %>
 
 <script type="text/javascript">
     tjq(document).ready(function () {
-        tjq('#houses-search-result').renderProducts('houses');
+        // Render product from localStorege cache.
+        tjq(this).renderProductsSearchResultItems('houses');
     })
 </script>
 

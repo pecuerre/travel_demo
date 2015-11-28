@@ -136,7 +136,7 @@ module TripFunctions
       :room_count     => row[3].to_i,
       :bathrooms      => row[4].to_i,
       :type           => row[5],
-      :comfort_level  => row[6], # rate.home_room
+      :comfort_level  => Spree::OptionType.find_by_name('home_room').option_values.find {|o| o.presentation == row[6]}, # rate.home_room
       :plan           => Spree::OptionType.find_by_name('home_plan').option_values.first.id, #row[7] # rate.plan
       :service_level  => row[8],
       :location_type  => row[9],

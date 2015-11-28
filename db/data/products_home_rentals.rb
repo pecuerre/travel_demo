@@ -16,6 +16,7 @@ CSV.foreach(Rails.root + "db/external/houses.csv", :col_sep => '|') do |row|
   next if index == 1
   houses_data = get_houses_parts(row)
   next unless houses_data
+  next unless houses_data[:name]
 
   product_attrs = {
       :name => houses_data[:name],
@@ -37,9 +38,9 @@ CSV.foreach(Rails.root + "db/external/houses.csv", :col_sep => '|') do |row|
   rate.set_persisted_option_value(:end_date, houses_data[:date])
   rate.set_persisted_option_value(:home_room, houses_data[:comfort_level])
   #rate.set_persisted_option_value(:home_plan, houses_data[:plan])
-  rate.set_persisted_option_value(:simple, houses_data[:simple])
-  rate.set_persisted_option_value(:double, houses_data[:double])
-  rate.set_persisted_option_value(:triple, houses_data[:triple])
+  rate.set_persisted_option_value(:simple, houses_data[:simple_price])
+  rate.set_persisted_option_value(:double, houses_data[:double_price])
+  rate.set_persisted_option_value(:triple, houses_data[:triple_price])
   rate.set_persisted_option_value(:destination, houses_data[:destination])
   rate.save
 end

@@ -1,0 +1,63 @@
+<% @destinos16={'Habana' => 'dest_habana_m.jpg',
+                'Varadero' => 'dest_varadero_m.jpg',
+                'Santiago de Cuba' => 'dest_santiago_m.jpg',
+                'Valle de Viñales' => 'dest_vinales_m.jpg',
+                'Baracoa' => 'dest_baracoa_m.jpg',
+                'Cayo Coco' => 'dest_ccoco_m.jpg'};
+%>
+<div class="section container">
+  <h1><%= image_tag('icon/star_blue_32x32.png', class: 'mytrp_icon') %><%= t(:popular_destinations) %> </h1>
+
+  <div class="image-carousel style2 block" data-animation="slide" data-item-width="270" data-item-margin="30">
+    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+      <ul class="slides image-box listing-style2">
+        <% @destinos16.each do |name, image| %>
+            <li>
+              <article class="box">
+                <figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1" style="animation-duration: 1s; visibility: visible;">
+                  <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>" title="" class="hover-effect"><%= image_tag('https://s3-us-west-2.amazonaws.com/webtriptocuba/'+image, size: "270x353", alt: name) %></a>
+                </figure>
+                <div class="details">
+                  <h4 class="box-title">
+                    <a href="<%= detail_destinations_path(:params => {:destiny => name}) %>"><%= name %>
+                      <small><%= rand(100...300).to_s %> reviews</small>
+                    </a></h4>
+                  <div class="feedback">
+                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
+                      <span class="five-stars" style="width: 80%;"></span></div>
+
+                  </div>
+                  <div class="row separator"></div>
+                  <div class="row">
+                    <a href="">
+                      <div class="col-md-12 descrip_line"><%= image_tag('icon/hotel_blue_24x24.png', class: 'smallicon') %>
+                        <span class="destination_resource"><%= rand(10...50).to_s %> hotels</span></div>
+                    </a>
+                  </div>
+                  <div class="row">
+                    <a href="">
+                      <div class="col-md-12 descrip_line"><%= image_tag('icon/home_blue_24x24.png', class: 'smallicon') %>
+                        <span class="destination_resource"><%= rand(10...70).to_s %> houses</span></div>
+                    </a>
+                  </div>
+                  <div class="row">
+                    <a href="">
+                      <div class="col-md-12 descrip_line"><%= image_tag('icon/restaurants_blue_24x24.png', class: 'smallicon') %>
+                        <span class="destination_resource"><%= rand(10...100).to_s %> restaurants</span></div>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row image-box style3">
+    <% @destinos16.each do |name, image| %>
+        <div class="col-sms-12 col-sm-12 col-md-6">
+
+        </div>
+    <% end %>
+  </div>
+</div>

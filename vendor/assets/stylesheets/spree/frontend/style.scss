@@ -9402,7 +9402,7 @@ ul.search-tabs {
     background: none;
   }
   #footer .footer-wrapper {
-    padding-top: 300px;
+    padding-top: 0px;
     padding-bottom: 0;
     .copyright {
       margin: 0;
@@ -9835,7 +9835,7 @@ button.ui-button::-moz-focus-inner {
 /* 8. Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #footer {
   .footer-wrapper {
-    padding: 80px 0;
+    padding: 0;
     > .container > .row > div {
       margin-top: 20px;
     }

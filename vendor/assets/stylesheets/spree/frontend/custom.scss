@@ -63,17 +63,18 @@
   src: font-url('KaushanScript-Regular.otf') format('opentype')
 }
 
-
 /********************** BASICS ****************/
 
 h1, h2 {
   text-transform: uppercase
 }
+
 .fullwidthbanner-container {
   left: 0 !important;
 }
+
 .hover-effect:after {
- background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
+  background: image_url('icon/hover-effect.png') no-repeat scroll center center rgba(255, 187, 0, 0.4) !important;
 
 }
 
@@ -382,16 +383,10 @@ form {
 
 #footer {
 
-  height: 700px;
   width: 100%;
-  background: url("https://s3-us-west-2.amazonaws.com/webtriptocuba/footer-grad-back.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-  background-color: #f5f5f5;
+  background-color: $green-color;
 
   > .footer-wrapper {
-    padding-top: 300px !important;
     padding-bottom: 0 !important;
     > .container {
 
@@ -416,11 +411,6 @@ form {
         }
       }
     }
-  }
-
-  .leftfootercolum {
-    border-color: $yellow-color;
-    border-right: 3px solid;
   }
 
   .footericon {
@@ -457,6 +447,8 @@ form {
   }
 }
 
+
+
 /******************** Seccions ******************/
 /** Generales **/
 
@@ -467,14 +459,13 @@ form {
   color: $dark_gray_color;
 }
 
-
-
 /*******************  ICONS ****************/
 
 img.mytrp_icon {
   margin-bottom: 10px;
   margin-right: 10px;
 }
+
 #icon-box {
   width: 49px;
   heigt: 22px;
@@ -630,19 +621,20 @@ img.mytrp_icon {
   margin-bottom: 10px;
 }
 
-
 /****  Home and Destination Slider ***************************************/
 
-.label_slider{
+.label_slider {
   width: 40%;
   float: right;
 }
+
 .slider {
   min-height: 646px;
 }
 
 .smallicon {
-  width: 24px !important;  margin-right: 5px;
+  width: 24px !important;
+  margin-right: 5px;
 }
 
 .destination_resource {

@@ -42,7 +42,11 @@
           </section>
       <% end %>
   <% end %>
-  <%= render partial: 'spree/shared/footer' %>
+  <% if ['spree/destinations'].include? params[:controller] %>
+      <%= render partial: 'spree/shared/footer_destination' %>
+  <% else %>
+      <%= render partial: 'spree/shared/footer' %>
+  <% end %>
 </div>
 </body>
 </html>

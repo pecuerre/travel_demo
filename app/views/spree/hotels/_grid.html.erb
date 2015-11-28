@@ -1,20 +1,20 @@
-<script id="hotels-grid" type="text/html">
+<script id="products-view-as-grid" type="text/html">
   <div class="row image-box hotel listing-style1">
     {{#items}}
     <div class="col-sm-6 col-md-4">
       <article class="box">
         <figure>
-          <div title="{{title}}" class="hover-effect">
-            <img id="product-gallery-{{id}}" src="{{image}}"/>
+          <div id="product-gallery-{{id}}" title="{{title}}" class="hover-effect">
+            <img src="{{image}}"/>
           </div>
         </figure>
         <div class="details">
           <span class="price"><small>AVG/NIGHT</small>{{price}}</span>
           <h4 class="box-title">
-            <a href="#" title="{{title}}">{{name}}</a>
+            <a href="#details" class="product-details" title="View all details" data-item="{{id}}">{{name}}</a>
             <small>
               <i class="soap-icon-departure yellow-color"></i>
-              <a href="#" title="{{destination}}">{{destination}}</a>
+              <span>{{destination.name}}</span>
             </small>
           </h4>
           <div class="feedback">

@@ -1,7 +1,7 @@
 <div class="sort-by-section clearfix box">
   <h4 class="sort-by-title block-sm">Sort results by:</h4>
   <ul class="sort-bar clearfix block-sm">
-    <% order_params = ['name'] #['name', 'price', 'rating', 'popularity']  %>
+    <% order_params = ['name'] #['name', 'price', 'rating', 'popularity']   %>
     <% order_params.each do |p| %>
         <%
            text = "<span>#{p}</span>".html_safe
@@ -15,8 +15,8 @@
   </ul>
 
   <ul class="products-view-type swap-tiles clearfix block-sm">
-    <li class="swap-list"><a href="#list"><i class="soap-icon-list"></i></a></li>
-    <li class="swap-grid"><a href="#grid"><i class="soap-icon-grid"></i></a></li>
-    <li class="swap-block"><a href="#block"><i class="soap-icon-block"></i></a></li>
+    <li class="swap-list"><a href="#" data-view="list"><i class="soap-icon-list"></i></a></li>
+    <li class="swap-grid"><a href="#" data-view="grid"><i class="soap-icon-grid"></i></a></li>
+    <li class="swap-block"><a href="#" data-view="block"><i class="soap-icon-block"></i></a></li>
   </ul>
 </div>

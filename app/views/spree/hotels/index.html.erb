@@ -1,26 +1,22 @@
 <% content_for :pagetitle do %>
-  <%= render partial: 'spree/hotels/pagetitle' %>
+    <%= render partial: 'spree/hotels/pagetitle' %>
 <% end %>
 
 <% content_for :travel_search_box do %>
-  <%= render :partial => 'spree/hotels/search_box', :locals => {id: 'hotels', active: true} %>
+    <%= render :partial => 'spree/hotels/search_box', :locals => {id: 'hotels', active: true} %>
 <% end %>
 
-<% content_for :sidebar do %>
-  <%= render partial: 'spree/hotels/filter' %>
-<% end %>
-
-<%= render partial: 'spree/hotels/sort_by' %>
-
-<div id="hotels-search-result">
-  <%= render partial: 'spree/hotels/list' %>
-  <%= render partial: 'spree/hotels/grid' %>
-  <%= render partial: 'spree/hotels/block' %>
-</div>
+<!--Load templates in mustache format-->
+<%= render partial: 'spree/properties/search_result' %>
+<%= render partial: 'spree/properties/list' %>
+<%= render partial: 'spree/properties/grid' %>
+<%= render partial: 'spree/properties/block' %>
+<%= render partial: 'spree/properties/details' %>
 
 <script type="text/javascript">
     tjq(document).ready(function () {
-        tjq('#hotels-search-result').renderProducts('hotels');
+        // Render product from localStorege cache.
+        tjq(this).renderProductsSearchResultItems('hotels');
     })
 </script>
 
